@@ -1,0 +1,17 @@
+/*
+|--------------------------------------
+| Section 1
+|--------------------------------------
+*/
+body > #root > section {
+	margin-top: 3.5rem;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+body > #root > section > .empty__space {
+	height: 50vh;
+}
