@@ -4,10 +4,8 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div class="App">
-    <HeaderItem v-if="$route.meta.headerItem"></HeaderItem>
-    <RouterView />
-  </div>
+  <HeaderItem v-if="$route.meta.headerItem"></HeaderItem>
+  <RouterView />
 </template>
 
 <style>

@@ -10,8 +10,17 @@ body > #root > section {
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
+	justify-content: space-around;
+}
+
+body > #root > section > h2 {
+	font-size: 0.85rem;
 }
 
 body > #root > section > .empty__space {
 	height: 50vh;
+}
+
+body > #root > section > .empty__space > p {
+	font-size: 0.75rem;
 }

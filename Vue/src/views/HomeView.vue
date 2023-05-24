@@ -2,7 +2,7 @@
 import { onMounted } from 'vue'
 
 onMounted(() => {
-  document.title = 'Home'
+  document.title = 'I Am Seb w/ Vue'
   // Dark Mode Checkbox Listener
   document.querySelector('#toggle_input').addEventListener('change', (e) => {
     if (e.target.checked) {
@@ -36,7 +36,7 @@ onMounted(() => {
 </template>
 
 <style scoped>
-section {
+body > #root > section {
   margin-top: 3.5rem;
   height: 100vh;
   display: flex;
@@ -45,7 +45,13 @@ section {
   justify-content: space-around;
 }
 
-section > .empty__space {
+body > #root > section > h2 {
+  font-size: 0.85rem;
+}
+body > #root > section > .empty__space {
   height: 50vh;
+}
+body > #root > section > .empty__space > p {
+  font-size: 0.75rem;
 }
 </style>

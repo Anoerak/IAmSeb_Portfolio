@@ -78,8 +78,8 @@ onMounted(() => {
     if (tl.reversed()) {
       tl.play()
     } else {
-      tl.to('nav', { right: 0, top: '50vh' })
-        .to('nav', { height: '100vh', top: window.pageYOffset }, '-=.1')
+      tl.to('nav', { right: 0 })
+        .to('nav', { height: '100vh', top: 0 }, '-=.1')
         .to('nav ul li a', { opacity: 1, pointerEvents: 'all', stagger: 0.2 }, '-=.8')
         .to('.close', { opacity: 1, pointerEvents: 'all' }, '-=.8')
         .to('nav h2', { opacity: 1 }, '-=1')
@@ -104,7 +104,7 @@ onMounted(() => {
 
   // Scrolling is inactive when innerWidth < 992px
   window.addEventListener('scroll', () => {
-    if (window.innerWidth < 992) {
+    if (window.innerWidth < 992 && tl.reversed()) {
       window.scrollTo(0, 0)
     }
   })
@@ -163,7 +163,7 @@ onMounted(() => {
 </template>
 
 <style scoped>
-header {
+body > #root > header {
   margin: auto;
   /* overflow: hidden; */
   margin: 0;
@@ -175,12 +175,12 @@ header {
   min-height: 10rem;
 }
 
-header > h1,
-header.dark > h1 {
+body > #root > header > h1,
+body > #root > header.dark > h1 {
   z-index: 1;
 }
 
-header > nav > h2 {
+body > #root > header > nav > h2 {
   opacity: 0;
 }
 
@@ -334,18 +334,12 @@ header > nav > .menu__ul > .menu__li > .li__content > a {
 */
 
 @media screen and (max-width: 992px) {
-  header {
+  body > #root > header {
     min-height: 10rem;
     justify-content: center;
   }
-  header > h1 {
+  body > #root > header > h1 {
     font-size: 1rem;
-  }
-  header > section > h2 {
-    font-size: 0.85rem;
-  }
-  header > section span {
-    font-size: 0.75rem;
   }
 
   /* Hamburger Menu Icon */
@@ -392,7 +386,7 @@ header > nav > .menu__ul > .menu__li > .li__content > a {
   /* Responsive Menu */
   header > nav,
   header.dark > nav {
-    position: absolute;
+    /* position: absolute; */
     width: 100%;
     height: 30px;
     max-height: none;
@@ -403,6 +397,7 @@ header > nav > .menu__ul > .menu__li > .li__content > a {
     justify-content: center;
     align-items: center;
     right: -200vw;
+    top: 50vh;
     z-index: 2;
   }
 
@@ -420,6 +415,7 @@ header > nav > .menu__ul > .menu__li > .li__content > a {
   header > nav > .menu__ul > .menu__li:nth-child(-n + 4),
   header.dark > nav > .menu__ul > .menu__li:nth-child(-n + 4) {
     margin: 50px 0;
+    min-width: fit-content;
     border: none;
     background-color: transparent;
     box-shadow: none;
@@ -429,6 +425,14 @@ header > nav > .menu__ul > .menu__li > .li__content > a {
   header > nav > .menu__ul > .menu__li > .li__content,
   header.dark > nav > .menu__ul > .menu__li > .li__content {
     background-color: transparent;
+    min-width: fit-content;
+    padding: 0 1rem;
+  }
+
+  header > nav > .menu__ul > .menu__li::before,
+  header > nav > .menu__ul > .menu__li > .li__border {
+    min-width: fit-content;
+    padding: 0 1rem;
   }
 
   header > nav > .menu__ul > .menu__li > .li__content > .li__link,
@@ -474,7 +478,7 @@ header > nav > .menu__ul > .menu__li > .li__content > a {
     pointer-events: none;
   }
 
-  header > nav h2 {
+  header > nav > h2 {
     position: absolute;
     top: 5%;
     left: 5%;

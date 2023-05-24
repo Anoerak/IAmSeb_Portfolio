@@ -195,12 +195,6 @@ body > nav > .menu__ul > .menu__li > .li__content > a {
 	body h1 {
 		font-size: 1rem;
 	}
-	body > section > h2 {
-		font-size: 0.85rem;
-	}
-	body > section span {
-		font-size: 0.75rem;
-	}
 
 	/* Hamburger Menu Icon */
 	body > .hamburger__menu__container {
@@ -245,7 +239,7 @@ body > nav > .menu__ul > .menu__li > .li__content > a {
 	/* Responsive Menu */
 	body > nav,
 	body.dark > nav {
-		position: absolute;
+		/* position: absolute; */
 		width: 100%;
 		height: 30px;
 		max-height: none;
@@ -256,6 +250,7 @@ body > nav > .menu__ul > .menu__li > .li__content > a {
 		justify-content: center;
 		align-items: center;
 		right: -200vw;
+		top: 50vh;
 		z-index: 2;
 	}
 
@@ -277,11 +272,20 @@ body > nav > .menu__ul > .menu__li > .li__content > a {
 		background-color: transparent;
 		box-shadow: none;
 		border-radius: 2rem;
+		min-width: fit-content;
 	}
 
 	body > nav > .menu__ul > .menu__li > .li__content,
 	body.dark > nav > .menu__ul > .menu__li > .li__content {
 		background-color: transparent;
+		min-width: fit-content;
+		padding: 0 1rem;
+	}
+
+	.menu__li::before,
+	.menu__li > .li__border {
+		min-width: fit-content;
+		padding: 0 1rem;
 	}
 
 	body > nav > .menu__ul > .menu__li > .li__content > .li__link,
@@ -360,7 +364,7 @@ body > nav > .menu__ul > .menu__li > .li__content > a {
 
 /*
 |--------------------------------------
-| Section 1
+| Animations
 |--------------------------------------
 */
 

@@ -4,6 +4,8 @@ import './Home.css';
 
 function Home() {
 	useEffect(() => {
+		// We set up the page title
+		document.title = 'I Am Seb w/ React';
 		// Dark Mode Checkbox Listener
 		document.querySelector('#toggle_input').addEventListener('change', (e) => {
 			if (e.target.checked) {

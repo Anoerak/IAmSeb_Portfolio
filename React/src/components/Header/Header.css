@@ -197,12 +197,6 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
 	body > #root > header > h1 {
 		font-size: 1rem;
 	}
-	body > #root > header > section > h2 {
-		font-size: 0.85rem;
-	}
-	body > #root > header > section span {
-		font-size: 0.75rem;
-	}
 
 	/* Hamburger Menu Icon */
 	body > #root > header > .hamburger__menu__container {
@@ -248,7 +242,7 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
 	/* Responsive Menu */
 	body > #root > header > nav,
 	body.dark > #root > header > nav {
-		position: absolute;
+		/* position: absolute; */
 		width: 100%;
 		height: 30px;
 		max-height: none;
@@ -259,6 +253,7 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
 		justify-content: center;
 		align-items: center;
 		right: -200vw;
+		top: 50vh;
 		z-index: 2;
 	}
 
@@ -280,11 +275,20 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
 		background-color: transparent;
 		box-shadow: none;
 		border-radius: 2rem;
+		min-width: fit-content;
+	}
+
+	.menu__li::before,
+	.menu__li > .li__border {
+		min-width: fit-content;
+		padding: 0 1rem;
 	}
 
 	body > #root > header > nav > .menu__ul > .menu__li > .li__content,
 	body.dark > #root > header > nav > .menu__ul > .menu__li > .li__content {
 		background-color: transparent;
+		min-width: fit-content;
+		padding: 0 1rem;
 	}
 
 	body > #root > header > nav > .menu__ul > .menu__li > .li__content > .li__link,
@@ -363,7 +367,7 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
 
 /*
 |--------------------------------------
-| Animation
+| Animations
 |--------------------------------------
 */
 

@@ -1,8 +1,23 @@
 /*
-	|-----------------------------------
+	|$$$$$$$$$$$$$$$$$-
 	| Global variables
-	|-----------------------------------
+	|$$$$$$$$$$$$$$$$$-
 */
+
+/* Light Mode */
+$bg__color: #ffffff;
+$text__color: #000000;
+$nav__bg__color: #ffffff;
+$li__bg__color: #dddddd7e;
+$li__hovered: rgba(177, 222, 236, 0.216);
+$li__border__hovered: rgb(177, 222, 236);
+/* Dark Mode */
+$dark__bg__color: #141414;
+$dark__text__color: #ffffff;
+$dark__nav__bg__color: #171717;
+$dark__li__bg__color: #ffffff1a;
+$dark__li__hovered: #ffffff0f;
+$dark__li__border__hovered: #f0983a84;
 
 $danger: #dc3545;
 $success: #35dcc6;
@@ -31,9 +46,9 @@ $dark-warning-alert: #cc6600;
 $navbar-background: #e3f2fd;
 
 /*
-	|-----------------------------------
+	|$$$$$$$$$$$$$$$$$-
 	| Links as buttons
-	|-----------------------------------
+	|$$$$$$$$$$$$$$$$$-
 */
 // Connexion link button
 $connexion-button-color: $white;

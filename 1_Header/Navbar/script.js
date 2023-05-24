@@ -74,7 +74,7 @@ open.addEventListener('click', () => {
 		tl.play();
 	} else {
 		tl.to('nav', { right: 0 })
-			.to('nav', { height: '100vh', top: window.pageYOffset }, '-=.1')
+			.to('nav', { height: '100vh', top: 0 }, '-=.1')
 			.to('nav ul li a', { opacity: 1, pointerEvents: 'all', stagger: 0.2 }, '-=.8')
 			.to('.close', { opacity: 1, pointerEvents: 'all' }, '-=.8')
 			.to('nav h2', { opacity: 1 }, '-=1');
@@ -95,5 +95,13 @@ close.addEventListener('click', () => {
 	setTimeout(() => {
 		window.location.reload();
 	}, 2500);
+});
+
+// Scrolling is inactive when innerWidth < 992px and navbar is open
+window.addEventListener('scroll', () => {
+	if (window.innerWidth < 992 && tl.reversed()) {
+		window.scrollTo(0, 0);
+		console.log('scrolling');
+	}
 });
 /* #endregion */

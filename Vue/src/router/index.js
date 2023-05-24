@@ -13,7 +13,8 @@ const router = createRouter({
       name: 'home',
       component: HomeView,
       meta: {
-        headerItem: true
+        headerItem: true,
+        title: 'I Am Seb w/ Vue'
       }
     },
     {
@@ -56,6 +57,17 @@ const router = createRouter({
       }
     }
   ]
+})
+
+router.beforeEach((to, from, next) => {
+  // Get the page title from the route meta data that we have defined
+  const title = to.meta.title
+  // If the route has a title, set it as the page title of the document/page
+  if (title) {
+    document.title = title
+  }
+  // Continue resolving the route
+  next()
 })
 
 export default router
