@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import Terminal from '../../components/Terminal/Terminal';
+import Card from '../../components/Card/Card';
 
 import './Home.css';
 
@@ -30,7 +32,7 @@ function Home() {
 			</div>
 
 			<div className='empty__space'>
-				<p>"Some Text"</p>
+				<Terminal />
 			</div>
 		</section>
 	);

@@ -1,28 +1,3 @@
-:root {
-	/* Light Mode */
-	--bg__color: #ffffff;
-	--text__color: #000000;
-	--nav__bg__color: #ffffff;
-	--li__bg__color: #dddddd7e;
-	--li__hovered: rgba(177, 222, 236, 0.216);
-	--li__border__hovered: rgb(177, 222, 236);
-	/* Dark Mode */
-	--dark__bg__color: #141414;
-	--dark__text__color: #ffffff;
-	--dark__nav__bg__color: #171717;
-	--dark__li__bg__color: #ffffff1a;
-	--dark__li__hovered: #ffffff0f;
-	--dark__li__border__hovered: #f0983a84;
-}
-
-body.dark {
-	background-color: var(--dark__bg__color);
-	color: var(--dark__text__color);
-}
-body {
-	background-color: var(--bg__color);
-	color: var(--text__color);
-}
 body > #root > header {
 	margin: auto;
 	/* overflow: hidden; */
@@ -127,11 +102,7 @@ body > #root > header > nav > .menu__ul > .menu__li:hover::before {
 }
 
 body.dark > #root > header.menu__li::before {
-	background: radial-gradient(
-		700px circle at var(--mouse-x) var(--mouse-y),
-		var(--dark__li__hovered),
-		transparent 40%
-	);
+	background: radial-gradient(700px circle at var(--mouse-x) var(--mouse-y), var(--dark__li__hovered), transparent 40%);
 	z-index: 3;
 }
 .menu__li::before {
@@ -140,19 +111,11 @@ body.dark > #root > header.menu__li::before {
 }
 
 body.dark > #root > header > nav > .menu__ul > .menu__li > .li__border {
-	background: radial-gradient(
-		350px circle at var(--mouse-x) var(--mouse-y),
-		var(--dark__li__border__hovered),
-		transparent 40%
-	);
+	background: radial-gradient(350px circle at var(--mouse-x) var(--mouse-y), var(--dark__li__border__hovered), transparent 40%);
 	z-index: 1;
 }
 body > #root > header > nav > .menu__ul > .menu__li > .li__border {
-	background: radial-gradient(
-		350px circle at var(--mouse-x) var(--mouse-y),
-		var(--li__border__hovered),
-		transparent 40%
-	);
+	background: radial-gradient(350px circle at var(--mouse-x) var(--mouse-y), var(--li__border__hovered), transparent 40%);
 	z-index: 1;
 }
 
