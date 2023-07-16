@@ -93,6 +93,11 @@ body.dark > #root > section .flip__terminal__back {
 |---------------------------------- 
 */
 
+body > #root > section .flip__terminal__back svg {
+	font-size: 1.5rem;
+	margin-right: 1rem;
+}
+
 body > #root > section [data-terminal] {
 	width: 750px;
 	max-width: 100%;

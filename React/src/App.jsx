@@ -4,6 +4,7 @@ import { Routes, Route, Outlet } from 'react-router-dom';
 import './libs/style/App.css';
 
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Projects from './pages/Projects/Projects';
@@ -14,6 +15,7 @@ export const Layout = () => (
 	<>
 		<Header />
 		<Outlet />
+		<Footer />
 	</>
 );
 

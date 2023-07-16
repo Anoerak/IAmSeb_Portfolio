@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHtml5, faCss3Alt, faJsSquare } from '@fortawesome/free-brands-svg-icons';
 
 import './Terminal.css';
 
@@ -180,9 +182,9 @@ function Terminal(prop) {
 					<div className='flip__terminal__back'>
 						<div id='terminal-back' data-terminal data-ty-startdelay='7000' data-ty-typedelay='10' data-ty-linedelay='50'>
 							<div data-ty>
-								<i className='fa-brands fa-html5'></i>
-								<i className='fa-brands fa-css3-alt'></i>
-								<i className='fa-brands fa-square-js'></i>
+								<FontAwesomeIcon icon={faHtml5} />
+								<FontAwesomeIcon icon={faCss3Alt} />
+								<FontAwesomeIcon icon={faJsSquare} />
 							</div>
 							<div data-ty='input' data-ty-prompt='👨‍💻'>
 								Here's the HTML behind this terminal...

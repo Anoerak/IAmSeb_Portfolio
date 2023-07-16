@@ -63,6 +63,21 @@ function Header() {
 				document.body.classList.remove('dark');
 			}
 		});
+
+		// Dark Mode Toggle
+		const toggler = document.querySelector('.toggler');
+		const circle = document.querySelector('.circle');
+		toggler.addEventListener('click', () => {
+			if (document.body.classList.contains('dark')) {
+				document.body.classList.remove('dark');
+				toggler.classList.toggle('clicked');
+				circle.classList.toggle('dark');
+			} else {
+				document.body.classList.add('dark');
+				toggler.classList.toggle('clicked');
+				circle.classList.toggle('dark');
+			}
+		});
 		/* #endregion */
 
 		/* #region  Responsive */
@@ -114,7 +129,10 @@ function Header() {
 				<div className='hamburger__menu__icon'></div>
 			</div>
 
-			<h1>I Am Seb</h1>
+			<h1 id='top'>I Am Seb</h1>
+
+			<div className='toggler'></div>
+			<button className='circle'></button>
 
 			<nav>
 				<h2>Sébastien P.</h2>
