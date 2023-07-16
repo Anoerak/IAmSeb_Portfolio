@@ -32,7 +32,9 @@ function Home() {
 			</div>
 
 			<div className='empty__space'>
-				<Terminal />
+				<Terminal>
+					<Card />
+				</Terminal>
 			</div>
 		</section>
 	);

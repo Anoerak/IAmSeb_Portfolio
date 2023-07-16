@@ -51,11 +51,7 @@ function Header() {
 
 		/* #region  Dark Mode */
 		// Dark Mode based on user settings
-		if (
-			window.matchMedia &&
-			window.matchMedia('(prefers-color-scheme: dark)').matches &&
-			!document.body.classList.contains('dark')
-		) {
+		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && !document.body.classList.contains('dark')) {
 			document.body.classList.add('dark');
 		}
 
@@ -118,7 +114,7 @@ function Header() {
 				<div className='hamburger__menu__icon'></div>
 			</div>
 
-			<h1>Cool Navbar Effect</h1>
+			<h1>I Am Seb</h1>
 
 			<nav>
 				<h2>Sébastien P.</h2>

@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 import './Terminal.css';
 
 function Terminal(prop) {
-	var { terminal, setTerminal } = useState(null);
-
 	useEffect(() => {
 		class Terminal {
 			/**
@@ -170,30 +168,9 @@ function Terminal(prop) {
 			}
 		}
 
-		/**
-		 * HTML API: If current script has container(s) specified, initialise terminal.
-		 */
-		if (document.currentScript.hasAttribute('data-terminal-container')) {
-			const containers = document.currentScript.getAttribute('data-terminal-container');
-			containers.split('|').forEach((container) => new Terminal(container));
-		}
-
-		// We redefine the terminal var when hovering the flip__terminal class.
-		// This is to prevent the terminal from being initialized when the page loads.
-		// This is because the terminal is not visible when the page loads.
-		// This is a hacky solution, but it works.
-
-		function initTerminal() {
-			setTerminal(new Terminal('#terminal-back'));
-		}
-
-		function destroyTerminal() {
-			setTerminal(null);
-		}
-
-		document.querySelector('.flip__terminal').addEventListener('mouseenter', initTerminal);
-		document.querySelector('.flip__terminal').addEventListener('mouseleave', destroyTerminal);
-	}, [terminal, setTerminal]);
+		// We initialise the terminal by looking for the ID terminal-back and then running the Terminal class on it.
+		new Terminal('#terminal-back');
+	}, []);
 
 	return (
 		<>

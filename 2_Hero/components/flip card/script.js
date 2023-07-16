@@ -179,6 +179,7 @@ class Terminal {
  */
 if (document.currentScript.hasAttribute('data-terminal-container')) {
 	const containers = document.currentScript.getAttribute('data-terminal-container');
+	console.log(containers);
 	containers.split('|').forEach((container) => new Terminal(container));
 }
 

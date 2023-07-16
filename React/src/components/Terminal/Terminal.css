@@ -1,9 +1,19 @@
 :root {
-	--terminal-color-bg: #252a33;
-	--terminal-color-text: #eee;
+	/* Light Mode */
+	--terminal-color-bg: #eee;
+	--terminal-color-text: #000000;
+	--terminal-navbar-bg: #000;
 	--terminal-color-text-subtle: #58d287;
 	--terminal-color-opening-closing: #df396b;
 	--terminal-color-spinner: #fd8331;
+
+	/* Dark Mode */
+	--dark-terminal-color-bg: #252a33;
+	--dark-terminal-color-text: #eee;
+	--dark-terminal-navbar-bg: #1a1d24;
+	--dark-terminal-color-text-subtle: #58d287;
+	--dark-terminal-color-opening-closing: #df396b;
+	--dark-terminal-color-spinner: #fd8331;
 }
 
 /* 
@@ -12,7 +22,7 @@
 |---------------------------------- 
 */
 
-.flip__terminal {
+body > #root > section .flip__terminal {
 	background-color: transparent;
 	min-width: 300px;
 	max-width: 100%;
@@ -22,45 +32,59 @@
 }
 
 /* This container is needed to position the front and back side */
-.flip__terminal__inner {
+body > #root > section .flip__terminal__inner {
 	display: flex;
 	justify-content: center;
 	position: relative;
 	width: 100%;
 	height: 100%;
+	border-radius: 6px;
 	transition: transform 0.8s 6s;
 	transform-style: preserve-3d;
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
-.flip__terminal:hover .flip__terminal__inner {
+body > #root > section .flip__terminal:hover .flip__terminal__inner {
 	transform: rotateY(180deg);
 }
-
-.flip__terminal:hover .cont {
+body > #root > section .flip__terminal:hover .cont {
 	display: block;
+}
+body > #root > section .flip__terminal:hover .flip__terminal__front {
+	opacity: 0;
+	transition-delay: 6.5s;
 }
 
 /* Position the front and back side */
-.flip__terminal__front,
-.flip__terminal__back {
+body > #root > section .flip__terminal__front,
+body > #root > section .flip__terminal__back {
 	position: absolute;
 	-webkit-backface-visibility: hidden; /* Safari */
 	backface-visibility: hidden;
 }
 
 /* Style the front side (fallback if image is missing) */
-.flip__terminal__front {
-	background-color: #bbbbbb00;
-	color: black;
+body > #root > section .flip__terminal__front {
+	border-radius: 6px;
+	background-color: var(--terminal-color-bg);
+	color: var(--terminal-color-text);
+}
+body.dark > #root > section .flip__terminal__front {
+	background-color: var(--dark-terminal-color-bg);
+	color: var(--dark-terminal-color-text);
 }
 
 /* Style the back side */
-.flip__terminal__back {
+body > #root > section .flip__terminal__back {
 	min-width: 750px;
+	border-radius: 6px;
 	background-color: transparent;
 	color: white;
 	transform: rotateY(180deg);
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+body.dark > #root > section .flip__terminal__back {
+	box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 /* 
@@ -69,7 +93,7 @@
 |---------------------------------- 
 */
 
-[data-terminal] {
+body > #root > section [data-terminal] {
 	width: 750px;
 	max-width: 100%;
 	background: var(--terminal-color-bg);
@@ -82,8 +106,12 @@
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
+body.dark > #root > section [data-terminal] {
+	background: var(--dark-terminal-color-bg);
+	color: var(--dark-terminal-color-text);
+}
 
-[data-terminal]:before {
+body > #root > section [data-terminal]:before {
 	z-index: 10;
 	content: '';
 	position: absolute;
@@ -100,46 +128,53 @@
 }
 
 /* We create a black navbar with the ::after pseudo element */
-[data-terminal]::after {
+body > #root > section [data-terminal]::after {
 	content: '';
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 45px;
-	background: #000;
+	background: var(--terminal-navbar-bg);
 	border-radius: 6px 6px 0 0;
 }
+body.dark > #root > section [data-terminal]::after {
+	background: var(--dark-terminal-navbar-bg);
+}
 
-[data-ty] {
+body > #root > section [data-ty] {
 	display: block;
 	line-height: 2;
 }
 
-[data-ty]:before {
+body > #root > section [data-ty]:before {
 	/* Set up defaults and ensure empty lines are displayed. */
 	content: '';
 	display: inline-block;
 	vertical-align: middle;
 }
 
-[data-ty='input']:before,
-[data-ty-prompt]:before {
-	font-family: 'Fire Code', monospace;
+body > #root > section [data-ty='input']:before,
+body > #root > section [data-ty-prompt]:before {
+	font-family: 'Fira Code', monospace;
 	font-size: 12px;
 	margin-right: 0.75em;
 	color: var(--terminal-color-text-subtle);
 }
+body.dark > #root > section [data-ty='input']:before,
+body.dark > #root > section [data-ty-prompt]:before {
+	color: var(--dark-terminal-color-text-subtle);
+}
 
-[data-ty='input']:before {
+body > #root > section [data-ty='input']:before {
 	content: '$';
 }
 
-[data-ty][data-ty-prompt]:before {
+body > #root > section [data-ty][data-ty-prompt]:before {
 	content: attr(data-ty-prompt);
 }
 
-[data-ty-cursor]:after {
+body > #root > section [data-ty-cursor]:after {
 	content: attr(data-ty-cursor);
 	font-family: monospace;
 	margin-left: 0.5em;
@@ -153,9 +188,9 @@
 |---------------------------------- 
  */
 
-.cont {
+body > #root > section .cont {
 	display: none;
-	z-index: 10;
+	/* z-index: 1; */
 	width: 40px;
 	height: 40px;
 	position: absolute;
@@ -166,7 +201,7 @@
 	border-radius: 50%;
 	overflow: hidden;
 }
-.cont::after {
+body > #root > section .cont::after {
 	content: '';
 	width: 35px;
 	height: 35px;
@@ -174,10 +209,13 @@
 	top: 2.5px;
 	right: 2.75px;
 	border-radius: 50%;
-	background: #000;
+	background: var(--dark-terminal-color-bg);
+}
+body.dark > #root > section .cont::after {
+	background: var(--dark-terminal-color-bg);
 }
 
-.spinner {
+body > #root > section .spinner {
 	position: absolute;
 	top: 22.5px;
 	right: 0;
@@ -188,16 +226,17 @@
 	animation: spin 1s infinite linear;
 }
 
-.number {
+body > #root > section .number {
 	position: absolute;
 	top: -5px;
 	left: 0;
-	z-index: 2;
+	z-index: 1;
 	width: 40px;
 	height: 40px;
 }
-.number::after {
+body > #root > section .number::after {
 	content: '';
+	z-index: -1;
 	width: 40px;
 	height: 40px;
 	color: var(--terminal-color-spinner);
@@ -206,7 +245,7 @@
 	left: 0;
 	font-size: 20px;
 	line-height: 50px;
-	animation: count 7s infinite;
+	animation: count 7s;
 }
 
 @keyframes spin {
@@ -219,8 +258,7 @@
 }
 
 @keyframes count {
-	0%,
-	100% {
+	0% {
 		content: '5';
 	}
 	15% {
@@ -240,6 +278,9 @@
 	}
 	90% {
 		content: 'GO';
+	}
+	100% {
+		content: '';
 	}
 }
 
