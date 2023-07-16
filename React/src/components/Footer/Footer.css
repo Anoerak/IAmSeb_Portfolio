@@ -97,7 +97,7 @@ body > #root > footer .go__to__top__button:hover .go__to__top__icon::after {
 }
 
 body > #root > footer .footer__container {
-	width: 40%;
+	width: 100%;
 	height: 100%;
 	display: flex;
 	flex-direction: row;
@@ -106,11 +106,12 @@ body > #root > footer .footer__container {
 }
 
 body > #root > footer .footer__container .footer__copy {
+	min-width: 10rem;
 	margin-left: 1rem;
 }
 
 body > #root > footer .footer__container .footer__links {
-	width: 50%;
+	width: 100%;
 	height: 100%;
 	display: flex;
 	flex-direction: row;
@@ -131,7 +132,11 @@ body > #root > footer .footer__container .footer__links a {
 	margin-right: 2rem;
 	z-index: 15;
 }
+body > #root > footer .footer__container .footer__links .footer__link svg {
+	font-size: 1.25rem;
+}
 body > #root > footer .footer__container .footer__links .footer__link {
+	margin: auto 1rem;
 	color: var(--text__color);
 }
 body.dark > #root > footer .footer__container .footer__links .footer__link {

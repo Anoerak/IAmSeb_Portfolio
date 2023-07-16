@@ -1,0 +1,126 @@
+<script></script>
+
+<template>
+    <div class="box">
+        <div className="cont">
+            <div className="spinner"></div>
+            <span className="number"></span>
+        </div>
+
+        <p>IamSeb</p>
+        <button id="modalBtn">
+            <font-awesome-icon :icon="['fas', 'paper-plane']" class="contactme" />
+            <span>Contact</span>
+        </button>
+    </div>
+</template>
+
+<style scoped>
+:root {
+    --primary_txt_color: rgba(255, 255, 255, 0.5);
+    --primary_color: rgba(118, 190, 231, 0.527);
+    --secondary_color: rgba(118, 231, 203, 0.507);
+}
+
+body > #root > section .box {
+    border-radius: 8px;
+    margin-top: 2rem;
+    width: 400px;
+    height: 300px;
+    background: #1f1e1e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+body > #root > section .box p {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    position: relative;
+    background: -webkit-linear-gradient(
+        45deg,
+        #ff0000,
+        #00f0f0,
+        #0000ff,
+        #ff0000,
+        #00f0f0,
+        #0000ff,
+        #f00f0f
+    );
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    transform: scale(1);
+    animation: animate 30s infinite;
+    background-size: 500%;
+}
+body > #root > section .box #modalBtn {
+    position: absolute;
+    height: 2rem;
+    width: 2rem;
+    background: -webkit-linear-gradient(45deg, #fafafa, #c8c8c8, #969696);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    bottom: 15px;
+    right: 15px;
+    border: none;
+}
+body > #root > section .box #modalBtn:hover ~ span {
+    opacity: 1;
+    transition: all 0.4s ease-in-out;
+}
+body > #root > section .box #modalBtn svg {
+    color: white;
+    font-size: 1.25rem;
+}
+body > #root > section .box span {
+    position: absolute;
+    font-size: 1rem;
+    background: -webkit-linear-gradient(45deg, #969696, #c8c8c8, #fafafa);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    width: auto;
+    right: 35px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    font-weight: 200;
+}
+body > #root > section .box::before,
+body .box::after {
+    content: '';
+    position: absolute;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    background: linear-gradient(
+        45deg,
+        #ff0000,
+        #00f0f0,
+        #0000ff,
+        #ff0000,
+        #00f0f0,
+        #0000ff,
+        #f00f0f
+    );
+    width: 100%;
+    height: 100%;
+    background-size: 500%;
+    z-index: -1;
+    transform: scale(1.02);
+    animation: animate 30s infinite;
+}
+body > #root > section .box::after {
+    filter: blur(30px);
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+</style>

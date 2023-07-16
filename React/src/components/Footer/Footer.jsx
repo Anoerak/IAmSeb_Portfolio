@@ -9,19 +9,19 @@ import './Footer.css';
 
 function Footer() {
 	useEffect(() => {
-		// On scroll, if on desktop, the navbar disappears or hamburger disappears
+		// On scroll, if on desktop, the footer disappears or hamburger disappears
 		const footer = document.querySelector('footer');
 		window.addEventListener('scroll', () => {
 			if (window.innerWidth > 992) {
 				footer.style.animation = 'fadingOut 0.5s ease-in-out forwards';
-				// If the user is at the top of the page, the navbar reappears
+				// If the user is at the top of the page, the footer reappears
 				if (window.pageYOffset === 0) {
 					footer.style.animation = 'fadingIn 0.5s ease-in-out forwards';
 				}
 			}
 		});
 
-		// On hover, the navbar reappears
+		// On hover, the footer reappears
 		footer.addEventListener('mouseenter', () => {
 			if (window.innerWidth > 992 && window.pageYOffset !== 0) {
 				footer.style.animation = 'fadingIn 0.5s ease-in-out forwards';
