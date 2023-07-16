@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link'; // For smooth scrolling
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import gitHubLogo from '../../assets/img/GitHub_logo.png';
@@ -40,23 +41,23 @@ function Footer() {
 					<Link to='/contact' className='footer__link'>
 						<FontAwesomeIcon icon={faPaperPlane} />
 					</Link>
-					<a href='https://github.com/Anoerak' className='footer__link' target='_blank' rel='noopener noreferrer'>
+					<Link to='https://github.com/Anoerak' className='footer__link' target='_blank' rel='noopener noreferrer'>
 						<img src={gitHubLogo} alt='GitHub_Logo' className='logo github' />
-					</a>
-					<a
-						href='https://www.linkedin.com/in/s%C3%A9bastien-p-48717074/'
+					</Link>
+					<Link
+						to='https://www.linkedin.com/in/s%C3%A9bastien-p-48717074/'
 						className='footer__link'
 						target='_blank'
 						rel='noopener noreferrer'
 					>
 						<img src={linkedInLogo} alt='LinkedIn_Logo' className='logo linkedin' />
-					</a>
+					</Link>
 				</div>
 			</div>
 			<div className='go__to__top__button'>
-				<a href='#top' className='go__to__top__link'>
+				<Link to='#' className='go__to__top__link'>
 					<div className='go__to__top__icon'></div>
-				</a>
+				</Link>
 			</div>
 		</footer>
 	);

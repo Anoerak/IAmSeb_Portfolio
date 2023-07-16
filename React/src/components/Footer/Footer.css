@@ -52,7 +52,12 @@ body > #root > footer .go__to__top__button:hover {
 body.dark > #root > footer .go__to__top__button:hover {
 	box-shadow: 0px 5px 10px rgba(255, 255, 255, 0.1);
 }
-body > #root > footer .go__to__top__button .go__to__top__link .go__to__top__icon::before {
+body > #root > footer .go__to__top__button .go__to__top__link {
+	width: 50px;
+	height: 75px;
+}
+body > #root > footer .go__to__top__button .go__to__top__link .go__to__top__icon::before,
+body > #root > footer .go__to__top__button .go__to__top__link .go__to__top__icon::after {
 	z-index: 10;
 	content: '';
 	width: 20px;
@@ -61,21 +66,16 @@ body > #root > footer .go__to__top__button .go__to__top__link .go__to__top__icon
 	transform: rotate(-45deg);
 	position: absolute;
 	top: 35px;
+}
+body > #root > footer .go__to__top__button .go__to__top__link .go__to__top__icon::before {
 	left: 8px;
 }
 body.dark > #root > footer .go__to__top__button .go__to__top__link .go__to__top__icon::before {
 	background-color: var(--dark__navigate-to-top-button-border);
 }
 body > #root > footer .go__to__top__button .go__to__top__link .go__to__top__icon::after {
-	z-index: 10;
-	content: '';
-	width: 20px;
-	height: 1px;
-	background-color: var(--navigate-to-top-button-border);
-	transform: rotate(45deg);
-	position: absolute;
-	top: 35px;
 	right: 8px;
+	transform: rotate(45deg);
 }
 body.dark > #root > footer .go__to__top__button .go__to__top__link .go__to__top__icon::after {
 	background-color: var(--dark__navigate-to-top-button-border);

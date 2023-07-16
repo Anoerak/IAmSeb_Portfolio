@@ -13,7 +13,8 @@ body > #root > header {
 
 body > #root > header > h1,
 body.dark > #root > header > h1 {
-	z-index: 1;
+	z-index: 15;
+	font-size: 2.5rem;
 }
 
 body > #root > header > nav > h2 {
@@ -36,7 +37,7 @@ body > #root > header > .toggler {
 	background-color: #222;
 	border-radius: 50%;
 	cursor: pointer;
-	z-index: 100;
+	z-index: 1000;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 	transition: all 300ms ease-in-out;
 	will-change: transform;
@@ -105,6 +106,7 @@ body > #root > header > nav {
 	width: 80%;
 	border-radius: 5rem;
 	margin-top: 1.5rem;
+	z-index: 10;
 }
 
 body.dark > #root > header > nav > .menu__ul {
