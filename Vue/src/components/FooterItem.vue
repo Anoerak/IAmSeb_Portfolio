@@ -62,7 +62,7 @@ export default {
             </div>
         </div>
         <div class="go__to__top__button">
-            <a href="#top" class="go__to__top__link">
+            <a href="#" class="go__to__top__link">
                 <div class="go__to__top__icon"></div>
             </a>
         </div>
@@ -97,6 +97,14 @@ body.dark > #root > footer {
     box-shadow: 0px -3px 5px rgba(255, 255, 255, 0.1);
 }
 
+body > #root > footer .go__to__top__button .go__to__top__link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
 body > #root > footer .go__to__top__button {
     transform: translateX(-50%);
     width: 50px;

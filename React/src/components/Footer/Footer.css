@@ -155,3 +155,42 @@ body.dark > #root > footer .footer__container .footer__links .logo.github {
 body.dark > #root > footer .footer__container .footer__links .logo.linkedin {
 	filter: invert(1);
 }
+
+@media screen and (max-width: 992px) {
+	body > div#root > footer {
+		height: auto;
+		width: 100%;
+		flex-direction: column-reverse;
+		align-items: center;
+		justify-content: space-around;
+		gap: 1rem;
+		padding: 1rem 0;
+	}
+	body > div#root > footer div.footer__container {
+		width: 100%;
+		height: 100%;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	body > div#root > footer div.footer__container .footer__copy {
+		margin: 0;
+		min-width: 0;
+	}
+	body > div#root > footer div.footer__container .footer__links {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+	}
+	body > div#root > footer div.footer__container .footer__links::before {
+		content: none;
+	}
+
+	body > div#root > footer div.go__to__top__button {
+		transform: translateX(0%);
+	}
+	body > #root > footer div.go__to__top__button:hover {
+		transform: translateX(0%) scale(1.1);
+		box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+	}
+}

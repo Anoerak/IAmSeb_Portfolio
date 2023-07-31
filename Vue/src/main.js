@@ -2,6 +2,8 @@ import './assets/main.css'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+import VueScrollTo from 'vue-scrollto'
+
 /* import the fontawesome core */
 import { library } from '@fortawesome/fontawesome-svg-core'
 /* import font awesome icon component */
@@ -22,6 +24,11 @@ import router from './router'
 const app = createApp(App)
 
 app.component('font-awesome-icon', FontAwesomeIcon)
+app.use(VueScrollTo, {
+    duration: 500,
+    easing: 'ease',
+    offset: -100
+})
 app.use(createPinia())
 app.use(router)
 

@@ -87,3 +87,23 @@ body > #root > section .box::after {
 		background-position: 0 0;
 	}
 }
+
+@media screen and (max-width: 768px) {
+	body > #root > section .box {
+		width: 300px;
+		height: 200px;
+	}
+	body > #root > section .box p {
+		font-size: 1.5rem;
+	}
+	body > #root > section .box #modalBtn {
+		height: 1.5rem;
+		width: 1.5rem;
+	}
+	body > #root > section .box #modalBtn svg {
+		font-size: 1rem;
+	}
+	body > #root > section .box span {
+		font-size: 0.75rem;
+	}
+}

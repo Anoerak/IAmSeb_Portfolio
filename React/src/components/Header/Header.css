@@ -229,7 +229,7 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
 
 @media screen and (max-width: 992px) {
 	body > #root > header {
-		min-height: 10rem;
+		min-height: 8rem;
 		justify-content: center;
 	}
 	body > #root > header > h1 {
