@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap');
 :root {
 	/* Light Mode */
-	--bg__color: #ffffff;
+	--bg__color: #f2f2f2;
+	--bg__color__dark: rgb(240, 240, 240);
 	--text__color: #000000;
-	--nav__bg__color: #ffffff;
+	--nav__bg__color: #f2f2f2;
 	--li__bg__color: #dddddd7e;
 	--li__hovered: rgba(177, 222, 236, 0.216);
 	--li__border__hovered: rgb(177, 222, 236);
 	/* Dark Mode */
 	--dark__bg__color: #141414;
+	--dark__bg__color__2: #1c1c1c;
 	--dark__text__color: #ffffff;
 	--dark__nav__bg__color: #171717;
 	--dark__li__bg__color: #ffffff1a;
