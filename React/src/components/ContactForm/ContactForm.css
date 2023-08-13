@@ -1,0 +1,149 @@
+:root {
+	--input-text: rgba(253, 131, 49, 0.75);
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	margin: 2rem auto;
+	padding: 2rem;
+	max-width: 500px;
+	border-radius: 1rem;
+	box-shadow: var(--box-shadows-light-inset);
+}
+body.dark form {
+	box-shadow: var(--box-shadows-dark-inset);
+}
+
+form > .input__field {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	width: 100%;
+	margin-bottom: 1rem;
+}
+
+form > .input__field > label {
+	font-size: 1.25rem;
+	margin-bottom: 0.5rem;
+}
+
+form > .input__field > input,
+form > .input__field > textarea {
+	width: 100%;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	border: none;
+	outline: none;
+	font-size: 1rem;
+	background-color: var(--bg__color);
+	color: var(--input-text);
+	font-weight: 600;
+	box-shadow: var(--box-shadows-light-outset);
+}
+body.dark form > .input__field > input,
+body.dark form > .input__field > textarea {
+	background-color: var(--dark__bg__color);
+	color: var(--input-text);
+	box-shadow: var(--box-shadows-dark-outset);
+}
+form > .input__field > input:focus,
+form > .input__field > textarea:focus {
+	box-shadow: var(--box-shadows-light-inset);
+}
+body.dark form > .input__field > input:focus,
+body.dark form > .input__field > textarea:focus {
+	box-shadow: var(--box-shadows-dark-inset);
+}
+
+body form > .input__field > textarea {
+	max-width: 100%;
+}
+
+form > .input__field > button {
+	width: 50%;
+	margin: 3rem auto 0 auto;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	border: none;
+	outline: none;
+	font-size: 1rem;
+	background-color: var(--bg__color);
+	color: var(--text__color);
+	box-shadow: var(--box-shadows-light-outset);
+}
+body.dark form > .input__field > button {
+	background-color: var(--dark__bg__color);
+	color: var(--dark__text__color);
+	box-shadow: var(--box-shadows-dark-outset);
+	transition: all 0.75s ease-in-out;
+}
+
+body form > .input__field > button:hover {
+	background-color: var(--bg__color__dark);
+	color: var(--input-text);
+	box-shadow: var(--box-shadows-light-outset);
+	cursor: pointer;
+}
+body.dark form > .input__field > button:hover {
+	background-color: var(--dark__bg__color__2);
+	color: var(--input-text);
+	box-shadow: var(--box-shadows-dark-outset);
+}
+body form > .input__field > button:active {
+	background-color: var(--bg__color__dark);
+	color: var(--input-text);
+	box-shadow: var(--box-shadows-light-outset);
+}
+body.dark form > .input__field > button:active {
+	background-color: var(--dark__bg__color__2);
+	color: var(--input-text);
+	box-shadow: var(--box-shadows-dark-outset);
+}
+form > .input__field > button::after {
+	content: '';
+	display: block;
+	opacity: 1;
+	background-color: var(--text__color);
+	width: 50%;
+	height: 1px;
+	margin: 0.5rem auto 0 auto;
+	transition: all 0.75s ease-in-out;
+}
+body.dark form > .input__field > button::after {
+	background-color: var(--dark__text__color);
+}
+form > .input__field > button:hover::after,
+body.dark form > .input__field > button:hover::after {
+	opacity: 1;
+	background-color: var(--input-text);
+	animation: bounce 0.75s ease-in-out infinite;
+}
+
+@keyframes input__field__error {
+	0% {
+		transform: translateX(0);
+	}
+	50% {
+		transform: translateX(0.5rem);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes bounce {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(0.5rem);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}

@@ -3,8 +3,8 @@ import React, { useEffect } from 'react';
 import { HashLink as Link } from 'react-router-hash-link'; // For smooth scrolling
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import gitHubLogo from '../../assets/img/GitHub_logo.png';
-import linkedInLogo from '../../assets/img/LinkedIn_logo.png';
+import gitHubLogo from '../../assets/logos/GitHub_logo2.webp';
+import linkedInLogo from '../../assets/logos/LinkedIn_logo.webp';
 
 import './Footer.css';
 
@@ -12,10 +12,11 @@ function Footer() {
 	useEffect(() => {
 		// On scroll, if on desktop, the footer disappears or hamburger disappears
 		const footer = document.querySelector('footer');
+		footer.style.animation = 'fadingOut 1.5s ease-in-out forwards';
 		window.addEventListener('scroll', () => {
 			footer.style.animation = 'fadingOut 0.5s ease-in-out forwards';
 			// If the user is at the bottom of the page, the footer reappears
-			if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+			if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 10) {
 				footer.style.animation = 'fadingIn 0.5s ease-in-out forwards';
 			}
 		});

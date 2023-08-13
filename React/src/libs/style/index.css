@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 :root {
+	--main-orange-color: #fd8331;
 	/* Light Mode */
 	--bg__color: #f2f2f2;
 	--bg__color__dark: rgb(240, 240, 240);
 	--text__color: #000000;
 	--nav__bg__color: #f2f2f2;
 	--li__bg__color: #dddddd7e;
-	--li__hovered: rgba(177, 222, 236, 0.216);
-	--li__border__hovered: rgb(177, 222, 236);
+	--li__hovered: rgba(253, 131, 49, 0.11);
+	--li__border__hovered: rgba(253, 131, 49, 0.502);
 	/* Dark Mode */
 	--dark__bg__color: #141414;
 	--dark__bg__color__2: #1c1c1c;
@@ -16,6 +19,18 @@
 	--dark__li__bg__color: #ffffff1a;
 	--dark__li__hovered: #ffffff0f;
 	--dark__li__border__hovered: #f0983a84;
+	/* Light Mode */
+	--navigate-to-top-button-border: #fd8331;
+	/* Dark Mode */
+	--dark__navigate-to-top-button-border: #fd8331;
+
+	--box-shadows-light-thin: 0px -3px 5px rgb(255, 255, 255), 0px 3px 5px rgba(0, 0, 0, 0.15);
+	--box-shadows-dark-thin: 0px -3px 5px rgb(255, 255, 255, 0.1), 0px 3px 5px rgba(0, 0, 0, 1);
+	--box-shadows-light-outset: -6px -6px 10px rgba(255, 255, 255, 1), 4px 4px 15px rgba(0, 0, 0, 0.15);
+	--box-shadows-dark-outset: -6px -6px 10px rgba(255, 255, 255, 0.1), 4px 4px 15px rgba(0, 0, 0, 1);
+	--box-shadows-light-inset: inset -2px -2px 5px rgb(255, 255, 255), inset 2px 2px 5px rgba(0, 0, 0, 0.15);
+	--box-shadows-dark-inset: inset -2px -2px 5px rgb(255, 255, 255, 0.1), inset 2px 2px 5px rgba(0, 0, 0, 1);
+	--box-shadow-dark-outset-hover: -6px -6px 10px rgba(255, 255, 255, 0.1), 4px 4px 15px rgba(0, 0, 0, 0.8);
 }
 
 html {
@@ -26,8 +41,8 @@ body {
 	background-color: var(--bg__color);
 	color: var(--text__color);
 	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-		'Helvetica Neue', sans-serif;
+	font-family: 'Roboto Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+		'Droid Sans', 'Helvetica Neue', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }

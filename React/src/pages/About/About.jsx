@@ -3,9 +3,73 @@ import React from 'react';
 import './About.css';
 
 function About() {
+	// We make the page scroll to the top when we load it
+	window.scrollTo(0, 0);
+
 	return (
-		<section className='about'>
-			<h2>About</h2>
+		<section id='about'>
+			<h2>About Me</h2>
+			<div className='GitHub__stats__container'>
+				<picture>
+					<img
+						align='right'
+						src='https://streak-stats.demolab.com?user=Anoerak&theme=dark&mode=weekly'
+						height='150'
+						alt='GitHub Stats'
+					/>
+				</picture>
+				<picture>
+					<img
+						align='right'
+						src='https://github-readme-stats-git-main-anoerak.vercel.app/api/top-langs/?username=Anoerak&layout=compact&langs_count=8&hide=html'
+						alt='GitHub Stats'
+					/>
+				</picture>
+			</div>
+			<div className='about__container'>
+				<div className='about__text'>
+					<p className='p__element 1'>
+						👋 Hey there! I'm Sébastien, a passionate full-stack web developer with a love for crafting seamless digital
+						experiences. With a blend of creativity and technical work, I thrive on transforming ideas into functional and
+						visually stunning applications.
+					</p>
+					<p className='p__element 2'>
+						🌐 My journey in the world of web development began several years ago, and since then, I've had the privilege of
+						working on a diverse range of projects that have honed my skills across the entire stack. From architecting robust
+						backends that handle (kind of 😅) complex data flows to designing intuitive user interfaces that prioritize user
+						engagement, I'm dedicated to delivering excellence at every stage.
+					</p>
+					<p className='p__element 3'>
+						🛠️ My toolkit is brimming with a variety of technologies, including but not limited to HTML, CSS, JavaScript, React,
+						Node.js, and SQL. I revel in the challenge of staying up-to-date with the latest industry trends and integrating
+						cutting-edge tools to elevate the quality of my work. I'm a firm believer in the power of continuous learning, and
+						I'm always excited to embrace new technologies that can push the boundaries of what's possible.
+					</p>
+					<p className='p__element 4'>
+						🌟 Beyond the code, I'm a strong advocate for user-centered design and seamless functionality. I firmly believe that
+						a successful web application should not only look visually appealing but also provide a smooth and intuitive user
+						experience. In a perfect world, each line of code I write would represent my dedication to crafting solutions that
+						meet those expectations.
+					</p>
+					<p className='p__element 5'>
+						🚀 When I'm not immersed in lines of code, you'll find me exploring the world, trying to teach but also to learn to
+						and from my son and partner, or immersing myself in a good movie or some good music (country, if you read this 😉).
+						I'm a firm believer in maintaining a healthy work-life balance, as I find that it greatly fuels my creativity and
+						problem-solving abilities when I know that I don't have to count the time spent with my family. I also enjoy
+						practicing yoga and swimming, hiking, play video games and reading.
+					</p>
+					<p className='p__element 6'>
+						🤝 If you're looking for a collaborative and driven developer to join your team or contribute to your project, I'd
+						love to connect! Whether it's brainstorming new ideas, optimizing existing systems, or tackling fresh challenges,
+						I'm always ready to embark on new coding adventures.
+					</p>
+					<p className='p__element 7'>
+						Thanks for stopping by and taking a glimpse into my world of web development. Let's create something amazing
+						together!
+					</p>
+				</div>
+				<div className='about__picture'></div>
+			</div>
 		</section>
 	);
 }

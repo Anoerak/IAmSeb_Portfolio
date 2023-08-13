@@ -1,3 +1,349 @@
-h2 {
-	color: red;
+body > #root > #projects {
+	min-height: 100vh;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 0 2rem;
+	border-radius: 1rem;
+	padding: 2rem;
+	background-color: var(--bg__color);
+	box-shadow: var(--box-shadows-light-inset);
+	margin-bottom: 8rem;
+}
+body.dark > #root > #projects {
+	background-color: var(--dark__bg__color);
+	box-shadow: var(--box-shadows-dark-inset);
+}
+
+body > #root > #projects > h2 {
+	font-size: 2rem;
+	color: var(--text__color);
+	box-shadow: var(--box-shadows-light-thin);
+	border-radius: 1rem;
+	padding: 1rem 2rem;
+	margin-bottom: 2rem;
+}
+body.dark > #root > #projects > h2 {
+	color: var(--dark__text__color);
+	box-shadow: var(--box-shadows-dark-thin);
+}
+
+body > #root > #projects > .shortcut__buttons {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-bottom: 2rem;
+	width: 75%;
+	padding: 2rem;
+	border-radius: 1rem;
+	box-shadow: var(--box-shadows-light-thin);
+}
+body.dark > #root > #projects > .shortcut__buttons {
+	box-shadow: var(--box-shadows-dark-thin);
+}
+
+body > #root > #projects > .shortcut__buttons > .shortcut__button {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	width: 20%;
+	padding: 1rem;
+	border-radius: 1rem;
+	box-shadow: var(--box-shadows-light-thin);
+	text-decoration: none;
+	color: var(--text__color);
+	transition: all 0.2s ease-in-out;
+}
+body.dark > #root > #projects > .shortcut__buttons > .shortcut__button {
+	box-shadow: var(--box-shadows-dark-thin);
+	color: var(--dark__text__color);
+}
+body > #root > #projects > .shortcut__buttons > .shortcut__button::after {
+	content: '';
+	position: absolute;
+	bottom: 0.75rem;
+	right: 1.75rem;
+	display: block;
+	opacity: 1;
+	width: 40%;
+	height: 1px;
+	background-color: var(--text__color);
+	margin: 0.5rem auto 0 auto;
+}
+body.dark > #root > #projects > .shortcut__buttons > .shortcut__button::after {
+	background-color: var(--main-orange-color);
+}
+body > #root > #projects > .shortcut__buttons > .shortcut__button:hover::after {
+	opacity: 1;
+	background-color: var(--main-orange-color);
+	animation: bounce 0.75s ease-in-out infinite;
+}
+
+body > #root > #projects > .shortcut__buttons > .shortcut__button > .shortcut__button__icon {
+	width: 2rem;
+	height: 2rem;
+}
+body.dark > #root > #projects > .shortcut__buttons > .shortcut__button > .shortcut__button__icon {
+	filter: invert(1);
+}
+
+body > #root > #projects > .shortcut__buttons > .shortcut__button:hover {
+	filter: brightness(1.1);
+	box-shadow: var(--box-shadows-light-thin);
+	color: var(--main-orange-color);
+}
+body.dark > #root > #projects > .shortcut__buttons > .shortcut__button:hover {
+	filter: brightness(1.1);
+	box-shadow: var(--box-shadows-dark-thin);
+	color: var(--main-orange-color);
+}
+body > #root > #projects > .shortcut__buttons > .shortcut__button:active {
+	box-shadow: var(--box-shadows-light-inset);
+	color: var(--main-orange-color);
+}
+body.dark > #root > #projects > .shortcut__buttons > .shortcut__button:active {
+	box-shadow: var(--box-shadows-dark-inset);
+	color: var(--main-orange-color);
+}
+
+body > #root > #projects > .projects__container {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	width: 100%;
+	padding: 2rem 1rem;
+	border-radius: 1rem;
+	box-shadow: var(--box-shadows-light-thin);
+}
+body.dark > #root > #projects > .projects__container {
+	box-shadow: var(--box-shadows-dark-thin);
+}
+
+body > #root > #projects > .projects__container > .projects__category {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	width: 100%;
+	padding: 2rem;
+	border-radius: 1rem;
+	box-shadow: var(--box-shadows-light-inset);
+	margin-bottom: 2rem;
+}
+body.dark > #root > #projects > .projects__container > .projects__category {
+	box-shadow: var(--box-shadows-dark-inset);
+}
+
+body > #root > #projects > .projects__container > .projects__category > h3 {
+	font-size: 1.5rem;
+	color: var(--text__color);
+	box-shadow: var(--box-shadows-light-thin);
+	border-radius: 1rem;
+	padding: 1rem 2rem;
+	margin-bottom: 2rem;
+}
+body.dark > #root > #projects > .projects__container > .projects__category > h3 {
+	color: var(--dark__text__color);
+	box-shadow: var(--box-shadows-dark-thin);
+}
+
+body > #root > #projects > .projects__container > #frontend > .projects__category__list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+body > #root > #projects > .projects__container > #frontend > .projects__category__list > .projects__category__list__item {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-around;
+	width: 95%;
+	padding: 1rem;
+	margin-bottom: 2rem;
+	border-radius: 1rem;
+	box-shadow: var(--box-shadows-light-thin);
+	text-decoration: none;
+	color: var(--text__color);
+	transition: all 0.2s ease-in-out;
+}
+body.dark > #root > #projects > .projects__container > #frontend > .projects__category__list > .projects__category__list__item {
+	box-shadow: var(--box-shadows-dark-thin);
+	color: var(--dark__text__color);
+}
+
+body > #root > #projects > .projects__container > #frontend > .projects__category__list > .projects__category__list__item > h4 {
+	font-size: 1.25rem;
+	color: var(--text__color);
+	box-shadow: var(--box-shadows-light-thin);
+	border-radius: 1rem;
+	padding: 1rem 2rem;
+	margin-bottom: 1rem;
+}
+body.dark > #root > #projects > .projects__container > #frontend > .projects__category__list > .projects__category__list__item > h4 {
+	color: var(--dark__text__color);
+	box-shadow: var(--box-shadows-dark-thin);
+}
+
+body > #root > #projects > .projects__container > #frontend > .projects__category__list > .projects__category__list__item > h5 {
+	font-size: 0.75rem;
+	color: var(--main-orange-color);
+	box-shadow: var(--box-shadows-light-inset);
+	border-radius: 1rem;
+	padding: 1rem 2rem;
+	margin-bottom: 2rem;
+}
+body.dark > #root > #projects > .projects__container > #frontend > .projects__category__list > .projects__category__list__item > h5 {
+	box-shadow: var(--box-shadows-dark-inset);
+}
+
+body
+	> #root
+	> #projects
+	> .projects__container
+	> #frontend
+	> .projects__category__list
+	> .projects__category__list__item
+	> .projects__category__list__item__container {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-around;
+	width: 100%;
+}
+
+body
+	> #root
+	> #projects
+	> .projects__container
+	> #frontend
+	> .projects__category__list
+	> .projects__category__list__item
+	> .projects__category__list__item__container
+	> .left__container,
+body
+	> #root
+	> #projects
+	> .projects__container
+	> #frontend
+	> .projects__category__list
+	> .projects__category__list__item
+	> .projects__category__list__item__container
+	> .right__container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-evenly;
+	max-width: 45%;
+	height: 80%;
+}
+
+body
+	> #root
+	> #projects
+	> .projects__container
+	> #frontend
+	> .projects__category__list
+	> .projects__category__list__item
+	> .projects__category__list__item__container
+	> .left__container
+	> .bottom {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-around;
+	gap: 2rem;
+	width: 100%;
+	margin-top: 2rem;
+}
+body
+	> #root
+	> #projects
+	> .projects__container
+	> #frontend
+	> .projects__category__list
+	> .projects__category__list__item
+	> .projects__category__list__item__container
+	> .left__container
+	> .bottom
+	> .technologies {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+body
+	> #root
+	> #projects
+	> .projects__container
+	> #frontend
+	> .projects__category__list
+	> .projects__category__list__item
+	> .projects__category__list__item__container
+	> .left__container
+	> .bottom
+	> .technologies
+	> h5 {
+	font-size: 0.75rem;
+	color: var(--text__color);
+	box-shadow: var(--box-shadows-light-outset);
+	border-radius: 1rem;
+	padding: 0.5rem 1rem;
+	margin-bottom: 2rem;
+}
+body.dark
+	> #root
+	> #projects
+	> .projects__container
+	> #frontend
+	> .projects__category__list
+	> .projects__category__list__item
+	> .projects__category__list__item__container
+	> .left__container
+	> .bottom
+	> .technologies
+	> h5 {
+	color: var(--dark__text__color);
+	box-shadow: var(--box-shadows-dark-outset);
+}
+
+body
+	> #root
+	> #projects
+	> .projects__container
+	> #frontend
+	> .projects__category__list
+	> .projects__category__list__item
+	> .projects__category__list__item__container
+	> .left__container
+	> .bottom
+	> .links {
+	margin: 2rem 0;
+}
+
+/* 
+|------------------------------------------
+| Animations
+|------------------------------------------
+ */
+@keyframes bounce {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(0.5rem);
+	}
+	100% {
+		transform: translateY(0);
+	}
 }

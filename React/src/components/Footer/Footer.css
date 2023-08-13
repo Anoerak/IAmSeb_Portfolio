@@ -1,10 +1,3 @@
-* {
-	/* Light Mode */
-	--navigate-to-top-button-border: #fd8331;
-	/* Dark Mode */
-	--dark__navigate-to-top-button-border: #fd8331;
-}
-
 body > #root > footer {
 	position: fixed;
 	bottom: 0;
@@ -12,8 +5,7 @@ body > #root > footer {
 	width: 100%;
 	height: 100px;
 	background: var(--bg__color);
-	/* box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.1); */
-	box-shadow: 0px -3px 5px rgb(255, 255, 255), 0px 3px 5px rgba(0, 0, 0, 0.15);
+	box-shadow: var(--box-shadows-light-thin);
 	z-index: 100;
 	display: flex;
 	flex-direction: row;
@@ -23,7 +15,7 @@ body > #root > footer {
 }
 body.dark > #root > footer {
 	background: var(--dark__bg__color);
-	box-shadow: 0px -3px 5px rgba(255, 255, 255, 0.1);
+	box-shadow: var(--box-shadows-dark-thin);
 }
 
 body > #root > footer .go__to__top__button {
@@ -32,10 +24,8 @@ body > #root > footer .go__to__top__button {
 	height: 75px;
 	border-radius: 1rem;
 	background: var(--bg__color);
-	/* box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1); */
 	transition: all 250ms ease-in-out;
-	box-shadow: -6px -6px 10px rgba(255, 255, 255, 1), 4px 4px 15px rgba(0, 0, 0, 0.15);
-	/* border: var(--navigate-to-top-button-border) 2px solid; */
+	box-shadow: var(--box-shadows-light-outset);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -46,18 +36,19 @@ body > #root > footer .go__to__top__button {
 body.dark > #root > footer .go__to__top__button {
 	background: var(--dark__bg__color);
 	transition: all 250ms ease-in-out;
-	box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.1), 4px 4px 15px rgba(0, 0, 0, 1);
-	/* box-shadow: 0px 3px 5px rgba(255, 255, 255, 0.1);
-	border: var(--dark__navigate-to-top-button-border) 2px solid; */
+	box-shadow: var(--box-shadows-dark-outset);
 }
 body > #root > footer .go__to__top__button:hover {
-	box-shadow: inset -2px -2px 5px rgb(255, 255, 255), inset 2px 2px 5px rgba(0, 0, 0, 0.15);
-	/* transform: translateX(-50%) scale(1.1);
-	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); */
+	filter: brightness(1.03);
 }
 body.dark > #root > footer .go__to__top__button:hover {
-	/* box-shadow: 0px 5px 10px rgba(255, 255, 255, 0.1); */
-	box-shadow: inset -2px -2px 5px rgb(255, 255, 255, 0.1), inset 2px 2px 5px rgba(0, 0, 0, 1);
+	filter: brightness(1.5);
+}
+body > #root > footer .go__to__top__button:active {
+	box-shadow: var(--box-shadows-light-inset);
+}
+body.dark > #root > footer .go__to__top__button:active {
+	box-shadow: var(--box-shadows-dark-inset);
 }
 body > #root > footer .go__to__top__button .go__to__top__link {
 	width: 50px;
@@ -155,10 +146,10 @@ body > #root > footer .footer__container .footer__links .logo {
 	height: auto;
 }
 body > #root > footer .footer__container .footer__links .logo.github {
-	filter: invert(1);
+	filter: invert(0);
 }
 body.dark > #root > footer .footer__container .footer__links .logo.github {
-	filter: invert(0);
+	filter: invert(1);
 }
 body.dark > #root > footer .footer__container .footer__links .logo.linkedin {
 	filter: invert(1);
@@ -197,8 +188,4 @@ body.dark > #root > footer .footer__container .footer__links .logo.linkedin {
 	body > div#root > footer div.go__to__top__button {
 		transform: translateX(0%);
 	}
-	/* body > #root > footer div.go__to__top__button:hover {
-		transform: translateX(0%) scale(1.1);
-		box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-	} */
 }

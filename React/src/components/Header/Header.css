@@ -15,6 +15,7 @@ body > #root > header > h1,
 body.dark > #root > header > h1 {
 	z-index: 15;
 	font-size: 2.5rem;
+	display: none;
 }
 
 body > #root > header > nav > h2 {
@@ -98,23 +99,23 @@ body > #root > header > .circle.clicked {
 |--------------------------------------
 */
 
-body.dark > #root > header > nav {
+/* body.dark > #root > header > nav {
 	background-color: var(--dark__bg__color);
-}
+} */
 body > #root > header > nav {
 	position: fixed;
 	width: 80%;
 	border-radius: 5rem;
-	margin-top: 1.5rem;
+	/* margin-top: 1.5rem; */
 	z-index: 10;
 }
 
-body.dark > #root > header > nav > .menu__ul {
+/* body.dark > #root > header > nav > .menu__ul {
 	background-color: var(--dark__bg__color);
-}
+} */
 body > #root > header > nav > .menu__ul {
 	height: 100%;
-	background-color: var(--bg__color);
+	/* background-color: var(--bg__color); */
 	border-radius: 2rem;
 	/* overflow: hidden; */
 	list-style: none;
@@ -127,9 +128,8 @@ body > #root > header > nav > .menu__ul {
 
 body.dark > #root > header > nav > .menu__ul > .menu__li {
 	background-color: var(--dark__bg__color);
-	/* box-shadow: 3px 3px 5px rgba(255, 255, 255, 0.1); */
 	transition: all 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
-	box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.15), 4px 4px 15px rgba(0, 0, 0, 1);
+	box-shadow: var(--box-shadows-dark-outset);
 }
 body > #root > header > nav > .menu__ul > .menu__li {
 	margin: 0;
@@ -140,9 +140,14 @@ body > #root > header > nav > .menu__ul > .menu__li {
 	line-height: 3.5rem;
 	position: relative;
 	cursor: pointer;
-	/* box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1); */
 	transition: all 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
-	box-shadow: -6px -6px 10px rgba(255, 255, 255, 1), 4px 4px 15px rgba(0, 0, 0, 0.15);
+	box-shadow: var(--box-shadows-light-outset);
+}
+body > #root > header > nav > .menu__ul > .menu__li:active {
+	box-shadow: var(--box-shadows-light-inset);
+}
+body.dark > #root > header > nav > .menu__ul > .menu__li:active {
+	box-shadow: var(--box-shadows-dark-inset);
 }
 
 body > #root > header > nav > .menu__ul > .menu__li:nth-child(1) {

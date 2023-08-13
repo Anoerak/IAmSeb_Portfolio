@@ -1,3 +1,103 @@
-h2 {
-	color: red;
+body > #root > section#about {
+	min-height: 100vh;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 0 2rem;
+	border-radius: 1rem;
+	padding: 2rem;
+	background-color: var(--bg__color);
+	box-shadow: var(--box-shadows-light-inset);
+	margin-bottom: 8rem;
+}
+body.dark > #root > section#about {
+	background-color: var(--dark__bg__color);
+	box-shadow: var(--box-shadows-dark-inset);
+}
+
+body > #root > section#about > h2 {
+	font-size: 2rem;
+	color: var(--text__color);
+	box-shadow: var(--box-shadows-light-thin);
+	border-radius: 1rem;
+	padding: 1rem 2rem;
+	margin-bottom: 2rem;
+}
+body.dark > #root > section#about > h2 {
+	color: var(--dark__text__color);
+	box-shadow: var(--box-shadows-dark-thin);
+}
+
+body > #root > section#about > .GitHub__stats__container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-bottom: 2rem;
+	width: 90%;
+	padding: 2rem;
+	border-radius: 1rem;
+	box-shadow: var(--box-shadows-light-thin);
+}
+body.dark > #root > section#about > .GitHub__stats__container {
+	box-shadow: var(--box-shadows-dark-thin);
+}
+
+body > #root > section#about > .GitHub__stats__container > picture {
+	box-shadow: var(--box-shadows-light-inset);
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+}
+body.dark > #root > section#about > .GitHub__stats__container > picture {
+	box-shadow: var(--box-shadows-dark-inset);
+}
+
+body > #root > section#about > .about__container {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+body > #root > section#about > .about__container > .about__text {
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 1rem;
+	column-count: 2;
+	column-gap: 2rem;
+}
+
+body > #root > section#about > .about__container > .about__text > p {
+	font-size: 1.25rem;
+	color: var(--text__color);
+	text-align: justify;
+	animation: appear 1s ease-in-out;
+}
+body.dark > #root > section#about > .about__container > .about__text > p {
+	color: var(--dark__text__color);
+}
+
+/*
+|--------------------------------------
+| Animation
+|-------------------------------------- 
+ */
+
+/* We create an animation that will make the text appear progressively when the user scrolls */
+@keyframes appear {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0px);
+	}
 }
