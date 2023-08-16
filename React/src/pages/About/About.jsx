@@ -11,16 +11,10 @@ function About() {
 			<h2>About Me</h2>
 			<div className='GitHub__stats__container'>
 				<picture>
-					<img
-						align='right'
-						src='https://streak-stats.demolab.com?user=Anoerak&theme=dark&mode=weekly'
-						height='150'
-						alt='GitHub Stats'
-					/>
+					<img src='https://streak-stats.demolab.com?user=Anoerak&theme=dark&mode=weekly' height='150' alt='GitHub Stats' />
 				</picture>
 				<picture>
 					<img
-						align='right'
 						src='https://github-readme-stats-git-main-anoerak.vercel.app/api/top-langs/?username=Anoerak&layout=compact&langs_count=8&hide=html'
 						alt='GitHub Stats'
 					/>

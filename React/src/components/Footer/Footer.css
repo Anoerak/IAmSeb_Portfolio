@@ -11,7 +11,8 @@ body > #root > footer {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	animation: fadingIn 1.25s ease;
+	/* animation: fadingIn 1.25s ease; */
+	opacity: 0;
 }
 body.dark > #root > footer {
 	background: var(--dark__bg__color);
@@ -96,8 +97,6 @@ body > #root > footer .go__to__top__button:hover .go__to__top__icon::after {
 }
 
 body > #root > footer .footer__container {
-	width: 100%;
-	height: 100%;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
@@ -110,21 +109,17 @@ body > #root > footer .footer__container .footer__copy {
 }
 
 body > #root > footer .footer__container .footer__links {
-	width: 100%;
-	height: 100%;
+	box-shadow: var(--box-shadows-light-inset);
+	margin: auto;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	gap: 3rem;
+	padding: 0 3rem;
+	border-radius: 1rem;
 }
-body > #root > footer .footer__container .footer__links::before {
-	content: '';
-	width: 1px;
-	height: 25%;
-	background: var(--text__color);
-	margin-right: 2rem;
-}
-body.dark > #root > footer .footer__container .footer__links::before {
-	background: var(--dark__text__color);
+body.dark > #root > footer .footer__container .footer__links {
+	box-shadow: var(--box-shadows-dark-inset);
 }
 body > #root > footer .footer__container .footer__links a {
 	text-decoration: none;
@@ -132,7 +127,7 @@ body > #root > footer .footer__container .footer__links a {
 	z-index: 15;
 }
 body > #root > footer .footer__container .footer__links .footer__link svg {
-	font-size: 1.25rem;
+	font-size: 1.5rem;
 }
 body > #root > footer .footer__container .footer__links .footer__link {
 	margin: auto 1rem;

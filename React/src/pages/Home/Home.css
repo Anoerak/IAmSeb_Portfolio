@@ -8,18 +8,14 @@ body > #root > section {
 	animation: fadingIn 1s ease;
 }
 
-/*
-|--------------------------------------
-| Section About Me
-|--------------------------------------
-*/
-
+/* #region About Me  */
 body > #root > section#about-me {
-	margin: auto 2rem;
+	margin: 0 2rem;
 	display: flex;
 	flex-direction: row;
 	align-items: flex-start;
 	justify-content: space-between;
+	position: relative;
 }
 
 body > #root > section#about-me > .left__container h2,
@@ -52,19 +48,26 @@ body > #root > section#about-me > .right__container {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
-	justify-content: space-between;
+	justify-content: end;
 }
 
-body > #root > section#about-me > .right__container a {
+body > #root > section#about-me a,
+body > #root > section#me-in-few-words a {
 	text-decoration: none;
 	margin: auto;
+	position: absolute;
+	top: 10rem;
+	right: 5rem;
 }
-body > #root > section#about-me > .right__container a:active ~ .next__section__arrow::before,
-body > #root > section#about-me > .right__container a:active ~ .next__section__arrow::after {
+body > #root > section#about-me a:active ~ .next__section__arrow::before,
+body > #root > section#about-me a:active ~ .next__section__arrow::after,
+body > #root > section#me-in-few-words a:active ~ .next__section__arrow::before,
+body > #root > section#me-in-few-words a:active ~ .next__section__arrow::after {
 	background-color: greenyellow;
 }
 
-body > #root > section#about-me > .right__container .next__section__arrow {
+body > #root > section#about-me .next__section__arrow,
+body > #root > section#me-in-few-words .next__section__arrow {
 	margin: auto;
 	transform: translateX(-50%);
 	width: 50px;
@@ -80,27 +83,34 @@ body > #root > section#about-me > .right__container .next__section__arrow {
 	cursor: pointer;
 	position: relative;
 }
-body.dark > #root > section#about-me > .right__container .next__section__arrow {
+body.dark > #root > section#about-me .next__section__arrow,
+body.dark > #root > section#me-in-few-words .next__section__arrow {
 	background: var(--dark__bg__color);
 	transition: all 250ms ease-in-out;
 	box-shadow: var(--box-shadows-dark-outset);
 }
 
-body > #root > section#about-me > .right__container .next__section__arrow:hover {
+body > #root > section#about-me .next__section__arrow:hover,
+body > #root > section#me-in-few-words .next__section__arrow:hover {
 	filter: brightness(1.03);
 }
-body.dark > #root > section#about-me > .right__container .next__section__arrow:hover {
+body.dark > #root > section#about-me .next__section__arrow:hover,
+body.dark > #root > section#me-in-few-words .next__section__arrow:hover {
 	filter: brightness(1.5);
 }
-body > #root > section#about-me > .right__container .next__section__arrow:active {
+body > #root > section#about-me .next__section__arrow:active,
+body > #root > section#me-in-few-words .next__section__arrow:active {
 	box-shadow: var(--box-shadows-light-inset);
 }
-body.dark > #root > section#about-me > .right__container .next__section__arrow:active {
+body.dark > #root > section#about-me .next__section__arrow:active,
+body.dark > #root > section#me-in-few-words .next__section__arrow:active {
 	box-shadow: var(--box-shadows-dark-inset);
 }
 
-body > #root > section#about-me > .right__container .next__section__arrow::before,
-body > #root > section#about-me > .right__container .next__section__arrow::after {
+body > #root > section#about-me .next__section__arrow::before,
+body > #root > section#about-me .next__section__arrow::after,
+body > #root > section#me-in-few-words .next__section__arrow::before,
+body > #root > section#me-in-few-words .next__section__arrow::after {
 	z-index: 10;
 	content: '';
 	width: 21px;
@@ -112,45 +122,94 @@ body > #root > section#about-me > .right__container .next__section__arrow::after
 	top: 80px;
 }
 
-body > #root > section#about-me > .right__container .next__section__arrow::before {
+body > #root > section#about-me .next__section__arrow::before,
+body > #root > section#me-in-few-words .next__section__arrow::before {
 	left: 8px;
 }
-body.dark > #root > section#about-me > .right__container .next__section__arrow::before {
+body.dark > #root > section#about-me .next__section__arrow::before,
+body.dark > #root > section#about-me .next__section__arrow::after,
+body.dark > #root > section#me-in-few-words .next__section__arrow::before,
+body.dark > #root > section#me-in-few-words .next__section__arrow::after {
 	background-color: var(--dark__navigate-to-top-button-border);
 }
 
-body > #root > section#about-me > .right__container .next__section__arrow::after {
+body > #root > section#about-me .next__section__arrow::after,
+body > #root > section#me-in-few-words .next__section__arrow::after {
 	right: 8px;
 	transform: rotate(-45deg);
 }
 
-body > #root > section#about-me > .right__container .next__section__arrow:hover::before,
-body > #root > section#about-me > .right__container .next__section__arrow:hover::after {
+body > #root > section#about-me .next__section__arrow:hover::before,
+body > #root > section#about-me .next__section__arrow:hover::after,
+body > #root > section#me-in-few-words .next__section__arrow:hover::before,
+body > #root > section#me-in-few-words .next__section__arrow:hover::after {
 	animation: jumpUpAndBackHome 0.75s ease infinite;
 }
 
 body > #root > section#about-me > .right__container h2 {
 	text-align: right;
 }
+/* #endregion */
 
-@keyframes jumpUpAndBackHome {
-	0% {
-		top: 80px;
-	}
-	50% {
-		top: 75px;
-	}
-	100% {
-		top: 80px;
-	}
+/* #region Me in few word  */
+body > #root > section#me-in-few-words {
+	min-height: 100vh;
+	position: relative;
+	margin: 0 2rem;
 }
 
-/*
-|--------------------------------------
-| Section Coming Soon
-|--------------------------------------
-*/
+body > #root > section#me-in-few-words > h2 {
+	font-size: 1.75rem;
+	color: var(--text__color);
+	box-shadow: var(--box-shadows-light-outset);
+	padding: 0.5rem 1rem;
+	border-radius: 1rem;
+}
+body.dark > #root > section#me-in-few-words > h2 {
+	color: var(--dark__text__color);
+	box-shadow: var(--box-shadows-dark-outset);
+}
 
+body > #root > section#me-in-few-words > .top__part,
+body > #root > section#me-in-few-words > .bottom__part {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 auto;
+}
+body > #root > section#me-in-few-words > .top__part > .about__me__logo,
+body > #root > section#me-in-few-words > .bottom__part > .about__me__logo {
+	height: 4rem;
+	width: 4rem;
+}
+body.dark > #root > section#me-in-few-words > .top__part > .about__me__logo,
+body.dark > #root > section#me-in-few-words > .bottom__part > .about__me__logo {
+	filter: invert(1);
+}
+body > #root > section#me-in-few-words > .top__part > .line__1,
+body > #root > section#me-in-few-words > .top__part > .line__2,
+body > #root > section#me-in-few-words > .top__part > .line__3,
+body > #root > section#me-in-few-words > .bottom__part > .line__4 {
+	font-size: 1.25rem;
+	word-spacing: 2px;
+	color: var(--text__color);
+	text-align: center;
+	width: 0;
+	white-space: nowrap; /* keep text in one line */
+	overflow: hidden; /* hide text behind the cursor */
+	border-right: 1px solid transparent; /* create the typewriter cursor */
+}
+body.dark > #root > section#me-in-few-words > .top__part > .line__1,
+body.dark > #root > section#me-in-few-words > .top__part > .line__2,
+body.dark > #root > section#me-in-few-words > .top__part > .line__3,
+body.dark > #root > section#me-in-few-words > .bottom__part > .line__4 {
+	color: var(--dark__text__color);
+	border-right: 1px solid var(--dark__bg__color);
+}
+
+/* #endregion */
+
+/* #region Coming Soon */
 body > #root > section#coming-soon {
 	min-height: 110vh;
 }
@@ -191,20 +250,16 @@ body > #root > section#coming-soon > .empty__space {
 body > #root > section#coming-soon > .empty__space > p {
 	font-size: 0.75rem;
 }
+/* #endregion */
 
-/*
-|--------------------------------------
-| Section My Stack
-|--------------------------------------
-*/
-
+/* #region My Tools  */
 body > #root > section#my-stack {
-	min-height: 110vh;
-	padding-bottom: 13rem;
+	min-height: 100vh;
+	padding: 6rem 0 13rem 0;
 }
 
 body > #root > section#my-stack > h2 {
-	font-size: 2rem;
+	font-size: 1.75rem;
 	color: var(--text__color);
 	box-shadow: var(--box-shadows-light-outset);
 	padding: 0.5rem 1rem;
@@ -216,7 +271,7 @@ body.dark > #root > section#my-stack > h2 {
 }
 
 body > #root > section#my-stack > h3 {
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 	color: var(--text__color);
 	box-shadow: var(--box-shadows-light-outset);
 	padding: 0.5rem 1rem;
@@ -264,10 +319,11 @@ body.dark > #root > section#my-stack > .stack__container > .stack__card:hover {
 }
 
 body > #root > section#my-stack > .stack__container > .stack__card > h3 {
-	font-size: 1.5rem;
+	font-size: 1rem;
 	color: var(--text__color);
 	box-shadow: var(--box-shadows-light-outset);
 	padding: 0.5rem 1rem;
+	margin: 2rem;
 	border-radius: 1rem;
 }
 body.dark > #root > section#my-stack > .stack__container > .stack__card > h3 {
@@ -297,14 +353,94 @@ body.dark > #root > section#my-stack > .stack__container > .stack__card > ul > l
 	background-color: var(--dark__bg__color);
 	color: var(--dark__text__color);
 }
+/* #endregion */
 
-/*
-|--------------------------------------
-| Animation for the cards
-|--------------------------------------
-*/
+/* #region Animations  */
+@keyframes jumpUpAndBackHome {
+	0% {
+		top: 80px;
+	}
+	50% {
+		top: 75px;
+	}
+	100% {
+		top: 80px;
+	}
+}
 
-/* Card1 slideIn from the left */
+/* #region Typing animation */
+@keyframes animated-cursor__1 {
+	from {
+		border-right-color: var(--bg__color);
+	}
+	to {
+		border-right-color: var(--text__color);
+	}
+}
+@keyframes animated-cursor__2 {
+	from {
+		border-right-color: var(--bg__color);
+	}
+	to {
+		border-right-color: var(--text__color);
+	}
+}
+@keyframes animated-cursor__3 {
+	from {
+		border-right-color: var(--bg__color);
+	}
+	to {
+		border-right-color: var(--text__color);
+	}
+}
+@keyframes animated-cursor__4 {
+	from {
+		border-right-color: var(--bg__color);
+	}
+	to {
+		border-right-color: var(--text__color);
+	}
+}
+
+@keyframes animated-text__1 {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+@keyframes animated-text__2 {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+@keyframes animated-text__3 {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+@keyframes animated-text__4 {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+/* #endregion */
+
+/* #Region Card1 slideIn from the left */
 @keyframes card1 {
 	0% {
 		opacity: 0;
@@ -355,8 +491,9 @@ body.dark > #root > section#my-stack > .stack__container > .stack__card > ul > l
 		transform: translateX(0);
 	}
 }
+/* #endregion */
 
-/* card1 animation fadeInFromUpLeft to its position based on the parent container position */
+/* #endregion */
 
 @media screen and (max-width: 992px) {
 	body > div#root > section {

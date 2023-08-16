@@ -1,0 +1,24 @@
+{
+	"compilerOptions": {
+		"checkJs": true,
+		"paths": {
+			"@App/*": ["app/*"],
+			"@Components/*": ["components/*"],
+			"@Pages/*": ["pages/*"],
+			"@Libs/*": ["libs/*"],
+			"@Hooks/*": ["libs/hooks/*"],
+			"@Styles/*": ["libs/styles/*"],
+			"@Assets/*": ["assets/*"],
+			"@Projects/*": ["assets/projects_datas/*"],
+			"@Images/*": ["assets/img/*"],
+			"@Logos/*": ["assets/logos/*"],
+			"@Videos/*": ["assets/videos/*"],
+			"@Test/*": ["test/*"]
+		},
+		"jsx": "react",
+		"resolveJsonModule": true,
+		"baseUrl": "src"
+	},
+	"exclude": ["node_modules", "build"],
+	"include": ["src"]
+}

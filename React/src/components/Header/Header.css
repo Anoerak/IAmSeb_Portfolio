@@ -114,15 +114,15 @@ body > #root > header > nav {
 	background-color: var(--dark__bg__color);
 } */
 body > #root > header > nav > .menu__ul {
-	height: 100%;
 	/* background-color: var(--bg__color); */
-	border-radius: 2rem;
 	/* overflow: hidden; */
+	height: 100%;
+	border-radius: 2rem;
 	list-style: none;
 	display: flex;
 	flex-direction: row;
 	gap: 2px;
-	margin: 0;
+	margin: -3rem 0 0 0;
 	padding: 0;
 }
 

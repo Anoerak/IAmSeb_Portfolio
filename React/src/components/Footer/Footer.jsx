@@ -3,8 +3,8 @@ import React, { useEffect } from 'react';
 import { HashLink as Link } from 'react-router-hash-link'; // For smooth scrolling
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import gitHubLogo from '../../assets/logos/GitHub_logo2.webp';
-import linkedInLogo from '../../assets/logos/LinkedIn_logo.webp';
+import gitHubLogo from '@Logos/GitHub_logo2.webp';
+import linkedInLogo from '@Logos/LinkedIn_logo.webp';
 
 import './Footer.css';
 
@@ -38,7 +38,7 @@ function Footer() {
 					<Link to='/contact' className='footer__link'>
 						<FontAwesomeIcon icon={faPaperPlane} />
 					</Link>
-					<Link to='https://github.com/Anoerak' className='footer__link' target='_blank' rel='noopener noreferrer'>
+					<Link Link to='https://github.com/Anoerak' className='footer__link' target='_blank' rel='noopener noreferrer'>
 						<img src={gitHubLogo} alt='GitHub_Logo' className='logo github' />
 					</Link>
 					<Link

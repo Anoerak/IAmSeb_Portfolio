@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { HashLink as Link } from 'react-router-hash-link'; // For smooth scrolling
-import pictureOfMe from '../../assets/img/portrait_me.webp';
-import BlinkingWords from '../../components/BlinkingWords/BlinkingWords';
-// import Terminal from '../../components/Terminal/Terminal';
-// import Card from '../../components/Card/Card';
-// import IAmSeb from '../../components/IAmSeb/IAmSeb';
+import pictureOfMe from '@Images/portrait_me.webp';
+import BlinkingWords from '@Components/BlinkingWords/BlinkingWords';
+import Webdev from '@Logos/web_dev.png';
+import HookedCode from '@Logos/hooked_code.png';
+// import Terminal from '@Components/Terminal/Terminal';
+// import Card from '@Components/Card/Card';
+// import IAmSeb from '@Components/IAmSeb/IAmSeb';
 
 import './Home.css';
 
@@ -109,9 +111,33 @@ function Home() {
 		);
 		/* #endregion */
 
+		/* #region me-in-few-words Animation */
+		const topPart = document.querySelector('.top__part');
+
+		const line1 = document.querySelector('.line__1');
+		const line2 = document.querySelector('.line__2');
+		const line3 = document.querySelector('.line__3');
+		const line4 = document.querySelector('.line__4');
+
+		window.addEventListener('scroll', () => {
+			// @ts-ignore
+			if (window.scrollY > topPart.offsetTop - window.innerHeight / 2) {
+				// @ts-ignore
+				line1.style.animation = 'animated-text__1 4s steps(87, end) 1s 1 normal both, animated-cursor__1 500ms steps(87, end) 1s 5';
+				// @ts-ignore
+				line2.style.animation = 'animated-text__2 4s steps(75, end) 5s 1 normal both, animated-cursor__2 500ms steps(75, end) 5s 5';
+				// @ts-ignore
+				line3.style.animation = 'animated-text__3 4s steps(91, end) 9s 1 normal both, animated-cursor__3 500ms steps(91, end) 9s 5';
+				// @ts-ignore
+				line4.style.animation =
+					'animated-text__4 4s steps(77, end) 13s 1 normal both, animated-cursor__4 500ms steps(77, end) 13s infinite';
+			}
+		});
+
+		/* #endregion */
+
 		/* #region My Stack Animation */
-		const stackContainer1 = document.getElementById('stack__container__1'),
-			stackContainer2 = document.getElementById('stack__container__2');
+		const stackContainer1 = document.getElementById('stack__container__1');
 		const card1 = document.getElementById('card1'),
 			card2 = document.getElementById('card2'),
 			card3 = document.getElementById('card3'),
@@ -127,10 +153,6 @@ function Home() {
 				card1.style.animation = 'card1 2s ease-out forwards';
 				card2.style.animation = 'card2 2s ease-out forwards';
 				card3.style.animation = 'card3 2s ease-out forwards';
-			}
-			// When the scroll position is greater than the middle of the stackContainer2
-			if (window.scrollY > stackContainer2.offsetTop - window.innerHeight / 2) {
-				// We animate the cards using the keyframes
 				card4.style.animation = 'card4 2s ease-out forwards';
 				card5.style.animation = 'card5 2s ease-out forwards';
 			}
@@ -149,34 +171,32 @@ function Home() {
 					<img src={pictureOfMe} alt='portrait of me' />
 				</div>
 				<div className='right__container'>
-					<Link to='#my-stack'>
-						<div className='next__section__arrow'></div>
-					</Link>
 					<h2>SEBASTIEN P.</h2>
 				</div>
+				<Link to='#me-in-few-words'>
+					<div className='next__section__arrow'></div>
+				</Link>
 			</section>
-			{/* <section id='coming-soon'>
-				<h2>Coming Soon!!</h2>
 
-				<IAmSeb />
-
-				<p>
-					Exciting news! My website is currently under construction and will be launching soon with a fresh new look and
-					cutting-edge technology. Get ready for an awesome user experience with intuitive navigation and stunning visuals. Stay
-					tuned for updates and be the first to experience my new online presence. I can’t wait to share it with you! 😊
-				</p>
-
-				<h3>Here is a teaser</h3>
-
-				<p>Hover the card and find out what's gonna happen 😃</p>
-				<div className='empty__space'>
-					<Terminal>
-						<Card />
-					</Terminal>
+			<section id='me-in-few-words'>
+				<h2>Who am I?</h2>
+				<div className='top__part'>
+					<img src={Webdev} alt='Webdev' className='about__me__logo' />
+					<p className='line__1'>I am a Fullstack Developer with a passion for creating and developing web applications.</p>
+					<p className='line__2'>I am always looking for new challenges and opportunities to learn and grow.</p>
+					<p className='line__3'>When I am not coding, you can find me playing with my son, video games, or watching movies.</p>
 				</div>
-			</section> */}
+				<div className='bottom__part'>
+					<img src={HookedCode} alt='HookedCode' className='about__me__logo' />
+					<p className='line__4'>I started learning web development in 2021 and I have been hooked ever since.</p>
+				</div>
+				<Link to='#my-stack'>
+					<div className='next__section__arrow'></div>
+				</Link>
+			</section>
+
 			<section id='my-stack'>
-				<h2>My Toolbox </h2>
+				<h2>My Tools </h2>
 				<div id='stack__container__1' className='stack__container'>
 					<div id='card1' className='stack__card'>
 						<h3>Front-End</h3>
@@ -205,6 +225,27 @@ function Home() {
 					</div>
 				</div>
 			</section>
+
+			{/* <section id='coming-soon'>
+				<h2>Coming Soon!!</h2>
+
+				<IAmSeb />
+
+				<p>
+					Exciting news! My website is currently under construction and will be launching soon with a fresh new look and
+					cutting-edge technology. Get ready for an awesome user experience with intuitive navigation and stunning visuals. Stay
+					tuned for updates and be the first to experience my new online presence. I can’t wait to share it with you! 😊
+				</p>
+
+				<h3>Here is a teaser</h3>
+
+				<p>Hover the card and find out what's gonna happen 😃</p>
+				<div className='empty__space'>
+					<Terminal>
+						<Card />
+					</Terminal>
+				</div>
+			</section> */}
 		</>
 	);
 }
