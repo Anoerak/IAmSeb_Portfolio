@@ -11,7 +11,6 @@ body > #root > footer {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	/* animation: fadingIn 1.25s ease; */
 	opacity: 0;
 }
 body.dark > #root > footer {
@@ -150,8 +149,10 @@ body.dark > #root > footer .footer__container .footer__links .logo.linkedin {
 	filter: invert(1);
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 600px) {
 	body > div#root > footer {
+		/* z-index: -10; */
+		position: initial;
 		height: auto;
 		width: 100%;
 		flex-direction: column-reverse;
@@ -160,21 +161,49 @@ body.dark > #root > footer .footer__container .footer__links .logo.linkedin {
 		gap: 1rem;
 		padding: 1rem 0;
 	}
+	body > div#root > footer div.go__to__top__button {
+		position: fixed;
+		bottom: 1rem;
+		right: 0.5rem;
+		width: 40px;
+		height: 40px;
+		border-radius: 0.5rem;
+	}
+	body > div#root > footer div.go__to__top__button .go__to__top__link {
+		width: 40px;
+		height: 40px;
+	}
+	body > div#root > footer div.go__to__top__button .go__to__top__link .go__to__top__icon::before,
+	body > div#root > footer div.go__to__top__button .go__to__top__link .go__to__top__icon::after {
+		width: 15px;
+		height: 3px;
+		top: 20px;
+	}
+	body > div#root > footer div.go__to__top__button .go__to__top__link .go__to__top__icon::before {
+		left: 7.5px;
+	}
+	body > div#root > footer div.go__to__top__button .go__to__top__link .go__to__top__icon::after {
+		right: 7.5px;
+	}
 	body > div#root > footer div.footer__container {
 		width: 100%;
 		height: 100%;
-		flex-direction: column;
+		flex-direction: column-reverse;
 		align-items: center;
 		justify-content: center;
 	}
 	body > div#root > footer div.footer__container .footer__copy {
-		margin: 0;
+		margin: 1rem 0;
 		min-width: 0;
 	}
 	body > div#root > footer div.footer__container .footer__links {
 		display: flex;
 		align-items: center;
 		justify-content: space-around;
+		padding: 0;
+		gap: 2rem;
+		width: 90%;
+		margin-top: 1rem;
 	}
 	body > div#root > footer div.footer__container .footer__links::before {
 		content: none;
@@ -182,5 +211,17 @@ body.dark > #root > footer .footer__container .footer__links .logo.linkedin {
 
 	body > div#root > footer div.go__to__top__button {
 		transform: translateX(0%);
+	}
+
+	@keyframes jumpUpAndBack {
+		0% {
+			top: 20px;
+		}
+		50% {
+			top: 25px;
+		}
+		100% {
+			top: 20px;
+		}
 	}
 }

@@ -112,28 +112,32 @@ function Home() {
 		/* #endregion */
 
 		/* #region me-in-few-words Animation */
-		const topPart = document.querySelector('.top__part');
+		if (window.innerWidth > 809) {
+			const topPart = document.querySelector('.top__part');
 
-		const line1 = document.querySelector('.line__1');
-		const line2 = document.querySelector('.line__2');
-		const line3 = document.querySelector('.line__3');
-		const line4 = document.querySelector('.line__4');
+			const line1 = document.querySelector('.line__1');
+			const line2 = document.querySelector('.line__2');
+			const line3 = document.querySelector('.line__3');
+			const line4 = document.querySelector('.line__4');
 
-		window.addEventListener('scroll', () => {
-			// @ts-ignore
-			if (window.scrollY > topPart.offsetTop - window.innerHeight / 2) {
+			window.addEventListener('scroll', () => {
 				// @ts-ignore
-				line1.style.animation = 'animated-text__1 4s steps(87, end) 1s 1 normal both, animated-cursor__1 500ms steps(87, end) 1s 5';
-				// @ts-ignore
-				line2.style.animation = 'animated-text__2 4s steps(75, end) 5s 1 normal both, animated-cursor__2 500ms steps(75, end) 5s 5';
-				// @ts-ignore
-				line3.style.animation = 'animated-text__3 4s steps(91, end) 9s 1 normal both, animated-cursor__3 500ms steps(91, end) 9s 5';
-				// @ts-ignore
-				line4.style.animation =
-					'animated-text__4 4s steps(77, end) 13s 1 normal both, animated-cursor__4 500ms steps(77, end) 13s infinite';
-			}
-		});
-
+				if (window.scrollY > topPart.offsetTop - window.innerHeight / 2) {
+					// @ts-ignore
+					line1.style.animation =
+						'animated-text__1 4s steps(87, end) 1s 1 normal both, animated-cursor__1 500ms steps(87, end) 1s 5';
+					// @ts-ignore
+					line2.style.animation =
+						'animated-text__2 4s steps(75, end) 5s 1 normal both, animated-cursor__2 500ms steps(75, end) 5s 5';
+					// @ts-ignore
+					line3.style.animation =
+						'animated-text__3 4s steps(91, end) 9s 1 normal both, animated-cursor__3 500ms steps(91, end) 9s 5';
+					// @ts-ignore
+					line4.style.animation =
+						'animated-text__4 4s steps(77, end) 13s 1 normal both, animated-cursor__4 500ms steps(77, end) 13s infinite';
+				}
+			});
+		}
 		/* #endregion */
 
 		/* #region My Stack Animation */
@@ -173,7 +177,7 @@ function Home() {
 				<div className='right__container'>
 					<h2>SEBASTIEN P.</h2>
 				</div>
-				<Link to='#me-in-few-words'>
+				<Link to='#me-in-few-words' className='next__link'>
 					<div className='next__section__arrow'></div>
 				</Link>
 			</section>
@@ -190,7 +194,7 @@ function Home() {
 					<img src={HookedCode} alt='HookedCode' className='about__me__logo' />
 					<p className='line__4'>I started learning web development in 2021 and I have been hooked ever since.</p>
 				</div>
-				<Link to='#my-stack'>
+				<Link to='#my-stack' className='next__link'>
 					<div className='next__section__arrow'></div>
 				</Link>
 			</section>
@@ -207,7 +211,7 @@ function Home() {
 						<BlinkingWords words={backStack} tag='back' />
 					</div>
 					<div id='card3' className='stack__card'>
-						<h3>Other</h3>
+						<h3>Others</h3>
 						<BlinkingWords words={otherStack} tag='others' />
 					</div>
 				</div>
@@ -216,11 +220,11 @@ function Home() {
 
 				<div id='stack__container__2' className='stack__container'>
 					<div id='card4' className='stack__card'>
-						<h3>Front Homeworks</h3>
+						<h3>Front..</h3>
 						<BlinkingWords words={learningStack[0]} tag='learningFront' />
 					</div>
 					<div id='card5' className='stack__card'>
-						<h3>Back Homeworks</h3>
+						<h3>Back..</h3>
 						<BlinkingWords words={learningStack[1]} tag='learningBack' />
 					</div>
 				</div>

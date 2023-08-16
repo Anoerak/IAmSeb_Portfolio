@@ -260,6 +260,7 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
 		width: 30px;
 		height: 20px;
 		text-align: initial;
+		z-index: 10;
 	}
 
 	body.dark > #root > header > .hamburger__menu__container > .hamburger__menu__icon {
@@ -307,7 +308,7 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
 		align-items: center;
 		right: -200vw;
 		top: 50vh;
-		z-index: 2;
+		z-index: 1000;
 	}
 
 	body > #root > header > nav > .menu__ul,
@@ -393,7 +394,7 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
 		opacity: 0;
 		pointer-events: none;
 		color: #fff;
-		font-size: 2em;
+		font-size: 1.5em;
 	}
 
 	body > #root > header > nav .close div::before,

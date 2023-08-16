@@ -15,7 +15,7 @@ function About() {
 				</picture>
 				<picture>
 					<img
-						src='https://github-readme-stats-git-main-anoerak.vercel.app/api/top-langs/?username=Anoerak&layout=compact&langs_count=8&hide=html'
+						src='https://github-readme-stats-git-main-anoerak.vercel.app/api/top-langs/?username=Anoerak&theme=dark&layout=compact&langs_count=8&hide=html'
 						alt='GitHub Stats'
 					/>
 				</picture>

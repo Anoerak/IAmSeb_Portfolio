@@ -147,3 +147,9 @@ body.dark form > .input__field > button:hover::after {
 		transform: translateY(0);
 	}
 }
+
+@media screen and (max-width: 600px) {
+	form {
+		width: auto;
+	}
+}

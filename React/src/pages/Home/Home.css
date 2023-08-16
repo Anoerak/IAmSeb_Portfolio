@@ -48,7 +48,7 @@ body > #root > section#about-me > .right__container {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
-	justify-content: end;
+	justify-content: flex-end;
 }
 
 body > #root > section#about-me a,
@@ -495,53 +495,116 @@ body.dark > #root > section#my-stack > .stack__container > .stack__card > ul > l
 
 /* #endregion */
 
-@media screen and (max-width: 992px) {
-	body > div#root > section {
-		height: auto;
+@media screen and (max-width: 600px) {
+	/* #region About Me */
+	body > #root > section#about-me {
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
 	}
 
-	body > div#root > section#about-me {
-		flex-direction: column;
-	}
-	body > div#root > section#about-me > div.left__container,
-	body > div#root > section#about-me > div.right__container {
-		width: 100%;
-	}
 	body > div#root > section#about-me > div.left__container h2,
 	body > div#root > section#about-me > div.right__container h2 {
-		font-size: 3rem;
+		font-size: 2.5rem;
 	}
-	body > div#root > section#about-me > div.left__container img {
-		height: 12rem;
-		width: 100%;
+	body > div#root > section#about-me a.next__link,
+	body > div#root > section#me-in-few-words a.next__link {
+		bottom: -15rem;
+		right: 33%;
 	}
-	body > div#root > section#about-me > div.right__container {
-		flex-direction: column-reverse;
-		position: relative;
-	}
-	body > div#root > section#about-me > div.right__container a,
-	body > div#root > section#about-me > div.right__container .next__section__arrow {
-		position: absolute;
-		bottom: 0;
-		left: 50%;
+	body > div#root > section#about-me a,
+	body > div#root > section#about-me .next__section__arrow,
+	body > div#root > section#me-in-few-words a,
+	body > div#root > section#me-in-few-words .next__section__arrow {
 		height: 40px;
 		width: 40px;
-		border-radius: 50%;
+		border-radius: 30%;
 	}
-	body > div#root > section#about-me > div.right__container .next__section__arrow::before {
-		left: 4px;
+	body > div#root > section#about-me .next__section__arrow::before,
+	body > div#root > section#me-in-few-words .next__section__arrow::before {
+		left: 3px;
 	}
-	body > div#root > section#about-me > div.right__container .next__section__arrow::after {
-		right: 4px;
+	body > div#root > section#about-me .next__section__arrow::after,
+	body > div#root > section#me-in-few-words .next__section__arrow::after {
+		right: 3px;
 	}
-	body > div#root > section#about-me > div.right__container .next__section__arrow::before,
-	body > div#root > section#about-me > div.right__container .next__section__arrow::after {
+	body > div#root > section#about-me .next__section__arrow::before,
+	body > div#root > section#about-me .next__section__arrow::after,
+	body > div#root > section#me-in-few-words .next__section__arrow::before,
+	body > div#root > section#me-in-few-words .next__section__arrow::after {
 		top: 20px;
 	}
-	body > #root > section#about-me > .right__container .next__section__arrow:hover::before,
-	body > #root > section#about-me > .right__container .next__section__arrow:hover::after {
+	body > #root > section#about-me .next__section__arrow:hover::before,
+	body > #root > section#about-me .next__section__arrow:hover::after,
+	body > #root > section#me-in-few-words .next__section__arrow:hover::before,
+	body > #root > section#me-in-few-words .next__section__arrow:hover::after {
 		animation: jumpUpAndBackHomeMobile 0.75s ease infinite;
 	}
+	/* #endregion */
+
+	/* #region Me in few word  */
+	body > #root > section#me-in-few-words {
+		margin: 0 1rem;
+		height: auto;
+		width: auto;
+	}
+	body div#root section#me-in-few-words a.next__link {
+		bottom: 40rem;
+		right: 38%;
+	}
+	body > #root > section#me-in-few-words div.top__part,
+	body > #root > section#me-in-few-words div.bottom__part {
+		width: calc(100% - 2rem);
+		margin: 0;
+	}
+	body > #root > section#me-in-few-words div.top__part .about__me__logo,
+	body > #root > section#me-in-few-words div.bottom__part .about__me__logo {
+		height: 2.5rem;
+		width: 2.5rem;
+	}
+	body > #root > section#me-in-few-words div.top__part .line__1,
+	body > #root > section#me-in-few-words div.top__part .line__2,
+	body > #root > section#me-in-few-words div.top__part .line__3,
+	body > #root > section#me-in-few-words div.bottom__part .line__4 {
+		font-size: 1rem;
+		text-align: justify;
+		white-space: normal;
+		overflow: visible;
+		animation: none;
+		border-right: none;
+		width: 100%;
+	}
+	/* #endregion */
+
+	/* #region My Tools */
+	body > #root > section#my-stack {
+		padding: 6rem 0 6rem 0;
+		height: auto;
+	}
+	body > #root > section#my-stack > .stack__container {
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+	}
+	body > #root > section#my-stack > .stack__container > .stack__card {
+		width: 80%;
+		height: 15rem;
+		margin: 1rem 0;
+	}
+	body > #root > section#my-stack > .stack__container > .stack__card > h3 {
+		font-size: 1.25rem;
+	}
+
+	body > #root > section#my-stack > h3 {
+		margin-top: 2rem;
+		font-size: 1rem;
+		width: 80%;
+		padding: 1rem 1.5rem;
+	}
+
+	/* #endregion */
+
+	/* #region Animations */
 	@keyframes jumpUpAndBackHomeMobile {
 		0% {
 			top: 22.5px;
@@ -552,5 +615,31 @@ body.dark > #root > section#my-stack > .stack__container > .stack__card > ul > l
 		100% {
 			top: 22.5px;
 		}
+	}
+	/* #endregion */
+}
+
+@media screen and (max-width: 992px) {
+	body > #root > section#me-in-few-words div.top__part,
+	body > #root > section#me-in-few-words div.bottom__part {
+		width: 100%;
+	}
+	body > #root > section#me-in-few-words div.top__part p.line__1,
+	body > #root > section#me-in-few-words div.top__part p.line__2,
+	body > #root > section#me-in-few-words div.top__part p.line__3,
+	body > #root > section#me-in-few-words div.bottom__part p.line__4 {
+		font-size: 0.85rem;
+	}
+}
+@media screen and (max-width: 1140px) {
+	body > #root > section#me-in-few-words div.top__part,
+	body > #root > section#me-in-few-words div.bottom__part {
+		width: 100%;
+	}
+	body > #root > section#me-in-few-words div.top__part p.line__1,
+	body > #root > section#me-in-few-words div.top__part p.line__2,
+	body > #root > section#me-in-few-words div.top__part p.line__3,
+	body > #root > section#me-in-few-words div.bottom__part p.line__4 {
+		font-size: 1.1rem;
 	}
 }

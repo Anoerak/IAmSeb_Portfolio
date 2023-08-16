@@ -472,3 +472,217 @@ body.dark
 		transform: translateY(0);
 	}
 }
+
+@media screen and (max-width: 600px) {
+	body > #root > #projects {
+		margin-bottom: 4rem;
+	}
+	body > #root > #projects h2 {
+		font-size: 1.5rem;
+	}
+	body > #root > #projects > .shortcut__buttons {
+		width: 80%;
+		gap: 2rem;
+		padding: 1rem;
+	}
+	body > #root > #projects > .shortcut__buttons > .shortcut__button {
+		width: 25%;
+		flex-direction: column;
+		font-size: 0.75rem;
+	}
+	body > #root > #projects > .shortcut__buttons > .shortcut__button::after {
+		width: 45%;
+	}
+	body > #root > #projects > .shortcut__buttons > .shortcut__button > .shortcut__button__icon {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+
+	body > #root > #projects > .projects__container {
+		padding: 0.5rem;
+		width: 105%;
+	}
+	body > #root > #projects > .projects__container > .projects__category {
+		padding: 0;
+		width: 100%;
+	}
+	body > #root > #projects > .projects__container > .projects__category > h3 {
+		font-size: 1.25rem;
+		padding: 1rem 2rem;
+	}
+	body > #root > #projects > .projects__container > .projects__category > .projects__category__list {
+		width: 80%;
+		flex-wrap: nowrap;
+	}
+	body > #root > #projects > .projects__container > .projects__category > .projects__category__list > .projects__category__list__item {
+		width: 95%;
+	}
+	body
+		> #root
+		> #projects
+		> .projects__container
+		> .projects__category
+		> .projects__category__list
+		> .projects__category__list__item
+		> h4 {
+		font-size: 1rem;
+		padding: 1rem 1rem;
+	}
+	body
+		> #root
+		> #projects
+		> .projects__container
+		> .projects__category
+		> .projects__category__list
+		> .projects__category__list__item
+		> h5 {
+		font-size: 0.75rem;
+		padding: 1rem 1rem;
+	}
+	body
+		> #root
+		> #projects
+		> .projects__container
+		> .projects__category
+		> .projects__category__list
+		> .projects__category__list__item
+		> .projects__category__list__item__container {
+		flex-direction: column;
+	}
+	body
+		> #root
+		> #projects
+		> .projects__container
+		> .projects__category
+		> .projects__category__list
+		> .projects__category__list__item
+		> .projects__category__list__item__container
+		> .left__container,
+	body
+		> #root
+		> #projects
+		> .projects__container
+		> .projects__category
+		> .projects__category__list
+		> .projects__category__list__item
+		> .projects__category__list__item__container
+		> .right__container {
+		width: 100%;
+		max-width: 100%;
+		height: 100%;
+	}
+	body
+		> #root
+		> #projects
+		> .projects__container
+		> .projects__category
+		> .projects__category__list
+		> .projects__category__list__item
+		> .projects__category__list__item__container
+		> .left__container
+		> .bottom {
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		width: 100%;
+		margin-top: 2rem;
+	}
+	body
+		> #root
+		> #projects
+		> .projects__container
+		> .projects__category
+		> .projects__category__list
+		> .projects__category__list__item
+		> .projects__category__list__item__container
+		> .left__container
+		> .bottom
+		> .technologies,
+	body
+		> #root
+		> #projects
+		> .projects__container
+		> .projects__category
+		> .projects__category__list
+		> .projects__category__list__item
+		> .projects__category__list__item__container
+		> .left__container
+		> .bottom
+		> .links {
+		width: 100%;
+		margin-bottom: 2rem;
+	}
+	body
+		> #root
+		> #projects
+		> .projects__container
+		> .projects__category
+		> .projects__category__list
+		> .projects__category__list__item
+		> .projects__category__list__item__container
+		> .left__container
+		> .bottom
+		> .technologies
+		> h5,
+	body
+		> #root
+		> #projects
+		> .projects__container
+		> .projects__category
+		> .projects__category__list
+		> .projects__category__list__item
+		> .projects__category__list__item__container
+		> .left__container
+		> .bottom
+		> .links
+		> h5 {
+		font-size: 0.75rem;
+		padding: 0.5rem 1rem;
+		margin-bottom: 2rem;
+	}
+	body
+		> #root
+		> #projects
+		> .projects__container
+		> .projects__category
+		> .projects__category__list
+		> .projects__category__list__item
+		> .projects__category__list__item__container
+		> .left__container
+		> .bottom
+		> .links
+		a
+		img {
+		width: 100%;
+	}
+	body
+		> #root
+		> #projects
+		> .projects__container
+		> .projects__category
+		> .projects__category__list
+		> .projects__category__list__item
+		> .projects__category__list__item__container
+		> .right__container
+		> .medias {
+		width: calc(100% - 1rem);
+		height: 100%;
+		max-width: 100%;
+		max-height: 100%;
+		padding: 0.5rem;
+		border-radius: 0;
+	}
+	body
+		> #root
+		> #projects
+		> .projects__container
+		> .projects__category
+		> .projects__category__list
+		> .projects__category__list__item
+		> .projects__category__list__item__container
+		> .right__container
+		> .medias
+		.control-dots {
+		display: none;
+	}
+}
