@@ -1428,13 +1428,13 @@ function Projects() {
 												/>
 												<p className='legend'>Readme</p>
 											</div>
-											{/* <div>
+											<div>
 												<img
 													src={require('@Projects/FortuneQuotes/desktop/FortuneQuotes_screenshot2.webp')}
 													alt='FortuneQuotes screenshot 2'
 												/>
 												<p className='legend'>screenshot</p>
-											</div> */}
+											</div>
 										</Carousel>
 									</div>
 								</div>
