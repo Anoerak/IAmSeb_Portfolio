@@ -473,7 +473,7 @@ body.dark
 	}
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (orientation: portrait) and (max-width: 600px) {
 	body > #root > #projects {
 		margin-bottom: 4rem;
 	}
@@ -684,5 +684,306 @@ body.dark
 		> .medias
 		.control-dots {
 		display: none;
+	}
+}
+
+@media screen and (orientation: landscape) and (max-width: 812px) {
+	body > #root > #projects {
+		margin-bottom: 4rem;
+	}
+	body > #root > #projects h2 {
+		font-size: 1.5rem;
+	}
+	body > #root > #projects > .shortcut__buttons {
+		width: 80%;
+		gap: 2rem;
+		padding: 1rem;
+	}
+	body > #root > #projects > .shortcut__buttons > .shortcut__button {
+		width: 25%;
+		flex-direction: column;
+		font-size: 0.75rem;
+	}
+	body > #root > #projects > .shortcut__buttons > .shortcut__button::after {
+		width: 65%;
+	}
+	body > #root > #projects > .shortcut__buttons > .shortcut__button > .shortcut__button__icon {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+
+	body > #root > #projects > .projects__container {
+		padding: 0.5rem;
+		width: 105%;
+	}
+	body > #root > #projects > .projects__container > .projects__category {
+		padding: 0;
+		width: 100%;
+	}
+	body > #root > #projects > .projects__container > .projects__category > h3 {
+		font-size: 1.25rem;
+		padding: 1rem 2rem;
+	}
+	body > #root > #projects > .projects__container > .projects__category > .projects__category__list {
+		width: 90%;
+		flex-wrap: nowrap;
+	}
+	body > #root > #projects > .projects__container > .projects__category > .projects__category__list > .projects__category__list__item {
+		width: 95%;
+	}
+
+	body > #root > #projects > .projects__container > .projects__category > .projects__category__list > .projects__category__list__item h4 {
+		font-size: 1rem;
+		padding: 1rem 1rem;
+	}
+	body > #root > #projects > .projects__container > .projects__category > .projects__category__list > .projects__category__list__item h5 {
+		font-size: 0.75rem;
+		padding: 1rem 1rem;
+	}
+	body
+		> #root
+		> #projects
+		> .projects__container
+		> .projects__category
+		> .projects__category__list
+		> .projects__category__list__item
+		> .projects__category__list__item__container {
+		flex-direction: column;
+	}
+	body
+		> #root
+		> #projects
+		> .projects__container
+		> .projects__category
+		> .projects__category__list
+		> .projects__category__list__item
+		> .projects__category__list__item__container
+		> .left__container,
+	body
+		> #root
+		> #projects
+		> .projects__container
+		> .projects__category
+		> .projects__category__list
+		> .projects__category__list__item
+		> .projects__category__list__item__container
+		> .right__container {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+	}
+	body
+		> #root
+		> #projects
+		> .projects__container
+		> .projects__category
+		> .projects__category__list
+		> .projects__category__list__item
+		> .projects__category__list__item__container
+		> .right__container
+		> .medias {
+		width: calc(100% - 1rem);
+		height: auto;
+		max-width: 100%;
+		max-height: 100%;
+		padding: 0.5rem;
+		border-radius: 0;
+		margin: 1rem auto;
+	}
+}
+
+@media screen and (orientation: portrait) and (min-width: 600px) and (max-width: 992px) {
+	body > #root > #projects {
+		margin-bottom: 8rem;
+	}
+	body > #root > #projects h2 {
+		font-size: 1.5rem;
+	}
+	body > #root > #projects > .shortcut__buttons {
+		width: 80%;
+		gap: 2rem;
+		padding: 1rem;
+	}
+	body > #root > #projects > .shortcut__buttons > .shortcut__button {
+		width: 10%;
+		flex-direction: column;
+		font-size: 0.75rem;
+	}
+
+	body > #root > #projects > .projects__container {
+		padding: 0.5rem;
+		width: 100%;
+	}
+	body > #root > #projects > .projects__container > .projects__category {
+		padding: 0;
+		width: 100%;
+	}
+	body > #root > #projects > .projects__container > .projects__category > h3 {
+		font-size: 1.25rem;
+		padding: 1rem 2rem;
+	}
+	body > #root > #projects > .projects__container > .projects__category > .projects__category__list {
+		width: 90%;
+		flex-wrap: nowrap;
+	}
+	body > #root > #projects > .projects__container > .projects__category > .projects__category__list > .projects__category__list__item {
+		width: 95%;
+	}
+
+	body > #root > #projects > .projects__container > .projects__category > .projects__category__list > .projects__category__list__item h4 {
+		font-size: 1rem;
+		padding: 1rem 1rem;
+	}
+	body > #root > #projects > .projects__container > .projects__category > .projects__category__list > .projects__category__list__item h5 {
+		font-size: 0.75rem;
+		padding: 1rem 1rem;
+	}
+	body
+		> #root
+		> #projects
+		> .projects__container
+		> .projects__category
+		> .projects__category__list
+		> .projects__category__list__item
+		> .projects__category__list__item__container {
+		flex-direction: column;
+	}
+	body
+		> #root
+		> #projects
+		> .projects__container
+		> .projects__category
+		> .projects__category__list
+		> .projects__category__list__item
+		> .projects__category__list__item__container
+		> .left__container,
+	body
+		> #root
+		> #projects
+		> .projects__container
+		> .projects__category
+		> .projects__category__list
+		> .projects__category__list__item
+		> .projects__category__list__item__container
+		> .right__container {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+	}
+	body
+		> #root
+		> #projects
+		> .projects__container
+		> .projects__category
+		> .projects__category__list
+		> .projects__category__list__item
+		> .projects__category__list__item__container
+		> .right__container
+		> .medias {
+		width: auto;
+		height: auto;
+		max-width: 100%;
+		max-height: 100%;
+		padding: 0.5rem;
+		border-radius: 0;
+		margin: 1rem auto;
+	}
+}
+
+@media screen and (orientation: landscape) and (min-width: 812px) and (max-width: 1300px) {
+	body > #root > #projects {
+		margin-bottom: 8rem;
+	}
+	body > #root > #projects h2 {
+		font-size: 1.5rem;
+	}
+	body > #root > #projects > .shortcut__buttons {
+		width: 80%;
+		gap: 2rem;
+		padding: 1rem;
+	}
+	body > #root > #projects > .shortcut__buttons > .shortcut__button {
+		width: 10%;
+		flex-direction: column;
+		font-size: 0.75rem;
+	}
+
+	body > #root > #projects > .projects__container {
+		padding: 0.5rem;
+		width: 100%;
+	}
+	body > #root > #projects > .projects__container > .projects__category {
+		padding: 0;
+		width: 100%;
+	}
+	body > #root > #projects > .projects__container > .projects__category > h3 {
+		font-size: 1.25rem;
+		padding: 1rem 2rem;
+	}
+	body > #root > #projects > .projects__container > .projects__category > .projects__category__list {
+		width: 90%;
+		flex-wrap: nowrap;
+	}
+	body > #root > #projects > .projects__container > .projects__category > .projects__category__list > .projects__category__list__item {
+		width: 95%;
+	}
+
+	body > #root > #projects > .projects__container > .projects__category > .projects__category__list > .projects__category__list__item h4 {
+		font-size: 1rem;
+		padding: 1rem 1rem;
+	}
+	body > #root > #projects > .projects__container > .projects__category > .projects__category__list > .projects__category__list__item h5 {
+		font-size: 0.75rem;
+		padding: 1rem 1rem;
+	}
+	body
+		> #root
+		> #projects
+		> .projects__container
+		> .projects__category
+		> .projects__category__list
+		> .projects__category__list__item
+		> .projects__category__list__item__container {
+		flex-direction: column;
+	}
+	body
+		> #root
+		> #projects
+		> .projects__container
+		> .projects__category
+		> .projects__category__list
+		> .projects__category__list__item
+		> .projects__category__list__item__container
+		> .left__container,
+	body
+		> #root
+		> #projects
+		> .projects__container
+		> .projects__category
+		> .projects__category__list
+		> .projects__category__list__item
+		> .projects__category__list__item__container
+		> .right__container {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+	}
+	body
+		> #root
+		> #projects
+		> .projects__container
+		> .projects__category
+		> .projects__category__list
+		> .projects__category__list__item
+		> .projects__category__list__item__container
+		> .right__container
+		> .medias {
+		width: auto;
+		height: auto;
+		max-width: 100%;
+		max-height: 100%;
+		padding: 0.5rem;
+		border-radius: 0;
+		margin: 1rem auto;
 	}
 }

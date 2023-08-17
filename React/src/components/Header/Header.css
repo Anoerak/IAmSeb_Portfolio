@@ -236,7 +236,7 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
 |--------------------------------------
 */
 
-@media screen and (max-width: 992px) {
+@media screen and (orientation: portrait) and (max-width: 600px) {
 	body > #root > header {
 		min-height: 8rem;
 		justify-content: center;
@@ -420,6 +420,21 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
 	}
 }
 
+@media screen and (orientation: landscape) and (max-width: 812px) {
+	body > #root > header {
+		min-height: 8rem;
+		justify-content: center;
+	}
+	body > #root > header > h1 {
+		font-size: 1rem;
+	}
+
+	/* Dark Mode Toggler */
+	body > #root > header > .toggler,
+	body > #root > header > .circle {
+		left: 24px;
+	}
+}
 /*
 |--------------------------------------
 | Animations

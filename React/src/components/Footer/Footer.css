@@ -149,7 +149,7 @@ body.dark > #root > footer .footer__container .footer__links .logo.linkedin {
 	filter: invert(1);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (orientation: portrait) and (max-width: 600px) {
 	body > div#root > footer {
 		/* z-index: -10; */
 		position: initial;
@@ -223,5 +223,65 @@ body.dark > #root > footer .footer__container .footer__links .logo.linkedin {
 		100% {
 			top: 20px;
 		}
+	}
+}
+
+@media screen and (orientation: landscape) and (max-width: 812px) {
+	body > div#root > footer {
+		position: initial;
+		height: auto;
+		width: 100%;
+		flex-direction: column-reverse;
+		align-items: center;
+		justify-content: space-around;
+		gap: 1rem;
+		padding: 1rem 0;
+	}
+	body > div#root > footer div.go__to__top__button {
+		position: fixed;
+		bottom: 1rem;
+		right: 0.5rem;
+		width: 40px;
+		height: 40px;
+		border-radius: 0.5rem;
+	}
+	body > div#root > footer div.go__to__top__button .go__to__top__link {
+		width: 40px;
+		height: 40px;
+	}
+	body > div#root > footer div.go__to__top__button .go__to__top__link .go__to__top__icon::before,
+	body > div#root > footer div.go__to__top__button .go__to__top__link .go__to__top__icon::after {
+		width: 15px;
+		height: 3px;
+		top: 20px;
+	}
+	body > div#root > footer div.go__to__top__button .go__to__top__link .go__to__top__icon::before {
+		left: 7.5px;
+	}
+	body > div#root > footer div.go__to__top__button .go__to__top__link .go__to__top__icon::after {
+		right: 7.5px;
+	}
+	body > div#root > footer div.footer__container {
+		width: 100%;
+		height: 100%;
+		flex-direction: column-reverse;
+		align-items: center;
+		justify-content: center;
+	}
+	body > div#root > footer div.footer__container .footer__copy {
+		margin: 1rem 0;
+		min-width: 0;
+	}
+	body > div#root > footer div.footer__container .footer__links {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		padding: 0;
+		gap: 2rem;
+		width: 90%;
+		margin-top: 1rem;
+	}
+	body > div#root > footer div.footer__container .footer__links::before {
+		content: none;
 	}
 }

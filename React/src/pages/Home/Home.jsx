@@ -112,7 +112,7 @@ function Home() {
 		/* #endregion */
 
 		/* #region me-in-few-words Animation */
-		if (window.innerWidth > 809) {
+		if (window.innerWidth >= 810) {
 			const topPart = document.querySelector('.top__part');
 
 			const line1 = document.querySelector('.line__1');

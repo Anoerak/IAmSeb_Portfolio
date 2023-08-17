@@ -32,7 +32,7 @@ function Header() {
 		// On scroll, if on desktop, the navbar disappears or hamburger disappears
 		const navbar = document.querySelector('nav');
 		window.addEventListener('scroll', () => {
-			if (window.innerWidth > 992) {
+			if (window.innerWidth >= 992) {
 				navbar.style.animation = 'fadingOut 0.5s ease-in-out forwards';
 				// If the user is at the top of the page, the navbar reappears
 				if (window.pageYOffset === 0) {
@@ -43,7 +43,7 @@ function Header() {
 
 		// On hover, the navbar reappears
 		navbar.addEventListener('mouseenter', () => {
-			if (window.innerWidth > 992 && window.pageYOffset !== 0) {
+			if (window.innerWidth >= 992 && window.pageYOffset !== 0) {
 				navbar.style.animation = 'fadingIn 0.5s ease-in-out forwards';
 			}
 		});
@@ -115,7 +115,7 @@ function Header() {
 
 		// Scrolling is inactive when innerWidth < 992px and navbar is open
 		window.addEventListener('scroll', () => {
-			if (window.innerWidth < 992 && tl.reversed()) {
+			if (window.innerWidth <= 992 && tl.reversed()) {
 				window.scrollTo(0, 0);
 				console.log('scrolling');
 			}

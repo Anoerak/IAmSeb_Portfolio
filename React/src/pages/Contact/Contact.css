@@ -29,7 +29,20 @@ body.dark > #root > section#contact > h2 {
 	box-shadow: var(--box-shadows-dark-thin);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (orientation: portrait) and (max-width: 600px) {
+	body > #root > section#contact {
+		height: auto;
+		margin-bottom: 4rem;
+	}
+	body > #root > section#contact > h2 {
+		font-size: 1.5rem;
+	}
+	body > #root > section#contact > p {
+		font-size: 1rem;
+	}
+}
+
+@media screen and (orientation: landscape) and (max-width: 812px) {
 	body > #root > section#contact {
 		height: auto;
 		margin-bottom: 4rem;

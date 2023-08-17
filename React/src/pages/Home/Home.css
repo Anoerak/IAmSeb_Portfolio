@@ -495,7 +495,7 @@ body.dark > #root > section#my-stack > .stack__container > .stack__card > ul > l
 
 /* #endregion */
 
-@media screen and (max-width: 600px) {
+@media screen and (orientation: portrait) and (max-width: 600px) {
 	/* #region About Me */
 	body > #root > section#about-me {
 		flex-direction: column;
@@ -619,27 +619,130 @@ body.dark > #root > section#my-stack > .stack__container > .stack__card > ul > l
 	/* #endregion */
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (orientation: landscape) and (max-width: 812px) {
+	body > #root > section {
+		height: auto;
+		margin: 2rem;
+	}
+	body > #root > section#about-me {
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+	}
+
+	body > div#root > section#about-me > div.left__container h2,
+	body > div#root > section#about-me > div.right__container h2 {
+		font-size: 2.5rem;
+	}
+
+	body > div#root > section#about-me a.next__link,
+	body > div#root > section#me-in-few-words a.next__link {
+		display: none;
+	}
+
+	body > #root > section#me-in-few-words {
+		width: auto;
+		gap: 2rem;
+	}
 	body > #root > section#me-in-few-words div.top__part,
 	body > #root > section#me-in-few-words div.bottom__part {
+		width: calc(100% - 2rem);
+		margin: 0;
+	}
+	body > #root > section#me-in-few-words div.top__part .about__me__logo,
+	body > #root > section#me-in-few-words div.bottom__part .about__me__logo {
+		height: 3rem;
+		width: 3rem;
+	}
+	body > #root > section#me-in-few-words div.top__part .line__1,
+	body > #root > section#me-in-few-words div.top__part .line__2,
+	body > #root > section#me-in-few-words div.top__part .line__3,
+	body > #root > section#me-in-few-words div.bottom__part .line__4 {
+		font-size: 1.25rem;
+		text-align: justify;
+		white-space: normal;
+		overflow: visible;
+		animation: none;
+		border-right: none;
 		width: 100%;
 	}
-	body > #root > section#me-in-few-words div.top__part p.line__1,
-	body > #root > section#me-in-few-words div.top__part p.line__2,
-	body > #root > section#me-in-few-words div.top__part p.line__3,
-	body > #root > section#me-in-few-words div.bottom__part p.line__4 {
-		font-size: 0.85rem;
+
+	body > #root > section#my-stack {
+		padding: 0;
+	}
+	body > #root > section#my-stack > h3 {
+		margin-top: 2rem;
+		font-size: 1rem;
+		width: 80%;
+		padding: 1rem 1.5rem;
+	}
+	body > #root > section#my-stack > #stack__container__2.stack__container .stack__card {
+		width: 45%;
+		/* height: 15rem; */
+		margin: 1rem 0;
 	}
 }
-@media screen and (max-width: 1140px) {
+
+@media screen and (orientation: portrait) and (min-width: 600px) and (max-width: 992px) {
+	body > #root > section {
+		height: auto;
+		margin: 0 2rem;
+	}
+	body > #root > section#about-me {
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		min-height: 80vh;
+	}
+
+	body > div#root > section#about-me > div.left__container h2,
+	body > div#root > section#about-me > div.right__container h2 {
+		font-size: 2.5rem;
+	}
+
+	body > div#root > section#about-me a.next__link,
+	body > div#root > section#me-in-few-words a.next__link {
+		display: none;
+	}
+
+	body > #root > section#me-in-few-words {
+		width: auto;
+		gap: 0rem;
+		min-height: 40vh;
+	}
 	body > #root > section#me-in-few-words div.top__part,
 	body > #root > section#me-in-few-words div.bottom__part {
 		width: 100%;
+		margin: 0;
 	}
-	body > #root > section#me-in-few-words div.top__part p.line__1,
-	body > #root > section#me-in-few-words div.top__part p.line__2,
-	body > #root > section#me-in-few-words div.top__part p.line__3,
-	body > #root > section#me-in-few-words div.bottom__part p.line__4 {
+	body > #root > section#me-in-few-words div.top__part .line__1,
+	body > #root > section#me-in-few-words div.top__part .line__2,
+	body > #root > section#me-in-few-words div.top__part .line__3,
+	body > #root > section#me-in-few-words div.bottom__part .line__4 {
+		font-size: 0.82rem;
+	}
+}
+
+@media screen and (orientation: landscape) and (min-width: 812px) and (max-width: 1080px) {
+	body > #root > section#about-me a,
+	body > #root > section#me-in-few-words a {
+		top: 5rem;
+	}
+
+	body > #root > section#me-in-few-words {
+		width: auto;
+		gap: 0rem;
+		min-height: 40vh;
+	}
+	body > #root > section#me-in-few-words div.top__part,
+	body > #root > section#me-in-few-words div.bottom__part {
+		width: 100%;
+		margin: 0;
+	}
+	body > #root > section#me-in-few-words div.top__part .line__1,
+	body > #root > section#me-in-few-words div.top__part .line__2,
+	body > #root > section#me-in-few-words div.top__part .line__3,
+	body > #root > section#me-in-few-words div.bottom__part .line__4 {
 		font-size: 1.1rem;
 	}
 }

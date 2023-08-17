@@ -105,7 +105,7 @@ body.dark > #root > section#about > .about__container > .about__text > p {
 	}
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (orientation: portrait) and (max-width: 600px) {
 	body > #root > section#about {
 		height: auto;
 		margin-bottom: 4rem;
@@ -118,6 +118,76 @@ body.dark > #root > section#about > .about__container > .about__text > p {
 		padding: 1rem;
 	}
 	body > #root > section#about > .GitHub__stats__container > picture,
+	body > #root > section#about > .GitHub__stats__container > picture > img {
+		width: 100%;
+		height: auto;
+	}
+	body > #root > section#about > .about__container {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	body > #root > section#about > .about__container > .about__text {
+		width: 100%;
+		column-count: 1;
+	}
+	body > #root > section#about > .about__container > .about__text > p {
+		font-size: 1rem;
+	}
+}
+
+@media screen and (orientation: landscape) and (max-width: 812px) {
+	body > #root > section#about {
+		height: auto;
+		margin-bottom: 2rem;
+	}
+	body > #root > section#about > h2 {
+		font-size: 1.5rem;
+	}
+	body > #root > section#about > .GitHub__stats__container {
+		width: 100%;
+		padding: 1rem;
+	}
+	body > #root > section#about > .GitHub__stats__container > picture {
+		width: 45%;
+		height: auto;
+	}
+	body > #root > section#about > .GitHub__stats__container > picture > img {
+		width: 100%;
+		height: auto;
+	}
+	body > #root > section#about > .about__container {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	body > #root > section#about > .about__container > .about__text {
+		width: 100%;
+		column-count: 1;
+	}
+	body > #root > section#about > .about__container > .about__text > p {
+		font-size: 1rem;
+	}
+}
+
+@media screen and (orientation: portrait) and (min-width: 600px) and (max-width: 992px) {
+	body > #root > section#about {
+		height: auto;
+		margin-bottom: 8rem;
+	}
+	body > #root > section#about > h2 {
+		font-size: 1.5rem;
+	}
+	body > #root > section#about > .GitHub__stats__container {
+		width: 50%;
+		padding: 1rem;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+	body > #root > section#about > .GitHub__stats__container > picture {
+		width: 100%;
+		height: auto;
+	}
 	body > #root > section#about > .GitHub__stats__container > picture > img {
 		width: 100%;
 		height: auto;
