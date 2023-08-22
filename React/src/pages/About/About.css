@@ -18,7 +18,6 @@ body.dark > #root > section#about {
 }
 
 body > #root > section#about > h2 {
-	font-size: 2rem;
 	color: var(--text__color);
 	box-shadow: var(--box-shadows-light-thin);
 	border-radius: 1rem;
@@ -78,7 +77,6 @@ body > #root > section#about > .about__container > .about__text {
 }
 
 body > #root > section#about > .about__container > .about__text > p {
-	font-size: 1.25rem;
 	color: var(--text__color);
 	text-align: justify;
 	animation: appear 1s ease-in-out;
@@ -110,9 +108,6 @@ body.dark > #root > section#about > .about__container > .about__text > p {
 		height: auto;
 		margin-bottom: 4rem;
 	}
-	body > #root > section#about > h2 {
-		font-size: 1.5rem;
-	}
 	body > #root > section#about > .GitHub__stats__container {
 		width: 100%;
 		padding: 1rem;
@@ -131,18 +126,12 @@ body.dark > #root > section#about > .about__container > .about__text > p {
 		width: 100%;
 		column-count: 1;
 	}
-	body > #root > section#about > .about__container > .about__text > p {
-		font-size: 1rem;
-	}
 }
 
 @media screen and (orientation: landscape) and (max-width: 812px) {
 	body > #root > section#about {
 		height: auto;
 		margin-bottom: 2rem;
-	}
-	body > #root > section#about > h2 {
-		font-size: 1.5rem;
 	}
 	body > #root > section#about > .GitHub__stats__container {
 		width: 100%;
@@ -165,18 +154,12 @@ body.dark > #root > section#about > .about__container > .about__text > p {
 		width: 100%;
 		column-count: 1;
 	}
-	body > #root > section#about > .about__container > .about__text > p {
-		font-size: 1rem;
-	}
 }
 
 @media screen and (orientation: portrait) and (min-width: 600px) and (max-width: 992px) {
 	body > #root > section#about {
 		height: auto;
 		margin-bottom: 8rem;
-	}
-	body > #root > section#about > h2 {
-		font-size: 1.5rem;
 	}
 	body > #root > section#about > .GitHub__stats__container {
 		width: 50%;
@@ -200,8 +183,5 @@ body.dark > #root > section#about > .about__container > .about__text > p {
 	body > #root > section#about > .about__container > .about__text {
 		width: 100%;
 		column-count: 1;
-	}
-	body > #root > section#about > .about__container > .about__text > p {
-		font-size: 1rem;
 	}
 }

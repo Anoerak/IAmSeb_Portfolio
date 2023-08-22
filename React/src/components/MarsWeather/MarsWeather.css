@@ -1,0 +1,12 @@
+.MarsWeather {
+	position: absolute;
+	top: 25%;
+	left: 45%;
+}
+
+.MarsWeather h1 {
+	font-size: 1rem;
+}
+.MarsWeather p {
+	font-size: 0.8rem;
+}

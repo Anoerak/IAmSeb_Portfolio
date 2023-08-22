@@ -1440,6 +1440,106 @@ function Projects() {
 								</div>
 							</div>
 						</div>
+						<div className='projects__category__list__item'>
+							<h4>SebGPT 😅</h4>
+							<h5>Host and integrate a GPT AI on my server and portfolio</h5>
+							<div className='projects__category__list__item__container'>
+								<div className='left__container'>
+									<p className='project__description'>
+										SebGPT is a GPT AI based on Llama-gpt, deployed on my server and integrated into my portfolio. It is
+										able to generate text based on the text you give it.
+									</p>
+									<div className='bottom'>
+										<div className='technologies'>
+											<h5>Technologies</h5>
+											<ul>
+												<li>Python</li>
+												<li>Docker</li>
+												<li>Portainer</li>
+												<li>React</li>
+												<li>NodeJS</li>
+												<li>Express</li>
+												<li>Llama 2</li>
+												<li>ChatGPT (text)</li>
+											</ul>
+										</div>
+										<div className='links'>
+											<h5>Code on GitHub</h5>
+											<a href='https://github.com/Anoerak/llama-gpt'>
+												<img
+													// @ts-ignore
+													align='left'
+													src='https://github-readme-stats-git-main-anoerak.vercel.app/api/pin/?username=Anoerak&repo=llama-gpt&show_icons=true&line_height=27&title_color=6aa6f8&text_color=8a919a&icon_color=6aa6f8&bg_color=22272e&border_color=fd8331bf'
+													alt='fortune_quotes Github Repository'
+												/>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div className='right__container'>
+									<div className='medias'>
+										<Carousel
+											showArrows={false}
+											showThumbs={false}
+											showStatus={false}
+											showIndicators={true}
+											infiniteLoop={true}
+											autoPlay={true}
+											interval={10000}
+											transitionTime={1000}
+											stopOnHover={true}
+											emulateTouch={true}
+											dynamicHeight={true}
+											swipeable={true}
+											centerMode={false}
+											centerSlidePercentage={100}
+											thumbWidth={100}
+											selectedItem={0}
+											axis={'horizontal'}
+											verticalSwipe={'natural'}
+											swipeScrollTolerance={5}
+											useKeyboardArrows={true}
+											statusFormatter={(current, total) => `Current slide: ${current} / Total: ${total}`}
+											width={'100%'}
+											// @ts-ignore
+											height={'100%'}
+											maxHeight={'30%'}
+											className={'carousel'}
+										>
+											<div>
+												<img
+													// @ts-ignore
+													src={require('@Projects/SebGPT/desktop/SebGPT_screenshot1.webp')}
+													alt='SebGPT screenshot 1'
+												/>
+												<p className='legend'>Screenshot1</p>
+											</div>
+											<div>
+												<img
+													src={require('@Projects/SebGPT/desktop/SebGPT_screenshot2.webp')}
+													alt='SebGPT screenshot 2'
+												/>
+												<p className='legend'>Screenshot2</p>
+											</div>
+											<div>
+												<img
+													src={require('@Projects/SebGPT/desktop/SebGPT_screenshot3.webp')}
+													alt='SebGPT screenshot 3'
+												/>
+												<p className='legend'>Screenshot3</p>
+											</div>
+											<div>
+												<img
+													src={require('@Projects/SebGPT/desktop/SebGPT_screenshot4.webp')}
+													alt='SebGPT screenshot 4'
+												/>
+												<p className='legend'>Screenshot4</p>
+											</div>
+										</Carousel>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</main>

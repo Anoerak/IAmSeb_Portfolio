@@ -14,7 +14,6 @@ body > #root > header {
 body > #root > header > h1,
 body.dark > #root > header > h1 {
 	z-index: 15;
-	font-size: 2.5rem;
 	display: none;
 }
 
@@ -122,7 +121,7 @@ body > #root > header > nav > .menu__ul {
 	display: flex;
 	flex-direction: row;
 	gap: 2px;
-	margin: -3rem 0 0 0;
+	margin: -6rem 0 0 0;
 	padding: 0;
 }
 
@@ -223,6 +222,7 @@ body.dark > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
 	color: var(--dark__text__color);
 }
 body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
+	font-size: 1.5rem;
 	text-decoration: none;
 	color: var(--text__color);
 	width: 100%;
@@ -240,9 +240,6 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
 	body > #root > header {
 		min-height: 8rem;
 		justify-content: center;
-	}
-	body > #root > header > h1 {
-		font-size: 1rem;
 	}
 
 	/* Dark Mode Toggler */
@@ -348,11 +345,10 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
 
 	body > #root > header > nav > .menu__ul > .menu__li > .li__content > .li__link,
 	body.dark > #root > header > nav > .menu__ul > .menu__li > .li__content > .li__link {
+		font-size: 2rem;
 		color: var(--bg__color);
 		background-color: transparent;
-		font-size: 2em;
 		text-decoration: none;
-		font-weight: 500;
 		position: relative;
 		opacity: 0;
 		pointer-events: none;
@@ -394,7 +390,6 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
 		opacity: 0;
 		pointer-events: none;
 		color: #fff;
-		font-size: 1.5em;
 	}
 
 	body > #root > header > nav .close div::before,
@@ -425,10 +420,10 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
 		min-height: 8rem;
 		justify-content: center;
 	}
-	body > #root > header > h1 {
-		font-size: 1rem;
-	}
 
+	body > #root > header > nav > .menu__ul {
+		margin-top: -8rem;
+	}
 	/* Dark Mode Toggler */
 	body > #root > header > .toggler,
 	body > #root > header > .circle {

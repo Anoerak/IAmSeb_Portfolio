@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
-import { HashLink as Link } from 'react-router-hash-link'; // For smooth scrolling
+import { HashLink } from 'react-router-hash-link'; // For smooth scrolling
 import pictureOfMe from '@Images/portrait_me.webp';
-import BlinkingWords from '@Components/BlinkingWords/BlinkingWords';
 import Webdev from '@Logos/web_dev.png';
 import HookedCode from '@Logos/hooked_code.png';
-// import Terminal from '@Components/Terminal/Terminal';
-// import Card from '@Components/Card/Card';
-// import IAmSeb from '@Components/IAmSeb/IAmSeb';
+
+import TypeWriter from '@Components/TypeWriter/TypeWriter';
+import GlitchingText from '@Components/GlitchingText/GlitchingText';
+import GlitchingImg from '@Components/GlitchingImg/GlitchingImg';
+import BlinkingWords from '@Components/BlinkingWords/BlinkingWords';
+import SebGPT from '@Components/SebGPT/SebGPT';
 
 import './Home.css';
 
@@ -111,35 +113,6 @@ function Home() {
 		);
 		/* #endregion */
 
-		/* #region me-in-few-words Animation */
-		if (window.innerWidth >= 810) {
-			const topPart = document.querySelector('.top__part');
-
-			const line1 = document.querySelector('.line__1');
-			const line2 = document.querySelector('.line__2');
-			const line3 = document.querySelector('.line__3');
-			const line4 = document.querySelector('.line__4');
-
-			window.addEventListener('scroll', () => {
-				// @ts-ignore
-				if (window.scrollY > topPart.offsetTop - window.innerHeight / 2) {
-					// @ts-ignore
-					line1.style.animation =
-						'animated-text__1 4s steps(87, end) 1s 1 normal both, animated-cursor__1 500ms steps(87, end) 1s 5';
-					// @ts-ignore
-					line2.style.animation =
-						'animated-text__2 4s steps(75, end) 5s 1 normal both, animated-cursor__2 500ms steps(75, end) 5s 5';
-					// @ts-ignore
-					line3.style.animation =
-						'animated-text__3 4s steps(91, end) 9s 1 normal both, animated-cursor__3 500ms steps(91, end) 9s 5';
-					// @ts-ignore
-					line4.style.animation =
-						'animated-text__4 4s steps(77, end) 13s 1 normal both, animated-cursor__4 500ms steps(77, end) 13s infinite';
-				}
-			});
-		}
-		/* #endregion */
-
 		/* #region My Stack Animation */
 		const stackContainer1 = document.getElementById('stack__container__1');
 		const card1 = document.getElementById('card1'),
@@ -169,62 +142,71 @@ function Home() {
 		<>
 			<section id='about-me'>
 				<div className='left__container'>
-					<h2>
-						FULLSTACK - <span>{'{DEVELOPER}'}</span>
-					</h2>
-					<img src={pictureOfMe} alt='portrait of me' />
+					<GlitchingText
+						text='*****************************'
+						dataValue='JUNIOR {FULLSTACK} DEVELOPER'
+						className='title1'
+						tags='h2'
+					/>
+					<br />
+					<GlitchingImg img={pictureOfMe} alt='portrait B&W' />
 				</div>
 				<div className='right__container'>
-					<h2>SEBASTIEN P.</h2>
+					<GlitchingText text='************' dataValue='SEBASTIEN P.' className='title2' tags='h2' />
 				</div>
-				<Link to='#me-in-few-words' className='next__link'>
+				<HashLink to='#me-anchor' className='next__link'>
 					<div className='next__section__arrow'></div>
-				</Link>
+				</HashLink>
+				<SebGPT />
 			</section>
 
 			<section id='me-in-few-words'>
-				<h2>Who am I?</h2>
+				<h4 id='me-anchor'>Who am I?</h4>
 				<div className='top__part'>
 					<img src={Webdev} alt='Webdev' className='about__me__logo' />
-					<p className='line__1'>I am a Fullstack Developer with a passion for creating and developing web applications.</p>
-					<p className='line__2'>I am always looking for new challenges and opportunities to learn and grow.</p>
-					<p className='line__3'>When I am not coding, you can find me playing with my son, video games, or watching movies.</p>
+					<TypeWriter
+						data={[
+							{ text: 'I am a Fullstack Developer with a passion for creating and developing web applications.' },
+							{ text: 'I am always looking for new challenges and opportunities to learn and grow.' },
+							{ text: 'When I am not coding, you can find me playing with my son, video games, or watching movies.' },
+						]}
+					/>
 				</div>
 				<div className='bottom__part'>
 					<img src={HookedCode} alt='HookedCode' className='about__me__logo' />
-					<p className='line__4'>I started learning web development in 2021 and I have been hooked ever since.</p>
+					<TypeWriter data={[{ text: 'I started learning web development in 2021 and I have been hooked ever since.' }]} />
 				</div>
-				<Link to='#my-stack' className='next__link'>
+				<HashLink to='#my-stack' className='next__link'>
 					<div className='next__section__arrow'></div>
-				</Link>
+				</HashLink>
 			</section>
 
 			<section id='my-stack'>
-				<h2>My Tools </h2>
+				<h4>My Tools </h4>
 				<div id='stack__container__1' className='stack__container'>
 					<div id='card1' className='stack__card'>
-						<h3>Front-End</h3>
+						<h5>Front-End</h5>
 						<BlinkingWords words={frontStack} tag='front' />
 					</div>
 					<div id='card2' className='stack__card'>
-						<h3>Back-End</h3>
+						<h5>Back-End</h5>
 						<BlinkingWords words={backStack} tag='back' />
 					</div>
 					<div id='card3' className='stack__card'>
-						<h3>Others</h3>
+						<h5>Others</h5>
 						<BlinkingWords words={otherStack} tag='others' />
 					</div>
 				</div>
 
-				<h3>And I try to keep up with something new on a daily basis...</h3>
+				<h6>And I try to keep up with something new on a daily basis...</h6>
 
 				<div id='stack__container__2' className='stack__container'>
 					<div id='card4' className='stack__card'>
-						<h3>Front..</h3>
+						<h5>Front..</h5>
 						<BlinkingWords words={learningStack[0]} tag='learningFront' />
 					</div>
 					<div id='card5' className='stack__card'>
-						<h3>Back..</h3>
+						<h5>Back..</h5>
 						<BlinkingWords words={learningStack[1]} tag='learningBack' />
 					</div>
 				</div>

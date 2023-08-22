@@ -8,6 +8,7 @@ module.exports = {
 			'@Components': path.resolve(__dirname, 'src/components'),
 			'@Pages': path.resolve(__dirname, 'src/pages'),
 			'@Libs': path.resolve(__dirname, 'src/libs'),
+			'@Services': path.resolve(__dirname, 'src/services'),
 			'@Hooks': path.resolve(__dirname, 'src/libs/hooks'),
 			'@Styles': path.resolve(__dirname, 'src/libs/styles'),
 			'@Assets': path.resolve(__dirname, 'src/assets'),

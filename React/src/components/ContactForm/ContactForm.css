@@ -28,7 +28,6 @@ form > .input__field {
 }
 
 form > .input__field > label {
-	font-size: 1.25rem;
 	margin-bottom: 0.5rem;
 }
 
@@ -39,16 +38,14 @@ form > .input__field > textarea {
 	border-radius: 0.5rem;
 	border: none;
 	outline: none;
-	font-size: 1rem;
 	background-color: var(--bg__color);
 	color: var(--input-text);
-	font-weight: 600;
 	box-shadow: var(--box-shadows-light-outset);
 }
 body.dark form > .input__field > input,
 body.dark form > .input__field > textarea {
 	background-color: var(--dark__bg__color);
-	color: var(--input-text);
+	color: var(--dark-main-orange-color);
 	box-shadow: var(--box-shadows-dark-outset);
 }
 form > .input__field > input:focus,
@@ -71,7 +68,6 @@ form > .input__field > button {
 	border-radius: 0.5rem;
 	border: none;
 	outline: none;
-	font-size: 1rem;
 	background-color: var(--bg__color);
 	color: var(--text__color);
 	box-shadow: var(--box-shadows-light-outset);
@@ -91,7 +87,7 @@ body form > .input__field > button:hover {
 }
 body.dark form > .input__field > button:hover {
 	background-color: var(--dark__bg__color__2);
-	color: var(--input-text);
+	color: var(--dark-main-orange-color);
 	box-shadow: var(--box-shadows-dark-outset);
 }
 body form > .input__field > button:active {
@@ -101,7 +97,7 @@ body form > .input__field > button:active {
 }
 body.dark form > .input__field > button:active {
 	background-color: var(--dark__bg__color__2);
-	color: var(--input-text);
+	color: var(--dark-main-orange-color);
 	box-shadow: var(--box-shadows-dark-outset);
 }
 form > .input__field > button::after {
@@ -120,7 +116,7 @@ body.dark form > .input__field > button::after {
 form > .input__field > button:hover::after,
 body.dark form > .input__field > button:hover::after {
 	opacity: 1;
-	background-color: var(--input-text);
+	background-color: var(--dark-main-orange-color);
 	animation: bounce 0.75s ease-in-out infinite;
 }
 

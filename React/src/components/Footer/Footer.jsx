@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-// import { Link } from 'react-router-dom';
-import { HashLink as Link } from 'react-router-hash-link'; // For smooth scrolling
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link'; // For smooth scrolling
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import gitHubLogo from '@Logos/GitHub_logo2.webp';
@@ -12,7 +12,7 @@ function Footer() {
 	useEffect(() => {
 		// On scroll, if on desktop, the footer disappears or hamburger disappears
 		const footer = document.querySelector('footer');
-		footer.style.animation = 'fadingIn 0.5s ease-in-out forwards';
+		footer.style.animation = 'fadingIn 0.25s ease-in-out forwards, fadingOut 0.25s ease-in-out forwards';
 		window.addEventListener('scroll', () => {
 			if (window.innerWidth > 992) {
 				footer.style.animation = 'fadingOut 0.5s ease-in-out forwards';
@@ -25,7 +25,7 @@ function Footer() {
 
 		// On hover, the footer reappears
 		footer.addEventListener('mouseenter', () => {
-			footer.style.animation = 'fadingIn 0.5s ease-in-out forwards';
+			footer.style.animation = 'fadingIn 0.25s ease-in-out forwards';
 		});
 		/* #endregion */
 	}, []);
@@ -40,7 +40,7 @@ function Footer() {
 					<Link to='/contact' className='footer__link'>
 						<FontAwesomeIcon icon={faPaperPlane} />
 					</Link>
-					<Link Link to='https://github.com/Anoerak' className='footer__link' target='_blank' rel='noopener noreferrer'>
+					<Link to='https://github.com/Anoerak' className='footer__link' target='_blank' rel='noopener noreferrer'>
 						<img src={gitHubLogo} alt='GitHub_Logo' className='logo github' />
 					</Link>
 					<Link
@@ -54,9 +54,9 @@ function Footer() {
 				</div>
 			</div>
 			<div className='go__to__top__button'>
-				<Link to='#' className='go__to__top__link'>
+				<HashLink to='#' className='go__to__top__link'>
 					<div className='go__to__top__icon'></div>
-				</Link>
+				</HashLink>
 			</div>
 		</footer>
 	);

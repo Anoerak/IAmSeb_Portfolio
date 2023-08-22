@@ -36,7 +36,7 @@ function Header() {
 				navbar.style.animation = 'fadingOut 0.5s ease-in-out forwards';
 				// If the user is at the top of the page, the navbar reappears
 				if (window.pageYOffset === 0) {
-					navbar.style.animation = 'fadingIn 0.5s ease-in-out forwards';
+					navbar.style.animation = 'fadingIn 0.25s ease-in-out forwards';
 				}
 			}
 		});
@@ -44,7 +44,7 @@ function Header() {
 		// On hover, the navbar reappears
 		navbar.addEventListener('mouseenter', () => {
 			if (window.innerWidth >= 992 && window.pageYOffset !== 0) {
-				navbar.style.animation = 'fadingIn 0.5s ease-in-out forwards';
+				navbar.style.animation = 'fadingIn 0.25s ease-in-out forwards';
 			}
 		});
 		/* #endregion */

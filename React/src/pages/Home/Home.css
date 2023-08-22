@@ -16,31 +16,40 @@ body > #root > section#about-me {
 	align-items: flex-start;
 	justify-content: space-between;
 	position: relative;
+	margin-top: -3rem;
+}
+
+body > #root > section#about-me > .left__container #glitching-img-container .imgWrap img.red,
+body > #root > section#about-me > .left__container #glitching-img-container .imgWrap img.green,
+body > #root > section#about-me > .left__container #glitching-img-container .imgWrap img.blue {
+	filter: none;
+	transform: translate(-50%, -50%);
+}
+
+body > #root > section#about-me > .left__container #glitching-img-container .imgWrap img,
+body > #root > section#about-me > .left__container #glitching-img-container .imgWrap img.red,
+body > #root > section#about-me > .left__container #glitching-img-container .imgWrap img.green,
+body > #root > section#about-me > .left__container #glitching-img-container .imgWrap img.blue {
+	animation: none;
 }
 
 body > #root > section#about-me > .left__container h2,
 body > #root > section#about-me > .right__container h2 {
-	font-family: 'Noto Serif JP', serif;
-	font-size: 3.5rem;
 	color: var(--text__color);
 	text-shadow: -6px -6px 10px rgba(255, 255, 255, 1), 4px 4px 15px rgba(0, 0, 0, 0.15);
 	word-wrap: break-word;
-	max-width: 45rem;
+	padding: 0.5rem 1rem;
+	border-radius: 1rem;
+	box-shadow: var(--box-shadows-light-inset);
+	background-color: var(--bg__color__dark);
 }
 body.dark > #root > section#about-me > .left__container h2,
 body.dark > #root > section#about-me > .right__container h2 {
 	color: var(--dark__text__color);
 	text-shadow: -6px -6px 10px rgba(255, 255, 255, 0.1), 4px 4px 15px rgba(0, 0, 0, 1);
-}
-
-body > #root > section#about-me > .left__container img {
-	height: 18rem;
-	width: 100%;
-	object-fit: cover;
-	object-position: 100% 25%;
-}
-body.dark > #root > section#about-me > .left__container img {
-	filter: grayscale(100%);
+	box-shadow: var(--box-shadows-dark-inset);
+	background-color: var(--dark__bg__color);
+	position: relative;
 }
 
 body > #root > section#about-me > .right__container {
@@ -54,10 +63,9 @@ body > #root > section#about-me > .right__container {
 body > #root > section#about-me a,
 body > #root > section#me-in-few-words a {
 	text-decoration: none;
-	margin: auto;
+	margin: 0 45%;
 	position: absolute;
-	top: 10rem;
-	right: 5rem;
+	bottom: 0;
 }
 body > #root > section#about-me a:active ~ .next__section__arrow::before,
 body > #root > section#about-me a:active ~ .next__section__arrow::after,
@@ -69,9 +77,8 @@ body > #root > section#me-in-few-words a:active ~ .next__section__arrow::after {
 body > #root > section#about-me .next__section__arrow,
 body > #root > section#me-in-few-words .next__section__arrow {
 	margin: auto;
-	transform: translateX(-50%);
-	width: 50px;
-	height: 125px;
+	width: 120px;
+	height: 50px;
 	border-radius: 2rem 2rem 2rem 2rem;
 	background: var(--bg__color__dark);
 	/* transition: all 0.25s ease; */
@@ -119,12 +126,12 @@ body > #root > section#me-in-few-words .next__section__arrow::after {
 	background-color: var(--navigate-to-top-button-border);
 	transform: rotate(45deg);
 	position: absolute;
-	top: 80px;
+	top: 25px;
 }
 
 body > #root > section#about-me .next__section__arrow::before,
 body > #root > section#me-in-few-words .next__section__arrow::before {
-	left: 8px;
+	left: 43px;
 }
 body.dark > #root > section#about-me .next__section__arrow::before,
 body.dark > #root > section#about-me .next__section__arrow::after,
@@ -135,7 +142,7 @@ body.dark > #root > section#me-in-few-words .next__section__arrow::after {
 
 body > #root > section#about-me .next__section__arrow::after,
 body > #root > section#me-in-few-words .next__section__arrow::after {
-	right: 8px;
+	right: 43px;
 	transform: rotate(-45deg);
 }
 
@@ -146,7 +153,7 @@ body > #root > section#me-in-few-words .next__section__arrow:hover::after {
 	animation: jumpUpAndBackHome 0.75s ease infinite;
 }
 
-body > #root > section#about-me > .right__container h2 {
+body > #root > section#about-me > .right__container h4 {
 	text-align: right;
 }
 /* #endregion */
@@ -156,16 +163,17 @@ body > #root > section#me-in-few-words {
 	min-height: 100vh;
 	position: relative;
 	margin: 0 2rem;
+	padding: 0;
+	justify-content: space-evenly;
 }
 
-body > #root > section#me-in-few-words > h2 {
-	font-size: 1.75rem;
+body > #root > section#me-in-few-words > h4 {
 	color: var(--text__color);
 	box-shadow: var(--box-shadows-light-outset);
 	padding: 0.5rem 1rem;
 	border-radius: 1rem;
 }
-body.dark > #root > section#me-in-few-words > h2 {
+body.dark > #root > section#me-in-few-words > h4 {
 	color: var(--dark__text__color);
 	box-shadow: var(--box-shadows-dark-outset);
 }
@@ -176,7 +184,17 @@ body > #root > section#me-in-few-words > .bottom__part {
 	flex-direction: column;
 	align-items: center;
 	margin: 0 auto;
+	box-shadow: var(--box-shadows-light-inset);
+	border-radius: 1rem;
+	padding: 1rem;
+	background-color: var(--bg__color__dark);
 }
+body.dark > #root > section#me-in-few-words > .top__part,
+body.dark > #root > section#me-in-few-words > .bottom__part {
+	box-shadow: var(--box-shadows-dark-inset);
+	background-color: var(--dark__bg__color);
+}
+
 body > #root > section#me-in-few-words > .top__part > .about__me__logo,
 body > #root > section#me-in-few-words > .bottom__part > .about__me__logo {
 	height: 4rem;
@@ -186,25 +204,20 @@ body.dark > #root > section#me-in-few-words > .top__part > .about__me__logo,
 body.dark > #root > section#me-in-few-words > .bottom__part > .about__me__logo {
 	filter: invert(1);
 }
-body > #root > section#me-in-few-words > .top__part > .line__1,
-body > #root > section#me-in-few-words > .top__part > .line__2,
-body > #root > section#me-in-few-words > .top__part > .line__3,
-body > #root > section#me-in-few-words > .bottom__part > .line__4 {
-	font-size: 1.25rem;
-	word-spacing: 2px;
+body > #root > section#me-in-few-words > .top__part > .TypeWriter .line__1,
+body > #root > section#me-in-few-words > .top__part > .TypeWriter .line__2,
+body > #root > section#me-in-few-words > .top__part > .TypeWriter .line__3 {
 	color: var(--text__color);
-	text-align: center;
-	width: 0;
-	white-space: nowrap; /* keep text in one line */
-	overflow: hidden; /* hide text behind the cursor */
-	border-right: 1px solid transparent; /* create the typewriter cursor */
 }
-body.dark > #root > section#me-in-few-words > .top__part > .line__1,
-body.dark > #root > section#me-in-few-words > .top__part > .line__2,
-body.dark > #root > section#me-in-few-words > .top__part > .line__3,
-body.dark > #root > section#me-in-few-words > .bottom__part > .line__4 {
+body.dark > #root > section#me-in-few-words > .top__part > .TypeWriter .line__1,
+body.dark > #root > section#me-in-few-words > .top__part > .TypeWriter .line__2,
+body.dark > #root > section#me-in-few-words > .top__part > .TypeWriter .line__3 {
 	color: var(--dark__text__color);
 	border-right: 1px solid var(--dark__bg__color);
+}
+
+body > #root > section#me-in-few-words a.next__link {
+	bottom: -30px;
 }
 
 /* #endregion */
@@ -214,25 +227,22 @@ body > #root > section#coming-soon {
 	min-height: 110vh;
 }
 
-body > #root > section#coming-soon > h2 {
-	font-size: 2rem;
+body > #root > section#coming-soon > h4 {
 	color: var(--text__color);
 }
-body.dark > #root > section#coming-soon > h2 {
+body.dark > #root > section#coming-soon > h4 {
 	color: var(--dark__text__color);
 }
 
-body > #root > section#coming-soon > h3 {
-	font-size: 1.5rem;
+body > #root > section#coming-soon > h5 {
 	color: var(--text__color);
 }
-body.dark > #root > section#coming-soon > h3 {
+body.dark > #root > section#coming-soon > h5 {
 	color: var(--dark__text__color);
 }
 
 body > #root > section#coming-soon p {
 	margin-top: 2rem;
-	font-size: 1.25rem;
 	word-spacing: 4px;
 	color: var(--text__color);
 	text-align: center;
@@ -247,38 +257,33 @@ body > #root > section#coming-soon > .empty__space {
 	margin-top: 5rem;
 }
 
-body > #root > section#coming-soon > .empty__space > p {
-	font-size: 0.75rem;
-}
 /* #endregion */
 
 /* #region My Tools  */
 body > #root > section#my-stack {
 	min-height: 100vh;
-	padding: 6rem 0 13rem 0;
+	padding: 8rem 0 13rem 0;
 }
 
-body > #root > section#my-stack > h2 {
-	font-size: 1.75rem;
+body > #root > section#my-stack > h4 {
 	color: var(--text__color);
 	box-shadow: var(--box-shadows-light-outset);
 	padding: 0.5rem 1rem;
 	border-radius: 1rem;
 }
-body.dark > #root > section#my-stack > h2 {
+body.dark > #root > section#my-stack > h4 {
 	color: var(--dark__text__color);
 	box-shadow: var(--box-shadows-dark-outset);
 }
 
-body > #root > section#my-stack > h3 {
-	font-size: 1.25rem;
+body > #root > section#my-stack > h6 {
 	color: var(--text__color);
 	box-shadow: var(--box-shadows-light-outset);
 	padding: 0.5rem 1rem;
 	border-radius: 1rem;
 	margin-top: 5rem;
 }
-body.dark > #root > section#my-stack > h3 {
+body.dark > #root > section#my-stack > h6 {
 	color: var(--dark__text__color);
 	box-shadow: var(--box-shadows-dark-outset);
 }
@@ -318,15 +323,14 @@ body.dark > #root > section#my-stack > .stack__container > .stack__card:hover {
 	filter: brightness(1.5);
 }
 
-body > #root > section#my-stack > .stack__container > .stack__card > h3 {
-	font-size: 1rem;
+body > #root > section#my-stack > .stack__container > .stack__card > h5 {
 	color: var(--text__color);
 	box-shadow: var(--box-shadows-light-outset);
 	padding: 0.5rem 1rem;
 	margin: 2rem;
 	border-radius: 1rem;
 }
-body.dark > #root > section#my-stack > .stack__container > .stack__card > h3 {
+body.dark > #root > section#my-stack > .stack__container > .stack__card > h5 {
 	color: var(--dark__text__color);
 	box-shadow: var(--box-shadows-dark-outset);
 }
@@ -358,13 +362,13 @@ body.dark > #root > section#my-stack > .stack__container > .stack__card > ul > l
 /* #region Animations  */
 @keyframes jumpUpAndBackHome {
 	0% {
-		top: 80px;
+		top: 22.5px;
 	}
 	50% {
-		top: 75px;
+		top: 27.5px;
 	}
 	100% {
-		top: 80px;
+		top: 22.5px;
 	}
 }
 
@@ -498,19 +502,55 @@ body.dark > #root > section#my-stack > .stack__container > .stack__card > ul > l
 @media screen and (orientation: portrait) and (max-width: 600px) {
 	/* #region About Me */
 	body > #root > section#about-me {
+		margin-top: 0rem;
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-around;
 	}
 
-	body > div#root > section#about-me > div.left__container h2,
-	body > div#root > section#about-me > div.right__container h2 {
-		font-size: 2.5rem;
+	body > div#root > section#about-me div.left__container,
+	body > div#root > section#about-me div.right__container {
+		width: 100%;
+	}
+	body > div#root > section#about-me div.left__container h2.glitching-text,
+	body > div#root > section#about-me div.right__container h2.glitching-text,
+	body > div#root > section#about-me div.left__container h2.glitching-text::before,
+	body > div#root > section#about-me div.right__container h2.glitching-text::before,
+	body > div#root > section#about-me div.left__container h2.glitching-text::after,
+	body > div#root > section#about-me div.right__container h2.glitching-text::after {
+		animation: none;
+	}
+
+	body > div#root > section#about-me div.left__container h2 {
+		max-width: 90%;
+		margin: auto;
+		animation: none;
+	}
+	body > div#root > section#about-me div.left__container #glitching-img-container {
+		max-width: 100%;
+		margin-top: 2rem;
+	}
+	body > div#root > section#about-me div.left__container #glitching-img-container .imgWrap img,
+	body > div#root > section#about-me div.left__container #glitching-img-container .imgWrap img.red,
+	body > div#root > section#about-me div.left__container #glitching-img-container .imgWrap img.green,
+	body > div#root > section#about-me div.left__container #glitching-img-container .imgWrap img.blue {
+		width: 100%;
+		animation: none;
+	}
+	body > div#root > section#about-me div.left__container #glitching-img-container .imgWrap img.red,
+	body > div#root > section#about-me div.left__container #glitching-img-container .imgWrap img.green,
+	body > div#root > section#about-me div.left__container #glitching-img-container .imgWrap img.blue {
+		filter: none;
+		transform: translate(-50%, -50%);
+	}
+
+	body > div#root > section#about-me div.right__container h2 {
+		max-width: 100%;
+		margin: auto;
 	}
 	body > div#root > section#about-me a.next__link,
 	body > div#root > section#me-in-few-words a.next__link {
-		bottom: -15rem;
-		right: 33%;
+		bottom: 0;
 	}
 	body > div#root > section#about-me a,
 	body > div#root > section#about-me .next__section__arrow,
@@ -549,8 +589,7 @@ body.dark > #root > section#my-stack > .stack__container > .stack__card > ul > l
 		width: auto;
 	}
 	body div#root section#me-in-few-words a.next__link {
-		bottom: 40rem;
-		right: 38%;
+		bottom: 0;
 	}
 	body > #root > section#me-in-few-words div.top__part,
 	body > #root > section#me-in-few-words div.bottom__part {
@@ -566,7 +605,6 @@ body.dark > #root > section#my-stack > .stack__container > .stack__card > ul > l
 	body > #root > section#me-in-few-words div.top__part .line__2,
 	body > #root > section#me-in-few-words div.top__part .line__3,
 	body > #root > section#me-in-few-words div.bottom__part .line__4 {
-		font-size: 1rem;
 		text-align: justify;
 		white-space: normal;
 		overflow: visible;
@@ -591,13 +629,9 @@ body.dark > #root > section#my-stack > .stack__container > .stack__card > ul > l
 		height: 15rem;
 		margin: 1rem 0;
 	}
-	body > #root > section#my-stack > .stack__container > .stack__card > h3 {
-		font-size: 1.25rem;
-	}
 
-	body > #root > section#my-stack > h3 {
+	body > #root > section#my-stack > h5 {
 		margin-top: 2rem;
-		font-size: 1rem;
 		width: 80%;
 		padding: 1rem 1.5rem;
 	}
@@ -616,7 +650,6 @@ body.dark > #root > section#my-stack > .stack__container > .stack__card > ul > l
 			top: 22.5px;
 		}
 	}
-	/* #endregion */
 }
 
 @media screen and (orientation: landscape) and (max-width: 812px) {
@@ -630,9 +663,47 @@ body.dark > #root > section#my-stack > .stack__container > .stack__card > ul > l
 		justify-content: space-around;
 	}
 
-	body > div#root > section#about-me > div.left__container h2,
-	body > div#root > section#about-me > div.right__container h2 {
-		font-size: 2.5rem;
+	body > div#root > section#about-me .left__container,
+	body > div#root > section#about-me .right__container {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	body > div#root > section#about-me .left__container h2.glitching-text,
+	body > div#root > section#about-me .right__container h2.glitching-text,
+	body > div#root > section#about-me .left__container h2.glitching-text::before,
+	body > div#root > section#about-me .right__container h2.glitching-text::before,
+	body > div#root > section#about-me .left__container h2.glitching-text::after,
+	body > div#root > section#about-me .right__container h2.glitching-text::after {
+		animation: none;
+	}
+
+	body > div#root > section#about-me .left__container h2,
+	body > div#root > section#about-me .right__container h2 {
+		font-size: 1.75rem;
+		margin: 2rem auto;
+		animation: none;
+	}
+
+	body > div#root > section#about-me .left__container h2 {
+		max-width: 90%;
+	}
+	body > div#root > section#about-me #glitching-img-container {
+		max-width: 100%;
+		margin-top: 2rem;
+	}
+	body > div#root > section#about-me #glitching-img-container .imgWrap img,
+	body > div#root > section#about-me #glitching-img-container .imgWrap img.red,
+	body > div#root > section#about-me #glitching-img-container .imgWrap img.green,
+	body > div#root > section#about-me #glitching-img-container .imgWrap img.blue {
+		width: 100%;
+		animation: none;
+	}
+
+	body > div#root > section#about-me .right__container h2 {
+		max-width: 100%;
 	}
 
 	body > div#root > section#about-me a.next__link,
@@ -658,8 +729,7 @@ body.dark > #root > section#my-stack > .stack__container > .stack__card > ul > l
 	body > #root > section#me-in-few-words div.top__part .line__2,
 	body > #root > section#me-in-few-words div.top__part .line__3,
 	body > #root > section#me-in-few-words div.bottom__part .line__4 {
-		font-size: 1.25rem;
-		text-align: justify;
+		text-align: center;
 		white-space: normal;
 		overflow: visible;
 		animation: none;
@@ -670,9 +740,8 @@ body.dark > #root > section#my-stack > .stack__container > .stack__card > ul > l
 	body > #root > section#my-stack {
 		padding: 0;
 	}
-	body > #root > section#my-stack > h3 {
+	body > #root > section#my-stack > h5 {
 		margin-top: 2rem;
-		font-size: 1rem;
 		width: 80%;
 		padding: 1rem 1.5rem;
 	}
@@ -691,13 +760,34 @@ body.dark > #root > section#my-stack > .stack__container > .stack__card > ul > l
 	body > #root > section#about-me {
 		flex-direction: column;
 		align-items: center;
-		justify-content: space-around;
+		justify-content: none;
 		min-height: 80vh;
+		margin-bottom: 2rem;
 	}
 
-	body > div#root > section#about-me > div.left__container h2,
-	body > div#root > section#about-me > div.right__container h2 {
-		font-size: 2.5rem;
+	body > #root > section#about-me div.left__container,
+	body > #root > section#about-me div.right__container {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	body > #root > section#about-me div.left__container h2,
+	body > #root > section#about-me div.right__container h2 {
+		font-size: 2rem;
+	}
+
+	body > #root > section#about-me div.left__container #glitching-img-container {
+		max-width: 100%;
+		height: 20rem;
+		margin-top: 2rem;
+	}
+	body > #root > section#about-me div.left__container #glitching-img-container .imgWrap img,
+	body > #root > section#about-me div.left__container #glitching-img-container .imgWrap img.red,
+	body > #root > section#about-me div.left__container #glitching-img-container .imgWrap img.green,
+	body > #root > section#about-me div.left__container #glitching-img-container .imgWrap img.blue {
+		width: 100%;
 	}
 
 	body > div#root > section#about-me a.next__link,
@@ -715,18 +805,29 @@ body.dark > #root > section#my-stack > .stack__container > .stack__card > ul > l
 		width: 100%;
 		margin: 0;
 	}
-	body > #root > section#me-in-few-words div.top__part .line__1,
-	body > #root > section#me-in-few-words div.top__part .line__2,
-	body > #root > section#me-in-few-words div.top__part .line__3,
-	body > #root > section#me-in-few-words div.bottom__part .line__4 {
-		font-size: 0.82rem;
-	}
 }
 
 @media screen and (orientation: landscape) and (min-width: 812px) and (max-width: 1080px) {
+	body > #root > section#about-me div.left__container h2,
+	body > #root > section#about-me div.right__container h2 {
+		font-size: 2rem;
+	}
+
+	body > #root > section#about-me div.left__container #glitching-img-container {
+		max-width: 100%;
+		height: 20rem;
+		margin-top: 2rem;
+	}
+	body > #root > section#about-me div.left__container #glitching-img-container .imgWrap img,
+	body > #root > section#about-me div.left__container #glitching-img-container .imgWrap img.red,
+	body > #root > section#about-me div.left__container #glitching-img-container .imgWrap img.green,
+	body > #root > section#about-me div.left__container #glitching-img-container .imgWrap img.blue {
+		width: 100%;
+	}
+
 	body > #root > section#about-me a,
 	body > #root > section#me-in-few-words a {
-		top: 5rem;
+		bottom: 0;
 	}
 
 	body > #root > section#me-in-few-words {
@@ -739,10 +840,11 @@ body.dark > #root > section#my-stack > .stack__container > .stack__card > ul > l
 		width: 100%;
 		margin: 0;
 	}
-	body > #root > section#me-in-few-words div.top__part .line__1,
-	body > #root > section#me-in-few-words div.top__part .line__2,
-	body > #root > section#me-in-few-words div.top__part .line__3,
-	body > #root > section#me-in-few-words div.bottom__part .line__4 {
-		font-size: 1.1rem;
+}
+
+@media screen and (min-width: 1080px) and (max-width: 1250px) {
+	body > #root > section#about-me div.left__container h2,
+	body > #root > section#about-me div.right__container h2 {
+		font-size: 2rem;
 	}
 }

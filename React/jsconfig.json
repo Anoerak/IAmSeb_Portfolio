@@ -5,6 +5,7 @@
 			"@App/*": ["app/*"],
 			"@Components/*": ["components/*"],
 			"@Pages/*": ["pages/*"],
+			"@Services/*": ["services/*"],
 			"@Libs/*": ["libs/*"],
 			"@Hooks/*": ["libs/hooks/*"],
 			"@Styles/*": ["libs/styles/*"],
