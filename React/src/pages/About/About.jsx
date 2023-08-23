@@ -1,4 +1,5 @@
 import React from 'react';
+import GlitchingText from '@Components/GlitchingText/GlitchingText';
 
 import './About.css';
 
@@ -8,12 +9,12 @@ function About() {
 
 	return (
 		<section id='about'>
-			<h2>About Me</h2>
+			<GlitchingText text='********' dataValue='About Me' className='title1' tags='h2' />
 			<div className='GitHub__stats__container'>
-				<picture>
+				<picture className='GitHub__stats__container__1'>
 					<img src='https://streak-stats.demolab.com?user=Anoerak&theme=dark&mode=weekly' height='150' alt='GitHub Stats' />
 				</picture>
-				<picture>
+				<picture className='GitHub__stats__container__2'>
 					<img
 						src='https://github-readme-stats-git-main-anoerak.vercel.app/api/top-langs/?username=Anoerak&theme=dark&layout=compact&langs_count=8&hide=html'
 						alt='GitHub Stats'

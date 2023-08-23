@@ -40,6 +40,9 @@ body.dark .OpenAI .subtitle {
 }
 
 body .OpenAI button {
+	top: 0;
+	position: absolute;
+	right: 1rem;
 	border: none;
 	border-radius: 0.5rem;
 	padding: 0.5rem;
@@ -122,6 +125,14 @@ body.dark .OpenAI .answer #prompt::placeholder {
 body .OpenAI .answer p {
 	font-size: 0.9rem;
 	margin: 0.5rem;
+}
+body .OpenAI .answer p.gpt__comment {
+	font-size: 0.75rem;
+	font-style: italic;
+	color: var(--main-orange-color);
+}
+body.dark .OpenAI .answer p.gpt__comment {
+	color: var(--dark-main-orange-color);
 }
 
 /*

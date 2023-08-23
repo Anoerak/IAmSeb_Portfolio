@@ -39,12 +39,16 @@ function GlitchingText(props) {
 		};
 
 		// We wait 1 second before starting the subtitle effect
-		setTimeout(() => {
-			lettersEffect(title1, 20);
-		}, 1500);
-		setTimeout(() => {
-			lettersEffect(title2, 40);
-		}, 4000);
+		if (title1) {
+			setTimeout(() => {
+				lettersEffect(title1, 20);
+			}, 1500);
+		}
+		if (title2) {
+			setTimeout(() => {
+				lettersEffect(title2, 40);
+			}, 4000);
+		}
 	}, []);
 
 	return (

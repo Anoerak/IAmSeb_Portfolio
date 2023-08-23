@@ -6,13 +6,14 @@ import Frontend from '@Logos/frontend.png';
 import Backend from '@Logos/back-end.png';
 import Fullstack from '@Logos/full-stack.png';
 import Others from '@Logos/others-dev.png';
+import GlitchingText from '@Components/GlitchingText/GlitchingText';
 
 import './Projects.css';
 
 function Projects() {
 	return (
 		<section id='projects'>
-			<h2>Projects</h2>
+			<GlitchingText text='***********' dataValue='My Projects' className='title1' tags='h2' />
 			<div className='shortcut__buttons'>
 				<a href='#frontend' className='shortcut__button'>
 					<img src={Frontend} className='shortcut__button__icon' alt='Frontend' />

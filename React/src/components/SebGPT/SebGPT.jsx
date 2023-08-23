@@ -64,7 +64,17 @@ const SebGPT = () => {
 						}
 					}}
 				/>
-				{loadingToDisplay ? <p>Loading...</p> : <p>{errorToDisplay ? 'Error' : <>{answerToDisplay}</>}</p>}
+				{loadingToDisplay ? (
+					<>
+						<p>Loading...</p>
+						<p className='gpt__comment'>
+							It might take up to 20/30 seconds. I require a lot of ressources and my owner is a poor guy looking for a well
+							payed position :){' '}
+						</p>
+					</>
+				) : (
+					<p>{errorToDisplay ? 'Error' : <>{answerToDisplay}</>}</p>
+				)}
 			</div>
 			<button
 				className='button'

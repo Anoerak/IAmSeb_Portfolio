@@ -21,7 +21,7 @@ body > #root > section#about > h2 {
 	color: var(--text__color);
 	box-shadow: var(--box-shadows-light-thin);
 	border-radius: 1rem;
-	padding: 1rem 2rem;
+	padding: 0.5rem 1rem;
 	margin-bottom: 2rem;
 }
 body.dark > #root > section#about > h2 {
@@ -52,9 +52,17 @@ body > #root > section#about > .GitHub__stats__container > picture {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	opacity: 0;
 }
 body.dark > #root > section#about > .GitHub__stats__container > picture {
 	box-shadow: var(--box-shadows-dark-inset);
+}
+
+body > #root > section#about > .GitHub__stats__container > picture.GitHub__stats__container__1 {
+	animation: glitchingInElement 3s ease-in-out 1s forwards;
+}
+body > #root > section#about > .GitHub__stats__container > picture.GitHub__stats__container__2 {
+	animation: glitchingInElement 3.5s ease-in-out 1.5s forwards;
 }
 
 body > #root > section#about > .about__container {
@@ -102,6 +110,159 @@ body.dark > #root > section#about > .about__container > .about__text > p {
 		transform: translateY(0px);
 	}
 }
+
+@keyframes glitchingInElement {
+	0% {
+		opacity: 0;
+	}
+	1% {
+		opacity: 1;
+	}
+	2% {
+		opacity: 0;
+	}
+	3% {
+		opacity: 1;
+	}
+	4% {
+		opacity: 0;
+	}
+	5% {
+		opacity: 1;
+	}
+	6% {
+		opacity: 0;
+	}
+	7% {
+		opacity: 1;
+	}
+	8% {
+		opacity: 0;
+	}
+	9% {
+		opacity: 1;
+	}
+	10% {
+		opacity: 0;
+	}
+	11% {
+		opacity: 1;
+	}
+	19% {
+		opacity: 0;
+	}
+	20% {
+		opacity: 1;
+	}
+	21% {
+		opacity: 0;
+	}
+	22% {
+		opacity: 1;
+	}
+	23% {
+		opacity: 0;
+	}
+	24% {
+		opacity: 1;
+	}
+	31% {
+		opacity: 0;
+	}
+	32% {
+		opacity: 1;
+	}
+	33% {
+		opacity: 0;
+	}
+	34% {
+		opacity: 1;
+	}
+	35% {
+		opacity: 0;
+	}
+	36% {
+		opacity: 1;
+	}
+	37% {
+		opacity: 0;
+	}
+	38% {
+		opacity: 1;
+	}
+	39% {
+		opacity: 0;
+	}
+	40% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	51% {
+		opacity: 1;
+	}
+	52% {
+		opacity: 0;
+	}
+	53% {
+		opacity: 1;
+	}
+	54% {
+		opacity: 0;
+	}
+	55% {
+		opacity: 1;
+	}
+	65% {
+		opacity: 0;
+	}
+	66% {
+		opacity: 1;
+	}
+	67% {
+		opacity: 0;
+	}
+	68% {
+		opacity: 1;
+	}
+	69% {
+		opacity: 0;
+	}
+	80% {
+		opacity: 1;
+	}
+	81% {
+		opacity: 0;
+	}
+	82% {
+		opacity: 1;
+	}
+	83% {
+		opacity: 0;
+	}
+	84% {
+		opacity: 1;
+	}
+	85% {
+		opacity: 0;
+	}
+	86% {
+		opacity: 1;
+	}
+	87% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/*
+	========================
+		Responsive
+	========================
+*/
 
 @media screen and (orientation: portrait) and (max-width: 600px) {
 	body > #root > section#about {

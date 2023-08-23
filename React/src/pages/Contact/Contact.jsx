@@ -1,12 +1,14 @@
 import React from 'react';
 import ContactForm from '@Components/ContactForm/ContactForm';
+import GlitchingText from '@Components/GlitchingText/GlitchingText';
 
 import './Contact.css';
 
 function Contact() {
 	return (
 		<section id='contact'>
-			<h2>Code with Me</h2>
+			<GlitchingText text='************' dataValue='Code with Me' className='title1' tags='h2' />
+			{/* <h2>Code with Me</h2> */}
 			<p>
 				✌️ Hey there! <br />
 				<br />
