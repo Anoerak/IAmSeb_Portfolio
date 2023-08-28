@@ -31,7 +31,7 @@ const SebGPT = () => {
 				});
 
 				const gptResponseJson = await gptResponse.json();
-				console.log(gptResponseJson.choices[0].message.content);
+				// console.log(gptResponseJson.choices[0].message.content);
 				setLoadingToDisplay(false);
 				setAnswerToDisplay(gptResponseJson.choices[0].message.content);
 			} catch (error) {

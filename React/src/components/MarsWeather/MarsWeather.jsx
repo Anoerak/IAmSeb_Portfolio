@@ -7,9 +7,9 @@ import './MarsWeather.css';
 function MarsWeather() {
 	const { weather, loading, error } = useNASAAPI();
 
-	console.log(weather);
-	console.log(loading);
-	console.log(error);
+	// console.log(weather);
+	// console.log(loading);
+	// console.log(error);
 
 	return (
 		<div className='MarsWeather'>

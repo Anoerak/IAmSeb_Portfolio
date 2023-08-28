@@ -117,7 +117,7 @@ function Header() {
 		window.addEventListener('scroll', () => {
 			if (window.innerWidth <= 992 && tl.reversed()) {
 				window.scrollTo(0, 0);
-				console.log('scrolling');
+				// console.log('scrolling');
 			}
 		});
 		/* #endregion */
