@@ -12,10 +12,18 @@
 @import '~/templates/pages/contact/contact.scss';
 
 body {
-	background-color: $bg__color;
-	color: $text__color;
+	background-color: var(--bg__color);
+	color: var(--text__color);
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
+
 body.dark {
-	background-color: $dark__bg__color;
-	color: $dark__text__color;
+	background-color: var(--dark__bg__color);
+	color: var(--dark__text__color);
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

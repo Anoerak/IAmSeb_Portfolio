@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+/* #region  Desktop */
+h1 {
+	font-family: 'Orbitron', 'Noto Serif JP', sans-serif;
+	font-weight: 400;
+	font-size: 3rem;
+}
+h2 {
+	font-family: 'Orbitron', 'Noto Serif JP', sans-serif;
+	font-weight: 400;
+	font-size: 2.5rem;
+}
+h3 {
+	font-family: 'Orbitron', 'Noto Serif JP', sans-serif;
+	font-weight: 400;
+	font-size: 2rem;
+}
+h4 {
+	font-family: 'Orbitron', 'Noto Serif JP', sans-serif;
+	font-weight: 400;
+	font-size: 1.5rem;
+}
+h5 {
+	font-family: 'Orbitron', 'Noto Serif JP', sans-serif;
+	font-weight: 400;
+	font-size: 1.25rem;
+}
+h6 {
+	font-family: 'Orbitron', 'Noto Serif JP', sans-serif;
+	font-weight: 400;
+	font-size: 1rem;
+}
+p {
+	font-family: 'Rajdhani', 'Roboto Mono', sans-serif;
+	font-weight: 400;
+	font-size: 1rem;
+}
+a {
+	font-family: 'Rajdhani', 'Roboto Mono', sans-serif;
+	font-weight: 400;
+	font-size: 1rem;
+}
+li {
+	font-family: 'Rajdhani', 'Roboto Mono', sans-serif;
+	font-weight: 400;
+	font-size: 1rem;
+}
+span {
+	font-family: 'Rajdhani', 'Roboto Mono', sans-serif;
+	font-weight: 400;
+	font-size: 1rem;
+}
+small {
+	font-family: 'Rajdhani', 'Roboto Mono', sans-serif;
+	font-weight: 400;
+	font-size: 1rem;
+}
+strong {
+	font-family: 'Rajdhani', 'Roboto Mono', sans-serif;
+	font-weight: 400;
+	font-size: 1rem;
+}
+em {
+	font-family: 'Rajdhani', 'Roboto Mono', sans-serif;
+	font-weight: 400;
+	font-size: 1rem;
+}
+del {
+	font-family: 'Rajdhani', 'Roboto Mono', sans-serif;
+	font-weight: 400;
+	font-size: 1rem;
+}
+form {
+	font-family: 'Rajdhani', 'Roboto Mono', sans-serif;
+	font-weight: 400;
+	font-size: 1rem;
+}
+label {
+	font-family: 'Rajdhani', 'Roboto Mono', sans-serif;
+	font-weight: 400;
+	font-size: 1rem;
+}
+
+textarea {
+	font-family: 'Rajdhani', 'Roboto Mono', sans-serif;
+	font-weight: 400;
+	font-size: 1rem;
+}
+input {
+	font-family: 'Rajdhani', 'Roboto Mono', sans-serif;
+	font-weight: 400;
+	font-size: 1rem;
+}
+/* #endregion */
+
+@media screen and (max-width: 600px) {
+	h1 {
+		font-size: 1.5rem;
+	}
+	h2 {
+		font-size: 1.25rem;
+	}
+	h3 {
+		font-size: 1rem;
+	}
+	h4 {
+		font-size: 1rem;
+	}
+	h5 {
+		font-size: 1rem;
+	}
+	h6 {
+		font-size: 1rem;
+	}
+	p {
+		font-size: 1rem;
+	}
+	a {
+		font-size: 1rem;
+	}
+	li {
+		font-size: 1rem;
+	}
+	span {
+		font-size: 1rem;
+	}
+	small {
+		font-size: 1rem;
+	}
+	strong {
+		font-size: 1rem;
+	}
+	em {
+		font-size: 1rem;
+	}
+	del {
+		font-size: 1rem;
+	}
+	form {
+		font-size: 1rem;
+	}
+	label {
+		font-size: 1rem;
+	}
+	textarea {
+		font-size: 1rem;
+	}
+	input {
+		font-size: 1rem;
+	}
+}

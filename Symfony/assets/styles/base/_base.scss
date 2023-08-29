@@ -2,11 +2,45 @@
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
 
+:root {
+	--main-orange-color: #fd8331;
+	--dark-main-orange-color: #6ad09d;
+	/* Light Mode */
+	--bg__color: #f5f5f5;
+	--bg__color__dark: rgb(240, 240, 240);
+	--text__color: #000000;
+	--nav__bg__color: #f5f5f5;
+	--li__bg__color: #dddddd7e;
+	--li__hovered: rgba(253, 131, 49, 0.11);
+	--li__border__hovered: rgba(253, 131, 49, 0.502);
+	/* Dark Mode */
+	--dark__bg__color: #141414;
+	--dark__bg__color__2: #1c1c1c;
+	--dark__text__color: #ffffff;
+	--dark__nav__bg__color: #171717;
+	--dark__li__bg__color: #ffffff1a;
+	--dark__li__hovered: #ffffff0f;
+	--dark__li__border__hovered: #f0983a84;
+	/* Light Mode */
+	--navigate-to-top-button-border: #fd8331;
+	/* Dark Mode */
+	--dark__navigate-to-top-button-border: #fd8331;
+
+	--box-shadows-light-thin: 0px -3px 5px rgb(255, 255, 255), 0px 3px 5px rgba(0, 0, 0, 0.15);
+	--box-shadows-dark-thin: 0px -3px 5px rgb(255, 255, 255, 0.1), 0px 3px 5px rgba(0, 0, 0, 1);
+	--box-shadows-light-outset: -6px -6px 10px rgba(255, 255, 255, 1), 4px 4px 15px rgba(0, 0, 0, 0.15);
+	--box-shadows-dark-outset: -6px -6px 10px rgba(255, 255, 255, 0.1), 4px 4px 15px rgba(0, 0, 0, 1);
+	--box-shadows-light-inset: inset -2px -2px 5px rgb(255, 255, 255), inset 2px 2px 5px rgba(0, 0, 0, 0.15);
+	--box-shadows-dark-inset: inset -2px -2px 5px rgb(255, 255, 255, 0.1), inset 2px 2px 5px rgba(0, 0, 0, 1);
+	--box-shadow-dark-outset-hover: -6px -6px 10px rgba(255, 255, 255, 0.1), 4px 4px 15px rgba(0, 0, 0, 0.8);
+}
+
 /**
  * Set up a decent box model on the root element
  */
 html {
 	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 
 /**

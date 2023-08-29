@@ -1,51 +1,45 @@
-<header>
-			<div class='hamburger__menu__container'>
-				<div class='hamburger__menu__icon'></div>
+{% block header %}
+	<header>
+		<div class='hamburger__menu__container'>
+			<div class='hamburger__menu__icon'></div>
+		</div>
+
+		<h1 id='top'>I Am Seb</h1>
+
+		<div class='toggler'></div>
+		<button class='circle'></button>
+
+		<nav>
+			<h2>Sébastien P.</h2>
+			<div class='close'>
+				<div></div>
 			</div>
-
-			<h1 id='top'>I Am Seb</h1>
-
-			<div class='toggler'></div>
-			<button class='circle'></button>
-
-			<nav>
-				<h2>Sébastien P.</h2>
-				<div class='close'>
-					<div></div>
-				</div>
-				<ul class='menu__ul'>
-					<li class='menu__li'>
-						<div class='li__border'></div>
-						<div class='li__content'>
-							<a href="{{
-								path('app_home')
-							}}" class='li__link'>Home</a>
-						</div>
-					</li>
-					<li class='menu__li'>
-						<div class='li__border'></div>
-						<div class='li__content'>
-							<Link class='li__link' to='/projects'>
-								Projects
-							</Link>
-						</div>
-					</li>
-					<li class='menu__li'>
-						<div class='li__border'></div>
-						<div class='li__content'>
-							<Link class='li__link' to='/about'>
-								About
-							</Link>
-						</div>
-					</li>
-					<li class='menu__li'>
-						<div class='li__border'></div>
-						<div class='li__content'>
-							<Link class='li__link' to='/contact'>
-								Contact
-							</Link>
-						</div>
-					</li>
-				</ul>
-			</nav>
-		</header>
+			<ul class='menu__ul'>
+				<li class='menu__li'>
+					<div class='li__border'></div>
+					<div class='li__content'>
+						<a href="{{ path('app_home') }}" class='li__link'>Home</a>
+					</div>
+				</li>
+				<li class='menu__li'>
+					<div class='li__border'></div>
+					<div class='li__content'>
+						<a href="{{ path('app_projects') }}" class='li__link'>Projects</a>
+					</div>
+				</li>
+				<li class='menu__li'>
+					<div class='li__border'></div>
+					<div class='li__content'>
+						<a href="{{ path('app_about') }}" class='li__link'>About</a>
+					</div>
+				</li>
+				<li class='menu__li'>
+					<div class='li__border'></div>
+					<div class='li__content'>
+						<a href="{{ path('app_contact') }}" class='li__link'>Contact</a>
+					</div>
+				</li>
+			</ul>
+		</nav>
+	</header>
+{% endblock %}

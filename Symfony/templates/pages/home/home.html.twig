@@ -4,6 +4,66 @@
 {% endblock %}
 
 {% block body %}
-	{# React Component Home #}
-	<div id="home" {{react_component('pages/Home/Home')}}></div>
+	<section id='about-me'>
+		<div class='left__container'>
+			<div {{ react_component('components/GlitchingText/GlitchingText', { text: '*****************************', dataValue: 'JUNIOR {FULLSTACK} DEVELOPER', tags: 'h2', classValue: 'title1', } ) }}></div>
+			<br/>
+			<div {{ react_component('components/GlitchingImg/GlitchingImg', { img: 'build/assets/imgs/portrait_me.webp' , alt: 'portrait B&W' } )}}></div>
+		</div>
+		<div class='right__container'>
+			<div c {{ react_component('components/GlitchingText/GlitchingText', { text: '************', dataValue: 'SEBASTIEN P.', tags: 'h2', classValue: 'title2', } ) }}></div>
+		</div>
+		<a href='#me-anchor' class='next__link'>
+			<div class='next__section__arrow'></div>
+		</a>
+		<SebGPT/>
+	</section>
+
+	<section id='me-in-few-words'>
+		<h4 id='me-anchor'>Who am I?</h4>
+		<div class='top__part'>
+			<img src="{{asset('build/assets/logos/web_dev.png')}}" alt='Webdev' class='about__me__logo'>
+			<TypeWriter data={[ { text: 'I am a Fullstack Developer with a passion for creating and developing web applications.' } , { text: 'I am always looking for new challenges and opportunities to learn and grow.' }, { text: 'When I am not coding, you can find me playing with my son, video games, or watching movies.' }, ]}/>
+		</div>
+		<div class='bottom__part'>
+			<img src="{{ asset('build/assets/logos/hooked_code.png')}}" alt='HookedCode' class='about__me__logo'>
+			<TypeWriter data={[{ text: 'I started learning web development in 2021 and I have been hooked ever since.' } ]}/>
+		</div>
+		<a href='#my-stack' class='next__link'>
+			<div class='next__section__arrow'></div>
+		</a>
+	</section>
+
+	<section id='my-stack'>
+		<h4>My Tools
+		</h4>
+		<div id='stack__container__1' class='stack__container'>
+			<div id='card1' class='stack__card'>
+				<h5>Front-End</h5>
+				<BlinkingWords words={frontStack} tag='front'/>
+			</div>
+			<div id='card2' class='stack__card'>
+				<h5>Back-End</h5>
+				<BlinkingWords words={backStack} tag='back'/>
+			</div>
+			<div id='card3' class='stack__card'>
+				<h5>Others</h5>
+				<BlinkingWords words={otherStack} tag='others'/>
+			</div>
+		</div>
+
+		<h6>And I try to keep up with something new on a daily basis...</h6>
+
+		<div id='stack__container__2' class='stack__container'>
+			<div id='card4' class='stack__card'>
+				<h5>Front..</h5>
+				<BlinkingWords words={learningStack[0]} tag='learningFront'/>
+			</div>
+			<div id='card5' class='stack__card'>
+				<h5>Back..</h5>
+				<BlinkingWords words={learningStack[1]} tag='learningBack'/>
+			</div>
+		</div>
+	</section>
+
 {% endblock %}

@@ -34,11 +34,7 @@ require('@fortawesome/fontawesome-free/js/all.js');
 // Global JS goes here
 /* #region  Dark Mode based on user settings */
 // Dark Mode based on user settings
-if (
-	window.matchMedia &&
-	window.matchMedia('(prefers-color-scheme: dark)').matches &&
-	!document.body.classList.contains('dark')
-) {
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && !document.body.classList.contains('dark')) {
 	document.body.classList.add('dark');
 }
 

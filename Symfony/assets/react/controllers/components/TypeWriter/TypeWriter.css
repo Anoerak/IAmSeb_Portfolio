@@ -1,0 +1,10 @@
+.TypeWriter .line__1,
+.TypeWriter .line__2,
+.TypeWriter .line__3 {
+	word-spacing: 2px;
+	text-align: center;
+	width: 0;
+	white-space: nowrap; /* keep text in one line */
+	overflow: hidden; /* hide text behind the cursor */
+	border-right: 1px solid transparent; /* create the typewriter cursor */
+}

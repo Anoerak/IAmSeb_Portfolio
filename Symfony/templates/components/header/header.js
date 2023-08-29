@@ -23,32 +23,59 @@ document.querySelectorAll('.menu__li').forEach((li) => {
 // On scroll, if on desktop, the navbar disappears or hamburger disappears
 const navbar = document.querySelector('nav');
 window.addEventListener('scroll', () => {
-	if (window.innerWidth > 992) {
+	if (window.innerWidth >= 992) {
 		navbar.style.animation = 'fadingOut 0.5s ease-in-out forwards';
-		window.scrollY === 0 ? (navbar.style.animation = 'fadingIn 0.5s ease-in-out forwards') : null;
+		// If the user is at the top of the page, the navbar reappears
+		if (window.pageYOffset === 0) {
+			navbar.style.animation = 'fadingIn 0.25s ease-in-out forwards';
+		}
 	}
 });
 
 // On hover, the navbar reappears
 navbar.addEventListener('mouseenter', () => {
-	navbar.style.animation ? (navbar.style.animation = 'fadingIn 0.5s ease-in-out forwards') : null;
+	if (window.innerWidth >= 992 && window.pageYOffset !== 0) {
+		navbar.style.animation = 'fadingIn 0.25s ease-in-out forwards';
+	}
 });
 /* #endregion */
 
-// Dark Mode Checkbox Listener
-document.querySelector('#toggle_input').addEventListener('change', (e) => {
-	if (e.target.checked) {
+/* #region  Dark Mode */
+// Dark Mode based on user settings
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && !document.body.classList.contains('dark')) {
+	document.body.classList.add('dark');
+}
+
+// Watch for changes in the user settings.
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+	if (e.matches) {
 		document.body.classList.add('dark');
 	} else {
 		document.body.classList.remove('dark');
 	}
 });
 
+// Dark Mode Toggle
+const toggler = document.querySelector('.toggler');
+const circle = document.querySelector('.circle');
+toggler.addEventListener('click', () => {
+	if (document.body.classList.contains('dark')) {
+		document.body.classList.remove('dark');
+		toggler.classList.toggle('clicked');
+		circle.classList.toggle('dark');
+	} else {
+		document.body.classList.add('dark');
+		toggler.classList.toggle('clicked');
+		circle.classList.toggle('dark');
+	}
+});
+/* #endregion */
+
 /* #region  Responsive */
 // Responsive Navbar
 const open = document.querySelector('.hamburger__menu__container');
 const close = document.querySelector('.close');
-var tl = gsap.timeline({ defaults: { duration: 1, ease: 'expo.inOut' } });
+var tl = gsap.timeline({ defaults: { duration: 0.75, ease: 'expo.inOut' } });
 open.addEventListener('click', () => {
 	if (tl.reversed()) {
 		tl.play();
@@ -61,7 +88,7 @@ open.addEventListener('click', () => {
 	}
 	document.querySelectorAll('.li__content').forEach((li) => {
 		setTimeout(() => {
-			li.style.backgroundColor = 'black';
+			li.style.backgroundColor = 'var(--text__color)';
 		}, 1800);
 	});
 });
@@ -79,9 +106,9 @@ close.addEventListener('click', () => {
 
 // Scrolling is inactive when innerWidth < 992px and navbar is open
 window.addEventListener('scroll', () => {
-	if (window.innerWidth < 992 && tl.reversed()) {
+	if (window.innerWidth <= 992 && tl.reversed()) {
 		window.scrollTo(0, 0);
-		console.log('scrolling');
+		// console.log('scrolling');
 	}
 });
 /* #endregion */
