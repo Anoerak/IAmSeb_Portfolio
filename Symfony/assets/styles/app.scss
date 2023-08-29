@@ -6,7 +6,10 @@
 @import '~/templates/components/header/header.scss';
 @import '~/templates/components/footer/footer.scss';
 
-@import '~/templates/home/home.scss';
+@import '~/templates/pages/home/home.scss';
+@import '~/templates/pages/projects/projects.scss';
+@import '~/templates/pages/about/about.scss';
+@import '~/templates/pages/contact/contact.scss';
 
 body {
 	background-color: $bg__color;
