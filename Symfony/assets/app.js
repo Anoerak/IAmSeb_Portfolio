@@ -26,6 +26,7 @@ import './bootstrap';
 
 // JS files required from templates
 import('../templates/components/header/header.js');
+import('../templates/components/footer/footer.js');
 
 // FontAwesome required
 require('@fortawesome/fontawesome-free/css/all.min.css');

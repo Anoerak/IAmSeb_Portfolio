@@ -52,7 +52,7 @@ function GlitchingText(props) {
 	}, []);
 
 	return (
-		<props.tags class={classValue} data-value={dataValue}>
+		<props.tags className={classValue} data-value={dataValue}>
 			{text}
 		</props.tags>
 	);

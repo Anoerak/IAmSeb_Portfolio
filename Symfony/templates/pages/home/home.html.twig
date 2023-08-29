@@ -3,6 +3,7 @@
 {% block title %}I Am Seb w/ Symfony
 {% endblock %}
 
+
 {% block body %}
 	<section id='about-me'>
 		<div class='left__container'>
@@ -11,7 +12,7 @@
 			<div {{ react_component('components/GlitchingImg/GlitchingImg', { img: 'build/assets/imgs/portrait_me.webp' , alt: 'portrait B&W' } )}}></div>
 		</div>
 		<div class='right__container'>
-			<div c {{ react_component('components/GlitchingText/GlitchingText', { text: '************', dataValue: 'SEBASTIEN P.', tags: 'h2', classValue: 'title2', } ) }}></div>
+			<div {{ react_component('components/GlitchingText/GlitchingText', { text: '************', dataValue: 'SEBASTIEN P.', tags: 'h2', classValue: 'title2', } ) }}></div>
 		</div>
 		<a href='#me-anchor' class='next__link'>
 			<div class='next__section__arrow'></div>
@@ -23,7 +24,7 @@
 		<h4 id='me-anchor'>Who am I?</h4>
 		<div class='top__part'>
 			<img src="{{asset('build/assets/logos/web_dev.png')}}" alt='Webdev' class='about__me__logo'>
-			<TypeWriter data={[ { text: 'I am a Fullstack Developer with a passion for creating and developing web applications.' } , { text: 'I am always looking for new challenges and opportunities to learn and grow.' }, { text: 'When I am not coding, you can find me playing with my son, video games, or watching movies.' }, ]}/>
+			<div {{ react_component('components/TypeWriter/TypeWriter', { text1: 'I am a Fullstack Developer with a passion for creating and developing web applications.', text2: 'I am always looking for new challenges and opportunities to learn and grow.', text3: 'When I am not coding, you can find me playing with my son, video games, or watching movies.' } )}}></div>
 		</div>
 		<div class='bottom__part'>
 			<img src="{{ asset('build/assets/logos/hooked_code.png')}}" alt='HookedCode' class='about__me__logo'>
@@ -65,5 +66,7 @@
 			</div>
 		</div>
 	</section>
+
+	{{ encore_entry_script_tags('home') }}
 
 {% endblock %}

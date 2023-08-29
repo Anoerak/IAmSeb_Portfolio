@@ -1,27 +1,26 @@
 {% block footer %}
-
 	<footer>
 		<div class='footer__container'>
 			<div class='footer__copy'>
 				<span>&copy; 2023 IAmSeb</span>
 			</div>
 			<div class='footer__links'>
-				<a href="{{ path('app_home') }}" class="footer__link">
-					<FontAwesomeIcon icon={faPaperPlane}/>
+				<a href="{{ path('app_contact') }}" class="footer__link">
+					<i class="fa-regular fa-paper-plane"></i>
 				</a>
 				<a href='https://github.com/Anoerak' class='footer__link' target='_blank' rel='noopener noreferrer'>
-					<img src="{{ asset('build/assets/logos/GitHub_logo2.webp')}}" alt="GitHub_Logo">
+					<img src="{{ asset('build/assets/logos/GitHub_logo2.webp')}}" class="logo github" alt="GitHub_Logo">
 
 
 				</a>
 				<a href='https://www.linkedin.com/in/s%C3%A9bastien-p-48717074/' class='footer__link' target='_blank' rel='noopener noreferrer'>
-					<img src="{{ asset('build/assets/logos/LinkedIn_logo.webp')}}" alt="LinkedIn_Logo">
+					<img src="{{ asset('build/assets/logos/LinkedIn_logo.webp')}}" class="logo linkedin" alt="LinkedIn_Logo">
 
 				</a>
 			</div>
 		</div>
 		<div class='go__to__top__button'>
-			<a to='#' class='go__to__top__link'>
+			<a href='#' class='go__to__top__link'>
 				<div class='go__to__top__icon'></div>
 			</a>
 		</div>

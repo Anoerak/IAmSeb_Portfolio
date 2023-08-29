@@ -33,9 +33,13 @@ body {
 			&:active {
 				box-shadow: var(--box-shadows-light-inset);
 			}
-			&:hover .go__to__top__icon::before,
-			&:hover .go__to__top__icon::after {
-				animation: jumpUpAndBack 0.75s ease-in-out infinite;
+			&:hover {
+				.go__to__top__icon {
+					&::before,
+					&::after {
+						animation: jumpUpAndBack 0.75s ease-in-out infinite;
+					}
+				}
 			}
 			.go__to__top__link {
 				width: 50px;
@@ -94,6 +98,8 @@ body {
 						height: 1.25rem;
 					}
 					.logo {
+						width: auto;
+						height: 4.5rem;
 						&.github {
 							filter: invert(0);
 						}
@@ -104,10 +110,6 @@ body {
 							filter: invert(1);
 						}
 					}
-				}
-				.logo {
-					width: auto;
-					height: 4.5rem;
 				}
 			}
 		}

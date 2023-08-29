@@ -6,8 +6,6 @@ function GlitchingImg(props) {
 	const [img, setImg] = useState(props.img);
 	const [alt, setAlt] = useState(props.alt);
 
-	console.log(props.img, props.alt);
-
 	return (
 		<div id='glitching-img-container'>
 			<svg className='filter'>

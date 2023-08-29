@@ -3,10 +3,16 @@ import React, { useState, useEffect } from 'react';
 import './TypeWriter.css';
 
 const TypeWriter = (props) => {
-	const [data, setData] = useState(props.data);
+	const [data, setData] = useState([]);
 
 	useEffect(() => {
-		setData(props.data);
+		const text = Object.values(props);
+		text.forEach((value) => {
+			let i = {
+				text: value,
+			};
+			setData((text) => [...text, i]);
+		});
 
 		if ((window.innerWidth > 768 && window.innerWidth < window.innerHeight) || window.innerWidth > window.innerHeight) {
 			window.addEventListener('scroll', () => {
@@ -26,7 +32,9 @@ const TypeWriter = (props) => {
 				}
 			});
 		}
-	}, [props.data]);
+	}, [props]);
+
+	console.log(data);
 
 	return (
 		<div className='TypeWriter'>
