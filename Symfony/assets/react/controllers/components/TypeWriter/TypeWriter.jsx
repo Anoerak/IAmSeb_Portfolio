@@ -34,8 +34,6 @@ const TypeWriter = (props) => {
 		}
 	}, [props]);
 
-	console.log(data);
-
 	return (
 		<div className='TypeWriter'>
 			{data.map((item, index) => {

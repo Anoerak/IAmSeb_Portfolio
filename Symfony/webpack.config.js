@@ -16,7 +16,7 @@ Encore
 		from: './assets/libs/',
 		to: 'assets/[path]/[name].[ext]',
 		// to: 'images/[path][name].[hash:8].[ext]',
-		pattern: /\.(png|jpg|jpeg|webp|svg|mp4)$/,
+		pattern: /\.(png|jpg|jpeg|webp|svg|mp4|gif)$/,
 	})
 	// only needed for CDN's or subdirectory deploy
 	//.setManifestKeyPrefix('build/')
