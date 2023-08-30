@@ -5,6 +5,8 @@
 
 
 {% block body %}
+	{{ encore_entry_script_tags('home') }}
+
 	<section id='about-me'>
 		<div class='left__container'>
 			<div {{ react_component('components/GlitchingText/GlitchingText', { text: '*****************************', dataValue: 'JUNIOR {FULLSTACK} DEVELOPER', tags: 'h2', classValue: 'title1', } ) }}></div>
@@ -28,7 +30,7 @@
 		</div>
 		<div class='bottom__part'>
 			<img src="{{ asset('build/assets/logos/hooked_code.png')}}" alt='HookedCode' class='about__me__logo'>
-			<TypeWriter data={[{ text: 'I started learning web development in 2021 and I have been hooked ever since.' } ]}/>
+			<div {{ react_component('components/TypeWriter/TypeWriter', { text: 'I started learning web development in 2021 and I have been hooked ever since.' } )}}></div>
 		</div>
 		<a href='#my-stack' class='next__link'>
 			<div class='next__section__arrow'></div>
@@ -41,7 +43,8 @@
 		<div id='stack__container__1' class='stack__container'>
 			<div id='card1' class='stack__card'>
 				<h5>Front-End</h5>
-				<BlinkingWords words={frontStack} tag='front'/>
+				<div {{ react_component('components/BlinkingWord/BlinkingWords', { words: test , tag: front } )}}></div>
+				{# <BlinkingWords words={frontStack} tag='front'/> #}
 			</div>
 			<div id='card2' class='stack__card'>
 				<h5>Back-End</h5>
@@ -66,7 +69,5 @@
 			</div>
 		</div>
 	</section>
-
-	{{ encore_entry_script_tags('home') }}
 
 {% endblock %}

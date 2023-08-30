@@ -13,6 +13,7 @@ body {
 		justify-content: space-between;
 		align-items: center;
 		opacity: 0;
+
 		.go__to__top__button {
 			transform: translateX(-50%);
 			width: 50px;
@@ -27,24 +28,31 @@ body {
 			transition: all 0.25s ease;
 			cursor: pointer;
 			position: relative;
+
 			&:hover {
 				filter: brightness(1.03);
 			}
+
 			&:active {
 				box-shadow: var(--box-shadows-light-inset);
 			}
+
 			&:hover {
 				.go__to__top__icon {
+
 					&::before,
 					&::after {
 						animation: jumpUpAndBack 0.75s ease-in-out infinite;
 					}
 				}
 			}
+
 			.go__to__top__link {
 				width: 50px;
 				height: 50px;
+
 				.go__to__top__icon {
+
 					&::before,
 					&::after {
 						z-index: 10;
@@ -57,9 +65,11 @@ body {
 						position: absolute;
 						top: 25px;
 					}
+
 					&::before {
 						left: 8px;
 					}
+
 					&::after {
 						right: 8px;
 						transform: rotate(45deg);
@@ -67,15 +77,18 @@ body {
 				}
 			}
 		}
+
 		.footer__container {
 			display: flex;
 			flex-direction: row;
 			justify-content: space-around;
 			align-items: center;
+
 			.footer__copy {
 				min-width: 10rem;
 				margin-left: 1rem;
 			}
+
 			.footer__links {
 				box-shadow: var(--box-shadows-light-inset);
 				margin: auto;
@@ -86,28 +99,27 @@ body {
 				gap: 3rem;
 				padding: 0 3rem;
 				border-radius: 1rem;
+
 				a {
 					text-decoration: none;
 					margin-right: 2rem;
 					z-index: 15;
 				}
+
 				.footer__link {
 					margin: 1rem;
 					color: var(--text__color);
+
 					.svg-inline--fa {
 						height: 1.25rem;
 					}
+
 					.logo {
 						width: auto;
 						height: 4.5rem;
+
 						&.github {
 							filter: invert(0);
-						}
-						&.github {
-							filter: invert(1);
-						}
-						&.linkedin {
-							filter: invert(1);
 						}
 					}
 				}
@@ -120,32 +132,49 @@ body.dark {
 	footer {
 		background: var(--dark__bg__color);
 		box-shadow: var(--box-shadows-dark-thin);
+
 		.go__to__top__button {
 			background: var(--dark__bg__color);
 			transition: all 250ms ease-in-out;
 			box-shadow: var(--box-shadows-dark-outset);
+
 			&:hover {
 				filter: brightness(1.5);
 			}
+
 			&:active {
 				box-shadow: var(--box-shadows-dark-inset);
 			}
+
 			.go__to__top__link {
 				.go__to__top__icon {
 					&::before {
 						background-color: var(--dark__navigate-to-top-button-border);
 					}
+
 					&::after {
 						background-color: var(--dark__navigate-to-top-button-border);
 					}
 				}
 			}
 		}
+
 		.footer__container {
 			.footer__links {
 				box-shadow: var(--box-shadows-dark-inset);
+
 				.footer__link {
 					color: var(--dark__text__color);
+
+					.logo {
+						&.github {
+							filter: invert(1);
+						}
+
+						&.linkedin {
+							filter: invert(1);
+						}
+					}
 				}
 			}
 		}
@@ -161,9 +190,11 @@ body.dark {
 	0% {
 		top: 20px;
 	}
+
 	50% {
 		top: 25px;
 	}
+
 	100% {
 		top: 20px;
 	}
@@ -176,7 +207,7 @@ body.dark {
  */
 
 @media screen and (orientation: portrait) and (max-width: 600px) {
-	body > div#root > footer {
+	body>div#root>footer {
 		/* z-index: -10; */
 		position: initial;
 		height: auto;
@@ -187,7 +218,8 @@ body.dark {
 		gap: 1rem;
 		padding: 1rem 0;
 	}
-	body > div#root > footer div.go__to__top__button {
+
+	body>div#root>footer div.go__to__top__button {
 		position: fixed;
 		bottom: 1rem;
 		right: 0.5rem;
@@ -195,34 +227,41 @@ body.dark {
 		height: 40px;
 		border-radius: 0.5rem;
 	}
-	body > div#root > footer div.go__to__top__button .go__to__top__link {
+
+	body>div#root>footer div.go__to__top__button .go__to__top__link {
 		width: 40px;
 		height: 40px;
 	}
-	body > div#root > footer div.go__to__top__button .go__to__top__link .go__to__top__icon::before,
-	body > div#root > footer div.go__to__top__button .go__to__top__link .go__to__top__icon::after {
+
+	body>div#root>footer div.go__to__top__button .go__to__top__link .go__to__top__icon::before,
+	body>div#root>footer div.go__to__top__button .go__to__top__link .go__to__top__icon::after {
 		width: 15px;
 		height: 3px;
 		top: 20px;
 	}
-	body > div#root > footer div.go__to__top__button .go__to__top__link .go__to__top__icon::before {
+
+	body>div#root>footer div.go__to__top__button .go__to__top__link .go__to__top__icon::before {
 		left: 7.5px;
 	}
-	body > div#root > footer div.go__to__top__button .go__to__top__link .go__to__top__icon::after {
+
+	body>div#root>footer div.go__to__top__button .go__to__top__link .go__to__top__icon::after {
 		right: 7.5px;
 	}
-	body > div#root > footer div.footer__container {
+
+	body>div#root>footer div.footer__container {
 		width: 100%;
 		height: 100%;
 		flex-direction: column-reverse;
 		align-items: center;
 		justify-content: center;
 	}
-	body > div#root > footer div.footer__container .footer__copy {
+
+	body>div#root>footer div.footer__container .footer__copy {
 		margin: 1rem 0;
 		min-width: 0;
 	}
-	body > div#root > footer div.footer__container .footer__links {
+
+	body>div#root>footer div.footer__container .footer__links {
 		display: flex;
 		align-items: center;
 		justify-content: space-around;
@@ -231,11 +270,12 @@ body.dark {
 		width: 90%;
 		margin-top: 1rem;
 	}
-	body > div#root > footer div.footer__container .footer__links::before {
+
+	body>div#root>footer div.footer__container .footer__links::before {
 		content: none;
 	}
 
-	body > div#root > footer div.go__to__top__button {
+	body>div#root>footer div.go__to__top__button {
 		transform: translateX(0%);
 	}
 
@@ -243,9 +283,11 @@ body.dark {
 		0% {
 			top: 20px;
 		}
+
 		50% {
 			top: 25px;
 		}
+
 		100% {
 			top: 20px;
 		}
@@ -253,7 +295,7 @@ body.dark {
 }
 
 @media screen and (orientation: landscape) and (max-width: 812px) {
-	body > div#root > footer {
+	body>div#root>footer {
 		position: initial;
 		height: auto;
 		width: 100%;
@@ -263,7 +305,8 @@ body.dark {
 		gap: 1rem;
 		padding: 1rem 0;
 	}
-	body > div#root > footer div.go__to__top__button {
+
+	body>div#root>footer div.go__to__top__button {
 		position: fixed;
 		bottom: 1rem;
 		right: 0.5rem;
@@ -271,34 +314,41 @@ body.dark {
 		height: 40px;
 		border-radius: 0.5rem;
 	}
-	body > div#root > footer div.go__to__top__button .go__to__top__link {
+
+	body>div#root>footer div.go__to__top__button .go__to__top__link {
 		width: 40px;
 		height: 40px;
 	}
-	body > div#root > footer div.go__to__top__button .go__to__top__link .go__to__top__icon::before,
-	body > div#root > footer div.go__to__top__button .go__to__top__link .go__to__top__icon::after {
+
+	body>div#root>footer div.go__to__top__button .go__to__top__link .go__to__top__icon::before,
+	body>div#root>footer div.go__to__top__button .go__to__top__link .go__to__top__icon::after {
 		width: 15px;
 		height: 3px;
 		top: 20px;
 	}
-	body > div#root > footer div.go__to__top__button .go__to__top__link .go__to__top__icon::before {
+
+	body>div#root>footer div.go__to__top__button .go__to__top__link .go__to__top__icon::before {
 		left: 7.5px;
 	}
-	body > div#root > footer div.go__to__top__button .go__to__top__link .go__to__top__icon::after {
+
+	body>div#root>footer div.go__to__top__button .go__to__top__link .go__to__top__icon::after {
 		right: 7.5px;
 	}
-	body > div#root > footer div.footer__container {
+
+	body>div#root>footer div.footer__container {
 		width: 100%;
 		height: 100%;
 		flex-direction: column-reverse;
 		align-items: center;
 		justify-content: center;
 	}
-	body > div#root > footer div.footer__container .footer__copy {
+
+	body>div#root>footer div.footer__container .footer__copy {
 		margin: 1rem 0;
 		min-width: 0;
 	}
-	body > div#root > footer div.footer__container .footer__links {
+
+	body>div#root>footer div.footer__container .footer__links {
 		display: flex;
 		align-items: center;
 		justify-content: space-around;
@@ -307,16 +357,20 @@ body.dark {
 		width: 90%;
 		margin-top: 1rem;
 	}
-	body > div#root > footer div.footer__container .footer__links::before {
+
+	body>div#root>footer div.footer__container .footer__links::before {
 		content: none;
 	}
+
 	@keyframes jumpUpAndBack {
 		0% {
 			top: 20px;
 		}
+
 		50% {
 			top: 25px;
 		}
+
 		100% {
 			top: 20px;
 		}
