@@ -13,8 +13,73 @@ class HomeController extends AbstractController
     #[Route('/', name: 'app_home')]
     public function home(): Response
     {
+        $frontStack = [
+            'React',
+            'HTML5',
+            '',
+            '',
+            'JavaScript',
+            '',
+            'Styled Components',
+            '',
+            'Responsive Design',
+            '',
+            'Vue',
+            '',
+            'Material UI',
+            '',
+            'Redux',
+            '',
+            'CSS3',
+        ];
+
+        $backStack = [
+            '',
+            '',
+            '',
+            '',
+            '',
+            'GitHub',
+            'PHP',
+            'Node.js',
+            '',
+            'MySQL',
+            'Git',
+            'Express',
+            '',
+            'Mongoose',
+            'GitLab',
+            'Twig',
+            '',
+            '',
+            'PHPUnit',
+            'Postman',
+            '',
+            '',
+            '',
+            '',
+            'Symfony',
+            '',
+            'Composer',
+            'JWT',
+            'REST API',
+            'MongoDB',
+            '',
+            'APIplatform',
+        ];
+
+        $otherStack = ['Docker', '', 'MacOS', '', 'Windows', '', 'Apache', '', 'NGINX', '', '', 'Figma', 'Microsoft Suite'];
+
+        $learningStack = [
+            ['', '', 'Solid', '', '', '', '', '', 'Next.js', '', 'TypeScript'],
+            ['Ansible', '', '', '', 'OpenStack', '', 'DApp/Web3.0'],
+        ];
         return $this->render('pages/home/home.html.twig', [
             'controller_name' => 'HomeController',
+            'frontStack' => $frontStack,
+            'learningStack' => $learningStack,
+            'otherStack' => $otherStack,
+            'backStack' => $backStack,
         ]);
     }
 

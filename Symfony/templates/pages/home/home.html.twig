@@ -19,7 +19,7 @@
 		<a href='#me-anchor' class='next__link'>
 			<div class='next__section__arrow'></div>
 		</a>
-		<SebGPT/>
+		{# <SebGPT/> #}
 	</section>
 
 	<section id='me-in-few-words'>
@@ -43,16 +43,15 @@
 		<div id='stack__container__1' class='stack__container'>
 			<div id='card1' class='stack__card'>
 				<h5>Front-End</h5>
-				<div {{ react_component('components/BlinkingWord/BlinkingWords', { words: test , tag: front } )}}></div>
-				{# <BlinkingWords words={frontStack} tag='front'/> #}
+				<div {{ react_component('components/BlinkingWords/BlinkingWords', { words: frontStack , tag: 'front' } )}}></div>
 			</div>
 			<div id='card2' class='stack__card'>
 				<h5>Back-End</h5>
-				<BlinkingWords words={backStack} tag='back'/>
+				<div {{ react_component('components/BlinkingWords/BlinkingWords', { words: backStack , tag: 'back' } )}}></div>
 			</div>
 			<div id='card3' class='stack__card'>
 				<h5>Others</h5>
-				<BlinkingWords words={otherStack} tag='others'/>
+				<div {{ react_component('components/BlinkingWords/BlinkingWords', { words: otherStack , tag: 'others' } )}}></div>
 			</div>
 		</div>
 
@@ -61,11 +60,11 @@
 		<div id='stack__container__2' class='stack__container'>
 			<div id='card4' class='stack__card'>
 				<h5>Front..</h5>
-				<BlinkingWords words={learningStack[0]} tag='learningFront'/>
+				<div {{ react_component('components/BlinkingWords/BlinkingWords', { words: learningStack[0] , tag: 'learningFront' } )}}></div>
 			</div>
 			<div id='card5' class='stack__card'>
 				<h5>Back..</h5>
-				<BlinkingWords words={learningStack[1]} tag='learningBack'/>
+				<div {{ react_component('components/BlinkingWords/BlinkingWords', { words: learningStack[1] , tag: 'learningBack' } )}}></div>
 			</div>
 		</div>
 	</section>

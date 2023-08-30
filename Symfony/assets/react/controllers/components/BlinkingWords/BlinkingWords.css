@@ -2,16 +2,16 @@
 	/* Light Mode */
 	--blinking-color-start-end: #e2192d00;
 	--blinking-bg-middle: rgb(253, 131, 49, 0.8);
-	--text-shadow-star-end: 0 0 20px var(--blinking-color-start-end);
-	--text-shadow-middle: -5px -5px 20px var(--blinking-bg-middle), 5px -5px 20px var(--blinking-bg-middle),
-		5px 5px 20px var(--blinking-bg-middle), -5px 5px 20px var(--blinking-bg-middle);
+	--text-shadow-star-end: 0 0 15px var(--blinking-color-start-end);
+	--text-shadow-middle: -5px -5px 15px var(--blinking-bg-middle), 5px -5px 15px var(--blinking-bg-middle),
+		5px 5px 15px var(--blinking-bg-middle), -5px 5px 15px var(--blinking-bg-middle);
 
 	/* Dark Mode */
 	--dark__blinking-color-start-end: #ffffff;
 	--dark__blinking-bg-middle: rgb(253, 131, 49, 0.5);
-	--dark__text-shadow-star-end: 0 0 20px var(--dark__blinking-color-start-end);
-	--dark__text-shadow-middle: -5px -5px 20px var(--dark__blinking-bg-middle), 5px -5px 20px var(--dark__blinking-bg-middle),
-		5px 5px 20px var(--dark__blinking-bg-middle), -5px 5px 20px var(--dark__blinking-bg-middle);
+	--dark__text-shadow-start-end: 0 0 15px var(--dark__blinking-color-start-end);
+	--dark__text-shadow-middle: -5px -5px 15px var(--dark__blinking-bg-middle), 5px -5px 15px var(--dark__blinking-bg-middle),
+		5px 5px 15px var(--dark__blinking-bg-middle), -5px 5px 15px var(--dark__blinking-bg-middle);
 }
 
 svg text.blink {
@@ -32,7 +32,7 @@ body.dark svg text.blink {
 
 @keyframes blink {
 	0% {
-		text-shadow: var(--text-shadow-star-end);
+		text-shadow: var(--text-shadow-start-end);
 	}
 	20% {
 		fill: var(--blinking-bg-middle);
@@ -43,13 +43,13 @@ body.dark svg text.blink {
 		text-shadow: var(--text-shadow-middle);
 	}
 	100% {
-		text-shadow: var(--text-shadow-star-end);
+		text-shadow: var(--text-shadow-start-end);
 	}
 }
 
 @keyframes darkBlink {
 	0% {
-		text-shadow: var(--dark__text-shadow-star-end);
+		text-shadow: var(--dark__text-shadow-start-end);
 	}
 	20% {
 		fill: var(--dark__blinking-bg-middle);
@@ -60,7 +60,7 @@ body.dark svg text.blink {
 		text-shadow: var(--dark__text-shadow-middle);
 	}
 	100% {
-		text-shadow: var(--dark__text-shadow-star-end);
+		text-shadow: var(--dark__text-shadow-start-end);
 	}
 }
 
