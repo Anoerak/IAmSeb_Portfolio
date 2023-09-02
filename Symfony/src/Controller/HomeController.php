@@ -3,10 +3,13 @@
 namespace App\Controller;
 
 use App\Form\ContactType;
+use Symfony\Component\Mime\Email;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 
 class HomeController extends AbstractController
 {
@@ -104,20 +107,52 @@ class HomeController extends AbstractController
 
 
     #[Route('/contact', name: 'app_contact')]
-    public function contact(Request $request): Response
+    public function contact(Request $request, MailerInterface $mailer): Response
     {
+        // We check if there is a message in the request
+        $message = $request->query->get('message');
+
         $form = $this->createForm(ContactType::class);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            dump('success', $form->getData());
+            $data = $form->getData();
+
+            // We use the Message and MessageHandler to send the email
+            $email = (new Email())
+                ->from('daemon@iamseb.dev')
+                ->to('seb@iamseb.dev')
+                ->subject('Contact from portfolio')
+                ->text(
+                    'From: ' . $data['email'] . "\n" .
+                        'Name: ' . $data['name'] . "\n" .
+                        'Message: ' . $data['message']
+                );
+
+            try {
+                $mailer->send($email);
+
+                // return $this->redirect($this->generateUrl('app_contact', [
+                //     'message' => 'We\'ll be in touch soon!!',
+                // ]));
+
+            } catch (TransportExceptionInterface $e) {
+                return $this->redirect($this->generateUrl('app_contact', [
+                    'message' => $e->getMessage(),
+                ]));
+            } finally {
+                return $this->redirect($this->generateUrl('app_contact', [
+                    'message' => 'We\'ll be in touch soon!!',
+                ]));
+            }
         }
 
         return $this->render('pages/contact/contact.html.twig', [
             'controller_name' => 'HomeController',
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'message' => $message ?? '',
         ]);
     }
 }

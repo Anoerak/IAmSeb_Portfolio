@@ -8,12 +8,40 @@
 	{{ encore_entry_script_tags('home') }}
 
 	<section id='about-me'>
-		<div class='left__container'>
+		<div class='top__container'>
 			<div {{ react_component('components/GlitchingText/GlitchingText', { text: '*****************************', dataValue: 'JUNIOR {FULLSTACK} DEVELOPER', tags: 'h2', classValue: 'title1', } ) }}></div>
 			<br/>
-			<div {{ react_component('components/GlitchingImg/GlitchingImg', { img: 'build/assets/imgs/portrait_me.webp' , alt: 'portrait B&W' } )}}></div>
 		</div>
-		<div class='right__container'>
+		<div class="middle__container">
+			<div {{ react_component('components/GlitchingImg/GlitchingImg', { img: 'build/assets/imgs/portrait_me.webp' , alt: 'portrait B&W' } )}}></div>
+			<div class="welcome">
+				<div class="welcome__img">
+					<img src="{{ asset('build/assets/logos/welcome-back.png')}}" alt="Welcome Back sign"/>
+				</div>
+				<div class="message__container">
+					<div class="message">
+						<p>Welcome to my web development portfolio! Here, you’ll find a showcase of my skills, creativity, and dedication to the craft of web development.</p>
+						<p>This website is built using a modern JavaScript framework. Depending on your preference, you can choose to view this site in React, Vue, or Symfony.</p>
+						<p>So go ahead, explore, and enjoy your journey through my portfolio. I hope it inspires you as much as it has inspired me in creating it. Happy browsing!</p>
+					</div>
+					<div class="links__container">
+						<a href="https://iamseb.dev" class="framework react">
+							<img src="{{ asset('build/assets/logos/react-native.webp')}}" alt="Welcome Back sign" class="react__img"/>
+							React
+						</a>
+						<a href="https://iamseb.dev/vue" class="framework vue">
+							<img src="{{ asset('build/assets/logos/vuejs.webp')}}" alt="Welcome Back sign" class="vue__img"/>
+							Vue
+						</a>
+						<a href="https://iamseb.dev/symfony" class="framework symfony">
+							<img src="{{ asset('build/assets/logos/symfony.webp')}}" alt="Welcome Back sign" class="symfony__img"/>
+							Symfony
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='bottom__container'>
 			<div {{ react_component('components/GlitchingText/GlitchingText', { text: '************', dataValue: 'SEBASTIEN P.', tags: 'h2', classValue: 'title2', } ) }}></div>
 		</div>
 		<a href='#me-anchor' class='next__link'>
@@ -24,13 +52,21 @@
 
 	<section id='me-in-few-words'>
 		<h4 id='me-anchor'>Who am I?</h4>
-		<div class='top__part'>
-			<img src="{{asset('build/assets/logos/web_dev.png')}}" alt='Webdev' class='about__me__logo'>
-			<div {{ react_component('components/TypeWriter/TypeWriter', { text1: 'I am a Fullstack Developer with a passion for creating and developing web applications.', text2: 'I am always looking for new challenges and opportunities to learn and grow.', text3: 'When I am not coding, you can find me playing with my son, video games, or watching movies.' } )}}></div>
-		</div>
-		<div class='bottom__part'>
-			<img src="{{ asset('build/assets/logos/hooked_code.png')}}" alt='HookedCode' class='about__me__logo'>
-			<div {{ react_component('components/TypeWriter/TypeWriter', { text: 'I started learning web development in 2021 and I have been hooked ever since.' } )}}></div>
+		<div class="middle__container">
+			<div class="left__side">
+				<div class='top__part'>
+					<img src="{{asset('build/assets/logos/web_dev.png')}}" alt='Webdev' class='about__me__logo'>
+					<div {{ react_component('components/TypeWriter/TypeWriter', { text1: 'I am a Fullstack Developer with a passion for creating and developing web applications.', text2: 'I am always looking for new challenges and opportunities to learn and grow.', text3: 'When I am not coding, you can find me playing with my son, video games, or watching movies.' } )}}></div>
+				</div>
+				<div class='bottom__part'>
+					<img src="{{ asset('build/assets/logos/hooked_code.png')}}" alt='HookedCode' class='about__me__logo'>
+					<div {{ react_component('components/TypeWriter/TypeWriter', { text: 'I started learning web development in 2021 and I have been hooked ever since.' } )}}></div>
+				</div>
+			</div>
+			<div class="right__side">
+				<img src="{{ asset('build/assets/logos/bot.png')}}" alt="Little Bot Head">
+				<div {{ react_component('components/SebGPT/SebGPT')}}></div>
+			</div>
 		</div>
 		<a href='#my-stack' class='next__link'>
 			<div class='next__section__arrow'></div>

@@ -3,8 +3,8 @@
 }
 
 #glitching-img-container {
-	height: 15rem;
-	width: 30rem;
+	height: 20rem;
+	width: 40rem;
 	opacity: 0;
 	animation: fadeInImg 1s ease-in-out 3.75s forwards;
 }

@@ -1,9 +1,6 @@
 body .OpenAI {
-	position: absolute;
-	width: 50%;
-	height: 50%;
-	top: 22%;
-	right: 0;
+	width: 95%;
+	position: relative;
 	box-shadow: var(--box-shadows-light-outset);
 	border-radius: 1rem;
 	padding: 1rem;

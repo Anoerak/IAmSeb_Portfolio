@@ -60,12 +60,12 @@ const learningStack = [
 ];
 
 /* #region Landing Page Animation */
-const leftContainer = document.querySelector('.left__container');
-const rightContainer = document.querySelector('.right__container');
-const nextSectionArrow = document.querySelector('.next__section__arrow');
+const topContainer = document.querySelector('.top__container'),
+	bottomContainer = document.querySelector('.bottom__container'),
+	nextSectionArrow = document.querySelector('.next__section__arrow');
 
 gsap.fromTo(
-	leftContainer,
+	topContainer,
 	{ x: '-200%' },
 	{
 		duration: 2,
@@ -74,7 +74,7 @@ gsap.fromTo(
 	}
 );
 gsap.fromTo(
-	rightContainer,
+	bottomContainer,
 	{ x: '200%' },
 	{
 		duration: 2,

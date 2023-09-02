@@ -19,6 +19,13 @@ section {
 			padding: 0.5rem 1rem;
 			margin-bottom: 2rem;
 		}
+
+		.message {
+			box-shadow: var(--box-shadows-light-outset);
+			padding: 1rem 2rem;
+			border-radius: 1rem;
+			margin-top: 4rem;
+		}
 	}
 }
 
@@ -31,6 +38,10 @@ body.dark {
 			h2 {
 				color: var(--dark__text__color);
 				box-shadow: var(--box-shadows-dark-thin);
+			}
+
+			.message {
+				box-shadow: var(--box-shadows-dark-outset);
 			}
 		}
 	}
