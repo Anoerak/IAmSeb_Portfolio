@@ -1,9 +1,6 @@
 body .OpenAI {
-	position: absolute;
-	width: 50%;
-	height: 50%;
-	top: 22%;
-	right: 0;
+	width: 95%;
+	position: relative;
 	box-shadow: var(--box-shadows-light-outset);
 	border-radius: 1rem;
 	padding: 1rem;
@@ -295,7 +292,12 @@ body.dark .OpenAI .answer p.gpt__comment {
 
 @media screen and (orientation: portrait) and (max-width: 600px) {
 	body .OpenAI {
-		display: none;
+		/* display: none; */
+		width: 80%;
+		margin: 0;
+	}
+	body .OpenAI .button {
+		top: 4.25rem;
 	}
 }
 

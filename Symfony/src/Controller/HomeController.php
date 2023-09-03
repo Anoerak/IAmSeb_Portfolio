@@ -120,7 +120,6 @@ class HomeController extends AbstractController
 
             $data = $form->getData();
 
-            // We use the Message and MessageHandler to send the email
             $email = (new Email())
                 ->from('daemon@iamseb.dev')
                 ->to('seb@iamseb.dev')
@@ -133,11 +132,6 @@ class HomeController extends AbstractController
 
             try {
                 $mailer->send($email);
-
-                // return $this->redirect($this->generateUrl('app_contact', [
-                //     'message' => 'We\'ll be in touch soon!!',
-                // ]));
-
             } catch (TransportExceptionInterface $e) {
                 return $this->redirect($this->generateUrl('app_contact', [
                     'message' => $e->getMessage(),

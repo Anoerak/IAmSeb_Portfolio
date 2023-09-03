@@ -10,13 +10,16 @@ body {
 		justify-content: flex-start;
 		min-height: 10rem;
 		animation: fadingIn 0.5s ease;
+
 		h1 {
 			z-index: 15;
 			display: none;
 		}
+
 		h2 {
 			opacity: 0;
 		}
+
 		.toggler {
 			display: block;
 			position: fixed;
@@ -31,6 +34,7 @@ body {
 			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 			transition: all 300ms ease-in-out;
 			will-change: transform;
+
 			&::after {
 				content: '';
 				position: fixed;
@@ -40,11 +44,13 @@ body {
 				top: 15px;
 				background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/626120/moon_copy.svg) no-repeat;
 			}
+
 			&:hover {
 				background-color: #555;
 				transform: rotate(-45deg);
 			}
 		}
+
 		.circle {
 			border: none;
 			display: block;
@@ -63,16 +69,19 @@ body {
 			backface-visibility: hidden;
 			will-change: transform;
 			perspective: 1000;
+
 			&.clicked {
 				transform: scale(128) translateZ(0);
 			}
 		}
+
 		nav {
 			position: fixed;
 			width: 80%;
 			border-radius: 5rem;
 			/* margin-top: 1.5rem; */
 			z-index: 10;
+
 			.menu__ul {
 				/* background-color: var(--bg__color); */
 				/* overflow: hidden; */
@@ -84,11 +93,13 @@ body {
 				gap: 2px;
 				margin: -6rem 0 0 0;
 				padding: 0;
-				&:hover > .menu__li {
+
+				&:hover>.menu__li {
 					.li__border {
 						opacity: 1;
 					}
 				}
+
 				.menu__li {
 					margin: 0;
 					width: 25%;
@@ -100,30 +111,35 @@ body {
 					cursor: pointer;
 					transition: all 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 					box-shadow: var(--box-shadows-light-outset);
+
 					&:active {
 						box-shadow: var(--box-shadows-light-inset);
 					}
+
 					&:nth-child(1) {
 						border-radius: 5rem 1rem 1rem 5rem;
 					}
+
 					&:nth-child(2),
 					&:nth-child(3) {
 						border-radius: 0.25rem;
 					}
+
 					&:nth-child(4) {
 						border-radius: 1rem 5rem 5rem 1rem;
 					}
+
 					&:hover::before {
 						opacity: 1;
 					}
+
 					.li__border {
-						background: radial-gradient(
-							350px circle at var(--mouse-x) var(--mouse-y),
-							var(--li__border__hovered),
-							transparent 40%
-						);
+						background: radial-gradient(350px circle at var(--mouse-x) var(--mouse-y),
+								var(--li__border__hovered),
+								transparent 40%);
 						z-index: 1;
 					}
+
 					&::before,
 					.li__border {
 						content: '';
@@ -137,10 +153,12 @@ body {
 						transition: all 0.5s ease-in-out;
 						z-index: 2;
 					}
+
 					&::before {
 						background: radial-gradient(700px circle at var(--mouse-x) var(--mouse-y), var(--li__hovered), transparent 40%);
 						z-index: 3;
 					}
+
 					.li__content {
 						display: flex;
 						flex-direction: column;
@@ -152,6 +170,7 @@ body {
 						margin: 1px;
 						position: relative;
 						z-index: 2;
+
 						a {
 							font-size: 1.5rem;
 							text-decoration: none;
@@ -171,6 +190,7 @@ body.dark {
 	header {
 		.toggler {
 			background-color: #eee;
+
 			&::after {
 				content: '';
 				position: fixed;
@@ -182,31 +202,37 @@ body.dark {
 			}
 		}
 	}
+
 	nav {
+
 		// 		background-color: var(--dark__bg__color);
 		.menu__ul {
+
 			// 			background-color: var(--dark__bg__color);
 			.menu__li {
 				background-color: var(--dark__bg__color);
 				transition: all 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 				box-shadow: var(--box-shadows-dark-outset);
+
 				&:active {
 					box-shadow: var(--box-shadows-dark-inset);
 				}
+
 				&::before {
 					background: radial-gradient(700px circle at var(--mouse-x) var(--mouse-y), var(--dark__li__hovered), transparent 40%);
 					z-index: 3;
 				}
+
 				.li__border {
-					background: radial-gradient(
-						350px circle at var(--mouse-x) var(--mouse-y),
-						var(--dark__li__border__hovered),
-						transparent 40%
-					);
+					background: radial-gradient(350px circle at var(--mouse-x) var(--mouse-y),
+							var(--dark__li__border__hovered),
+							transparent 40%);
 					z-index: 1;
 				}
+
 				.li__content {
 					background-color: var(--dark__nav__bg__color);
+
 					a {
 						color: var(--dark__text__color);
 					}
@@ -223,181 +249,199 @@ body.dark {
 */
 
 @media screen and (orientation: portrait) and (max-width: 600px) {
-	body > #root > header {
-		min-height: 8rem;
-		justify-content: center;
+	body {
+		header {
+			min-height: 8rem;
+			justify-content: center;
+
+			.toggler,
+			.circle {
+				left: 24px;
+			}
+
+			.hamburger__menu__container {
+				cursor: pointer;
+				position: fixed;
+				top: 5%;
+				right: 5%;
+				width: 30px;
+				height: 20px;
+				text-align: initial;
+				z-index: 10;
+
+				.hamburger__menu__icon {
+					width: 30px;
+					height: 4px;
+					background: var(--text__color);
+
+					&::before,
+					&::after {
+						content: '';
+						position: absolute;
+						width: 30px;
+						height: 4px;
+						background: var(--text__color);
+					}
+
+					&::before {
+						margin-top: 9px;
+					}
+
+					&::after {
+						margin-top: 18px;
+					}
+				}
+			}
+
+			nav {
+				/* position: absolute; */
+				width: 100%;
+				height: 30px;
+				max-height: none;
+				border-radius: 0;
+				background: var(--text__color);
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				right: -200vw;
+				top: 50vh;
+				z-index: 1000;
+
+				.menu__ul {
+					list-style: none;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					background-color: var(--text__color);
+					border-radius: 0;
+					width: inherit;
+					margin-top: -3rem;
+
+					.menu__li {
+						&:nth-child(-n + 4) {
+							margin: 50px 0;
+							border: none;
+							background-color: transparent;
+							box-shadow: none;
+							border-radius: 2rem;
+							min-width: fit-content;
+						}
+
+						&::before,
+						.li__border {
+							min-width: fit-content;
+							padding: 0 1rem;
+						}
+
+						.li__content {
+							background-color: transparent;
+							min-width: fit-content;
+							padding: 0 1rem;
+
+							.li__link {
+								font-size: 2rem;
+								color: var(--bg__color);
+								background-color: transparent;
+								text-decoration: none;
+								position: relative;
+								opacity: 0;
+								pointer-events: none;
+							}
+						}
+
+						a {
+							&:after {
+								content: '';
+								width: 100%;
+								position: absolute;
+								height: 3px;
+								border-radius: 5px;
+								background: #fff;
+								bottom: -10px;
+								left: 0;
+								transform-origin: left;
+								transition: transform 0.5s ease;
+								transform: scaleX(0);
+							}
+
+							&:hover {
+								&:after {
+									transform: scaleX(1);
+								}
+							}
+						}
+					}
+				}
+
+				.close {
+					width: 30px;
+					height: 30px;
+					position: absolute;
+					top: 6%;
+					right: 5%;
+					cursor: pointer;
+					opacity: 0;
+					pointer-events: none;
+
+					div {
+
+						&::before,
+						&::after {
+							content: '';
+							position: absolute;
+							width: 30px;
+							height: 4px;
+							background: #fff;
+							transition: background 0.5s ease;
+						}
+
+						&::before {
+							transform: rotate(-45deg);
+						}
+
+						&::after {
+							transform: rotate(45deg);
+						}
+					}
+
+					&:hover {
+						div {
+
+							&::before,
+							&::after {
+								background: rgb(209, 3, 3);
+							}
+						}
+					}
+				}
+
+				h2 {
+					position: absolute;
+					top: 5%;
+					left: 5%;
+					opacity: 0;
+					pointer-events: none;
+					color: #fff;
+				}
+			}
+		}
 	}
 
-	/* Dark Mode Toggler */
-	body > #root > header > .toggler,
-	body > #root > header > .circle {
-		left: 24px;
-	}
 
-	/* Hamburger Menu Icon */
-	body > #root > header > .hamburger__menu__container {
-		cursor: pointer;
-		position: fixed;
-		top: 5%;
-		right: 5%;
-		width: 30px;
-		height: 20px;
-		text-align: initial;
-		z-index: 10;
-	}
+	body.dark {
+		header {
+			.hamburger__menu__container {
+				.hamburger__menu__icon {
+					background: var(--dark__text__color);
 
-	body.dark > #root > header > .hamburger__menu__container > .hamburger__menu__icon {
-		background: var(--dark__text__color);
-	}
-	body > #root > header > .hamburger__menu__container > .hamburger__menu__icon {
-		width: 30px;
-		height: 4px;
-		background: var(--text__color);
-	}
-
-	body.dark > #root > header > .hamburger__menu__container > .hamburger__menu__icon::before,
-	body.dark > #root > header > .hamburger__menu__container > .hamburger__menu__icon::after {
-		background: var(--dark__text__color);
-	}
-	body > #root > header > .hamburger__menu__container > .hamburger__menu__icon::before,
-	body > #root > header > .hamburger__menu__container > .hamburger__menu__icon::after {
-		content: '';
-		position: absolute;
-		width: 30px;
-		height: 4px;
-		background: var(--text__color);
-	}
-
-	.hamburger__menu__icon::before {
-		margin-top: 9px;
-	}
-
-	.hamburger__menu__icon::after {
-		margin-top: 18px;
-	}
-
-	/* Responsive Menu */
-	body > #root > header > nav,
-	body.dark > #root > header > nav {
-		/* position: absolute; */
-		width: 100%;
-		height: 30px;
-		max-height: none;
-		border-radius: 0;
-		background: var(--text__color);
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		right: -200vw;
-		top: 50vh;
-		z-index: 1000;
-	}
-
-	body > #root > header > nav > .menu__ul,
-	body.dark > #root > header > nav > .menu__ul {
-		list-style: none;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		background-color: var(--text__color);
-		border-radius: 0;
-		width: inherit;
-		margin-top: -3rem;
-	}
-
-	body > #root > header > nav > .menu__ul > .menu__li:nth-child(-n + 4),
-	body.dark > #root > header > nav > .menu__ul > .menu__li:nth-child(-n + 4) {
-		margin: 50px 0;
-		border: none;
-		background-color: transparent;
-		box-shadow: none;
-		border-radius: 2rem;
-		min-width: fit-content;
-	}
-
-	.menu__li::before,
-	.menu__li > .li__border {
-		min-width: fit-content;
-		padding: 0 1rem;
-	}
-
-	body > #root > header > nav > .menu__ul > .menu__li > .li__content,
-	body.dark > #root > header > nav > .menu__ul > .menu__li > .li__content {
-		background-color: transparent;
-		min-width: fit-content;
-		padding: 0 1rem;
-	}
-
-	body > #root > header > nav > .menu__ul > .menu__li > .li__content > .li__link,
-	body.dark > #root > header > nav > .menu__ul > .menu__li > .li__content > .li__link {
-		font-size: 2rem;
-		color: var(--bg__color);
-		background-color: transparent;
-		text-decoration: none;
-		position: relative;
-		opacity: 0;
-		pointer-events: none;
-	}
-
-	body > #root > header > nav ul li a:after {
-		content: '';
-		width: 100%;
-		position: absolute;
-		height: 3px;
-		border-radius: 5px;
-		background: #fff;
-		bottom: -10px;
-		left: 0;
-		transform-origin: left;
-		transition: transform 0.5s ease;
-		transform: scaleX(0);
-	}
-
-	body > #root > header > nav ul li a:hover:after {
-		transform: scaleX(1);
-	}
-
-	body > #root > header > nav .close {
-		width: 30px;
-		height: 30px;
-		position: absolute;
-		top: 6%;
-		right: 5%;
-		cursor: pointer;
-		opacity: 0;
-		pointer-events: none;
-	}
-
-	body > #root > header > nav h2 {
-		position: absolute;
-		top: 5%;
-		left: 5%;
-		opacity: 0;
-		pointer-events: none;
-		color: #fff;
-	}
-
-	body > #root > header > nav .close div::before,
-	body > #root > header > nav .close div::after {
-		content: '';
-		position: absolute;
-		width: 30px;
-		height: 4px;
-		background: #fff;
-		transition: background 0.5s ease;
-	}
-	body > #root > header > nav .close div::before {
-		transform: rotate(-45deg);
-	}
-
-	body > #root > header > nav .close div::after {
-		transform: rotate(45deg);
-	}
-
-	body > #root > header > nav .close:hover div::before,
-	body > #root > header > nav .close:hover div::after {
-		background: rgb(209, 3, 3);
+					&::before,
+					&::after {
+						background: var(--dark__text__color);
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -406,6 +450,7 @@ body.dark {
 		header {
 			min-height: 8rem;
 			justify-content: center;
+
 			nav {
 				.menu__ul {
 					margin-top: -8rem;
@@ -417,6 +462,7 @@ body.dark {
 	/* Dark Mode Toggler */
 	body {
 		header {
+
 			.toggler,
 			.circle {
 				left: 24px;
@@ -424,6 +470,7 @@ body.dark {
 		}
 	}
 }
+
 /*
 |--------------------------------------
 | Animations
@@ -434,6 +481,7 @@ body.dark {
 	0% {
 		opacity: 1;
 	}
+
 	100% {
 		opacity: 0;
 	}
@@ -443,6 +491,7 @@ body.dark {
 	0% {
 		opacity: 0;
 	}
+
 	100% {
 		opacity: 1;
 	}

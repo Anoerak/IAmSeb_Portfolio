@@ -1,9 +1,15 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { HashLink } from 'react-router-hash-link'; // For smooth scrolling
 import pictureOfMe from '@Images/portrait_me.webp';
 import Webdev from '@Logos/web_dev.png';
 import HookedCode from '@Logos/hooked_code.png';
+import Bot from '@Logos/bot.png';
+import WelcomeBack from '@Logos/welcome-back.png';
+import ReactNative from '@Logos/react-native.webp';
+import VueJs from '@Logos/vuejs.webp';
+import Symfony from '@Logos/symfony.webp';
 
 import TypeWriter from '@Components/TypeWriter/TypeWriter';
 import GlitchingText from '@Components/GlitchingText/GlitchingText';
@@ -141,40 +147,87 @@ function Home() {
 	return (
 		<>
 			<section id='about-me'>
-				<div className='left__container'>
+				<div className='top__container'>
 					<GlitchingText
-						text='*****************************'
+						text='****************************'
 						dataValue='JUNIOR {FULLSTACK} DEVELOPER'
 						className='title1'
 						tags='h2'
 					/>
 					<br />
-					<GlitchingImg img={pictureOfMe} alt='portrait B&W' />
 				</div>
-				<div className='right__container'>
+				<div className='middle__container'>
+					<GlitchingImg img={pictureOfMe} alt='portrait B&W' />
 					<GlitchingText text='************' dataValue='SEBASTIEN P.' className='title2' tags='h2' />
+					<div className='welcome'>
+						<div className='welcome__img'>
+							<img src={WelcomeBack} alt='Welcome Back sign' />
+						</div>
+						<div className='message__container'>
+							<div className='message'>
+								<p>
+									Welcome to my web development portfolio! Here, you’ll find a showcase of my skills, creativity, and
+									dedication to the craft of web development.
+								</p>
+								<p>
+									This website is built using a modern JavaScript framework. Depending on your preference, you can choose
+									to view this site in React, Vue, or Symfony.
+								</p>
+								<p>
+									So go ahead, explore, and enjoy your journey through my portfolio. I hope it inspires you as much as it
+									has inspired me in creating it. Happy browsing!
+								</p>
+							</div>
+							<div className='links__container'>
+								<Link to='https://iamseb.dev' className='framework react'>
+									<img src={ReactNative} alt='Welcome Back sign' className='react__img' />
+									React
+								</Link>
+								<Link to='https://iamseb.dev/vue' className='framework vue'>
+									<img src={VueJs} alt='Welcome Back sign' className='vue__img' />
+									Vue
+								</Link>
+								<Link to='https://iamseb.dev/symfony' className='framework symfony'>
+									<img src={Symfony} alt='Welcome Back sign' className='symfony__img' />
+									Symfony
+								</Link>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div className='bottom__container'>
+					<GlitchingText text='************' dataValue='SEBASTIEN P.' className='title3' tags='h2' />
 				</div>
 				<HashLink to='#me-anchor' className='next__link'>
 					<div className='next__section__arrow'></div>
 				</HashLink>
-				<SebGPT />
 			</section>
 
 			<section id='me-in-few-words'>
 				<h4 id='me-anchor'>Who am I?</h4>
-				<div className='top__part'>
-					<img src={Webdev} alt='Webdev' className='about__me__logo' />
-					<TypeWriter
-						data={[
-							{ text: 'I am a Fullstack Developer with a passion for creating and developing web applications.' },
-							{ text: 'I am always looking for new challenges and opportunities to learn and grow.' },
-							{ text: 'When I am not coding, you can find me playing with my son, video games, or watching movies.' },
-						]}
-					/>
-				</div>
-				<div className='bottom__part'>
-					<img src={HookedCode} alt='HookedCode' className='about__me__logo' />
-					<TypeWriter data={[{ text: 'I started learning web development in 2021 and I have been hooked ever since.' }]} />
+				<div className='middle__container'>
+					<div className='left__side'>
+						<div className='top__part'>
+							<img src={Webdev} alt='Webdev' className='about__me__logo' />
+							<TypeWriter
+								data={[
+									{ text: 'I am a Fullstack Developer with a passion for creating and developing web applications.' },
+									{ text: 'I am always looking for new challenges and opportunities to learn and grow.' },
+									{ text: 'When I am not coding, you can find me playing with my son, video games, or watching movies.' },
+								]}
+							/>
+						</div>
+						<div className='bottom__part'>
+							<img src={HookedCode} alt='HookedCode' className='about__me__logo' />
+							<TypeWriter
+								data={[{ text: 'I started learning web development in 2021 and I have been hooked ever since.' }]}
+							/>
+						</div>
+					</div>
+					<div className='right__side'>
+						<img src={Bot} alt='Little Bot Head' />
+						<SebGPT />
+					</div>
 				</div>
 				<HashLink to='#my-stack' className='next__link'>
 					<div className='next__section__arrow'></div>
@@ -211,27 +264,6 @@ function Home() {
 					</div>
 				</div>
 			</section>
-
-			{/* <section id='coming-soon'>
-				<h2>Coming Soon!!</h2>
-
-				<IAmSeb />
-
-				<p>
-					Exciting news! My website is currently under construction and will be launching soon with a fresh new look and
-					cutting-edge technology. Get ready for an awesome user experience with intuitive navigation and stunning visuals. Stay
-					tuned for updates and be the first to experience my new online presence. I can’t wait to share it with you! 😊
-				</p>
-
-				<h3>Here is a teaser</h3>
-
-				<p>Hover the card and find out what's gonna happen 😃</p>
-				<div className='empty__space'>
-					<Terminal>
-						<Card />
-					</Terminal>
-				</div>
-			</section> */}
 		</>
 	);
 }

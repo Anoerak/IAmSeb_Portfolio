@@ -14,6 +14,7 @@ function GlitchingText(props) {
 
 		let title1 = document.querySelector('.title1');
 		let title2 = document.querySelector('.title2');
+		let title3 = document.querySelector('.title3');
 
 		const lettersEffect = (element, duration) => {
 			let iteration = 0;
@@ -43,11 +44,12 @@ function GlitchingText(props) {
 			setTimeout(() => {
 				lettersEffect(title1, 20);
 			}, 1500);
-		}
-		if (title2) {
 			setTimeout(() => {
-				lettersEffect(title2, 40);
-			}, 4000);
+				lettersEffect(title3, 20);
+			}, 4100);
+			setTimeout(() => {
+				lettersEffect(title2, 10);
+			}, 3600);
 		}
 	}, []);
 

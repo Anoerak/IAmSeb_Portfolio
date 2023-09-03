@@ -53,6 +53,17 @@ body {
 				align-items: flex-start;
 				justify-content: space-between;
 
+				h2 {
+					display: none;
+					color: var(--text__color);
+					text-shadow: -6px -6px 10px rgba(255, 255, 255, 1), 4px 4px 15px rgba(0, 0, 0, 0.15);
+					word-wrap: break-word;
+					padding: 0.5rem 1rem;
+					border-radius: 1rem;
+					box-shadow: var(--box-shadows-light-inset);
+					background-color: var(--bg__color__dark);
+				}
+
 				#glitching-img-container {
 					.imgWrap {
 						img {
@@ -124,14 +135,15 @@ body {
 								padding: 1rem;
 								border-radius: 1rem;
 								background-color: var(--bg__color);
+								transition: all 250ms ease-in-out;
 
 								&:hover {
 									cursor: pointer;
 									filter: brightness(1.03);
 								}
 
-								&.vue {
-									cursor: not-allowed;
+								&:active {
+									box-shadow: var(--box-shadows-light-inset);
 								}
 
 								img {
@@ -211,6 +223,7 @@ body {
 		}
 
 		&#me-in-few-words {
+			height: 110vh;
 			position: relative;
 			margin: 0 2rem;
 			padding-bottom: 5rem;
@@ -222,22 +235,6 @@ body {
 				box-shadow: var(--box-shadows-light-outset);
 				padding: 0.5rem 1rem;
 				border-radius: 1rem;
-			}
-
-			a {
-				text-decoration: none;
-				margin: 0 45%;
-				position: absolute;
-				bottom: 0;
-
-				&:active~.next__section__arrow::before,
-				&:active~.next__section__arrow::after {
-					background-color: greenyellow;
-				}
-
-				&.next__link {
-					bottom: -30px;
-				}
 			}
 
 			.middle__container {
@@ -287,6 +284,7 @@ body {
 					box-shadow: var(--box-shadows-light-inset);
 					padding: 1rem;
 					border-radius: 1rem;
+					background-color: var(--bg__color__dark);
 
 					img {
 						width: 3.5rem;
@@ -297,6 +295,22 @@ body {
 					div {
 						width: 100%;
 					}
+				}
+			}
+
+			a {
+				text-decoration: none;
+				margin: 0 45%;
+				position: absolute;
+				bottom: 0;
+
+				&:active~.next__section__arrow::before,
+				&:active~.next__section__arrow::after {
+					background-color: greenyellow;
+				}
+
+				&.next__link {
+					bottom: -30px;
 				}
 			}
 
@@ -352,31 +366,6 @@ body {
 			}
 
 
-		}
-
-		&#coming-soon {
-			min-height: 110vh;
-
-			h4 {
-				color: var(--text__color);
-			}
-
-			h5 {
-				color: var(--text__color);
-			}
-
-			p {
-				margin-top: 2rem;
-				word-spacing: 4px;
-				color: var(--text__color);
-				text-align: center;
-				width: 75%;
-			}
-
-			.empty__space {
-				height: 50vh;
-				margin-top: 5rem;
-			}
 		}
 
 		&#my-stack {
@@ -490,6 +479,14 @@ body.dark {
 								box-shadow: var(--box-shadows-dark-outset);
 								background-color: var(--dark__bg__color);
 
+								&:active {
+									box-shadow: var(--box-shadows-dark-inset);
+								}
+
+								&:hover {
+									filter: brightness(1.5);
+								}
+
 								img {
 									filter: invert(1);
 								}
@@ -553,6 +550,7 @@ body.dark {
 
 				.right__side {
 					box-shadow: var(--box-shadows-dark-inset);
+					background-color: var(--dark__bg__color);
 
 					img {
 						filter: invert(1);

@@ -3,8 +3,11 @@ import React, { useState, useEffect } from 'react';
 import './GlitchingText.css';
 
 function GlitchingText(props) {
+	// eslint-disable-next-line
 	const [text, setText] = useState(props.text);
+	// eslint-disable-next-line
 	const [dataValue, setDataValue] = useState(props.dataValue);
+	// eslint-disable-next-line
 	const [className, setClassName] = useState(`${props.className} glitching-text`);
 
 	useEffect(() => {
@@ -14,6 +17,7 @@ function GlitchingText(props) {
 
 		let title1 = document.querySelector('.title1');
 		let title2 = document.querySelector('.title2');
+		let title3 = document.querySelector('.title3');
 
 		const lettersEffect = (element, duration) => {
 			let iteration = 0;
@@ -23,6 +27,7 @@ function GlitchingText(props) {
 			interval = setInterval(() => {
 				element.innerText = element.innerText
 					.split('')
+					// @ts-ignore
 					.map((letter, index) => {
 						if (index < iteration) {
 							return element.dataset.value[index];
@@ -43,11 +48,12 @@ function GlitchingText(props) {
 			setTimeout(() => {
 				lettersEffect(title1, 20);
 			}, 1500);
-		}
-		if (title2) {
 			setTimeout(() => {
-				lettersEffect(title2, 40);
-			}, 4000);
+				lettersEffect(title3, 20);
+			}, 4100);
+			setTimeout(() => {
+				lettersEffect(title2, 10);
+			}, 3600);
 		}
 	}, []);
 

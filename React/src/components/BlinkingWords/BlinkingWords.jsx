@@ -35,6 +35,8 @@ function BlinkingWords(props) {
 		'matrix(1 0 0 1 638.2075 66.7529)',
 		'matrix(1 0 0 1 185.8467 282.4043)',
 		'matrix(1 0 0 1 34.1494 150.5947)',
+		'matrix(1 0 0 1 34.1494 50.5947)',
+		'matrix(1 0 0 1 34.1494 50.5947)',
 	];
 	const classList = [
 		'st17 st0',
@@ -66,6 +68,8 @@ function BlinkingWords(props) {
 		'st5 st28 st23',
 		'st5 st28 st12',
 		'st5 st28 st10',
+		'st5 st28 st7',
+		'st5 st28 st7',
 		'st5 st28 st7',
 	];
 
@@ -132,7 +136,7 @@ function BlinkingWords(props) {
 	}, [props, words]);
 
 	return (
-		<svg id={`tag-index-${props.tag}`} x='0px' y='0px' width='920px' height='324px' viewBox='0 0 920 324'>
+		<svg id={`tag-index-${props.tag}`} x='0px' y='0px' width='925px' height='325px' viewBox='0 0 925 325'>
 			{words.map((word, index) => {
 				return (
 					<text key={index} transform={transformedWords[index]} className={classList[index]}>
