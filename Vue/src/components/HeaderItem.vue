@@ -33,7 +33,7 @@ onMounted(() => {
             navbar.style.animation = 'fadingOut 0.5s ease-in-out forwards'
             // If the user is at the top of the page, the navbar reappears
             if (window.pageYOffset === 0) {
-                navbar.style.animation = 'fadingIn 0.5s ease-in-out forwards'
+                navbar.style.animation = 'fadingIn 0.25s ease-in-out forwards'
             }
         }
     })
@@ -41,7 +41,7 @@ onMounted(() => {
     // On hover, the navbar reappears
     navbar.addEventListener('mouseenter', () => {
         if (window.innerWidth > 992 && window.pageYOffset !== 0) {
-            navbar.style.animation = 'fadingIn 0.5s ease-in-out forwards'
+            navbar.style.animation = 'fadingIn 0.25s ease-in-out forwards'
         }
     })
     /* #endregion */
@@ -180,7 +180,7 @@ onMounted(() => {
     </header>
 </template>
 
-<style scoped>
+<style>
 body > #root > header {
     margin: auto;
     /* overflow: hidden; */
@@ -196,7 +196,8 @@ body > #root > header {
 
 body > #root > header > h1,
 body.dark > #root > header > h1 {
-    z-index: 1;
+    z-index: 15;
+    display: none;
 }
 
 body > #root > header > nav > h2 {
@@ -219,7 +220,7 @@ body > #root > header > .toggler {
     background-color: #222;
     border-radius: 50%;
     cursor: pointer;
-    z-index: 100;
+    z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: all 300ms ease-in-out;
     will-change: transform;
@@ -280,46 +281,55 @@ body > #root > header > .circle.clicked {
 |--------------------------------------
 */
 
-body.dark > #root > header > nav {
-    background-color: var(--dark__bg__color);
-}
+/* body.dark > #root > header > nav {
+	background-color: var(--dark__bg__color);
+} */
 body > #root > header > nav {
     position: fixed;
     width: 80%;
     border-radius: 5rem;
-    margin-top: 1.5rem;
+    /* margin-top: 1.5rem; */
+    z-index: 10;
 }
 
-body.dark > #root > header > nav > .menu__ul {
-    background-color: var(--dark__bg__color);
-}
+/* body.dark > #root > header > nav > .menu__ul {
+	background-color: var(--dark__bg__color);
+} */
 body > #root > header > nav > .menu__ul {
-    height: 100%;
-    background-color: var(--bg__color);
-    border-radius: 2rem;
+    /* background-color: var(--bg__color); */
     /* overflow: hidden; */
+    height: 100%;
+    border-radius: 2rem;
     list-style: none;
     display: flex;
     flex-direction: row;
     gap: 2px;
-    margin: 0;
+    margin: -6rem 0 0 0;
     padding: 0;
 }
 
 body.dark > #root > header > nav > .menu__ul > .menu__li {
-    background-color: var(--dark__li__bg__color);
-    box-shadow: 3px 3px 5px rgba(255, 255, 255, 0.1);
+    background-color: var(--dark__bg__color);
+    transition: all 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: var(--box-shadows-dark-outset);
 }
 body > #root > header > nav > .menu__ul > .menu__li {
     margin: 0;
     width: 25%;
-    background-color: var(--li__bg__color);
+    background-color: var(--bg__color);
     text-align: center;
     vertical-align: middle;
     line-height: 3.5rem;
     position: relative;
     cursor: pointer;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    transition: all 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: var(--box-shadows-light-outset);
+}
+body > #root > header > nav > .menu__ul > .menu__li:active {
+    box-shadow: var(--box-shadows-light-inset);
+}
+body.dark > #root > header > nav > .menu__ul > .menu__li:active {
+    box-shadow: var(--box-shadows-dark-inset);
 }
 
 body > #root > header > nav > .menu__ul > .menu__li:nth-child(1) {
@@ -411,6 +421,7 @@ body.dark > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
     color: var(--dark__text__color);
 }
 body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
+    font-size: 1.5rem;
     text-decoration: none;
     color: var(--text__color);
     width: 100%;
@@ -424,13 +435,10 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
 |--------------------------------------
 */
 
-@media screen and (max-width: 992px) {
+@media screen and (orientation: portrait) and (max-width: 600px) {
     body > #root > header {
-        min-height: 10rem;
+        min-height: 8rem;
         justify-content: center;
-    }
-    body > #root > header > h1 {
-        font-size: 1rem;
     }
 
     /* Dark Mode Toggler */
@@ -448,6 +456,7 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
         width: 30px;
         height: 20px;
         text-align: initial;
+        z-index: 10;
     }
 
     body.dark > #root > header > .hamburger__menu__container > .hamburger__menu__icon {
@@ -495,7 +504,7 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
         align-items: center;
         right: -200vw;
         top: 50vh;
-        z-index: 2;
+        z-index: 1000;
     }
 
     body > #root > header > nav > .menu__ul,
@@ -507,6 +516,7 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
         background-color: var(--text__color);
         border-radius: 0;
         width: inherit;
+        margin-top: -3rem;
     }
 
     body > #root > header > nav > .menu__ul > .menu__li:nth-child(-n + 4),
@@ -534,11 +544,10 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
 
     body > #root > header > nav > .menu__ul > .menu__li > .li__content > .li__link,
     body.dark > #root > header > nav > .menu__ul > .menu__li > .li__content > .li__link {
+        font-size: 2rem;
         color: var(--bg__color);
         background-color: transparent;
-        font-size: 2em;
         text-decoration: none;
-        font-weight: 500;
         position: relative;
         opacity: 0;
         pointer-events: none;
@@ -580,7 +589,6 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
         opacity: 0;
         pointer-events: none;
         color: #fff;
-        font-size: 2em;
     }
 
     body > #root > header > nav .close div::before,
@@ -606,6 +614,21 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
     }
 }
 
+@media screen and (orientation: landscape) and (max-width: 812px) {
+    body > #root > header {
+        min-height: 8rem;
+        justify-content: center;
+    }
+
+    body > #root > header > nav > .menu__ul {
+        margin-top: -8rem;
+    }
+    /* Dark Mode Toggler */
+    body > #root > header > .toggler,
+    body > #root > header > .circle {
+        left: 24px;
+    }
+}
 /*
 |--------------------------------------
 | Animations

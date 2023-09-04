@@ -86,8 +86,8 @@ function Home() {
 		document.title = 'I Am Seb w/ React';
 
 		/* #region Landing Page Animation */
-		const leftContainer = document.querySelector('.left__container');
-		const rightContainer = document.querySelector('.right__container');
+		const leftContainer = document.querySelector('.top__container');
+		const rightContainer = document.querySelector('.bottom__container');
 		const nextSectionArrow = document.querySelector('.next__section__arrow');
 
 		gsap.fromTo(

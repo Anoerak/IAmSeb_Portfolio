@@ -1,53 +1,301 @@
 <script>
 import { onMounted } from 'vue'
-import Terminal from '../components/TerminalItem.vue'
-import IAmSeb from '../components/IAmSebItem.vue'
+import gsap from 'gsap'
 
-export default {
-    name: 'HomeView',
-    components: {
-        Terminal,
-        IAmSeb
-    },
-    props: {
-        type: Object,
-        default: () => {}
-    }
-}
+import GlitchingText from '../components/GlitchingText.vue'
+import GlitchingImg from '../components/GlitchingImg.vue'
+import BlinkingWords from '../components/BlinkingWords.vue'
+
+import pictureOfMe from '../assets/img/portrait_me.webp'
+import Webdev from '../assets/logos/web_dev.png'
+import HookedCode from '../assets/logos/hooked_code.png'
+import Bot from '../assets/logos/bot.png'
+import WelcomeBack from '../assets/logos/welcome-back.png'
+import ReactNative from '../assets/logos/react-native.webp'
+import VueJs from '../assets/logos/vuejs.webp'
+import Symfony from '../assets/logos/symfony.webp'
 
 onMounted(() => {
     document.title = 'I Am Seb w/ Vue'
 })
+
+export default {
+    name: 'HomeView',
+    data() {
+        return {
+            pictureOfMe,
+            Webdev,
+            HookedCode,
+            Bot,
+            WelcomeBack,
+            ReactNative,
+            VueJs,
+            Symfony,
+            frontStack: [
+                'React',
+                'HTML5',
+                '',
+                '',
+                'JavaScript',
+                '',
+                'Styled Components',
+                '',
+                'Responsive Design',
+                '',
+                'Vue',
+                '',
+                'Material UI',
+                '',
+                'Redux',
+                '',
+                'CSS3'
+            ],
+            backStack: [
+                '',
+                '',
+                '',
+                '',
+                '',
+                'GitHub',
+                'PHP',
+                'Node.js',
+                '',
+                'MySQL',
+                'Git',
+                'Express',
+                '',
+                'Mongoose',
+                'GitLab',
+                'Twig',
+                '',
+                '',
+                'PHPUnit',
+                'Postman',
+                '',
+                '',
+                '',
+                '',
+                'Symfony',
+                '',
+                'Composer',
+                'JWT',
+                'REST API',
+                'MongoDB',
+                'APIplatform'
+            ],
+            otherStack: [
+                'Docker',
+                '',
+                'MacOS',
+                '',
+                'Windows',
+                '',
+                'Apache',
+                '',
+                'NGINX',
+                '',
+                '',
+                'Figma',
+                'Microsoft Suite'
+            ],
+            learningStack: [
+                ['', '', 'Solid', '', '', '', '', 'Next.js', '', 'TypeScript'],
+                ['Ansible', '', '', '', 'OpenStack', '', 'DApp/Web3.0']
+            ]
+        }
+    },
+    components: {
+        GlitchingText,
+        GlitchingImg,
+        BlinkingWords
+    },
+    props: {
+        type: Object,
+        default: () => { }
+    },
+    mounted() {
+        /* Landing Page Animation */
+        const leftContainer = document.querySelector('.top__container')
+        const rightContainer = document.querySelector('.bottom__container')
+        const nextSectionArrow = document.querySelector('.next__section__arrow')
+
+        gsap.fromTo(
+            leftContainer,
+            { x: '-200%' },
+            {
+                duration: 2,
+                x: '0%',
+                ease: 'power2.out'
+            }
+        )
+        gsap.fromTo(
+            rightContainer,
+            { x: '200%' },
+            {
+                duration: 2,
+                x: '0%',
+                ease: 'power2.out'
+            }
+        )
+        gsap.fromTo(
+            nextSectionArrow,
+            { opacity: 0 },
+            {
+                duration: 1,
+                opacity: 1,
+                ease: 'power2.out'
+            }
+        )
+
+        /* My Stack Animation */
+        const stackContainer1 = document.getElementById('stack__container__1')
+        const card1 = document.getElementById('card1'),
+            card2 = document.getElementById('card2'),
+            card3 = document.getElementById('card3'),
+            card4 = document.getElementById('card4'),
+            card5 = document.getElementById('card5')
+
+        // When stackContainer1 is entirely visible, we animate the cards
+        // We track the scroll position
+        window.addEventListener('scroll', () => {
+            // When the scroll position is greater than the middle of the stackContainer1
+            if (window.scrollY > stackContainer1.offsetTop - window.innerHeight / 2) {
+                // We animate the cards using the keyframes
+                card1.style.animation = 'card1 2s ease-out forwards'
+                card2.style.animation = 'card2 2s ease-out forwards'
+                card3.style.animation = 'card3 2s ease-out forwards'
+                card4.style.animation = 'card4 2s ease-out forwards'
+                card5.style.animation = 'card5 2s ease-out forwards'
+            }
+        })
+    },
+}
 </script>
 
 <template>
-    <section>
-        <h2>Coming Soon!!</h2>
+    <section id="about-me">
+        <div class="top__container">
+            <GlitchingText text="****************************" dataValue="JUNIOR {FULLSTACK} DEVELOPER" class="title1"
+                tags="h2" />
+            <br />
+        </div>
+        <div class="middle__container">
+            <GlitchingImg :image="pictureOfMe" alt="portrait B&W" />
+            <GlitchingText text="************" dataValue="SEBASTIEN P." class="title2" tags="h2" />
+            <div class="welcome">
+                <div class="welcome__img">
+                    <img :src="WelcomeBack" alt="Welcome Back sign" />
+                </div>
+                <div class="message__container">
+                    <div class="message">
+                        <p>
+                            Welcome to my web development portfolio! Here, you’ll find a showcase of
+                            my skills, creativity, and dedication to the craft of web development.
+                        </p>
+                        <p>
+                            This website is built using a modern JavaScript framework. Depending on
+                            your preference, you can choose to view this site in React, Vue, or
+                            Symfony.
+                        </p>
+                        <p>
+                            So go ahead, explore, and enjoy your journey through my portfolio. I
+                            hope it inspires you as much as it has inspired me in creating it. Happy
+                            browsing!
+                        </p>
+                    </div>
+                    <div class="links__container">
+                        <a to="https://iamseb.dev" class="framework react">
+                            <img :src="ReactNative" alt="Welcome Back sign" class="react__img" />
+                            React
+                        </a>
+                        <a to="https://iamseb.dev/vue" class="framework vue">
+                            <img :src="VueJs" alt="Welcome Back sign" class="vue__img" />
+                            Vue
+                        </a>
+                        <a to="https://iamseb.dev/symfony" class="framework symfony">
+                            <img :src="Symfony" alt="Welcome Back sign" class="symfony__img" />
+                            Symfony
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom__container">
+            <GlitchingText text="************" dataValue="SEBASTIEN P." class="title3" tags="h2" />
+        </div>
+        <a to="#me-anchor" class="next__link">
+            <div class="next__section__arrow"></div>
+        </a>
+    </section>
 
-        <Terminal>
-            <IAmSeb />
-        </Terminal>
+    <section id="me-in-few-words">
+        <h4 id="me-anchor">Who am I?</h4>
+        <div class="middle__container">
+            <div class="left__side">
+                <div class="top__part">
+                    <img :src="Webdev" alt="Webdev" class="about__me__logo" />
+                    <!--<TypeWriter
+								data={[
+									{ text: 'I am a Fullstack Developer with a passion for creating and developing web applications.' },
+									{ text: 'I am always looking for new challenges and opportunities to learn and grow.' },
+									{ text: 'When I am not coding, you can find me playing with my son, video games, or watching movies.' },
+								]}-->
+                    />
+                </div>
+                <div class="bottom__part">
+                    <img :src="HookedCode" alt="HookedCode" class="about__me__logo" />
+                    <!--<TypeWriter
+								data={[{ text: 'I started learning web development in 2021 and I have been hooked ever since.' }]}
+							/>-->
+                </div>
+            </div>
+            <div class="right__side">
+                <img :src="Bot" alt="Little Bot Head" />
+                <SebGPT />
+            </div>
+        </div>
+        <a to="#my-stack" class="next__link">
+            <div class="next__section__arrow"></div>
+        </a>
+    </section>
 
-        <p>
-            Exciting news! My website is currently under construction and will be launching soon
-            with a fresh new look and cutting-edge technology. Get ready for an awesome user
-            experience with intuitive navigation and stunning visuals. Stay tuned for updates and be
-            the first to experience my new online presence. I can’t wait to share it with you! 😊
-        </p>
+    <section id="my-stack">
+        <h4>My Tools</h4>
+        <div id="stack__container__1" class="stack__container">
+            <div id="card1" class="stack__card">
+                <h5>Front-End</h5>
+                <BlinkingWords :words="frontStack" tag="front" />
+            </div>
+            <div id="card2" class="stack__card">
+                <h5>Back-End</h5>
+                <BlinkingWords :words="backStack" tag="back" />
+            </div>
+            <div id="card3" class="stack__card">
+                <h5>Others</h5>
+                <BlinkingWords :words="otherStack" tag="others" />
+            </div>
+        </div>
 
-        <div class="empty__space"></div>
+        <h6>And I try to keep up with something new on a daily basis...</h6>
+
+        <div id="stack__container__2" class="stack__container">
+            <div id="card4" class="stack__card">
+                <h5>Front..</h5>
+                <BlinkingWords :words="learningStack[0]" tag="learningFront" />
+            </div>
+            <div id="card5" class="stack__card">
+                <h5>Back..</h5>
+                <BlinkingWords :words="learningStack[1]" tag="learningBack" />
+            </div>
+        </div>
     </section>
 </template>
 
-<style scoped>
-/*
-|--------------------------------------
-| Section 1
-|--------------------------------------
-*/
-body > #root > section {
+<style>
+/* #region Global */
+body>#root>section {
     margin-top: 3.5rem;
-    height: 100vh;
+    min-height: calc(100dvh - 190px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,32 +303,1411 @@ body > #root > section {
     animation: fadingIn 1s ease;
 }
 
-body > #root > section > h2 {
-    font-size: 1.5rem;
-    color: var(--text__color);
-}
-body.dark > #root > section > h2 {
-    color: var(--dark__text__color);
+/* #region About Me  */
+body>#root>section#about-me {
+    height: calc(100dvh - 190px);
+    margin: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+    margin-top: -3rem;
 }
 
-body > #root > section p {
+body>#root>section#about-me>.top__container,
+body>#root>section#about-me>.bottom__container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+body>#root>section#about-me>.top__container h2,
+body>#root>section#about-me>.bottom__container h2,
+body>#root>section#about-me>.middle__container h2 {
+    display: flex;
+    color: var(--text__color);
+    text-shadow: -6px -6px 10px rgba(255, 255, 255, 1), 4px 4px 15px rgba(0, 0, 0, 0.15);
+    word-wrap: break-word;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    box-shadow: var(--box-shadows-light-inset);
+    background-color: var(--bg__color__dark);
+}
+
+body.dark>#root>section#about-me>.top__container h2,
+body.dark>#root>section#about-me>.bottom__container h2,
+body.dark>#root>section#about-me>.middle__container h2 {
+    color: var(--dark__text__color);
+    text-shadow: -6px -6px 10px rgba(255, 255, 255, 0.1), 4px 4px 15px rgba(0, 0, 0, 1);
+    box-shadow: var(--box-shadows-dark-inset);
+    background-color: var(--dark__bg__color);
+    position: relative;
+}
+
+body>#root>section#about-me>.bottom__container {
+    height: 100%;
+    width: 100%;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+body>#root>section#about-me>.middle__container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+body>#root>section#about-me>.middle__container>#glitching-img-container {
+    margin-top: 1.5rem;
+}
+
+body>#root>section#about-me>.middle__container>#glitching-img-container>.imgWrap>img {
+    animation: none;
+}
+
+body>#root>section#about-me>.middle__container>#glitching-img-container>.imgWrap>img.green,
+body>#root>section#about-me>.middle__container>#glitching-img-container>.imgWrap>img.blue,
+body>#root>section#about-me>.middle__container>#glitching-img-container>.imgWrap>img.red {
+    filter: none;
+    transform: translate(-50%, -50%);
+}
+
+body>#root>section#about-me>.middle__container>h2 {
+    display: none;
+}
+
+body>#root>section#about-me>.middle__container>.welcome {
+    opacity: 0;
+    width: 40%;
+    margin-top: -6rem;
+    margin-right: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    animation: fadeInImg 1s ease-in-out 4s forwards;
+}
+
+body>#root>section#about-me>.middle__container>.welcome>.welcome__img {
+    width: 3rem;
+    box-shadow: var(--box-shadows-light-outset);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+body.dark>#root>section#about-me>.middle__container>.welcome>.welcome__img {
+    box-shadow: var(--box-shadows-dark-outset);
+}
+
+body>#root>section#about-me>.middle__container>.welcome>.welcome__img>img {
+    width: 3rem;
+    height: 3rem;
+}
+
+body.dark>#root>section#about-me>.middle__container>.welcome>.welcome__img>img {
+    filter: invert(1);
+}
+
+body>#root>section#about-me>.middle__container>.welcome>.message__container {
+    width: 94%;
+    display: flex;
+    flex-direction: column;
     margin-top: 2rem;
-    font-size: 1.25rem;
-    word-spacing: 4px;
-    color: var(--text__color);
-    text-align: center;
-    width: 75%;
+    height: auto;
+    box-shadow: var(--box-shadows-light-inset);
+    padding: 1rem;
+    border-radius: 1rem;
 }
-body.dark > #root > section p {
+
+body.dark>#root>section#about-me>.middle__container>.welcome>.message__container {
+    box-shadow: var(--box-shadows-dark-inset);
+}
+
+body>#root>section#about-me>.middle__container>.welcome>.message__container>.message {
+    text-align: justify;
+}
+
+body>#root>section#about-me>.middle__container>.welcome>.message__container>.links__container {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+body>#root>section#about-me>.middle__container>.welcome>.message__container>.links__container>a {
+    position: inherit;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text__color);
+    box-shadow: var(--box-shadows-light-outset);
+    width: 4rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: var(--bg__color);
+    transition: all 250ms ease-in-out;
+}
+
+body.dark>#root>section#about-me>.middle__container>.welcome>.message__container>.links__container>a {
+    box-shadow: var(--box-shadows-dark-outset);
+    background-color: var(--dark__bg__color);
     color: var(--dark__text__color);
 }
 
-body > #root > section > .empty__space {
-    height: 50vh;
+body>#root>section#about-me>.middle__container>.welcome>.message__container>.links__container>a:hover {
+    cursor: pointer;
+    filter: brightness(1.03);
+}
+
+body>#root>section#about-me>.middle__container>.welcome>.message__container>.links__container>a:active {
+    box-shadow: var(--box-shadows-light-inset);
+}
+
+body>#root>section#about-me>.middle__container>.welcome>.message__container>.links__container>a>img {
+    width: 3rem;
+    height: 3rem;
+    box-shadow: none;
+}
+
+body.dark>#root>section#about-me>.middle__container>.welcome>.message__container>.links__container>a>img {
+    filter: invert(1);
+}
+
+body>#root>section#about-me a,
+body>#root>section#me-in-few-words a {
+    text-decoration: none;
+    margin: 0 45%;
+    position: absolute;
+    bottom: 0;
+}
+
+body>#root>section#about-me a:active~.next__section__arrow::before,
+body>#root>section#about-me a:active~.next__section__arrow::after,
+body>#root>section#me-in-few-words a:active~.next__section__arrow::before,
+body>#root>section#me-in-few-words a:active~.next__section__arrow::after {
+    background-color: greenyellow;
+}
+
+body>#root>section#about-me .next__section__arrow,
+body>#root>section#me-in-few-words .next__section__arrow {
+    margin: auto;
+    width: 120px;
+    height: 50px;
+    border-radius: 2rem 2rem 2rem 2rem;
+    background: var(--bg__color__dark);
+    /* transition: all 0.25s ease; */
+    transition: all 250ms ease-in-out;
+    box-shadow: var(--box-shadows-light-outset);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+body.dark>#root>section#about-me .next__section__arrow,
+body.dark>#root>section#me-in-few-words .next__section__arrow {
+    background: var(--dark__bg__color);
+    transition: all 250ms ease-in-out;
+    box-shadow: var(--box-shadows-dark-outset);
+}
+
+body>#root>section#about-me .next__section__arrow:hover,
+body>#root>section#me-in-few-words .next__section__arrow:hover {
+    filter: brightness(1.03);
+}
+
+body.dark>#root>section#about-me .next__section__arrow:hover,
+body.dark>#root>section#me-in-few-words .next__section__arrow:hover {
+    filter: brightness(1.5);
+}
+
+body>#root>section#about-me .next__section__arrow:active,
+body>#root>section#me-in-few-words .next__section__arrow:active {
+    box-shadow: var(--box-shadows-light-inset);
+}
+
+body.dark>#root>section#about-me .next__section__arrow:active,
+body.dark>#root>section#me-in-few-words .next__section__arrow:active {
+    box-shadow: var(--box-shadows-dark-inset);
+}
+
+body>#root>section#about-me .next__section__arrow::before,
+body>#root>section#about-me .next__section__arrow::after,
+body>#root>section#me-in-few-words .next__section__arrow::before,
+body>#root>section#me-in-few-words .next__section__arrow::after {
+    z-index: 10;
+    content: '';
+    width: 21px;
+    height: 4px;
+    border-radius: 50% 0;
+    background-color: var(--navigate-to-top-button-border);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 25px;
+}
+
+body>#root>section#about-me .next__section__arrow::before,
+body>#root>section#me-in-few-words .next__section__arrow::before {
+    left: 43px;
+}
+
+body.dark>#root>section#about-me .next__section__arrow::before,
+body.dark>#root>section#about-me .next__section__arrow::after,
+body.dark>#root>section#me-in-few-words .next__section__arrow::before,
+body.dark>#root>section#me-in-few-words .next__section__arrow::after {
+    background-color: var(--dark__navigate-to-top-button-border);
+}
+
+body>#root>section#about-me .next__section__arrow::after,
+body>#root>section#me-in-few-words .next__section__arrow::after {
+    right: 43px;
+    transform: rotate(-45deg);
+}
+
+body>#root>section#about-me .next__section__arrow:hover::before,
+body>#root>section#about-me .next__section__arrow:hover::after,
+body>#root>section#me-in-few-words .next__section__arrow:hover::before,
+body>#root>section#me-in-few-words .next__section__arrow:hover::after {
+    animation: jumpUpAndBackHome 0.75s ease infinite;
+}
+
+body>#root>section#about-me>.bottom__container h4 {
+    text-align: right;
+}
+
+/* #endregion */
+
+/* #region Me in few word  */
+body>#root>section#me-in-few-words {
+    height: 110vh;
+    position: relative;
+    margin: 0 2rem;
+    padding-bottom: 5rem;
+    padding: 0;
+    justify-content: space-evenly;
+}
+
+body>#root>section#me-in-few-words>h4 {
+    color: var(--text__color);
+    box-shadow: var(--box-shadows-light-outset);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+}
+
+body.dark>#root>section#me-in-few-words>h4 {
+    color: var(--dark__text__color);
+    box-shadow: var(--box-shadows-dark-outset);
+}
+
+body>#root>section#me-in-few-words>.middle__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+}
+
+body>#root>section#me-in-few-words>.middle__container>.left__side>.top__part,
+body>#root>section#me-in-few-words>.middle__container>.left__side>.bottom__part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    box-shadow: var(--box-shadows-light-inset);
+    border-radius: 1rem;
+    padding: 1.5rem 1rem;
+    background-color: var(--bg__color__dark);
+    height: 50%;
+}
+
+body.dark>#root>section#me-in-few-words>.middle__container>.left__side>.top__part,
+body.dark>#root>section#me-in-few-words>.middle__container>.left__side>.bottom__part {
+    box-shadow: var(--box-shadows-dark-inset);
+    background-color: var(--dark__bg__color);
+}
+
+body>#root>section#me-in-few-words>.middle__container>.left__side>.top__part>.about__me__logo,
+body>#root>section#me-in-few-words>.middle__container>.left__side>.bottom__part>.about__me__logo {
+    height: 4rem;
+    width: 4rem;
+}
+
+body.dark>#root>section#me-in-few-words>.middle__container>.left__side>.top__part>.about__me__logo,
+body.dark>#root>section#me-in-few-words>.middle__container>.left__side>.bottom__part>.about__me__logo {
+    filter: invert(1);
+}
+
+body>#root>section#me-in-few-words>.middle__container>.left__side>.top__part>.TypeWriter .line__1,
+body>#root>section#me-in-few-words>.middle__container>.left__side>.top__part>.TypeWriter .line__2,
+body>#root>section#me-in-few-words>.middle__container>.left__side>.top__part>.TypeWriter .line__3 {
+    color: var(--text__color);
+}
+
+body.dark>#root>section#me-in-few-words>.middle__container>.left__side>.top__part>.TypeWriter .line__1,
+body.dark>#root>section#me-in-few-words>.middle__container>.left__side>.top__part>.TypeWriter .line__2,
+body.dark>#root>section#me-in-few-words>.middle__container>.left__side>.top__part>.TypeWriter .line__3 {
+    color: var(--dark__text__color);
+    border-right: 1px solid var(--dark__bg__color);
+}
+
+body>#root>section#me-in-few-words>.middle__container>.right__side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 49%;
+    box-shadow: var(--box-shadows-light-inset);
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: var(--bg__color__dark);
+}
+
+body.dark>#root>section#me-in-few-words>.middle__container>.right__side {
+    box-shadow: var(--box-shadows-dark-inset);
+    background-color: var(--dark__bg__color);
+}
+
+body>#root>section#me-in-few-words>.middle__container>.right__side>img {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+body.dark>#root>section#me-in-few-words>.middle__container>.right__side>img {
+    filter: invert(1);
+}
+
+body>#root>section#me-in-few-words a.next__link {
+    bottom: -30px;
+}
+
+/* #endregion */
+
+/* #region My Tools  */
+body>#root>section#my-stack {
+    height: auto;
+    padding: 0 0 8rem 0;
+}
+
+body>#root>section#my-stack>h4 {
+    color: var(--text__color);
+    box-shadow: var(--box-shadows-light-outset);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+}
+
+body.dark>#root>section#my-stack>h4 {
+    color: var(--dark__text__color);
+    box-shadow: var(--box-shadows-dark-outset);
+}
+
+body>#root>section#my-stack>h6 {
+    color: var(--text__color);
+    box-shadow: var(--box-shadows-light-outset);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
     margin-top: 5rem;
 }
 
-body > #root > section > .empty__space > p {
-    font-size: 0.75rem;
+body.dark>#root>section#my-stack>h6 {
+    color: var(--dark__text__color);
+    box-shadow: var(--box-shadows-dark-outset);
+}
+
+body>#root>section#my-stack>.stack__container {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+body>#root>section#my-stack>.stack__container>.stack__card {
+    opacity: 0;
+    width: 30%;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+    background-color: var(--bg__color__dark);
+    border-radius: 1rem;
+    box-shadow: var(--box-shadows-light-inset);
+    transition: all 250ms ease-in-out;
+}
+
+body.dark>#root>section#my-stack>.stack__container>.stack__card {
+    background-color: var(--dark__bg__color);
+    box-shadow: var(--box-shadows-dark-inset);
+}
+
+body>#root>section#my-stack>.stack__container>.stack__card:hover {
+    filter: brightness(1.03);
+}
+
+body.dark>#root>section#my-stack>.stack__container>.stack__card:hover {
+    filter: brightness(1.5);
+}
+
+body>#root>section#my-stack>.stack__container>.stack__card>h5 {
+    color: var(--text__color);
+    box-shadow: var(--box-shadows-light-outset);
+    padding: 0.5rem 1rem;
+    margin: 2rem;
+    border-radius: 1rem;
+}
+
+body.dark>#root>section#my-stack>.stack__container>.stack__card>h5 {
+    color: var(--dark__text__color);
+    box-shadow: var(--box-shadows-dark-outset);
+}
+
+body>#root>section#my-stack>.stack__container>.stack__card>ul {
+    margin: 1rem;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+body>#root>section#my-stack>.stack__container>.stack__card>ul>li {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--bg__color);
+    color: var(--text__color);
+}
+
+body.dark>#root>section#my-stack>.stack__container>.stack__card>ul>li {
+    background-color: var(--dark__bg__color);
+    color: var(--dark__text__color);
+}
+
+/* #endregion */
+
+/* #region Animations  */
+@keyframes jumpUpAndBackHome {
+    0% {
+        top: 22.5px;
+    }
+
+    50% {
+        top: 27.5px;
+    }
+
+    100% {
+        top: 22.5px;
+    }
+}
+
+/* #region Typing animation */
+/* #endregion */
+@keyframes animated-cursor__1 {
+    from {
+        border-right-color: var(--bg__color);
+    }
+
+    to {
+        border-right-color: var(--text__color);
+    }
+}
+
+@keyframes animated-cursor__2 {
+    from {
+        border-right-color: var(--bg__color);
+    }
+
+    to {
+        border-right-color: var(--text__color);
+    }
+}
+
+@keyframes animated-cursor__3 {
+    from {
+        border-right-color: var(--bg__color);
+    }
+
+    to {
+        border-right-color: var(--text__color);
+    }
+}
+
+@keyframes animated-cursor__4 {
+    from {
+        border-right-color: var(--bg__color);
+    }
+
+    to {
+        border-right-color: var(--text__color);
+    }
+}
+
+@keyframes animated-text__1 {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes animated-text__2 {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes animated-text__3 {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes animated-text__4 {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/* #endregion */
+
+/* #Region Card1 slideIn from the left */
+@keyframes card1 {
+    0% {
+        opacity: 0;
+        transform: translate(-200%, -200%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes card2 {
+    0% {
+        opacity: 0;
+        transform: translateY(200%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes card3 {
+    0% {
+        opacity: 0;
+        transform: translate(200%, -200%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes card4 {
+    0% {
+        opacity: 0;
+        transform: translateX(-200%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes card5 {
+    0% {
+        opacity: 0;
+        transform: translateX(200%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* #endregion */
+
+/* #endregion */
+
+@media screen and (orientation: portrait) and (max-width: 600px) {
+
+    /* #region About Me */
+    html>body>#root>section#about-me {
+        height: auto;
+        margin: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    body>div#root>section#about-me div.top__container,
+    body>div#root>section#about-me div.bottom__container {
+        width: 100%;
+    }
+
+    body>div#root>section#about-me div.top__container h2.glitching-text,
+    body>div#root>section#about-me div.bottom__container h2.glitching-text,
+    body>div#root>section#about-me div.top__container h2.glitching-text::before,
+    body>div#root>section#about-me div.bottom__container h2.glitching-text::before,
+    body>div#root>section#about-me div.top__container h2.glitching-text::after,
+    body>div#root>section#about-me div.bottom__container h2.glitching-text::after {
+        animation: none;
+    }
+
+    body>div#root>section#about-me div.top__container h2 {
+        max-width: 90%;
+        margin: auto;
+        animation: none;
+    }
+
+    body>div#root>section#about-me div.middle__container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    body>div#root>section#about-me div.middle__container #glitching-img-container {
+        max-width: 100%;
+        margin-top: 2rem;
+    }
+
+    body>div#root>section#about-me div.middle__container #glitching-img-container .imgWrap img,
+    body>div#root>section#about-me div.middle__container #glitching-img-container .imgWrap img.red,
+    body>div#root>section#about-me div.middle__container #glitching-img-container .imgWrap img.green,
+    body>div#root>section#about-me div.middle__container #glitching-img-container .imgWrap img.blue {
+        width: 100%;
+        animation: none;
+    }
+
+    body>div#root>section#about-me div.middle__container #glitching-img-container .imgWrap img.red,
+    body>div#root>section#about-me div.middle__container #glitching-img-container .imgWrap img.green,
+    body>div#root>section#about-me div.middle__container #glitching-img-container .imgWrap img.blue {
+        filter: none;
+        transform: translate(-50%, -50%);
+    }
+
+    body>div#root>section#about-me div.middle__container h2 {
+        display: flex;
+        max-width: 100%;
+        margin: auto;
+    }
+
+    body>div#root>section#about-me div.middle__container .welcome {
+        width: 100%;
+        margin-top: 2rem;
+        margin-right: 0;
+    }
+
+    body>div#root>section#about-me div.middle__container .welcome .message__container {
+        width: auto;
+        margin-top: 1rem;
+    }
+
+    body>div#root>section#about-me div.middle__container .welcome .message__container .message {
+        text-align: justify;
+        white-space: normal;
+        overflow: visible;
+        animation: none;
+        border-right: none;
+        width: 100%;
+    }
+
+    body>div#root>section#about-me div.middle__container .welcome .message__container .links__container {
+        margin: 1rem 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    body>div#root>section#about-me div.middle__container .welcome .message__container .links__container a {
+        position: inherit;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        color: var(--text__color);
+        box-shadow: var(--box-shadows-light-outset);
+        width: 3rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        background-color: var(--bg__color);
+        transition: all 250ms ease-in-out;
+    }
+
+    body>div#root>section#about-me div.middle__container .welcome .message__container .links__container a:hover {
+        cursor: pointer;
+        filter: brightness(1.03);
+    }
+
+    body>div#root>section#about-me div.middle__container .welcome .message__container .links__container a:active {
+        box-shadow: var(--box-shadows-light-inset);
+    }
+
+    body>div#root>section#about-me div.middle__container .welcome .message__container .links__container a>img {
+        width: 2rem;
+        height: 2rem;
+        box-shadow: none;
+    }
+
+    body>div#root>section#about-me div.bottom__container h2 {
+        display: none;
+    }
+
+    body>div#root>section#about-me a.next__link,
+    body>div#root>section#me-in-few-words a.next__link {
+        display: none;
+        bottom: 0;
+    }
+
+    /* #Region Next Section Arrow */
+    body>div#root>section#about-me a,
+    body>div#root>section#about-me .next__section__arrow,
+    body>div#root>section#me-in-few-words a,
+    body>div#root>section#me-in-few-words .next__section__arrow {
+        height: 40px;
+        width: 40px;
+        border-radius: 30%;
+    }
+
+    body>div#root>section#about-me .next__section__arrow::before,
+    body>div#root>section#me-in-few-words .next__section__arrow::before {
+        left: 3px;
+    }
+
+    body>div#root>section#about-me .next__section__arrow::after,
+    body>div#root>section#me-in-few-words .next__section__arrow::after {
+        right: 3px;
+    }
+
+    body>div#root>section#about-me .next__section__arrow::before,
+    body>div#root>section#about-me .next__section__arrow::after,
+    body>div#root>section#me-in-few-words .next__section__arrow::before,
+    body>div#root>section#me-in-few-words .next__section__arrow::after {
+        top: 20px;
+    }
+
+    body>#root>section#about-me .next__section__arrow:hover::before,
+    body>#root>section#about-me .next__section__arrow:hover::after,
+    body>#root>section#me-in-few-words .next__section__arrow:hover::before,
+    body>#root>section#me-in-few-words .next__section__arrow:hover::after {
+        animation: jumpUpAndBackHomeMobile 0.75s ease infinite;
+    }
+
+    /* #endregion */
+    /* #endregion */
+
+    /* #region Me in few word  */
+    body>#root>section#me-in-few-words {
+        margin: 1rem;
+        height: auto;
+        width: auto;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        gap: 2rem;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side {
+        width: 100%;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part,
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.bottom__part {
+        width: initial;
+        margin: 0;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>img.about__me__logo,
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.bottom__part>img.about__me__logo,
+    body>#root>section#me-in-few-words>div.middle__container>div.right__side>img {
+        height: 3rem;
+        width: 3rem;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>div.TypeWriter,
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.bottom__part>div.TypeWriter {
+        width: 100%;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>div.TypeWriter .line__1,
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>div.TypeWriter .line__2,
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>div.TypeWriter .line__3,
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.bottom__part>div.TypeWriter .line__1 {
+        white-space: normal;
+        overflow: visible;
+        animation: none;
+        display: flex;
+        width: auto;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container>div.right__side {
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    body div#root section#me-in-few-words a.next__link {
+        display: none;
+        bottom: 0;
+    }
+
+    /* #endregion */
+
+    /* #region My Tools */
+    body>#root>section#my-stack {
+        padding: 0;
+        height: auto;
+    }
+
+    body>#root>section#my-stack>.stack__container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    body>#root>section#my-stack>.stack__container>.stack__card {
+        width: 80%;
+        height: 15rem;
+        margin: 1rem 0;
+    }
+
+    body>#root>section#my-stack>h5 {
+        margin-top: 2rem;
+        width: 80%;
+        padding: 1rem 1.5rem;
+    }
+
+    /* #endregion */
+
+    /* #region Animations */
+    @keyframes jumpUpAndBackHomeMobile {
+        0% {
+            top: 22.5px;
+        }
+
+        50% {
+            top: 17.5px;
+        }
+
+        100% {
+            top: 22.5px;
+        }
+    }
+}
+
+@media screen and (orientation: landscape) and (max-width: 812px) {
+    body>#root>section {
+        height: auto;
+        margin: 2rem;
+    }
+
+    /* #region About Me */
+    body>#root>section#about-me {
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: none;
+        min-height: 80vh;
+        margin-bottom: 2rem;
+    }
+
+    body>#root>section#about-me div.top__container,
+    body>#root>section#about-me div.bottom__container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    body>#root>section#about-me div.top__container h2,
+    body>#root>section#about-me div.bottom__container h2 {
+        font-size: 2rem;
+    }
+
+    body>#root>section#about-me div.middle__container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    body>#root>section#about-me div.middle__container #glitching-img-container {
+        max-width: 100%;
+        margin-top: 2rem;
+    }
+
+    body>#root>section#about-me div.middle__container #glitching-img-container .imgWrap img,
+    body>#root>section#about-me div.middle__container #glitching-img-container .imgWrap img.red,
+    body>#root>section#about-me div.middle__container #glitching-img-container .imgWrap img.green,
+    body>#root>section#about-me div.middle__container #glitching-img-container .imgWrap img.blue {
+        width: 100%;
+    }
+
+    body>#root>section#about-me div.middle__container h2 {
+        display: flex;
+        max-width: 100%;
+        margin: auto;
+        margin-top: 2rem;
+    }
+
+    body>#root>section#about-me div.middle__container .welcome {
+        width: 100%;
+        margin-top: 2rem;
+        margin-right: 0;
+    }
+
+    body>#root>section#about-me div.middle__container .welcome .message__container {
+        width: auto;
+        margin-top: 1rem;
+    }
+
+    body>#root>section#about-me div.middle__container .welcome .message__container .message {
+        text-align: justify;
+        white-space: normal;
+        overflow: visible;
+        animation: none;
+        border-right: none;
+        width: 100%;
+    }
+
+    body>#root>section#about-me div.middle__container .welcome .message__container .links__container {
+        margin: 1rem 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    body>#root>section#about-me div.middle__container .welcome .message__container .links__container a {
+        position: inherit;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        color: var(--text__color);
+        box-shadow: var(--box-shadows-light-outset);
+        width: 3rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        background-color: var(--bg__color);
+        transition: all 250ms ease-in-out;
+    }
+
+    body>#root>section#about-me div.middle__container .welcome .message__container .links__container a:hover {
+        cursor: pointer;
+        filter: brightness(1.03);
+    }
+
+    body>#root>section#about-me div.middle__container .welcome .message__container .links__container a:active {
+        box-shadow: var(--box-shadows-light-inset);
+    }
+
+    body>#root>section#about-me div.middle__container .welcome .message__container .links__container a>img {
+        width: 2rem;
+        height: 2rem;
+        box-shadow: none;
+    }
+
+    body>#root>section#about-me div.bottom__container h2 {
+        display: none;
+    }
+
+    body>#root>section#about-me a.next__link,
+    body>#root>section#me-in-few-words a.next__link {
+        display: none;
+    }
+
+    /* #endregion */
+
+    /* #region Me In Few Words */
+    body>#root>section#me-in-few-words {
+        width: auto;
+        gap: 0rem;
+        min-height: 40vh;
+        height: auto;
+    }
+
+    body>#root>section#me-in-few-words div.top__part,
+    body>#root>section#me-in-few-words div.bottom__part {
+        width: 100%;
+        margin: 0;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        gap: 2rem;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side {
+        width: 100%;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part,
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.bottom__part {
+        width: initial;
+        margin: 0;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>img.about__me__logo,
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.bottom__part>img.about__me__logo,
+    body>#root>section#me-in-few-words>div.middle__container>div.right__side>img {
+        height: 3rem;
+        width: 3rem;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>div.TypeWriter,
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.bottom__part>div.TypeWriter {
+        width: 100%;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>div.TypeWriter .line__1,
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>div.TypeWriter .line__2,
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>div.TypeWriter .line__3,
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.bottom__part>div.TypeWriter .line__1 {
+        white-space: normal;
+        overflow: visible;
+        animation: none;
+        display: flex;
+        width: auto;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container>div.right__side {
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container>div.right__side>img {
+        height: 3rem;
+        width: 3rem;
+    }
+
+    /* #endregion */
+}
+
+@media screen and (orientation: portrait) and (min-width: 600px) and (max-width: 992px) {
+    body>#root>section {
+        height: auto;
+        margin: 0 2rem;
+    }
+
+    /* #region About Me */
+    body>#root>section#about-me {
+        flex-direction: column;
+        align-items: center;
+        justify-content: none;
+        min-height: 80vh;
+        height: auto;
+        margin-bottom: 2rem;
+    }
+
+    body>#root>section#about-me div.top__container,
+    body>#root>section#about-me div.bottom__container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    body>#root>section#about-me div.top__container h2,
+    body>#root>section#about-me div.bottom__container h2 {
+        font-size: 2rem;
+    }
+
+    body>#root>section#about-me div.middle__container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    body>#root>section#about-me div.middle__container #glitching-img-container {
+        max-width: 100%;
+        margin-top: 2rem;
+    }
+
+    body>#root>section#about-me div.middle__container #glitching-img-container .imgWrap img,
+    body>#root>section#about-me div.middle__container #glitching-img-container .imgWrap img.red,
+    body>#root>section#about-me div.middle__container #glitching-img-container .imgWrap img.green,
+    body>#root>section#about-me div.middle__container #glitching-img-container .imgWrap img.blue {
+        width: 100%;
+    }
+
+    body>#root>section#about-me div.middle__container h2 {
+        display: flex;
+        max-width: 100%;
+        margin: auto;
+        margin-top: 2rem;
+    }
+
+    body>#root>section#about-me div.middle__container .welcome {
+        width: 100%;
+        margin-top: 2rem;
+        margin-right: 0;
+    }
+
+    body>#root>section#about-me div.middle__container .welcome .message__container {
+        width: auto;
+        margin-top: 1rem;
+    }
+
+    body>#root>section#about-me div.middle__container .welcome .message__container .message {
+        text-align: justify;
+        white-space: normal;
+        overflow: visible;
+        animation: none;
+        border-right: none;
+        width: 100%;
+    }
+
+    body>#root>section#about-me div.middle__container .welcome .message__container .links__container {
+        margin: 1rem 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    body>#root>section#about-me div.middle__container .welcome .message__container .links__container a {
+        position: inherit;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        color: var(--text__color);
+        box-shadow: var(--box-shadows-light-outset);
+        width: 3rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        background-color: var(--bg__color);
+        transition: all 250ms ease-in-out;
+    }
+
+    body>#root>section#about-me div.middle__container .welcome .message__container .links__container a:hover {
+        cursor: pointer;
+        filter: brightness(1.03);
+    }
+
+    body>#root>section#about-me div.middle__container .welcome .message__container .links__container a:active {
+        box-shadow: var(--box-shadows-light-inset);
+    }
+
+    body>#root>section#about-me div.middle__container .welcome .message__container .links__container a>img {
+        width: 2rem;
+        height: 2rem;
+        box-shadow: none;
+    }
+
+    body>#root>section#about-me div.bottom__container h2 {
+        display: none;
+    }
+
+    body>div#root>section#about-me a.next__link,
+    body>div#root>section#me-in-few-words a.next__link {
+        display: none;
+    }
+
+    /* #endregion */
+
+    /* #region Me In Few Words */
+    body>#root>section#me-in-few-words {
+        width: auto;
+        gap: 0rem;
+        min-height: 40vh;
+        height: auto;
+    }
+
+    body>#root>section#me-in-few-words div.top__part,
+    body>#root>section#me-in-few-words div.bottom__part {
+        width: 100%;
+        margin: 0;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        gap: 2rem;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side {
+        width: 100%;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part,
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.bottom__part {
+        width: initial;
+        margin: 0;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>img.about__me__logo,
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.bottom__part>img.about__me__logo,
+    body>#root>section#me-in-few-words>div.middle__container>div.right__side>img {
+        height: 3rem;
+        width: 3rem;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>div.TypeWriter,
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.bottom__part>div.TypeWriter {
+        width: 100%;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>div.TypeWriter .line__1,
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>div.TypeWriter .line__2,
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>div.TypeWriter .line__3,
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.bottom__part>div.TypeWriter .line__1 {
+        white-space: normal;
+        overflow: visible;
+        animation: none;
+        display: flex;
+        width: auto;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container>div.right__side {
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container>div.right__side>img {
+        height: 3rem;
+        width: 3rem;
+    }
+
+    /* #endregion */
+}
+
+@media screen and (orientation: landscape) and (min-width: 812px) and (max-width: 1080px) {
+    body>#root>section#about-me {
+        min-height: 80vh;
+    }
+
+    body>#root>section#about-me div.top__container h2,
+    body>#root>section#about-me div.bottom__container h2 {
+        font-size: 2rem;
+    }
+
+    body>#root>section#about-me div.middle__container #glitching-img-container {
+        max-width: 100%;
+        margin-top: 1.5rem;
+    }
+
+    body>#root>section#about-me div.middle__container .welcome {
+        margin-right: 0;
+    }
+
+    body>#root>section#about-me a,
+    body>#root>section#me-in-few-words a {
+        bottom: 0;
+    }
+
+    body>#root>section#me-in-few-words {
+        width: auto;
+        gap: 0rem;
+        min-height: 80vh;
+        height: auto;
+    }
+
+    body>#root>section#me-in-few-words div.top__part,
+    body>#root>section#me-in-few-words div.bottom__part {
+        width: 100%;
+        margin: 0;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        gap: 2rem;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side {
+        width: 100%;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part,
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.bottom__part {
+        width: initial;
+        margin: 0;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>img.about__me__logo,
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.bottom__part>img.about__me__logo,
+    body>#root>section#me-in-few-words>div.middle__container>div.right__side>img {
+        height: 3rem;
+        width: 3rem;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>div.TypeWriter,
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.bottom__part>div.TypeWriter {
+        width: 100%;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>div.TypeWriter .line__1,
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>div.TypeWriter .line__2,
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>div.TypeWriter .line__3,
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.bottom__part>div.TypeWriter .line__1 {
+        display: flex;
+        width: auto;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container>div.right__side {
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    body>#root>section#me-in-few-words>div.middle__container>div.right__side>img {
+        height: 3rem;
+        width: 3rem;
+    }
+}
+
+@media screen and (min-width: 1080px) and (max-width: 1250px) {
+
+    body>#root>section#about-me div.top__container h2,
+    body>#root>section#about-me div.bottom__container h2 {
+        font-size: 2rem;
+    }
 }
 </style>
