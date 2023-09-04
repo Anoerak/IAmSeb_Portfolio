@@ -181,11 +181,7 @@ body.dark {
 	}
 }
 
-/*
-|--------------------------------------------------
-|	Animation
-|--------------------------------------------------
-*/
+/* #region  Animations */
 @keyframes jumpUpAndBack {
 	0% {
 		top: 20px;
@@ -200,13 +196,10 @@ body.dark {
 	}
 }
 
-/*
-	==============================
-		Responsive Design 
-	==============================
- */
+/* #endregion */
 
-@media screen and (orientation: portrait) and (max-width: 600px) {
+/* #region  Media Queries */
+@include responsive(mobile-portrait) {
 	body>div#root>footer {
 		/* z-index: -10; */
 		position: initial;
@@ -294,7 +287,7 @@ body.dark {
 	}
 }
 
-@media screen and (orientation: landscape) and (max-width: 812px) {
+@include responsive(mobile-landscape) {
 	body>div#root>footer {
 		position: initial;
 		height: auto;
@@ -376,3 +369,5 @@ body.dark {
 		}
 	}
 }
+
+/* #endregion */

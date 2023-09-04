@@ -6,15 +6,19 @@
 	border-radius: 5px;
 	transition: all 0.3s ease-in-out;
 	cursor: pointer;
+
 	&:hover {
 		background-color: darken($background-color, 10%);
 	}
+
 	&:focus {
 		box-shadow: 0 0 0 0.2rem rgba($background-color, 0.5);
 	}
+
 	&:active {
 		background-color: darken($background-color, 20%);
 	}
+
 	&:disabled {
 		opacity: 0.5;
 		cursor: not-allowed;
@@ -34,4 +38,36 @@
 	flex-direction: column;
 	gap: 1rem;
 	cursor: not-allowed;
+}
+
+@mixin responsive($breakpoint) {
+	@if($breakpoint =='mobile-portrait') {
+		@media screen and (orientation: portrait) and (max-width: 600px) {
+			@content;
+		}
+	}
+
+	@if($breakpoint =='mobile-landscape') {
+		@media screen and (orientation: landscape) and (max-width: 812px) {
+			@content;
+		}
+	}
+
+	@if($breakpoint =='tablet-portrait') {
+		@media screen and (orientation: portrait) and (min-width: 600px) and (max-width: 992px) {
+			@content;
+		}
+	}
+
+	@if($breakpoint =='tablet-landscape') {
+		@media screen and (orientation: landscape) and (min-width: 812px) and (max-width: 1080px) {
+			@content;
+		}
+	}
+
+	@if($breakpoint =='desktop') {
+		@media screen and (min-width: 1080px) and (max-width: 1250px) {
+			@content;
+		}
+	}
 }

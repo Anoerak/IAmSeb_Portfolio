@@ -44,9 +44,13 @@ function GlitchingText(props) {
 			setTimeout(() => {
 				lettersEffect(title1, 20);
 			}, 1500);
+		}
+		if (title3) {
 			setTimeout(() => {
 				lettersEffect(title3, 20);
 			}, 4100);
+		}
+		if (title2) {
 			setTimeout(() => {
 				lettersEffect(title2, 10);
 			}, 3600);

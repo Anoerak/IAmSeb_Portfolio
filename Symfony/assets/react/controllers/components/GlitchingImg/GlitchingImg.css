@@ -107,6 +107,7 @@
 	transform: scale(0, 1) translate(-50%, -50%);
 }
 
+/* #region Animation */
 @keyframes imgGlitch {
 	0% {
 		clip-path: path(
@@ -208,6 +209,7 @@
 		transform: translate(-50%, -50%);
 	}
 }
+
 @keyframes shakingImgRed {
 	0% {
 		transform: translate(-50%, -50%);
@@ -297,6 +299,7 @@
 		transform: translate(-50%, -50%);
 	}
 }
+
 @keyframes shakingImgGreen {
 	0% {
 		transform: translate(-50%, -50%);
@@ -527,3 +530,4 @@
 		opacity: 1;
 	}
 }
+/* #endregion */

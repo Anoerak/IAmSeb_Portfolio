@@ -25,13 +25,13 @@ body {
 				width: 100%;
 
 				h2 {
-					color: var(--text__color);
+					color: $text__color;
 					text-shadow: -6px -6px 10px rgba(255, 255, 255, 1), 4px 4px 15px rgba(0, 0, 0, 0.15);
 					word-wrap: break-word;
 					padding: 0.5rem 1rem;
 					border-radius: 1rem;
-					box-shadow: var(--box-shadows-light-inset);
-					background-color: var(--bg__color__dark);
+					box-shadow: $box-shadows-light-inset;
+					background-color: $bg__color__dark;
 				}
 			}
 
@@ -55,13 +55,13 @@ body {
 
 				h2 {
 					display: none;
-					color: var(--text__color);
+					color: $text__color;
 					text-shadow: -6px -6px 10px rgba(255, 255, 255, 1), 4px 4px 15px rgba(0, 0, 0, 0.15);
 					word-wrap: break-word;
 					padding: 0.5rem 1rem;
 					border-radius: 1rem;
-					box-shadow: var(--box-shadows-light-inset);
-					background-color: var(--bg__color__dark);
+					box-shadow: $box-shadows-light-inset;
+					background-color: $bg__color__dark;
 				}
 
 				#glitching-img-container {
@@ -91,7 +91,7 @@ body {
 
 					.welcome__img {
 						width: 5rem;
-						box-shadow: var(--box-shadows-light-outset);
+						box-shadow: $box-shadows-light-outset;
 						padding: 1rem;
 						border-radius: 1rem;
 
@@ -107,7 +107,7 @@ body {
 						flex-direction: column;
 						margin-top: 2rem;
 						height: auto;
-						box-shadow: var(--box-shadows-light-inset);
+						box-shadow: $box-shadows-light-inset;
 						padding: 1rem;
 						border-radius: 1rem;
 
@@ -129,12 +129,12 @@ body {
 								flex-direction: column;
 								align-items: center;
 								text-decoration: none;
-								color: var(--text__color);
-								box-shadow: var(--box-shadows-light-outset);
+								color: $text__color;
+								box-shadow: $box-shadows-light-outset;
 								width: 6rem;
 								padding: 1rem;
 								border-radius: 1rem;
-								background-color: var(--bg__color);
+								background-color: $bg__color;
 								transition: all 250ms ease-in-out;
 
 								&:hover {
@@ -143,7 +143,7 @@ body {
 								}
 
 								&:active {
-									box-shadow: var(--box-shadows-light-inset);
+									box-shadow: $box-shadows-light-inset;
 								}
 
 								img {
@@ -175,10 +175,10 @@ body {
 				width: 120px;
 				height: 50px;
 				border-radius: 2rem 2rem 2rem 2rem;
-				background: var(--bg__color__dark);
+				background: $bg__color__dark;
 				/* transition: all 0.25s ease; */
 				transition: all 250ms ease-in-out;
-				box-shadow: var(--box-shadows-light-outset);
+				box-shadow: $box-shadows-light-outset;
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -195,7 +195,7 @@ body {
 				}
 
 				&:active {
-					box-shadow: var(--box-shadows-light-inset);
+					box-shadow: $box-shadows-light-inset;
 				}
 
 				&::before,
@@ -205,7 +205,7 @@ body {
 					width: 21px;
 					height: 4px;
 					border-radius: 50% 0;
-					background-color: var(--navigate-to-top-button-border);
+					background-color: $navigate-to-top-button-border;
 					transform: rotate(45deg);
 					position: absolute;
 					top: 25px;
@@ -231,8 +231,8 @@ body {
 			justify-content: space-evenly;
 
 			h4 {
-				color: var(--text__color);
-				box-shadow: var(--box-shadows-light-outset);
+				color: $text__color;
+				box-shadow: $box-shadows-light-outset;
 				padding: 0.5rem 1rem;
 				border-radius: 1rem;
 			}
@@ -253,10 +253,10 @@ body {
 						flex-direction: column;
 						align-items: center;
 						margin: 0 auto;
-						box-shadow: var(--box-shadows-light-inset);
+						box-shadow: $box-shadows-light-inset;
 						border-radius: 1rem;
 						padding: 1rem;
-						background-color: var(--bg__color__dark);
+						background-color: $bg__color__dark;
 
 						.about__me__logo {
 							height: 4rem;
@@ -269,7 +269,7 @@ body {
 						.TypeWriter .line__1,
 						.TypeWriter .line__2,
 						.TypeWriter .line__3 {
-							color: var(--text__color);
+							color: $text__color;
 						}
 					}
 				}
@@ -281,10 +281,10 @@ body {
 					justify-content: flex-start;
 					width: 49%;
 					height: 100%;
-					box-shadow: var(--box-shadows-light-inset);
+					box-shadow: $box-shadows-light-inset;
 					padding: 1rem;
 					border-radius: 1rem;
-					background-color: var(--bg__color__dark);
+					background-color: $bg__color__dark;
 
 					img {
 						width: 3.5rem;
@@ -319,10 +319,10 @@ body {
 				width: 120px;
 				height: 50px;
 				border-radius: 2rem 2rem 2rem 2rem;
-				background: var(--bg__color__dark);
+				background: $bg__color__dark;
 				/* transition: all 0.25s ease; */
 				transition: all 250ms ease-in-out;
-				box-shadow: var(--box-shadows-light-outset);
+				box-shadow: $box-shadows-light-outset;
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -339,7 +339,7 @@ body {
 				}
 
 				&:active {
-					box-shadow: var(--box-shadows-light-inset);
+					box-shadow: $box-shadows-light-inset;
 				}
 
 				&::before,
@@ -349,7 +349,7 @@ body {
 					width: 21px;
 					height: 4px;
 					border-radius: 50% 0;
-					background-color: var(--navigate-to-top-button-border);
+					background-color: $navigate-to-top-button-border;
 					transform: rotate(45deg);
 					position: absolute;
 					top: 25px;
@@ -364,8 +364,6 @@ body {
 					transform: rotate(-45deg);
 				}
 			}
-
-
 		}
 
 		&#my-stack {
@@ -373,15 +371,15 @@ body {
 			padding: 0 0 8rem 0;
 
 			h4 {
-				color: var(--text__color);
-				box-shadow: var(--box-shadows-light-outset);
+				color: $text__color;
+				box-shadow: $box-shadows-light-outset;
 				padding: 0.5rem 1rem;
 				border-radius: 1rem;
 			}
 
 			h6 {
-				color: var(--text__color);
-				box-shadow: var(--box-shadows-light-outset);
+				color: $text__color;
+				box-shadow: $box-shadows-light-outset;
 				padding: 0.5rem 1rem;
 				border-radius: 1rem;
 				margin-top: 5rem;
@@ -404,9 +402,9 @@ body {
 					align-items: center;
 					justify-content: space-around;
 					gap: 1rem;
-					background-color: var(--bg__color__dark);
+					background-color: $bg__color__dark;
 					border-radius: 1rem;
-					box-shadow: var(--box-shadows-light-inset);
+					box-shadow: $box-shadows-light-inset;
 					transition: all 250ms ease-in-out;
 
 					&:hover {
@@ -414,8 +412,8 @@ body {
 					}
 
 					h5 {
-						color: var(--text__color);
-						box-shadow: var(--box-shadows-light-outset);
+						color: $text__color;
+						box-shadow: $box-shadows-light-outset;
 						padding: 0.5rem 1rem;
 						margin: 2rem;
 						border-radius: 1rem;
@@ -435,8 +433,8 @@ body {
 							margin: 0.5rem;
 							padding: 0.5rem;
 							border-radius: 0.5rem;
-							background-color: var(--bg__color);
-							color: var(--text__color);
+							background-color: $bg__color;
+							color: $text__color;
 						}
 					}
 				}
@@ -452,10 +450,10 @@ body.dark {
 			.top__container,
 			.bottom__container {
 				h2 {
-					color: var(--dark__text__color);
+					color: $dark__text__color;
 					text-shadow: -6px -6px 10px rgba(255, 255, 255, 0.1), 4px 4px 15px rgba(0, 0, 0, 1);
-					box-shadow: var(--box-shadows-dark-inset);
-					background-color: var(--dark__bg__color);
+					box-shadow: $box-shadows-dark-inset;
+					background-color: $dark__bg__color;
 					position: relative;
 				}
 			}
@@ -463,7 +461,7 @@ body.dark {
 			.middle__container {
 				.welcome {
 					.welcome__img {
-						box-shadow: var(--box-shadows-dark-outset);
+						box-shadow: $box-shadows-dark-outset;
 
 						img {
 							filter: invert(1);
@@ -471,16 +469,16 @@ body.dark {
 					}
 
 					.message__container {
-						box-shadow: var(--box-shadows-dark-inset);
+						box-shadow: $box-shadows-dark-inset;
 
 						.links__container {
 							a {
-								color: var(--dark__text__color);
-								box-shadow: var(--box-shadows-dark-outset);
-								background-color: var(--dark__bg__color);
+								color: $dark__text__color;
+								box-shadow: $box-shadows-dark-outset;
+								background-color: $dark__bg__color;
 
 								&:active {
-									box-shadow: var(--box-shadows-dark-inset);
+									box-shadow: $box-shadows-dark-inset;
 								}
 
 								&:hover {
@@ -497,29 +495,29 @@ body.dark {
 			}
 
 			.next__section__arrow {
-				background: var(--dark__bg__color);
+				background: $dark__bg__color;
 				transition: all 250ms ease-in-out;
-				box-shadow: var(--box-shadows-dark-outset);
+				box-shadow: $box-shadows-dark-outset;
 
 				&:hover {
 					filter: brightness(1.5);
 				}
 
 				&:active {
-					box-shadow: var(--box-shadows-dark-inset);
+					box-shadow: $box-shadows-dark-inset;
 				}
 
 				&::before,
 				&::after {
-					background-color: var(--dark__navigate-to-top-button-border);
+					background-color: $dark__navigate-to-top-button-border;
 				}
 			}
 		}
 
 		&#me-in-few-words {
 			h4 {
-				color: var(--dark__text__color);
-				box-shadow: var(--box-shadows-dark-outset);
+				color: $dark__text__color;
+				box-shadow: $box-shadows-dark-outset;
 			}
 
 			.middle__container {
@@ -527,8 +525,8 @@ body.dark {
 
 					.top__part,
 					.bottom__part {
-						box-shadow: var(--box-shadows-dark-inset);
-						background-color: var(--dark__bg__color);
+						box-shadow: $box-shadows-dark-inset;
+						background-color: $dark__bg__color;
 
 						.about__me__logo {
 							filter: invert(1);
@@ -540,8 +538,8 @@ body.dark {
 						.TypeWriter .line__1,
 						.TypeWriter .line__2,
 						.TypeWriter .line__3 {
-							color: var(--dark__text__color);
-							border-right: 1px solid var(--dark__bg__color);
+							color: $dark__text__color;
+							border-right: 1px solid $dark__bg__color;
 						}
 					}
 
@@ -549,8 +547,8 @@ body.dark {
 				}
 
 				.right__side {
-					box-shadow: var(--box-shadows-dark-inset);
-					background-color: var(--dark__bg__color);
+					box-shadow: $box-shadows-dark-inset;
+					background-color: $dark__bg__color;
 
 					img {
 						filter: invert(1);
@@ -559,68 +557,68 @@ body.dark {
 			}
 
 			.next__section__arrow {
-				background: var(--dark__bg__color);
+				background: $dark__bg__color;
 				transition: all 250ms ease-in-out;
-				box-shadow: var(--box-shadows-dark-outset);
+				box-shadow: $box-shadows-dark-outset;
 
 				&:hover {
 					filter: brightness(1.5);
 				}
 
 				&:active {
-					box-shadow: var(--box-shadows-dark-inset);
+					box-shadow: $box-shadows-dark-inset;
 				}
 
 				&::before,
 				&::after {
-					background-color: var(--dark__navigate-to-top-button-border);
+					background-color: $dark__navigate-to-top-button-border;
 				}
 			}
 		}
 
 		&#coming-soon {
 			h4 {
-				color: var(--dark__text__color);
+				color: $dark__text__color;
 			}
 
 			h5 {
-				color: var(--dark__text__color);
+				color: $dark__text__color;
 			}
 
 			p {
-				color: var(--dark__text__color);
+				color: $dark__text__color;
 			}
 		}
 
 		&#my-stack {
 			h4 {
-				color: var(--dark__text__color);
-				box-shadow: var(--box-shadows-dark-outset);
+				color: $dark__text__color;
+				box-shadow: $box-shadows-dark-outset;
 			}
 
 			h6 {
-				color: var(--dark__text__color);
-				box-shadow: var(--box-shadows-dark-outset);
+				color: $dark__text__color;
+				box-shadow: $box-shadows-dark-outset;
 			}
 
 			.stack__container {
 				.stack__card {
-					background-color: var(--dark__bg__color);
-					box-shadow: var(--box-shadows-dark-inset);
+					background-color: $dark__bg__color;
+					box-shadow: $box-shadows-dark-inset;
 
 					&:hover {
 						filter: brightness(1.5);
 					}
 
 					h5 {
-						color: var(--dark__text__color);
-						box-shadow: var(--box-shadows-dark-outset);
+						color: $dark__text__color;
+						box-shadow: $box-shadows-dark-outset;
 					}
 
 					ul {
 						li {
-							background-color: var(--dark__bg__color);
-							color: var(--dark__text__color);
+							background-color: $dark__bg__color;
+							color: $dark__text__color;
 						}
 					}
 				}
@@ -647,41 +645,41 @@ body.dark {
 /* #region Typing animation */
 @keyframes animated-cursor__1 {
 	from {
-		border-right-color: var(--bg__color);
+		border-right-color: $bg__color;
 	}
 
 	to {
-		border-right-color: var(--text__color);
+		border-right-color: $text__color;
 	}
 }
 
 @keyframes animated-cursor__2 {
 	from {
-		border-right-color: var(--bg__color);
+		border-right-color: $bg__color;
 	}
 
 	to {
-		border-right-color: var(--text__color);
+		border-right-color: $text__color;
 	}
 }
 
 @keyframes animated-cursor__3 {
 	from {
-		border-right-color: var(--bg__color);
+		border-right-color: $bg__color;
 	}
 
 	to {
-		border-right-color: var(--text__color);
+		border-right-color: $text__color;
 	}
 }
 
 @keyframes animated-cursor__4 {
 	from {
-		border-right-color: var(--bg__color);
+		border-right-color: $bg__color;
 	}
 
 	to {
-		border-right-color: var(--text__color);
+		border-right-color: $text__color;
 	}
 }
 
@@ -986,187 +984,239 @@ body.dark {
 
 /* #endregion */
 
-@media screen and (orientation: portrait) and (max-width: 600px) {
+
+/* #region Media Queries */
+@include responsive(mobile-portrait) {
 	body {
 		section {
 			&#about-me {
-				margin-top: 0rem;
+				height: auto;
+				margin: 1rem;
+				display: flex;
 				flex-direction: column;
 				align-items: center;
 				justify-content: space-around;
 
-				div {
+				div.top__container,
+				div.bottom__container {
+					width: 100%;
+				}
 
-					&.top__container,
-					&.bottom__container {
-						width: 100%;
+				div.top__container h2.glitching-text,
+				div.bottom__container h2.glitching-text,
+				div.top__container h2.glitching-text::before,
+				div.bottom__container h2.glitching-text::before,
+				div.top__container h2.glitching-text::after,
+				div.bottom__container h2.glitching-text::after {
+					animation: none;
+				}
 
-						h2 {
-							.glitching-text {
+				div.top__container {
+					h2 {
+						max-width: 90%;
+						margin: auto;
+						animation: none;
+					}
+				}
+
+				div.middle__container {
+					flex-direction: column;
+					align-items: center;
+					justify-content: space-around;
+
+					h2 {
+						display: flex;
+						max-width: 100%;
+						margin: auto;
+					}
+
+					#glitching-img-container {
+						max-width: 100%;
+						margin-top: 2rem;
+
+						.imgWrap {
+							img {
+								width: 100%;
 								animation: none;
 
-								&::before,
-								&::after {
+								&.red,
+								&.green,
+								&.blue {
+									width: 100%;
 									animation: none;
+									filter: none;
+									transform: translate(-50%, -50%);
 								}
 							}
 						}
+
 					}
 
-					&.top__container {
-						h2 {
-							max-width: 90%;
-							margin: auto;
-							animation: none;
-						}
+					.welcome {
+						width: 100%;
+						margin-top: 2rem;
 
-						#glitching-img-container {
-							max-width: 100%;
-							margin-top: 2rem;
+						.message__container {
+							width: auto;
+							margin-top: 1rem;
 
-							.imgWrap {
-								img {
-									width: 100%;
-									animation: none;
+							.message {
+								text-align: justify;
+								white-space: normal;
+								overflow: visible;
+								animation: none;
+								border-right: none;
+								width: 100%;
 
-									.red,
-									.green,
-									.blue {
-										width: 100%;
-										animation: none;
-										filter: none;
-										transform: translate(-50%, -50%);
+								.links__container {
+									margin: 1rem 0;
+									display: flex;
+									flex-direction: row;
+									align-items: center;
+									justify-content: space-around;
+
+									a {
+										position: inherit;
+										margin: 0;
+										display: flex;
+										flex-direction: column;
+										align-items: center;
+										text-decoration: none;
+										color: $text__color;
+										box-shadow: $box-shadows-light-outset;
+										width: 3rem;
+										padding: 1rem;
+										border-radius: 1rem;
+										background-color: $bg__color;
+										transition: all 250ms ease-in-out;
+
+										&:hover {
+											cursor: pointer;
+											filter: brightness(1.03);
+										}
+
+										&:active {
+											box-shadow: $box-shadows-light-inset;
+										}
+
+										img {
+											width: 2rem;
+											height: 2rem;
+											box-shadow: none;
+										}
 									}
 								}
 							}
 						}
 					}
-
-					&.bottom__container {
-						h2 {
-							max-width: 100%;
-							margin: auto;
-						}
-					}
 				}
 
-				a {
-					height: 40px;
-					width: 40px;
-					border-radius: 30%;
-
-					&.next_link {
-						bottom: 0;
-					}
-				}
-
-				.next__section__arrow {
-					height: 40px;
-					width: 40px;
-					border-radius: 30%;
-
-					&::before {
-						left: 3px;
-					}
-
-					&::after {
-						right: 3px;
-					}
-
-					&::before,
-					&::after {
-						top: 20px;
-					}
-
-					&:hover::before,
-					&hover::after {
-						animation: jumpUpAndBackHomeMobile 0.75s ease infinite;
-					}
+				div.bottom__container h2 {
+					display: none;
 				}
 			}
 
+			&#about-me,
 			&#me-in-few-words {
-				margin: 0 1rem;
-				height: auto;
-				width: auto;
-
 				a {
 					height: 40px;
 					width: 40px;
 					border-radius: 30%;
 
 					&.next__link {
+						display: none;
 						bottom: 0;
 					}
+
+					.next__section__arrow {
+						height: 40px;
+						width: 40px;
+						border-radius: 30%;
+
+						&::before {
+							left: 3px;
+						}
+
+						&::after {
+							right: 3px;
+						}
+
+						&::before,
+						&::after {
+							top: 20px;
+						}
+
+						&:hover::before,
+						&:hover::after {
+							animation: jumpUpAndBackHomeMobile 0.75s ease infinite;
+						}
+					}
 				}
+			}
 
-				.next__section__arrow {
-					height: 40px;
-					width: 40px;
-					border-radius: 30%;
+			&#me-in-few-words {
+				margin: 1rem;
+				height: auto;
+				width: auto;
 
-					&::before {
-						left: 3px;
-					}
+				div.middle__container {
+					flex-direction: column;
+					align-items: center;
+					justify-content: space-around;
+					width: 100%;
+					gap: 2rem;
 
-					&::after {
-						right: 3px;
-					}
+					div.left__side {
 
-					&::before,
-					&::after {
-						top: 20px;
-					}
+						div.top__part,
+						div.bottom__part {
+							width: initial;
+							margin: 0;
 
-					&:hover::before,
-					&hover::after {
-						animation: jumpUpAndBackHomeMobile 0.75s ease infinite;
-					}
-				}
+							img {
+								.about__me__logo {
+									height: 3rem;
+									width: 3rem;
+								}
+							}
 
-				div {
+							div.TypeWriter {
+								width: 100%;
 
-					&.top__part,
-					&.bottom__part {
-						width: calc(100% - 2rem);
-						margin: 0;
-
-						.about__me__logo {
-							height: 2.5rem;
-							width: 2.5rem;
+								.line__1,
+								.line__2,
+								.line__3 {
+									white-space: normal;
+									overflow: visible;
+									animation: none;
+									display: flex;
+									width: auto;
+								}
+							}
 						}
 					}
 
-					&.top__part {
+					div.right__side {
+						width: 100%;
+						padding: 1rem 0;
 
-						.line__1,
-						.line__2,
-						.line__3 {
-							text-align: justify;
-							white-space: normal;
-							overflow: visible;
-							animation: none;
-							border-right: none;
-							width: 100%;
-						}
-					}
-
-					&.bottom__part {
-						.line__4 {
-							text-align: justify;
-							white-space: normal;
-							overflow: visible;
-							animation: none;
-							border-right: none;
-							width: 100%;
+						img {
+							height: 3rem;
+							width: 3rem;
 						}
 					}
 				}
 			}
 
 			&#my-stack {
-				padding: 6rem 0 6rem 0;
+				padding: 0;
 				height: auto;
+
+				h5 {
+					margin-top: 2rem;
+					width: 80%;
+					padding: 1rem 1.5rem;
+				}
 
 				.stack__container {
 					flex-direction: column;
@@ -1179,17 +1229,10 @@ body.dark {
 						margin: 1rem 0;
 					}
 				}
-
-				h5 {
-					margin-top: 2rem;
-					width: 80%;
-					padding: 1rem 1.5rem;
-				}
 			}
 		}
 	}
 
-	/* #region Animations */
 	@keyframes jumpUpAndBackHomeMobile {
 		0% {
 			top: 22.5px;
@@ -1205,7 +1248,7 @@ body.dark {
 	}
 }
 
-@media screen and (orientation: landscape) and (max-width: 812px) {
+@include responsive(mobile-landscape) {
 	body {
 		section {
 			height: auto;
@@ -1349,7 +1392,7 @@ body.dark {
 	}
 }
 
-@media screen and (orientation: portrait) and (min-width: 600px) and (max-width: 992px) {
+@include responsive(tablet-portrait) {
 	body {
 		section {
 			height: auto;
@@ -1427,7 +1470,7 @@ body.dark {
 	}
 }
 
-@media screen and (orientation: landscape) and (min-width: 812px) and (max-width: 1080px) {
+@include responsive(tablet-landscape) {
 	body {
 		section {
 			&#about-me {
@@ -1487,7 +1530,7 @@ body.dark {
 	}
 }
 
-@media screen and (min-width: 1080px) and (max-width: 1250px) {
+@include responsive(desktop) {
 	body {
 		section {
 			#about-me {
@@ -1504,3 +1547,5 @@ body.dark {
 		}
 	}
 }
+
+/* #endregion */

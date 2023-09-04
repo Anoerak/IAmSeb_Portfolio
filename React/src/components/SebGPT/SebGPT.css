@@ -132,11 +132,7 @@ body.dark .OpenAI .answer p.gpt__comment {
 	color: var(--dark-main-orange-color);
 }
 
-/*
-|-------------------------------------------
-|		Animations
-|-------------------------------------------
-*/
+/* #region Animations */
 @keyframes glitchingInElement {
 	0% {
 		opacity: 0;
@@ -283,13 +279,9 @@ body.dark .OpenAI .answer p.gpt__comment {
 		opacity: 1;
 	}
 }
+/* #endregion */
 
-/*
-	========================
-		Responsive Design
-	========================
-*/
-
+/* #region Media Queries */
 @media screen and (orientation: portrait) and (max-width: 600px) {
 	body .OpenAI {
 		/* display: none; */
@@ -301,47 +293,38 @@ body.dark .OpenAI .answer p.gpt__comment {
 	}
 }
 
-@media screen and (orientation: landscape) and (max-width: 1020px) {
+@media screen and (orientation: landscape) and (max-width: 812px) {
 	body .OpenAI {
-		display: none;
+		/* display: none; */
+		width: 80%;
+		margin: 0;
+	}
+	body .OpenAI .button {
+		top: 4.25rem;
 	}
 }
 
 @media screen and (orientation: portrait) and (min-width: 601px) and (max-width: 992px) {
 	body .OpenAI {
+		/* display: none; */
 		width: 80%;
-		height: 26%;
-		top: 58%;
-		right: initial;
+		margin: 0;
 	}
-	body .OpenAI h3 {
-		font-size: 0.85rem;
-	}
-	body .OpenAI .subtitle {
-		font-size: 0.75rem;
-	}
-	body .OpenAI .answer {
-		height: 6rem;
-	}
-	body .OpenAI .answer #prompt {
-		font-size: 0.65rem;
-		height: 0.75rem;
-	}
-	body .OpenAI .answer p {
-		font-size: 0.75rem;
-	}
-	body .OpenAI button {
-		top: 0;
-		position: absolute;
-		right: 1rem;
+	body .OpenAI .button {
+		top: 4.25rem;
 	}
 }
 
 @media screen and (orientation: landscape) and (min-width: 1020px) and (max-width: 1280px) {
 	body .OpenAI {
-		width: 45%;
-		height: 50%;
-		top: 23%;
-		right: 0;
+		/* display: none; */
+		width: 80%;
+		margin: 0;
+	}
+	body .OpenAI .button {
+		top: 4.25rem;
+		right: 0rem;
+		width: auto;
 	}
 }
+/* #endregion */

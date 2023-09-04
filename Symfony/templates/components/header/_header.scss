@@ -242,13 +242,31 @@ body.dark {
 	}
 }
 
-/*
-|--------------------------------------
-| Navbar Responsive
-|--------------------------------------
-*/
+/* #region  Animations */
+@keyframes fadingOut {
+	0% {
+		opacity: 1;
+	}
 
-@media screen and (orientation: portrait) and (max-width: 600px) {
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes fadingIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+/* #endregion */
+
+/* #region  Media Queries */
+@include responsive(mobile-portrait) {
 	body {
 		header {
 			min-height: 8rem;
@@ -428,7 +446,6 @@ body.dark {
 		}
 	}
 
-
 	body.dark {
 		header {
 			.hamburger__menu__container {
@@ -445,7 +462,7 @@ body.dark {
 	}
 }
 
-@media screen and (orientation: landscape) and (max-width: 812px) {
+@include responsive(mobile-landscape) {
 	body {
 		header {
 			min-height: 8rem;
@@ -471,28 +488,4 @@ body.dark {
 	}
 }
 
-/*
-|--------------------------------------
-| Animations
-|--------------------------------------
-*/
-
-@keyframes fadingOut {
-	0% {
-		opacity: 1;
-	}
-
-	100% {
-		opacity: 0;
-	}
-}
-
-@keyframes fadingIn {
-	0% {
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 1;
-	}
-}
+/* #endregion */

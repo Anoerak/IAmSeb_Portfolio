@@ -32,6 +32,7 @@
 	-webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
 }
 
+/* #region Animations */
 @keyframes glitch {
 	2%,
 	64% {
@@ -82,3 +83,4 @@
 		opacity: 1;
 	}
 }
+/* #endregion */
