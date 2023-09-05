@@ -5,6 +5,8 @@ import GlitchingText from '@Components/GlitchingText/GlitchingText';
 import './Contact.css';
 
 function Contact() {
+	document.title = 'IamSeb w/ React | Contact';
+
 	return (
 		<section id='contact'>
 			<GlitchingText text='************' dataValue='Code with Me' className='title1' tags='h2' />

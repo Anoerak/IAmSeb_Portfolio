@@ -42,6 +42,8 @@ export default {
 				});
 		},
 	}
+	// If submitted, show a success message
+	// If there's an error, show the error message
 
 }
 </script>

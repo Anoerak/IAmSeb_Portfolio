@@ -1,10 +1,11 @@
 <script>
-import { onMounted } from 'vue'
 import gsap from 'gsap'
 
 import GlitchingText from '../components/GlitchingText.vue'
 import GlitchingImg from '../components/GlitchingImg.vue'
 import BlinkingWords from '../components/BlinkingWords.vue'
+import TypeWriter from '../components/TypeWriter.vue'
+import SebGPT from '../components/SebGPT.vue'
 
 import pictureOfMe from '../assets/img/portrait_me.webp'
 import Webdev from '../assets/logos/web_dev.png'
@@ -14,10 +15,6 @@ import WelcomeBack from '../assets/logos/welcome-back.png'
 import ReactNative from '../assets/logos/react-native.webp'
 import VueJs from '../assets/logos/vuejs.webp'
 import Symfony from '../assets/logos/symfony.webp'
-
-onMounted(() => {
-    document.title = 'I Am Seb w/ Vue'
-})
 
 export default {
     name: 'HomeView',
@@ -101,13 +98,24 @@ export default {
             learningStack: [
                 ['', '', 'Solid', '', '', '', '', 'Next.js', '', 'TypeScript'],
                 ['Ansible', '', '', '', 'OpenStack', '', 'DApp/Web3.0']
+            ],
+            TypeWriter_1: [
+                { text: 'I am a Fullstack Developer with a passion for creating and developing web applications.' },
+                { text: 'I am always looking for new challenges and opportunities to learn and grow.' },
+                { text: 'When I am not coding, you can find me playing with my son, video games, or watching movies.' },
+            ],
+            TypeWriter_2: [
+                { text: 'I started learning web development in 2021 and I have been hooked ever since.' },
+                { text: 'I love that I learn a bit more every day and the ability to mix tech together!!' },
             ]
         }
     },
     components: {
         GlitchingText,
         GlitchingImg,
-        BlinkingWords
+        BlinkingWords,
+        SebGPT,
+        TypeWriter
     },
     props: {
         type: Object,
@@ -204,16 +212,16 @@ export default {
                         </p>
                     </div>
                     <div class="links__container">
-                        <a to="https://iamseb.dev" class="framework react">
-                            <img :src="ReactNative" alt="Welcome Back sign" class="react__img" />
+                        <a href="https://iamseb.dev" class="framework react">
+                            <img :src="ReactNative" alt="React.js logo" class="react__img" />
                             React
                         </a>
-                        <a to="https://iamseb.dev/vue" class="framework vue">
-                            <img :src="VueJs" alt="Welcome Back sign" class="vue__img" />
+                        <a href="https://iamseb.dev/vue" class="framework vue">
+                            <img :src="VueJs" alt="Vue.js logo" class="vue__img" />
                             Vue
                         </a>
-                        <a to="https://iamseb.dev/symfony" class="framework symfony">
-                            <img :src="Symfony" alt="Welcome Back sign" class="symfony__img" />
+                        <a href="https://iamseb.dev/symfony" class="framework symfony">
+                            <img :src="Symfony" alt="Symfony 6 logo" class="symfony__img" />
                             Symfony
                         </a>
                     </div>
@@ -223,7 +231,7 @@ export default {
         <div class="bottom__container">
             <GlitchingText text="************" dataValue="SEBASTIEN P." class="title3" tags="h2" />
         </div>
-        <a to="#me-anchor" class="next__link">
+        <a href="#me-anchor" class="next__link">
             <div class="next__section__arrow"></div>
         </a>
     </section>
@@ -234,19 +242,11 @@ export default {
             <div class="left__side">
                 <div class="top__part">
                     <img :src="Webdev" alt="Webdev" class="about__me__logo" />
-                    <!--<TypeWriter
-								data={[
-									{ text: 'I am a Fullstack Developer with a passion for creating and developing web applications.' },
-									{ text: 'I am always looking for new challenges and opportunities to learn and grow.' },
-									{ text: 'When I am not coding, you can find me playing with my son, video games, or watching movies.' },
-								]}-->
-                    />
+                    <TypeWriter :data="TypeWriter_1" />
                 </div>
                 <div class="bottom__part">
                     <img :src="HookedCode" alt="HookedCode" class="about__me__logo" />
-                    <!--<TypeWriter
-								data={[{ text: 'I started learning web development in 2021 and I have been hooked ever since.' }]}
-							/>-->
+                    <TypeWriter :data="TypeWriter_2" />
                 </div>
             </div>
             <div class="right__side">
@@ -254,7 +254,7 @@ export default {
                 <SebGPT />
             </div>
         </div>
-        <a to="#my-stack" class="next__link">
+        <a href="#my-stack" class="next__link">
             <div class="next__section__arrow"></div>
         </a>
     </section>
@@ -614,6 +614,10 @@ body>#root>section#me-in-few-words>.middle__container {
     gap: 1rem;
 }
 
+body>#root>section#me-in-few-words>.middle__container>.left__side {
+    width: 49%;
+}
+
 body>#root>section#me-in-few-words>.middle__container>.left__side>.top__part,
 body>#root>section#me-in-few-words>.middle__container>.left__side>.bottom__part {
     display: flex;
@@ -663,6 +667,7 @@ body>#root>section#me-in-few-words>.middle__container>.right__side {
     align-items: center;
     justify-content: flex-start;
     width: 49%;
+    height: calc(100% - 2rem);
     box-shadow: var(--box-shadows-light-inset);
     padding: 1rem;
     border-radius: 1rem;

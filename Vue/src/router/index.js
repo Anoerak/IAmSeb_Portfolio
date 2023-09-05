@@ -15,7 +15,7 @@ const router = createRouter({
             meta: {
                 headerItem: true,
                 footerItem: true,
-                title: 'I Am Seb w/ Vue'
+                title: 'IamSeb w/ Vue | Home'
             }
         },
         {
@@ -28,7 +28,8 @@ const router = createRouter({
             component: AboutView,
             meta: {
                 headerItem: true,
-                footerItem: true
+                footerItem: true,
+                title: 'IamSeb w/ Vue | About Me'
             }
         },
         {
@@ -38,7 +39,8 @@ const router = createRouter({
             component: ContactView,
             meta: {
                 headerItem: true,
-                footerItem: true
+                footerItem: true,
+                title: 'IamSeb w/ Vue | Contact'
             }
         },
         {
@@ -48,7 +50,8 @@ const router = createRouter({
             component: ProjectsView,
             meta: {
                 headerItem: true,
-                footerItem: true
+                footerItem: true,
+                title: 'IamSeb w/ Vue | Projects'
             }
         },
         {

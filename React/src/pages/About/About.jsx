@@ -4,6 +4,8 @@ import GlitchingText from '@Components/GlitchingText/GlitchingText';
 import './About.css';
 
 function About() {
+	document.title = 'IamSeb w/ React | About';
+
 	// We make the page scroll to the top when we load it
 	window.scrollTo(0, 0);
 

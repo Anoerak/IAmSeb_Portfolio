@@ -5,6 +5,8 @@ import Video from '@Videos/glitch_4K.mp4';
 import './NotFound.css';
 
 function NotFound() {
+	document.title = 'IamNotSeb w/ React | Error';
+
 	useEffect(() => {
 		const letters = "0123456789ABCDEFGHIJKLMNOØPQRSTUVWXYZabcdefghijklmnoøpqrestuvwxyz!@#$%^&*()_+{}|:<>?/.,'";
 

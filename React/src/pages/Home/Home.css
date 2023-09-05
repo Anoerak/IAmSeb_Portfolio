@@ -350,6 +350,7 @@ body > #root > section#me-in-few-words > .middle__container > .right__side {
 	align-items: center;
 	justify-content: flex-start;
 	width: 49%;
+	height: calc(100% - 2rem);
 	box-shadow: var(--box-shadows-light-inset);
 	padding: 1rem;
 	border-radius: 1rem;

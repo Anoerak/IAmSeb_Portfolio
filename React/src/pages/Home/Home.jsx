@@ -83,7 +83,7 @@ function Home() {
 
 	useEffect(() => {
 		// We set up the page title
-		document.title = 'I Am Seb w/ React';
+		document.title = 'IamSeb w/ React | Home';
 
 		/* #region Landing Page Animation */
 		const leftContainer = document.querySelector('.top__container');
@@ -220,7 +220,10 @@ function Home() {
 						<div className='bottom__part'>
 							<img src={HookedCode} alt='HookedCode' className='about__me__logo' />
 							<TypeWriter
-								data={[{ text: 'I started learning web development in 2021 and I have been hooked ever since.' }]}
+								data={[
+									{ text: 'I started learning web development in 2021 and I have been hooked ever since.' },
+									{ text: 'I love that I learn a bit more every day and the ability to mix tech together!!' },
+								]}
 							/>
 						</div>
 					</div>

@@ -26,7 +26,7 @@ const TypeWriter = (props) => {
 							line.classList[0].split('__')[1]
 						} 4s steps(87, end) ${delay}s 1 normal both, animated-cursor__${
 							line.classList[0].split('__')[1]
-						} 500ms steps(87, end) ${delay}s 5`;
+						} 250ms steps(87, end) ${delay}s 5`;
 						delay += 4;
 					});
 				}

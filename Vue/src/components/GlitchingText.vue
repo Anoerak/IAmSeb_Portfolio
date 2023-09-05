@@ -1,6 +1,4 @@
 <script>
-import { defineProps } from 'vue'
-defineProps(['text', 'ClassName', 'tags', 'dataValue'])
 
 export default {
     name: 'GlitchingText',
@@ -92,6 +90,7 @@ export default {
 .glitching-text {
     animation: glitch 1s linear infinite;
 }
+
 .glitching-text:hover,
 .glitching-text:hover::before,
 .glitching-text:hover::after {
@@ -124,42 +123,51 @@ export default {
 }
 
 @keyframes glitch {
+
     2%,
     64% {
         transform: translate(2px, 0) skew(0deg);
     }
+
     4%,
     60% {
         transform: translate(-2px, 0) skew(0deg);
     }
+
     62% {
         transform: translate(0, 0) skew(5deg);
     }
 }
 
 @keyframes glitchTop {
+
     2%,
     64% {
         transform: translate(2px, -2px);
     }
+
     4%,
     60% {
         transform: translate(-2px, 2px);
     }
+
     62% {
         transform: translate(13px, -1px) skew(-13deg);
     }
 }
 
 @keyframes glitchBottom {
+
     2%,
     64% {
         transform: translate(-2px, 0);
     }
+
     4%,
     60% {
         transform: translate(-2px, 0);
     }
+
     62% {
         transform: translate(-22px, 5px) skew(21deg);
     }
@@ -169,8 +177,8 @@ export default {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
-}
-</style>
+}</style>

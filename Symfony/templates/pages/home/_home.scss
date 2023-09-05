@@ -246,6 +246,7 @@ body {
 				align-items: center;
 				justify-content: space-between;
 				width: 100%;
+				gap: 1rem;
 
 				.left__side {
 					width: 49%;
@@ -258,8 +259,9 @@ body {
 						margin: 0 auto;
 						box-shadow: $box-shadows-light-inset;
 						border-radius: 1rem;
-						padding: 1rem;
+						padding: 1.5rem 1rem;
 						background-color: $bg__color__dark;
+						height: 50%;
 
 						.about__me__logo {
 							height: 4rem;
@@ -285,7 +287,7 @@ body {
 					width: 49%;
 					height: 100%;
 					box-shadow: $box-shadows-light-inset;
-					padding: 1rem;
+					padding: 0 1rem;
 					border-radius: 1rem;
 					background-color: $bg__color__dark;
 

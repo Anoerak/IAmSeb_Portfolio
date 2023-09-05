@@ -11,6 +11,8 @@ import GlitchingText from '@Components/GlitchingText/GlitchingText';
 import './Projects.css';
 
 function Projects() {
+	document.title = 'IamSeb w/ React | Projects';
+
 	return (
 		<section id='projects'>
 			<GlitchingText text='***********' dataValue='My Projects' className='title1' tags='h2' />
