@@ -1,59 +1,49 @@
 <script>
+import { RouterLink } from 'vue-router'
 import Video from '../../assets/videos/glitch_4K.mp4'
-// import GlitchingText from '../../components/GlitchingText.vue'
 
 export default {
-  datas: () => ({
-    Video
-  }),
-  components: {
-    // GlitchingText
+  data() {
+    return {
+      Video
+    };
   },
   mounted() {
-    const letters =
-      "0123456789ABCDEFGHIJKLMNOØPQRSTUVWXYZabcdefghijklmnoøpqrestuvwxyz!@#$%^&*()_+{}|:<>?/.,'"
-
-    let interval = null
-    const screen = document.querySelector('body'),
-      title = document.querySelector('.title'),
-      subtitle = document.querySelector('.subtitle'),
-      message = document.querySelector('.message')
-
+    const letters = "0123456789ABCDEFGHIJKLMNOØPQRSTUVWXYZabcdefghijklmnoøpqrestuvwxyz!@#$%^&*()_+{}|:<>?/.,'";
+    let interval = null;
+    const screen = document.querySelector('body'), title = document.querySelector('.title'), subtitle = document.querySelector('.subtitle'), message = document.querySelector('.message');
     const lettersEffect = (element, duration) => {
-      let iteration = 0
-
-      clearInterval(interval)
-
+      let iteration = 0;
+      clearInterval(interval);
       interval = setInterval(() => {
         element.innerText = element.innerText
           .split('')
           .map((letter, index) => {
             if (index < iteration) {
-              return element.dataset.value[index]
+              return element.dataset.value[index];
             }
-
-            return letters[Math.floor(Math.random() * letters.length)]
+            return letters[Math.floor(Math.random() * letters.length)];
           })
-          .join('')
+          .join('');
         if (iteration >= element.dataset.value.length) {
-          clearInterval(interval)
+          clearInterval(interval);
         }
-        iteration += 1 / 3
-      }, duration)
-    }
-
+        iteration += 1 / 3;
+      }, duration);
+    };
     screen.onload = () => {
-      lettersEffect(title, 25)
+      lettersEffect(title, 25);
       // We wait 1 second before starting the subtitle effect
       setTimeout(() => {
-        lettersEffect(subtitle, 10)
-      }, 250)
+        lettersEffect(subtitle, 10);
+      }, 250);
       // We wait 1 seconds before starting the message effect
       setTimeout(() => {
-        lettersEffect(message, 5)
-      }, 1250)
-    }
-  }
+        lettersEffect(message, 5);
+      }, 1250);
+    };
+  },
+  components: { RouterLink }
 }
 </script>
 
@@ -64,7 +54,6 @@ export default {
 
   <div id="content">
     <div class="message__container">
-      <!--<GlitchingText class="title" dataValue="404" text="***" tags="h1" />-->
       <h1 class="title" data-value="404">***</h1>
       <h2 class="subtitle" data-value="Oups, we can't find that page.">
         ******************************
@@ -76,20 +65,16 @@ export default {
     <div class="back__button">
       <div class="button__border"></div>
       <RouterLink class="button__content" to="/"> Go back </RouterLink>
-      <!-- 
-		<a class="button__content" href="https://http.cat/404"> Go back </a>
-	-->
     </div>
   </div>
 </template>
 
-<style scoped>
+<style>
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-body>#root>.App>#background_video {
+body>#root>#background_video {
   position: fixed;
   right: 0;
   bottom: 0;
@@ -99,7 +84,7 @@ body>#root>.App>#background_video {
   z-index: -1;
 }
 
-body>#root>.App>#content {
+body>#root>#content {
   background: rgba(0, 0, 0, 0.5);
   color: var(--dark__text__color);
   padding: 2rem;
@@ -107,64 +92,66 @@ body>#root>.App>#content {
   margin-top: 5rem;
 }
 
-body>#root>.App>#content>.message__container>p::before,
-body>#root>.App>#content>.message__container>p::after,
-body>#root>.App>#content>.message__container>h1::before,
-body>#root>.App>#content>.message__container>h1::after {
+body>#root>#content>.message__container>p::before,
+body>#root>#content>.message__container>p::after,
+body>#root>#content>.message__container>h1::before,
+body>#root>#content>.message__container>h1::after {
   right: 0;
 }
 
-body>#root>.App>#content>.message__container>h1::before,
-body>#root>.App>#content>.message__container>h1::after,
-body>#root>.App>#content>.message__container>h2::before,
-body>#root>.App>#content>.message__container>h2::after,
-body>#root>.App>#content>.message__container>p::before,
-body>#root>.App>#content>.message__container>p::after {
+body>#root>#content>.message__container>h1::before,
+body>#root>#content>.message__container>h1::after,
+body>#root>#content>.message__container>h2::before,
+body>#root>#content>.message__container>h2::after,
+body>#root>#content>.message__container>p::before,
+body>#root>#content>.message__container>p::after {
   content: attr(data-value);
   position: absolute;
   left: 0;
 }
 
-body>#root>.App>#content>.message__container>h1 {
+body>#root>#content>.message__container>h1 {
   text-align: center;
   font-size: 10rem;
+  color: var(--dark__text__color);
   margin: 0;
   text-shadow: 0 0 10px white;
   animation: glitch 1s linear infinite;
 }
 
-body>#root>.App>#content>.message__container>h1::before {
+body>#root>#content>.message__container>h1::before {
   animation: glitchTop 1s linear infinite;
   clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
 }
 
-body>#root>.App>#content>.message__container>h1::after {
+body>#root>#content>.message__container>h1::after {
   animation: glitchBottom 1.5s linear infinite;
   clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
   -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
 }
 
-body>#root>.App>#content>.message__container>h2 {
+body>#root>#content>.message__container>h2 {
   font-size: 2rem;
   margin-top: 2rem;
-  animation: glitch 1.5s linear infinite;
+  color: var(--dark__text__color);
   width: fit-content;
+  animation: glitch 1.5s linear infinite;
 }
 
-body>#root>.App>#content>.message__container>h2::before {
+body>#root>#content>.message__container>h2::before {
   animation: glitchTop 1s linear infinite;
   clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
 }
 
-body>#root>.App>#content>.message__container>h2::after {
+body>#root>#content>.message__container>h2::after {
   animation: glitchBottom 1.5s linear infinite;
   clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
   -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
 }
 
-body>#root>.App>#content>.message__container>p {
+body>#root>#content>.message__container>p {
   font-size: 1.5rem;
   margin-top: 0.5rem;
   margin-right: 5rem;
@@ -172,19 +159,19 @@ body>#root>.App>#content>.message__container>p {
   animation: glitch 2s linear infinite;
 }
 
-body>#root>.App>#content>.message__container>p::before {
+body>#root>#content>.message__container>p::before {
   animation: glitchTop 1s linear infinite;
   clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
 }
 
-body>#root>.App>#content>.message__container>p::after {
+body>#root>#content>.message__container>p::after {
   animation: glitchBottom 1.5s linear infinite;
   clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
   -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
 }
 
-body>#root>.App>#content>.back__button {
+body>#root>#content>.back__button {
   position: absolute;
   bottom: 5rem;
   left: 5rem;
@@ -193,7 +180,7 @@ body>#root>.App>#content>.back__button {
   border-radius: 2rem;
 }
 
-body>#root>.App>#content>.back__button>.button__border {
+body>#root>#content>.back__button>.button__border {
   position: relative;
   top: 0;
   left: 0;
@@ -205,7 +192,7 @@ body>#root>.App>#content>.back__button>.button__border {
   transition: all 3.5s ease-in-out;
 }
 
-body>#root>.App>#content>.back__button>.button__border::before {
+body>#root>#content>.back__button>.button__border::before {
   cursor: pointer;
   content: '';
   position: absolute;
@@ -218,7 +205,7 @@ body>#root>.App>#content>.back__button>.button__border::before {
   animation: buttonBorderFadingIn 3.5s ease-in-out forwards;
 }
 
-body>#root>.App>#content>.back__button>.button__border::after {
+body>#root>#content>.back__button>.button__border::after {
   cursor: pointer;
   content: '';
   position: absolute;
@@ -228,7 +215,7 @@ body>#root>.App>#content>.back__button>.button__border::after {
   z-index: 6;
 }
 
-body>#root>.App>#content>.back__button>.button__content {
+body>#root>#content>.back__button>.button__content {
   position: absolute;
   top: 0;
   left: 0;
@@ -246,8 +233,9 @@ body>#root>.App>#content>.back__button>.button__content {
   transition: all 0.2s ease-in-out;
 }
 
-body>#root>.App>#content>.back__button>.button__content:hover {
+body>#root>#content>.back__button>.button__content:hover {
   box-shadow: 0 0 5px 2.5px greenyellow;
+  cursor: pointer;
 }
 
 @keyframes textFadingIn {
@@ -340,44 +328,63 @@ body>#root>.App>#content>.back__button>.button__content:hover {
 }
 
 @media screen and (max-width: 992px) {
-  body>#root>.App>#content>.message__container>h1 {
+  body>#root>#content>.message__container>h1 {
     font-size: 5rem;
   }
 
-  body>#root>.App>#content>.message__container>h2 {
+  body>#root>#content>.message__container>h2 {
     font-size: 1.5rem;
   }
 
-  body>#root>.App>#content>.message__container>p {
+  body>#root>#content>.message__container>p {
     font-size: 1rem;
   }
 
-  body>#root>.App>#content>.back__button {
+  body>#root>#content>.back__button {
     bottom: 2rem;
     left: 2rem;
     height: 30px;
     width: 130px;
   }
 
-  body>#root>.App>#content>.back__button>.button__border {
+  body>#root>#content>.back__button>.button__border {
     border-radius: 1rem;
   }
 
-  body>#root>.App>#content>.back__button>.button__border::before {
+  body>#root>#content>.back__button>.button__border::before {
     border-top: solid 1px white;
     border-left: solid 1px white;
     border-radius: inherit;
   }
 
-  body>#root>.App>#content>.back__button>.button__border::after {
+  body>#root>#content>.back__button>.button__border::after {
     border-bottom: solid 1px white;
     border-right: solid 1px white;
     border-radius: inherit;
   }
 
-  body>#root>.App>#content>.back__button>.button__content {
+  body>#root>#content>.back__button>.button__content {
     line-height: 30px;
     border-radius: inherit;
+  }
+
+  body>#root>#content>.message__container>h1::after,
+  body>#root>#content>.message__container>h2::after,
+  body>#root>#content>.message__container>p::after {
+    top: 0rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  body>#root>#content {
+    min-height: 500px;
+  }
+
+  body>#root>#content>.message__container {
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }
 </style>
