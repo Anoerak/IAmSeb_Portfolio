@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { HashLink } from 'react-router-hash-link'; // For smooth scrolling
 import pictureOfMe from '@Images/portrait_me.webp';
@@ -181,18 +180,18 @@ function Home() {
 								</p>
 							</div>
 							<div className='links__container'>
-								<Link to='https://iamseb.dev' className='framework react'>
+								<a href='https://iamseb.dev' className='framework react'>
 									<img src={ReactNative} alt='Welcome Back sign' className='react__img' />
 									React
-								</Link>
-								<Link to='https://iamseb.dev/vue' className='framework vue'>
+								</a>
+								<a href='https://iamseb.dev/vue' className='framework vue'>
 									<img src={VueJs} alt='Welcome Back sign' className='vue__img' />
 									Vue
-								</Link>
-								<Link to='https://iamseb.dev/symfony' className='framework symfony'>
+								</a>
+								<a href='https://iamseb.dev/symfony' className='framework symfony'>
 									<img src={Symfony} alt='Welcome Back sign' className='symfony__img' />
 									Symfony
-								</Link>
+								</a>
 							</div>
 						</div>
 					</div>

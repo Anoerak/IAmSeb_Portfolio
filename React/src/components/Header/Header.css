@@ -106,7 +106,7 @@ body > #root > header > nav {
 	width: 80%;
 	border-radius: 5rem;
 	/* margin-top: 1.5rem; */
-	z-index: 10;
+	z-index: 100;
 }
 
 /* body.dark > #root > header > nav > .menu__ul {

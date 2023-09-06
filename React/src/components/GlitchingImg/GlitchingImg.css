@@ -713,6 +713,38 @@ body.dark #glitching-img-container .my__resume img {
 	}
 }
 
+@media screen and (orientation: portrait) and (max-width: 600px) {
+	body > #root > section#about-me > div.middle__container > div#glitching-img-container > a.my__resume {
+		width: 4rem;
+		height: 4rem;
+		top: -7rem;
+	}
+
+	body > #root > section#about-me > div.middle__container > div#glitching-img-container > a.my__resume > img {
+		width: 2rem;
+	}
+}
+
+@media screen and (orientation: landscape) and (max-width: 812px) {
+	body > #root > section#about-me > div.middle__container > div#glitching-img-container > a.my__resume {
+		top: 30rem;
+		right: 17rem;
+		height: 5rem;
+	}
+}
+
+@media screen and (orientation: portrait) and (min-width: 600px) and (max-width: 992px) {
+	body > #root > section#about-me > div.middle__container > div#glitching-img-container > a.my__resume {
+		top: 6rem;
+		right: 0rem;
+		height: 4rem;
+	}
+
+	body > #root > section#about-me > div.middle__container > div#glitching-img-container > a.my__resume > img {
+		width: 2rem;
+	}
+}
+
 @media screen and (max-width: 768px) {
 	#glitching-img-container {
 		width: 20rem;
