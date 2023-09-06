@@ -1186,7 +1186,8 @@ body.dark>#root>section#my-stack>.stack__container>.stack__card>ul>li {
     body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>div.TypeWriter .line__1,
     body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>div.TypeWriter .line__2,
     body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>div.TypeWriter .line__3,
-    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.bottom__part>div.TypeWriter .line__1 {
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.bottom__part>div.TypeWriter .line__1,
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.bottom__part>div.TypeWriter .line__2 {
         white-space: normal;
         overflow: visible;
         animation: none;
@@ -1611,11 +1612,12 @@ body.dark>#root>section#my-stack>.stack__container>.stack__card>ul>li {
     body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>div.TypeWriter .line__1,
     body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>div.TypeWriter .line__2,
     body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>div.TypeWriter .line__3,
-    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.bottom__part>div.TypeWriter .line__1 {
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.bottom__part>div.TypeWriter .line__1,
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.bottom__part>div.TypeWriter .line__2 {
         white-space: normal;
         overflow: visible;
         animation: none;
-        display: flex;
+        /* display: flex; */
         width: auto;
     }
 
@@ -1658,8 +1660,9 @@ body.dark>#root>section#my-stack>.stack__container>.stack__card>ul>li {
 
     body>#root>section#me-in-few-words {
         width: auto;
+        margin-top: 2rem;
         gap: 0rem;
-        min-height: 80vh;
+        min-height: 100vh;
         height: auto;
     }
 
@@ -1671,7 +1674,7 @@ body.dark>#root>section#my-stack>.stack__container>.stack__card>ul>li {
 
     body>#root>section#me-in-few-words>div.middle__container {
         flex-direction: row;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
         width: 100%;
         gap: 2rem;
@@ -1702,9 +1705,11 @@ body.dark>#root>section#my-stack>.stack__container>.stack__card>ul>li {
     body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>div.TypeWriter .line__1,
     body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>div.TypeWriter .line__2,
     body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.top__part>div.TypeWriter .line__3,
-    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.bottom__part>div.TypeWriter .line__1 {
-        display: flex;
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.bottom__part>div.TypeWriter .line__1,
+    body>#root>section#me-in-few-words>div.middle__container>div.left__side>div.bottom__part>div.TypeWriter .line__2 {
+        /* display: flex; */
         width: auto;
+        white-space: normal;
     }
 
     body>#root>section#me-in-few-words>div.middle__container>div.right__side {

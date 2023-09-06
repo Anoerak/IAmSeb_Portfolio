@@ -7,6 +7,91 @@ import Backend from '../assets/logos/back-end.png';
 import Fullstack from '../assets/logos/full-stack.png';
 import Others from '../assets/logos/others-dev.png';
 
+import OhMyFood1 from '../assets/projects_datas/OhMyFood/desktop/OhMyFood_screenshot1.webp';
+import OhMyFood2 from '../assets/projects_datas/OhMyFood/desktop/OhMyFood_screenshot2.webp';
+import OhMyFood3 from '../assets/projects_datas/OhMyFood/desktop/OhMyFood_screenshot3.webp';
+import OhMyFood4 from '../assets/projects_datas/OhMyFood/desktop/OhMyFood_screenshot4.webp';
+import OhMyFood5 from '../assets/projects_datas/OhMyFood/desktop/OhMyFood_screenshot5.webp';
+import OhMyFood6 from '../assets/projects_datas/OhMyFood/desktop/OhMyFood_screenshot6.webp';
+import OhMyFood7 from '../assets/projects_datas/OhMyFood/OhMyFood_gif1.gif';
+import OhMyFood8 from '../assets/projects_datas/OhMyFood/OhMyFood_gif2.gif';
+
+import Fisheye1 from '../assets/projects_datas/Fisheye/desktop/Fisheye_screenshot1.webp';
+import Fisheye2 from '../assets/projects_datas/Fisheye/desktop/Fisheye_screenshot2.webp';
+import Fisheye3 from '../assets/projects_datas/Fisheye/desktop/Fisheye_screenshot3.webp';
+import Fisheye4 from '../assets/projects_datas/Fisheye/desktop/Fisheye_screenshot4.webp';
+import Fisheye5 from '../assets/projects_datas/Fisheye/desktop/Fisheye_screenshot5.webp';
+import Fisheye6 from '../assets/projects_datas/Fisheye/desktop/Fisheye_screenshot6.webp';
+import Fisheye7 from '../assets/projects_datas/Fisheye/Fisheye_screencast1.gif';
+import Fisheye8 from '../assets/projects_datas/Fisheye/Fisheye_screencast2.gif';
+
+import SportSee1 from '../assets/projects_datas/SportSee/desktop/SportSee_screenshot1.webp';
+import SportSee2 from '../assets/projects_datas/SportSee/desktop/SportSee_screenshot2.webp';
+import SportSee3 from '../assets/projects_datas/SportSee/desktop/SportSee_screenshot3.webp';
+import SportSee4 from '../assets/projects_datas/SportSee/desktop/SportSee_screenshot4.webp';
+import SportSee5 from '../assets/projects_datas/SportSee/SportSee_screencast.gif';
+
+import ChaletsEtCaviar1 from '../assets/projects_datas/Chalets&Caviar/desktop/C&C_screenshot1.webp';
+import ChaletsEtCaviar2 from '../assets/projects_datas/Chalets&Caviar/desktop/C&C_screenshot2.webp';
+import ChaletsEtCaviar3 from '../assets/projects_datas/Chalets&Caviar/desktop/C&C_screenshot3.webp';
+import ChaletsEtCaviar4 from '../assets/projects_datas/Chalets&Caviar/desktop/C&C_screenshot4.webp';
+import ChaletsEtCaviar5 from '../assets/projects_datas/Chalets&Caviar/desktop/C&C_screenshot5.webp';
+import ChaletsEtCaviar6 from '../assets/projects_datas/Chalets&Caviar/desktop/C&C_screenshot6.webp';
+import ChaletsEtCaviar7 from '../assets/projects_datas/Chalets&Caviar/C&C_screencast1.gif';
+import ChaletsEtCaviar8 from '../assets/projects_datas/Chalets&Caviar/C&C_screencast2.gif';
+
+import Piquante1 from '../assets/projects_datas/Piquante/desktop/Piquante_screenshot1.webp';
+import Piquante2 from '../assets/projects_datas/Piquante/desktop/Piquante_screenshot2.webp';
+import Piquante3 from '../assets/projects_datas/Piquante/desktop/Piquante_screenshot3.webp';
+import Piquante4 from '../assets/projects_datas/Piquante/desktop/Piquante_screenshot4.webp';
+
+import ExpressFood1 from '../assets/projects_datas/ExpressFood/desktop/ExpressFood_screenshot1.webp';
+import ExpressFood2 from '../assets/projects_datas/ExpressFood/desktop/ExpressFood_screenshot2.webp';
+import ExpressFood3 from '../assets/projects_datas/ExpressFood/desktop/ExpressFood_screenshot3.webp';
+import ExpressFood4 from '../assets/projects_datas/ExpressFood/desktop/ExpressFood_screenshot4.webp';
+import ExpressFood5 from '../assets/projects_datas/ExpressFood/desktop/ExpressFood_screenshot5.webp';
+
+import BileMo1 from '../assets/projects_datas/BileMo/desktop/Bilemo_screenshot1.webp';
+import BileMo2 from '../assets/projects_datas/BileMo/desktop/Bilemo_screenshot2.webp';
+import BileMo3 from '../assets/projects_datas/BileMo/desktop/Bilemo_screenshot3.webp';
+import BileMo6 from '../assets/projects_datas/BileMo/Bilemo_screencast1.gif';
+import BileMo7 from '../assets/projects_datas/BileMo/Bilemo_screencast2.gif';
+import BileMo8 from '../assets/projects_datas/BileMo/Bilemo_screencast3.gif';
+
+import Groupomania1 from '../assets/projects_datas/Groupomania/desktop/Groupomania_screenshot1.webp';
+import Groupomania2 from '../assets/projects_datas/Groupomania/desktop/Groupomania_screenshot2.webp';
+import Groupomania3 from '../assets/projects_datas/Groupomania/desktop/Groupomania_screenshot3.webp';
+import Groupomania4 from '../assets/projects_datas/Groupomania/desktop/Groupomania_screenshot4.webp';
+import Groupomania5 from '../assets/projects_datas/Groupomania/desktop/Groupomania_screenshot5.webp';
+import Groupomania6 from '../assets/projects_datas/Groupomania/Groupomania_screencast.gif';
+
+import MyBlog1 from '../assets/projects_datas/MyBlog/desktop/myblog_screenshot1.webp';
+import MyBlog2 from '../assets/projects_datas/MyBlog/desktop/myblog_screenshot2.webp';
+import MyBlog3 from '../assets/projects_datas/MyBlog/desktop/myblog_screenshot3.webp';
+import MyBlog4 from '../assets/projects_datas/MyBlog/desktop/myblog_screenshot4.webp';
+import MyBlog5 from '../assets/projects_datas/MyBlog/desktop/myblog_screenshot5.webp';
+import MyBlog6 from '../assets/projects_datas/MyBlog/myblog_screencast.gif';
+
+import SnowTricks1 from '../assets/projects_datas/SnowTricks/desktop/Snowtrick_screenshot1.webp';
+import SnowTricks2 from '../assets/projects_datas/SnowTricks/desktop/Snowtrick_screenshot2.webp';
+import SnowTricks3 from '../assets/projects_datas/SnowTricks/desktop/Snowtrick_screenshot3.webp';
+import SnowTricks4 from '../assets/projects_datas/SnowTricks/desktop/Snowtrick_screenshot4.webp';
+import SnowTricks5 from '../assets/projects_datas/SnowTricks/desktop/Snowtrick_screenshot5.webp';
+import SnowTricks6 from '../assets/projects_datas/SnowTricks/desktop/Snowtrick_screenshot6.webp';
+
+import Tutorials1 from '../assets/projects_datas/Tutorials/desktop/Tutorial_screenshot1.webp';
+import Tutorials2 from '../assets/projects_datas/Tutorials/desktop/Tutorial_screenshot2.webp';
+import Tutorials3 from '../assets/projects_datas/Tutorials/desktop/Tutorial_screenshot3.webp';
+
+import FortuneQuotes1 from '../assets/projects_datas/FortuneQuotes/desktop/FortuneQuotes_screenshot1.webp';
+import FortuneQuotes2 from '../assets/projects_datas/FortuneQuotes/desktop/FortuneQuotes_screenshot2.webp';
+
+import SebGPT1 from '../assets/projects_datas/SebGPT/desktop/SebGPT_screenshot1.webp';
+import SebGPT2 from '../assets/projects_datas/SebGPT/desktop/SebGPT_screenshot2.webp';
+import SebGPT3 from '../assets/projects_datas/SebGPT/desktop/SebGPT_screenshot3.webp';
+import SebGPT4 from '../assets/projects_datas/SebGPT/desktop/SebGPT_screenshot4.webp';
+
+
 export default {
 	name: 'ProjectsView',
 	data() {
@@ -17,385 +102,385 @@ export default {
 			Others,
 			OhMyFoodMedias: [
 				{
-					path: '/vue/src/assets/projects_datas/OhMyFood/desktop/OhMyFood_screenshot1.webp',
+					path: OhMyFood1,
 					alt: 'OhMyFood screenshot 1',
 					legend: 'Loader'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/OhMyFood/desktop/OhMyFood_screenshot2.webp',
+					path: OhMyFood2,
 					alt: 'OhMyFood screenshot 2',
 					legend: 'Home page'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/OhMyFood/desktop/OhMyFood_screenshot3.webp',
+					path: OhMyFood3,
 					alt: 'OhMyFood screenshot 3',
 					legend: 'Menu page'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/OhMyFood/desktop/OhMyFood_screenshot4.webp',
+					path: OhMyFood4,
 					alt: 'OhMyFood screenshot 4',
 					legend: 'Menu selection'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/OhMyFood/desktop/OhMyFood_screenshot5.webp',
+					path: OhMyFood5,
 					alt: 'OhMyFood screenshot 5',
 					legend: 'Mobile Home page'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/OhMyFood/desktop/OhMyFood_screenshot6.webp',
+					path: OhMyFood6,
 					alt: 'OhMyFood screenshot 6',
 					legend: 'Mobile Menu page'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/OhMyFood/OhMyFood_gif1.gif',
+					path: OhMyFood7,
 					alt: 'OhMyFood gif 1',
 					legend: 'Desktop Navigation'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/OhMyFood/OhMyFood_gif2.gif',
+					path: OhMyFood8,
 					alt: 'OhMyFood gif 2',
 					legend: 'Mobile Navigation'
 				}
 			],
 			FisheyeMedias: [
 				{
-					path: '/vue/src/assets/projects_datas/Fisheye/desktop/Fisheye_screenshot1.webp',
+					path: Fisheye1,
 					alt: 'Fisheye screenshot 1',
 					legend: 'Homepage'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/Fisheye/desktop/Fisheye_screenshot2.webp',
+					path: Fisheye2,
 					alt: 'Fisheye screenshot 2',
 					legend: 'Profile page'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/Fisheye/desktop/Fisheye_screenshot3.webp',
+					path: Fisheye3,
 					alt: 'Fisheye screenshot 3',
 					legend: 'Gallery page'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/Fisheye/desktop/Fisheye_screenshot4.webp',
+					path: Fisheye4,
 					alt: 'Fisheye screenshot 4',
 					legend: 'Mobile profile selection'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/Fisheye/desktop/Fisheye_screenshot5.webp',
+					path: Fisheye5,
 					alt: 'Fisheye screenshot 5',
 					legend: 'Contact form'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/Fisheye/desktop/Fisheye_screenshot6.webp',
+					path: Fisheye6,
 					alt: 'Fisheye screenshot 6',
 					legend: 'Mobile gallery'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/Fisheye/Fisheye_screencast1.gif',
+					path: Fisheye7,
 					alt: 'Fisheye gif 1',
 					legend: 'Desktop Navigation'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/Fisheye/Fisheye_screencast2.gif',
+					path: Fisheye8,
 					alt: 'Fisheye gif 2',
 					legend: 'Mobile Navigation'
 				}
 			],
 			SportSeeMedias: [
 				{
-					path: '/vue/src/assets/projects_datas/SportSee/desktop/SportSee_screenshot1.webp',
+					path: SportSee1,
 					alt: 'SportSee screenshot 1',
 					legend: 'Home page'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/SportSee/desktop/SportSee_screenshot2.webp',
+					path: SportSee2,
 					alt: 'SportSee screenshot 2',
 					legend: 'Dashboard'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/SportSee/desktop/SportSee_screenshot3.webp',
+					path: SportSee3,
 					alt: 'SportSee screenshot 3',
 					legend: 'Activity bar chart'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/SportSee/desktop/SportSee_screenshot4.webp',
+					path: SportSee4,
 					alt: 'SportSee screenshot 4',
 					legend: 'Activity curves chart'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/SportSee/SportSee_screencast.gif',
+					path: SportSee5,
 					alt: 'SportSee gif 1',
 					legend: 'Navigation'
 				}
 			],
 			ChaletsEtCaviarMedias: [
 				{
-					path: '/vue/src/assets/projects_datas/Chalets&Caviar/desktop/C&C_screenshot1.webp',
+					path: ChaletsEtCaviar1,
 					alt: 'Chalets & Caviar screenshot 1',
 					legend: 'Homepage'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/Chalets&Caviar/desktop/C&C_screenshot2.webp',
+					path: ChaletsEtCaviar2,
 					alt: 'Chalets & Caviar screenshot 2',
 					legend: 'Profile page'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/Chalets&Caviar/desktop/C&C_screenshot3.webp',
+					path: ChaletsEtCaviar3,
 					alt: 'Chalets & Caviar screenshot 3',
 					legend: 'Gallery page'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/Chalets&Caviar/desktop/C&C_screenshot4.webp',
+					path: ChaletsEtCaviar4,
 					alt: 'Chalets & Caviar screenshot 4',
 					legend: 'Mobile profile selection'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/Chalets&Caviar/desktop/C&C_screenshot5.webp',
+					path: ChaletsEtCaviar5,
 					alt: 'Chalets & Caviar screenshot 5',
 					legend: 'Contact form'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/Chalets&Caviar/desktop/C&C_screenshot6.webp',
+					path: ChaletsEtCaviar6,
 					alt: 'Chalets & Caviar screenshot 6',
 					legend: 'Mobile gallery'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/Chalets&Caviar/C&C_screencast1.gif',
+					path: ChaletsEtCaviar7,
 					alt: 'Fisheye gif 1',
 					legend: 'Desktop Navigation'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/Chalets&Caviar/C&C_screencast2.gif',
+					path: ChaletsEtCaviar8,
 					alt: 'Fisheye gif 2',
 					legend: 'Mobile Navigation'
 				}
 			],
 			PiquanteMedias: [
 				{
-					path: '/vue/src/assets/projects_datas/Piquante/desktop/Piquante_screenshot1.webp',
+					path: Piquante1,
 					alt: 'Piquante screenshot 1',
 					legend: 'Login page'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/Piquante/desktop/Piquante_screenshot2.webp',
+					path: Piquante2,
 					alt: 'Piquante screenshot 2',
 					legend: 'Home page'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/Piquante/desktop/Piquante_screenshot3.webp',
+					path: Piquante3,
 					alt: 'Piquante screenshot 3',
 					legend: 'Create form'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/Piquante/desktop/Piquante_screenshot4.webp',
+					path: Piquante4,
 					alt: 'Piquante screenshot 4',
 					legend: 'Item created'
 				},
 			],
 			ExpressFoodMedias: [
 				{
-					path: '/vue/src/assets/projects_datas/ExpressFood/desktop/ExpressFood_screenshot1.webp',
+					path: ExpressFood1,
 					alt: 'ExpressFood screenshot 1',
 					legend: 'Screen1'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/ExpressFood/desktop/ExpressFood_screenshot2.webp',
+					path: ExpressFood2,
 					alt: 'ExpressFood screenshot 2',
 					legend: 'Screen2'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/ExpressFood/desktop/ExpressFood_screenshot3.webp',
+					path: ExpressFood3,
 					alt: 'ExpressFood screenshot 3',
 					legend: 'Screen3'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/ExpressFood/desktop/ExpressFood_screenshot4.webp',
+					path: ExpressFood4,
 					alt: 'ExpressFood screenshot 4',
 					legend: 'Screen4'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/ExpressFood/desktop/ExpressFood_screenshot5.webp',
+					path: ExpressFood5,
 					alt: 'ExpressFood screenshot 5',
 					legend: 'Screen5'
 				}
 			],
 			BileMoMedias: [
 				{
-					path: '/vue/src/assets/projects_datas/BileMo/desktop/Bilemo_screenshot1.webp',
+					path: BileMo1,
 					alt: 'BileMo screenshot 1',
 					legend: 'Home page'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/BileMo/desktop/Bilemo_screenshot2.webp',
+					path: BileMo2,
 					alt: 'BileMo screenshot 2',
 					legend: 'Dashboard'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/BileMo/desktop/Bilemo_screenshot3.webp',
+					path: BileMo3,
 					alt: 'BileMo screenshot 3',
 					legend: 'Mobile Home page'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/BileMo/Bilemo_screencast1.gif',
+					path: BileMo6,
 					alt: 'BileMo gif 1',
 					legend: 'Navigation'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/BileMo/Bilemo_screencast2.gif',
+					path: BileMo7,
 					alt: 'BileMo gif 2',
 					legend: 'Mobile Navigation'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/BileMo/Bilemo_screencast3.gif',
+					path: BileMo8,
 					alt: 'BileMo gif 3',
 					legend: 'Mobile Navigation'
 				}
 			],
 			GroupomaniaMedias: [
 				{
-					path: '/vue/src/assets/projects_datas/Groupomania/desktop/Groupomania_screenshot1.webp',
+					path: Groupomania1,
 					alt: 'Groupomania screenshot 1',
 					legend: 'Home page'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/Groupomania/desktop/Groupomania_screenshot2.webp',
+					path: Groupomania2,
 					alt: 'Groupomania screenshot 2',
 					legend: 'Dashboard'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/Groupomania/desktop/Groupomania_screenshot3.webp',
+					path: Groupomania3,
 					alt: 'Groupomania screenshot 3',
 					legend: 'Mobile Home page'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/Groupomania/desktop/Groupomania_screenshot4.webp',
+					path: Groupomania4,
 					alt: 'Groupomania screenshot 4',
 					legend: 'Mobile Dashboard'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/Groupomania/desktop/Groupomania_screenshot5.webp',
+					path: Groupomania5,
 					alt: 'Groupomania screenshot 5',
 					legend: 'Mobile Post creation'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/Groupomania/Groupomania_screencast.gif',
+					path: Groupomania6,
 					alt: 'Groupomania gif 1',
 					legend: 'Navigation'
 				}
 			],
 			MyBlogMedias: [
 				{
-					path: '/vue/src/assets/projects_datas/MyBlog/desktop/myblog_screenshot1.webp',
+					path: MyBlog1,
 					alt: 'MyBlog screenshot 1',
 					legend: 'Home page'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/MyBlog/desktop/myblog_screenshot2.webp',
+					path: MyBlog2,
 					alt: 'MyBlog screenshot 2',
 					legend: 'Dashboard'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/MyBlog/desktop/myblog_screenshot3.webp',
+					path: MyBlog3,
 					alt: 'MyBlog screenshot 3',
 					legend: 'Mobile Home page'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/MyBlog/desktop/myblog_screenshot4.webp',
+					path: MyBlog4,
 					alt: 'MyBlog screenshot 4',
 					legend: 'Mobile Dashboard'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/MyBlog/desktop/myblog_screenshot5.webp',
+					path: MyBlog5,
 					alt: 'MyBlog screenshot 5',
 					legend: 'Mobile Post creation'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/MyBlog/myblog_screencast.gif',
+					path: MyBlog6,
 					alt: 'MyBlog gif 1',
 					legend: 'Navigation'
 				}
 			],
 			SnowTricksMedias: [
 				{
-					path: '/vue/src/assets/projects_datas/SnowTricks/desktop/Snowtrick_screenshot1.webp',
+					path: SnowTricks1,
 					alt: 'SnowTricks screenshot 1',
 					legend: 'Home page'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/SnowTricks/desktop/Snowtrick_screenshot2.webp',
+					path: SnowTricks2,
 					alt: 'SnowTricks screenshot 2',
 					legend: 'Dashboard'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/SnowTricks/desktop/Snowtrick_screenshot3.webp',
+					path: SnowTricks3,
 					alt: 'SnowTricks screenshot 3',
 					legend: 'Mobile Home page'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/SnowTricks/desktop/Snowtrick_screenshot4.webp',
+					path: SnowTricks4,
 					alt: 'SnowTricks screenshot 4',
 					legend: 'Mobile Dashboard'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/SnowTricks/desktop/Snowtrick_screenshot5.webp',
+					path: SnowTricks5,
 					alt: 'SnowTricks screenshot 5',
 					legend: 'Mobile Post creation'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/SnowTricks/desktop/Snowtrick_screenshot6.webp',
+					path: SnowTricks6,
 					alt: 'SnowTricks screenshot 6',
 					legend: 'Mobile Post creation'
 				}
 			],
 			TutorialsMedias: [
 				{
-					path: '/vue/src/assets/projects_datas/Tutorials/desktop/Tutorial_screenshot1.webp',
+					path: Tutorials1,
 					alt: 'Tutorial screenshot 1',
 					legend: 'Home page'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/Tutorials/desktop/Tutorial_screenshot2.webp',
+					path: Tutorials2,
 					alt: 'Tutorial screenshot 2',
 					legend: 'Dashboard'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/Tutorials/desktop/Tutorial_screenshot3.webp',
+					path: Tutorials3,
 					alt: 'Tutorial screenshot 3',
 					legend: 'Mobile Home page'
 				}
 			],
 			FortuneQuotesMedias: [
 				{
-					path: '/vue/src/assets/projects_datas/FortuneQuotes/desktop/FortuneQuotes_screenshot1.webp',
+					path: FortuneQuotes1,
 					alt: 'FortuneQuotes screenshot 1',
 					legend: 'Home page'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/FortuneQuotes/desktop/FortuneQuotes_screenshot2.webp',
+					path: FortuneQuotes2,
 					alt: 'FortuneQuotes screenshot 2',
 					legend: 'Dashboard'
 				}
 			],
 			SebGPTMedias: [
 				{
-					path: '/vue/src/assets/projects_datas/SebGPT/desktop/SebGPT_screenshot1.webp',
+					path: SebGPT1,
 					alt: 'SebGPT screenshot 1',
 					legend: 'Home page'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/SebGPT/desktop/SebGPT_screenshot2.webp',
+					path: SebGPT2,
 					alt: 'SebGPT screenshot 2',
 					legend: 'Dashboard'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/SebGPT/desktop/SebGPT_screenshot3.webp',
+					path: SebGPT3,
 					alt: 'SebGPT screenshot 3',
 					legend: 'Mobile Home page'
 				},
 				{
-					path: '/vue/src/assets/projects_datas/SebGPT/desktop/SebGPT_screenshot4.webp',
+					path: SebGPT4,
 					alt: 'SebGPT screenshot 4',
 					legend: 'Mobile Dashboard'
 				}
-			]
+			],
 		}
 	},
 	components: {

@@ -13,7 +13,7 @@ export default {
 		}
 	},
 	mounted() {
-		if ((window.innerWidth > 768 && window.innerWidth < window.innerHeight) || window.innerWidth > window.innerHeight) {
+		if (window.innerWidth > 812) {
 			window.addEventListener('scroll', () => {
 				const container = document.querySelector('.TypeWriter');
 				const lines = document.querySelectorAll('.line__selector');

@@ -181,7 +181,7 @@ onMounted(() => {
 </template>
 
 <style>
-body > #root > header {
+body>#root>header {
     margin: auto;
     /* overflow: hidden; */
     margin: 0;
@@ -194,13 +194,13 @@ body > #root > header {
     animation: fadingIn 0.5s ease;
 }
 
-body > #root > header > h1,
-body.dark > #root > header > h1 {
+body>#root>header>h1,
+body.dark>#root>header>h1 {
     z-index: 15;
     display: none;
 }
 
-body > #root > header > nav > h2 {
+body>#root>header>nav>h2 {
     opacity: 0;
 }
 
@@ -210,7 +210,7 @@ body > #root > header > nav > h2 {
 |--------------------------------------
 */
 
-body > #root > header > .toggler {
+body>#root>header>.toggler {
     display: block;
     position: fixed;
     width: 48px;
@@ -225,7 +225,8 @@ body > #root > header > .toggler {
     transition: all 300ms ease-in-out;
     will-change: transform;
 }
-body > #root > header > .toggler::after {
+
+body>#root>header>.toggler::after {
     content: '';
     position: fixed;
     width: 16px;
@@ -234,14 +235,17 @@ body > #root > header > .toggler::after {
     top: 15px;
     background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/626120/moon_copy.svg) no-repeat;
 }
-body > #root > header > .toggler:hover {
+
+body>#root>header>.toggler:hover {
     background-color: #555;
     transform: rotate(-45deg);
 }
-body.dark > #root > header > .toggler {
+
+body.dark>#root>header>.toggler {
     background-color: #eee;
 }
-body.dark > #root > header > .toggler::after {
+
+body.dark>#root>header>.toggler::after {
     content: '';
     position: fixed;
     width: 16px;
@@ -251,7 +255,7 @@ body.dark > #root > header > .toggler::after {
     background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/626120/sun.svg);
 }
 
-body > #root > header > .circle {
+body>#root>header>.circle {
     border: none;
     display: block;
     right: 24px;
@@ -271,7 +275,7 @@ body > #root > header > .circle {
     perspective: 1000;
 }
 
-body > #root > header > .circle.clicked {
+body>#root>header>.circle.clicked {
     transform: scale(128) translateZ(0);
 }
 
@@ -284,18 +288,18 @@ body > #root > header > .circle.clicked {
 /* body.dark > #root > header > nav {
 	background-color: var(--dark__bg__color);
 } */
-body > #root > header > nav {
+body>#root>header>nav {
     position: fixed;
     width: 80%;
     border-radius: 5rem;
     /* margin-top: 1.5rem; */
-    z-index: 10;
+    z-index: 100;
 }
 
 /* body.dark > #root > header > nav > .menu__ul {
 	background-color: var(--dark__bg__color);
 } */
-body > #root > header > nav > .menu__ul {
+body>#root>header>nav>.menu__ul {
     /* background-color: var(--bg__color); */
     /* overflow: hidden; */
     height: 100%;
@@ -308,12 +312,13 @@ body > #root > header > nav > .menu__ul {
     padding: 0;
 }
 
-body.dark > #root > header > nav > .menu__ul > .menu__li {
+body.dark>#root>header>nav>.menu__ul>.menu__li {
     background-color: var(--dark__bg__color);
     transition: all 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: var(--box-shadows-dark-outset);
 }
-body > #root > header > nav > .menu__ul > .menu__li {
+
+body>#root>header>nav>.menu__ul>.menu__li {
     margin: 0;
     width: 25%;
     background-color: var(--bg__color);
@@ -325,36 +330,38 @@ body > #root > header > nav > .menu__ul > .menu__li {
     transition: all 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: var(--box-shadows-light-outset);
 }
-body > #root > header > nav > .menu__ul > .menu__li:active {
+
+body>#root>header>nav>.menu__ul>.menu__li:active {
     box-shadow: var(--box-shadows-light-inset);
 }
-body.dark > #root > header > nav > .menu__ul > .menu__li:active {
+
+body.dark>#root>header>nav>.menu__ul>.menu__li:active {
     box-shadow: var(--box-shadows-dark-inset);
 }
 
-body > #root > header > nav > .menu__ul > .menu__li:nth-child(1) {
+body>#root>header>nav>.menu__ul>.menu__li:nth-child(1) {
     border-radius: 5rem 1rem 1rem 5rem;
 }
 
-body > #root > header > nav > .menu__ul > .menu__li:nth-child(2),
-body > #root > header > nav > .menu__ul > .menu__li:nth-child(3) {
+body>#root>header>nav>.menu__ul>.menu__li:nth-child(2),
+body>#root>header>nav>.menu__ul>.menu__li:nth-child(3) {
     border-radius: 0.25rem;
 }
 
-body > #root > header > nav > .menu__ul > .menu__li:nth-child(4) {
+body>#root>header>nav>.menu__ul>.menu__li:nth-child(4) {
     border-radius: 1rem 5rem 5rem 1rem;
 }
 
-body > #root > header > nav > .menu__ul:hover > .menu__li > .li__border {
+body>#root>header>nav>.menu__ul:hover>.menu__li>.li__border {
     opacity: 1;
 }
 
-body > #root > header > nav > .menu__ul > .menu__li:hover::before {
+body>#root>header>nav>.menu__ul>.menu__li:hover::before {
     opacity: 1;
 }
 
 .menu__li::before,
-.menu__li > .li__border {
+.menu__li>.li__border {
     content: '';
     position: absolute;
     top: 0;
@@ -367,44 +374,39 @@ body > #root > header > nav > .menu__ul > .menu__li:hover::before {
     z-index: 2;
 }
 
-body.dark > #root > header.menu__li::before {
-    background: radial-gradient(
-        700px circle at var(--mouse-x) var(--mouse-y),
-        var(--dark__li__hovered),
-        transparent 40%
-    );
+body.dark>#root>header.menu__li::before {
+    background: radial-gradient(700px circle at var(--mouse-x) var(--mouse-y),
+            var(--dark__li__hovered),
+            transparent 40%);
     z-index: 3;
 }
+
 .menu__li::before {
-    background: radial-gradient(
-        700px circle at var(--mouse-x) var(--mouse-y),
-        var(--li__hovered),
-        transparent 40%
-    );
+    background: radial-gradient(700px circle at var(--mouse-x) var(--mouse-y),
+            var(--li__hovered),
+            transparent 40%);
     z-index: 3;
 }
 
-body.dark > #root > header > nav > .menu__ul > .menu__li > .li__border {
-    background: radial-gradient(
-        350px circle at var(--mouse-x) var(--mouse-y),
-        var(--dark__li__border__hovered),
-        transparent 40%
-    );
-    z-index: 1;
-}
-body > #root > header > nav > .menu__ul > .menu__li > .li__border {
-    background: radial-gradient(
-        350px circle at var(--mouse-x) var(--mouse-y),
-        var(--li__border__hovered),
-        transparent 40%
-    );
+body.dark>#root>header>nav>.menu__ul>.menu__li>.li__border {
+    background: radial-gradient(350px circle at var(--mouse-x) var(--mouse-y),
+            var(--dark__li__border__hovered),
+            transparent 40%);
     z-index: 1;
 }
 
-body.dark > #root > header > nav > .menu__ul > .menu__li > .li__content {
+body>#root>header>nav>.menu__ul>.menu__li>.li__border {
+    background: radial-gradient(350px circle at var(--mouse-x) var(--mouse-y),
+            var(--li__border__hovered),
+            transparent 40%);
+    z-index: 1;
+}
+
+body.dark>#root>header>nav>.menu__ul>.menu__li>.li__content {
     background-color: var(--dark__nav__bg__color);
 }
-body > #root > header > nav > .menu__ul > .menu__li > .li__content {
+
+body>#root>header>nav>.menu__ul>.menu__li>.li__content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -417,10 +419,11 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content {
     z-index: 2;
 }
 
-body.dark > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
+body.dark>#root>header>nav>.menu__ul>.menu__li>.li__content>a {
     color: var(--dark__text__color);
 }
-body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
+
+body>#root>header>nav>.menu__ul>.menu__li>.li__content>a {
     font-size: 1.5rem;
     text-decoration: none;
     color: var(--text__color);
@@ -436,19 +439,19 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
 */
 
 @media screen and (orientation: portrait) and (max-width: 600px) {
-    body > #root > header {
+    body>#root>header {
         min-height: 8rem;
         justify-content: center;
     }
 
     /* Dark Mode Toggler */
-    body > #root > header > .toggler,
-    body > #root > header > .circle {
+    body>#root>header>.toggler,
+    body>#root>header>.circle {
         left: 24px;
     }
 
     /* Hamburger Menu Icon */
-    body > #root > header > .hamburger__menu__container {
+    body>#root>header>.hamburger__menu__container {
         cursor: pointer;
         position: fixed;
         top: 5%;
@@ -456,24 +459,26 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
         width: 30px;
         height: 20px;
         text-align: initial;
-        z-index: 10;
+        z-index: 100;
     }
 
-    body.dark > #root > header > .hamburger__menu__container > .hamburger__menu__icon {
+    body.dark>#root>header>.hamburger__menu__container>.hamburger__menu__icon {
         background: var(--dark__text__color);
     }
-    body > #root > header > .hamburger__menu__container > .hamburger__menu__icon {
+
+    body>#root>header>.hamburger__menu__container>.hamburger__menu__icon {
         width: 30px;
         height: 4px;
         background: var(--text__color);
     }
 
-    body.dark > #root > header > .hamburger__menu__container > .hamburger__menu__icon::before,
-    body.dark > #root > header > .hamburger__menu__container > .hamburger__menu__icon::after {
+    body.dark>#root>header>.hamburger__menu__container>.hamburger__menu__icon::before,
+    body.dark>#root>header>.hamburger__menu__container>.hamburger__menu__icon::after {
         background: var(--dark__text__color);
     }
-    body > #root > header > .hamburger__menu__container > .hamburger__menu__icon::before,
-    body > #root > header > .hamburger__menu__container > .hamburger__menu__icon::after {
+
+    body>#root>header>.hamburger__menu__container>.hamburger__menu__icon::before,
+    body>#root>header>.hamburger__menu__container>.hamburger__menu__icon::after {
         content: '';
         position: absolute;
         width: 30px;
@@ -490,8 +495,8 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
     }
 
     /* Responsive Menu */
-    body > #root > header > nav,
-    body.dark > #root > header > nav {
+    body>#root>header>nav,
+    body.dark>#root>header>nav {
         /* position: absolute; */
         width: 100%;
         height: 30px;
@@ -507,8 +512,8 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
         z-index: 1000;
     }
 
-    body > #root > header > nav > .menu__ul,
-    body.dark > #root > header > nav > .menu__ul {
+    body>#root>header>nav>.menu__ul,
+    body.dark>#root>header>nav>.menu__ul {
         list-style: none;
         flex-direction: column;
         align-items: center;
@@ -519,8 +524,8 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
         margin-top: -3rem;
     }
 
-    body > #root > header > nav > .menu__ul > .menu__li:nth-child(-n + 4),
-    body.dark > #root > header > nav > .menu__ul > .menu__li:nth-child(-n + 4) {
+    body>#root>header>nav>.menu__ul>.menu__li:nth-child(-n + 4),
+    body.dark>#root>header>nav>.menu__ul>.menu__li:nth-child(-n + 4) {
         margin: 50px 0;
         border: none;
         background-color: transparent;
@@ -530,20 +535,20 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
     }
 
     .menu__li::before,
-    .menu__li > .li__border {
+    .menu__li>.li__border {
         min-width: fit-content;
         padding: 0 1rem;
     }
 
-    body > #root > header > nav > .menu__ul > .menu__li > .li__content,
-    body.dark > #root > header > nav > .menu__ul > .menu__li > .li__content {
+    body>#root>header>nav>.menu__ul>.menu__li>.li__content,
+    body.dark>#root>header>nav>.menu__ul>.menu__li>.li__content {
         background-color: transparent;
         min-width: fit-content;
         padding: 0 1rem;
     }
 
-    body > #root > header > nav > .menu__ul > .menu__li > .li__content > .li__link,
-    body.dark > #root > header > nav > .menu__ul > .menu__li > .li__content > .li__link {
+    body>#root>header>nav>.menu__ul>.menu__li>.li__content>.li__link,
+    body.dark>#root>header>nav>.menu__ul>.menu__li>.li__content>.li__link {
         font-size: 2rem;
         color: var(--bg__color);
         background-color: transparent;
@@ -553,7 +558,7 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
         pointer-events: none;
     }
 
-    body > #root > header > nav ul li a:after {
+    body>#root>header>nav ul li a:after {
         content: '';
         width: 100%;
         position: absolute;
@@ -567,11 +572,11 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
         transform: scaleX(0);
     }
 
-    body > #root > header > nav ul li a:hover:after {
+    body>#root>header>nav ul li a:hover:after {
         transform: scaleX(1);
     }
 
-    body > #root > header > nav .close {
+    body>#root>header>nav .close {
         width: 30px;
         height: 30px;
         position: absolute;
@@ -582,7 +587,7 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
         pointer-events: none;
     }
 
-    body > #root > header > nav h2 {
+    body>#root>header>nav h2 {
         position: absolute;
         top: 5%;
         left: 5%;
@@ -591,8 +596,8 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
         color: #fff;
     }
 
-    body > #root > header > nav .close div::before,
-    body > #root > header > nav .close div::after {
+    body>#root>header>nav .close div::before,
+    body>#root>header>nav .close div::after {
         content: '';
         position: absolute;
         width: 30px;
@@ -600,35 +605,38 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
         background: #fff;
         transition: background 0.5s ease;
     }
-    body > #root > header > nav .close div::before {
+
+    body>#root>header>nav .close div::before {
         transform: rotate(-45deg);
     }
 
-    body > #root > header > nav .close div::after {
+    body>#root>header>nav .close div::after {
         transform: rotate(45deg);
     }
 
-    body > #root > header > nav .close:hover div::before,
-    body > #root > header > nav .close:hover div::after {
+    body>#root>header>nav .close:hover div::before,
+    body>#root>header>nav .close:hover div::after {
         background: rgb(209, 3, 3);
     }
 }
 
 @media screen and (orientation: landscape) and (max-width: 812px) {
-    body > #root > header {
+    body>#root>header {
         min-height: 8rem;
         justify-content: center;
     }
 
-    body > #root > header > nav > .menu__ul {
+    body>#root>header>nav>.menu__ul {
         margin-top: -8rem;
     }
+
     /* Dark Mode Toggler */
-    body > #root > header > .toggler,
-    body > #root > header > .circle {
+    body>#root>header>.toggler,
+    body>#root>header>.circle {
         left: 24px;
     }
 }
+
 /*
 |--------------------------------------
 | Animations
@@ -639,6 +647,7 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
     0% {
         opacity: 1;
     }
+
     100% {
         opacity: 0;
     }
@@ -648,6 +657,7 @@ body > #root > header > nav > .menu__ul > .menu__li > .li__content > a {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
