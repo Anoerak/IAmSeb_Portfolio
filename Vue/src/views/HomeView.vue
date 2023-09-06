@@ -16,6 +16,10 @@ import ReactNative from '../assets/logos/react-native.webp'
 import VueJs from '../assets/logos/vuejs.webp'
 import Symfony from '../assets/logos/symfony.webp'
 
+import MyResume from '../assets/documents/Resume_Seb_classic.pdf'
+// import MyCV from '../assets/logos/cv.png'
+
+
 export default {
     name: 'HomeView',
     data() {
@@ -28,6 +32,8 @@ export default {
             ReactNative,
             VueJs,
             Symfony,
+            MyResume,
+            // MyCV,
             frontStack: [
                 'React',
                 'HTML5',
@@ -188,7 +194,10 @@ export default {
             <br />
         </div>
         <div class="middle__container">
-            <GlitchingImg :image="pictureOfMe" alt="portrait B&W" />
+            <GlitchingImg :image="pictureOfMe" alt="portrait B&W" cv=true :resumeFile="MyResume" />
+            <!--<a class="my__resume" :href="MyResume" download="MyResume">
+                <img :src="MyCV" alt="Logo of Resume">
+            </a>-->
             <GlitchingText text="************" dataValue="SEBASTIEN P." class="title2" tags="h2" />
             <div class="welcome">
                 <div class="welcome__img">
@@ -357,6 +366,7 @@ body>#root>section#about-me>.middle__container {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
+    z-index: 10;
 }
 
 body>#root>section#about-me>.middle__container>#glitching-img-container {
@@ -461,7 +471,7 @@ body.dark>#root>section#about-me>.middle__container>.welcome>.message__container
 
 body>#root>section#about-me>.middle__container>.welcome>.message__container>.links__container>a:hover {
     cursor: pointer;
-    filter: brightness(1.03);
+    animation: fadeInImg 0.5s ease-in-out infinite;
 }
 
 body>#root>section#about-me>.middle__container>.welcome>.message__container>.links__container>a:active {

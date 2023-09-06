@@ -17,6 +17,8 @@ import GlitchingImg from '@Components/GlitchingImg/GlitchingImg';
 import BlinkingWords from '@Components/BlinkingWords/BlinkingWords';
 import SebGPT from '@Components/SebGPT/SebGPT';
 
+import MyResume from '@Documents/Resume_Seb_classic.pdf';
+
 import './Home.css';
 
 function Home() {
@@ -157,7 +159,7 @@ function Home() {
 					<br />
 				</div>
 				<div className='middle__container'>
-					<GlitchingImg img={pictureOfMe} alt='portrait B&W' />
+					<GlitchingImg img={pictureOfMe} alt='portrait B&W' cv='true' resumeFile={MyResume} />
 					<GlitchingText text='************' dataValue='SEBASTIEN P.' className='title2' tags='h2' />
 					<div className='welcome'>
 						<div className='welcome__img'>

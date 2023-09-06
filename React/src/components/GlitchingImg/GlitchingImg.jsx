@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
+import MyCV from '@Logos/cv.png';
 
 import './GlitchingImg.css';
 
 function GlitchingImg(props) {
+	// eslint-disable-next-line
 	const [img, setImg] = useState(props.img);
+	// eslint-disable-next-line
 	const [alt, setAlt] = useState(props.alt);
+	// eslint-disable-next-line
+	const [cv, setCv] = useState(props.cv);
+	// eslint-disable-next-line
+	const [resumeFile, setResumefile] = useState(props.resumeFile);
 
 	return (
 		<div id='glitching-img-container'>
@@ -30,6 +37,11 @@ function GlitchingImg(props) {
 					<span>Hover me!!</span>
 				</p>
 			</div>
+			{cv && (
+				<a className='my__resume' href={resumeFile}>
+					<img src={MyCV} alt='My CV' />
+				</a>
+			)}
 		</div>
 	);
 }

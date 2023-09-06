@@ -16,6 +16,7 @@ module.exports = {
 			'@Images': path.resolve(__dirname, 'src/assets/img'),
 			'@Logos': path.resolve(__dirname, 'src/assets/logos'),
 			'@Videos': path.resolve(__dirname, 'src/assets/videos'),
+			'@Documents': path.resolve(__dirname, 'src/assets/documents'),
 			'@Test': path.resolve(__dirname, 'src/test'),
 		},
 	},
