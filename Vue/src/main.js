@@ -1,5 +1,3 @@
-import './assets/main.css'
-
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import VueScrollTo from 'vue-scrollto'
@@ -20,6 +18,8 @@ config.styleDefaults = 'duotone'
 
 import App from './App.vue'
 import router from './router'
+
+import './assets/main.css'
 
 const app = createApp(App)
 

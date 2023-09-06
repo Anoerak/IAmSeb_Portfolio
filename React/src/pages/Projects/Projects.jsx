@@ -686,14 +686,7 @@ function Projects() {
 										</div>
 										<div className='links'>
 											<h5>Code on GitHub</h5>
-											{/* <a href='https://github.com/Anoerak/Anoerak_P6_13072022'>
-												<img
-													// @ts-ignore
-													align='left'
-													src='https://github-readme-stats-git-main-anoerak.vercel.app/api/pin/?username=Anoerak&repo=Anoerak_P6_13072022&show_icons=true&line_height=27&title_color=6aa6f8&text_color=8a919a&icon_color=6aa6f8&bg_color=22272e&border_color=fd8331bf'
-													alt='Fisheye Github Repository'
-												/>
-											</a> */}
+											<p>No Repository</p>
 										</div>
 									</div>
 								</div>

@@ -6,7 +6,7 @@ import ProjectsView from '../views/ProjectsView.vue'
 import NotFoundView from '../views/Errors/NotFoundView.vue'
 
 const router = createRouter({
-    history: createWebHistory(import.meta.env.BASE_URL),
+    history: createWebHistory('/vue'),
     routes: [
         {
             path: '/',

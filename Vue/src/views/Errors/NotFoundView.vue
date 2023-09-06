@@ -1,13 +1,13 @@
 <script>
 import Video from '../../assets/videos/glitch_4K.mp4'
-import GlitchingText from '../../components/GlitchingText.vue'
+// import GlitchingText from '../../components/GlitchingText.vue'
 
 export default {
   datas: () => ({
     Video
   }),
   components: {
-    GlitchingText
+    // GlitchingText
   },
   mounted() {
     const letters =

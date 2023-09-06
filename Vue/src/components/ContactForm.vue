@@ -9,47 +9,60 @@ export default {
 		}
 	},
 	methods: {
-		handleSubmit(e) {
-			e.preventDefault();
+		handleSubmit() {
+			setTimeout(() => {
+				this.submitted = true;
+			}, 1000);
+		}
+		// handleSubmit(e) {
+		// 	e.preventDefault();
 
-			const inputs = e.target.elements;
-			const data = {};
+		// 	const inputs = e.target.elements;
+		// 	const data = {};
 
-			for (let i = 0; i < inputs.length; i++) {
-				if (inputs[i].name) {
-					data[inputs[i].name] = inputs[i].value;
-				}
-			}
+		// 	for (let i = 0; i < inputs.length; i++) {
+		// 		if (inputs[i].name) {
+		// 			data[inputs[i].name] = inputs[i].value;
+		// 		}
+		// 	}
 
-			fetch('https://public.herotofu.com/v1/f13130f0-396f-11ee-b9b4-c111e90b930c', {
-				method: 'POST',
-				headers: {
-					Accept: 'application/json',
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(data),
-			})
-				.then((response) => {
-					if (!response.ok) {
-						throw new Error('Form response was not ok');
-					}
-					this.submitted(true);
-				})
-				.catch((err) => {
-					// Submit the form manually
-					e.target.submit();
-					this.error(err.message);
-				});
-		},
+		// 	fetch(this.FORM_ENDPOINT, {
+		// 		method: 'POST',
+		// 		headers: {
+		// 			Accept: 'application/json',
+		// 			'Content-Type': 'application/json',
+		// 		},
+		// 		body: JSON.stringify(data),
+		// 	})
+		// 		.then((response) => {
+		// 			if (!response.ok) {
+		// 				throw new Error('Form response was not ok');
+		// 			}
+		// 			this.submitted(true);
+		// 		})
+		// 		.catch((err) => {
+		// 			e.target.submit();
+		// 			this.submitted(true);
+		// 			this.error(err.message);
+		// 		});
+		// },
 	}
-	// If submitted, show a success message
-	// If there's an error, show the error message
 
 }
 </script>
 
 <template>
-	<form action={FORM_ENDPOINT} onSubmit={handleSubmit} method='POST'>
+	<div v-if="error">
+		<h2>Something went wrong!</h2>
+		<p>It's probably because of the developer....</p>
+		<p>Please, try again</p>
+		<button v-on:click="this.submitted(false)">Try again</button>
+	</div>
+	<div v-if="submitted">
+		<h2>Thank you!</h2>
+		<div>We'll be in touch soon.</div>
+	</div>
+	<form :action="FORM_ENDPOINT" @submit="handleSubmit" method='POST'>
 		<div class='input__field'>
 			<label htmlFor='name'>Name</label>
 			<input type='text' placeholder='Your name' name='name' required />
