@@ -797,8 +797,8 @@ body.dark #glitching-img-container .my__resume img {
 
 @media screen and (orientation: portrait) and (min-width: 600px) and (max-width: 992px) {
     body>#root>section#about-me>div.middle__container>div#glitching-img-container>a.my__resume {
-        top: 6rem;
-        right: 0rem;
+        top: 32rem;
+        right: -15rem;
         height: 4rem;
     }
 
