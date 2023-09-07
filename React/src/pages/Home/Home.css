@@ -712,6 +712,7 @@ body.dark > #root > section#my-stack > .stack__container > .stack__card > ul > l
 		color: var(--text__color);
 		box-shadow: var(--box-shadows-light-outset);
 		width: 3rem;
+		height: 3rem;
 		padding: 1rem;
 		border-radius: 1rem;
 		background-color: var(--bg__color);

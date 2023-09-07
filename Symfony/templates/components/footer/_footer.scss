@@ -5,8 +5,8 @@ body {
 		left: 0;
 		width: 100%;
 		height: 70px;
-		background: var(--bg__color);
-		box-shadow: var(--box-shadows-light-thin);
+		background: $bg__color;
+		box-shadow: $box-shadows-light-thin;
 		z-index: 100;
 		display: flex;
 		flex-direction: row;
@@ -19,9 +19,9 @@ body {
 			width: 50px;
 			height: 50px;
 			border-radius: 1rem;
-			background: var(--bg__color);
+			background: $bg__color;
 			transition: all 250ms ease-in-out;
-			box-shadow: var(--box-shadows-light-outset);
+			box-shadow: $box-shadows-light-outset;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -34,7 +34,7 @@ body {
 			}
 
 			&:active {
-				box-shadow: var(--box-shadows-light-inset);
+				box-shadow: $box-shadows-light-inset;
 			}
 
 			&:hover {
@@ -60,7 +60,7 @@ body {
 						width: 21px;
 						height: 4px;
 						border-radius: 50% 0;
-						background-color: var(--navigate-to-top-button-border);
+						background-color: $navigate-to-top-button-border;
 						transform: rotate(-45deg);
 						position: absolute;
 						top: 25px;
@@ -90,7 +90,7 @@ body {
 			}
 
 			.footer__links {
-				box-shadow: var(--box-shadows-light-inset);
+				box-shadow: $box-shadows-light-inset;
 				margin: auto;
 				height: 60px;
 				display: flex;
@@ -108,7 +108,7 @@ body {
 
 				.footer__link {
 					margin: 1rem;
-					color: var(--text__color);
+					color: $text__color;
 
 					.svg-inline--fa {
 						height: 1.25rem;
@@ -130,30 +130,30 @@ body {
 
 body.dark {
 	footer {
-		background: var(--dark__bg__color);
-		box-shadow: var(--box-shadows-dark-thin);
+		background: $dark__bg__color;
+		box-shadow: $box-shadows-dark-thin;
 
 		.go__to__top__button {
-			background: var(--dark__bg__color);
+			background: $dark__bg__color;
 			transition: all 250ms ease-in-out;
-			box-shadow: var(--box-shadows-dark-outset);
+			box-shadow: $box-shadows-dark-outset;
 
 			&:hover {
 				filter: brightness(1.5);
 			}
 
 			&:active {
-				box-shadow: var(--box-shadows-dark-inset);
+				box-shadow: $box-shadows-dark-inset;
 			}
 
 			.go__to__top__link {
 				.go__to__top__icon {
 					&::before {
-						background-color: var(--dark__navigate-to-top-button-border);
+						background-color: $dark__navigate-to-top-button-border;
 					}
 
 					&::after {
-						background-color: var(--dark__navigate-to-top-button-border);
+						background-color: $dark__navigate-to-top-button-border;
 					}
 				}
 			}
@@ -161,10 +161,10 @@ body.dark {
 
 		.footer__container {
 			.footer__links {
-				box-shadow: var(--box-shadows-dark-inset);
+				box-shadow: $box-shadows-dark-inset;
 
 				.footer__link {
-					color: var(--dark__text__color);
+					color: $dark__text__color;
 
 					.logo {
 						&.github {
@@ -200,76 +200,80 @@ body.dark {
 
 /* #region  Media Queries */
 @include responsive(mobile-portrait) {
-	body>div#root>footer {
-		/* z-index: -10; */
-		position: initial;
-		height: auto;
-		width: 100%;
-		flex-direction: column-reverse;
-		align-items: center;
-		justify-content: space-around;
-		gap: 1rem;
-		padding: 1rem 0;
-	}
+	body {
+		#root {
+			footer {
+				/* z-index: -10; */
+				position: initial;
+				height: auto;
+				width: 100%;
+				flex-direction: column-reverse;
+				align-items: center;
+				justify-content: space-around;
+				gap: 1rem;
+				padding: 1rem 0;
 
-	body>div#root>footer div.go__to__top__button {
-		position: fixed;
-		bottom: 1rem;
-		right: 0.5rem;
-		width: 40px;
-		height: 40px;
-		border-radius: 0.5rem;
-	}
+				div.go__to__top__button {
+					position: fixed;
+					bottom: 1rem;
+					right: 0.5rem;
+					width: 40px;
+					height: 40px;
+					border-radius: 0.5rem;
+					transform: translateX(0%);
 
-	body>div#root>footer div.go__to__top__button .go__to__top__link {
-		width: 40px;
-		height: 40px;
-	}
+					.go__to__top__link {
+						width: 40px;
+						height: 40px;
 
-	body>div#root>footer div.go__to__top__button .go__to__top__link .go__to__top__icon::before,
-	body>div#root>footer div.go__to__top__button .go__to__top__link .go__to__top__icon::after {
-		width: 15px;
-		height: 3px;
-		top: 20px;
-	}
+						.go__to__top__icon {
 
-	body>div#root>footer div.go__to__top__button .go__to__top__link .go__to__top__icon::before {
-		left: 7.5px;
-	}
+							&::before,
+							&::after {
+								width: 15px;
+								height: 3px;
+								top: 20px;
+							}
 
-	body>div#root>footer div.go__to__top__button .go__to__top__link .go__to__top__icon::after {
-		right: 7.5px;
-	}
+							&::before {
+								left: 7.5px;
+							}
 
-	body>div#root>footer div.footer__container {
-		width: 100%;
-		height: 100%;
-		flex-direction: column-reverse;
-		align-items: center;
-		justify-content: center;
-	}
+							&:after {
+								right: 7.5px;
+							}
+						}
+					}
+				}
 
-	body>div#root>footer div.footer__container .footer__copy {
-		margin: 1rem 0;
-		min-width: 0;
-	}
+				div.footer__container {
+					width: 100%;
+					height: 100%;
+					flex-direction: column-reverse;
+					align-items: center;
+					justify-content: center;
 
-	body>div#root>footer div.footer__container .footer__links {
-		display: flex;
-		align-items: center;
-		justify-content: space-around;
-		padding: 0;
-		gap: 2rem;
-		width: 90%;
-		margin-top: 1rem;
-	}
+					.footer__copy {
+						margin: 1rem 0;
+						min-width: 0;
+					}
 
-	body>div#root>footer div.footer__container .footer__links::before {
-		content: none;
-	}
+					.footer__links {
+						display: flex;
+						align-items: center;
+						justify-content: space-around;
+						padding: 0;
+						gap: 2rem;
+						width: 90%;
+						margin-top: 1rem;
 
-	body>div#root>footer div.go__to__top__button {
-		transform: translateX(0%);
+						&::before {
+							content: none;
+						}
+					}
+				}
+			}
+		}
 	}
 
 	@keyframes jumpUpAndBack {
@@ -288,71 +292,78 @@ body.dark {
 }
 
 @include responsive(mobile-landscape) {
-	body>div#root>footer {
-		position: initial;
-		height: auto;
-		width: 100%;
-		flex-direction: column-reverse;
-		align-items: center;
-		justify-content: space-around;
-		gap: 1rem;
-		padding: 1rem 0;
-	}
+	body {
+		div#root {
+			footer {
+				position: initial;
+				height: auto;
+				width: 100%;
+				flex-direction: column-reverse;
+				align-items: center;
+				justify-content: space-around;
+				gap: 1rem;
+				padding: 1rem 0;
 
-	body>div#root>footer div.go__to__top__button {
-		position: fixed;
-		bottom: 1rem;
-		right: 0.5rem;
-		width: 40px;
-		height: 40px;
-		border-radius: 0.5rem;
-	}
+				div.go__to__top__button {
+					position: fixed;
+					bottom: 1rem;
+					right: 0.5rem;
+					width: 40px;
+					height: 40px;
+					border-radius: 0.5rem;
 
-	body>div#root>footer div.go__to__top__button .go__to__top__link {
-		width: 40px;
-		height: 40px;
-	}
+					.go__to__top__link {
+						width: 40px;
+						height: 40px;
 
-	body>div#root>footer div.go__to__top__button .go__to__top__link .go__to__top__icon::before,
-	body>div#root>footer div.go__to__top__button .go__to__top__link .go__to__top__icon::after {
-		width: 15px;
-		height: 3px;
-		top: 20px;
-	}
+						.go__to__top__icon {
 
-	body>div#root>footer div.go__to__top__button .go__to__top__link .go__to__top__icon::before {
-		left: 7.5px;
-	}
+							&::before,
+							&::after {
+								width: 15px;
+								height: 3px;
+								top: 20px;
+							}
 
-	body>div#root>footer div.go__to__top__button .go__to__top__link .go__to__top__icon::after {
-		right: 7.5px;
-	}
+							&::before {
+								left: 7.5px;
+							}
 
-	body>div#root>footer div.footer__container {
-		width: 100%;
-		height: 100%;
-		flex-direction: column-reverse;
-		align-items: center;
-		justify-content: center;
-	}
+							&:after {
+								right: 7.5px;
+							}
+						}
+					}
+				}
 
-	body>div#root>footer div.footer__container .footer__copy {
-		margin: 1rem 0;
-		min-width: 0;
-	}
+				div.footer__container {
+					width: 100%;
+					height: 100%;
+					flex-direction: column-reverse;
+					align-items: center;
+					justify-content: center;
 
-	body>div#root>footer div.footer__container .footer__links {
-		display: flex;
-		align-items: center;
-		justify-content: space-around;
-		padding: 0;
-		gap: 2rem;
-		width: 90%;
-		margin-top: 1rem;
-	}
+					.footer__copy {
+						margin: 1rem 0;
+						min-width: 0;
+					}
 
-	body>div#root>footer div.footer__container .footer__links::before {
-		content: none;
+					.footer__links {
+						display: flex;
+						align-items: center;
+						justify-content: space-around;
+						padding: 0;
+						gap: 2rem;
+						width: 90%;
+						margin-top: 1rem;
+
+						&::before {
+							content: none;
+						}
+					}
+				}
+			}
+		}
 	}
 
 	@keyframes jumpUpAndBack {

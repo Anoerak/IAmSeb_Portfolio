@@ -8,20 +8,20 @@ section {
 		margin: 0 2rem;
 		border-radius: 1rem;
 		padding: 2rem;
-		background-color: var(--bg__color);
-		box-shadow: var(--box-shadows-light-inset);
+		background-color: $bg__color;
+		box-shadow: $box-shadows-light-inset;
 		margin-bottom: 8rem;
 
 		h2 {
-			color: var(--text__color);
-			box-shadow: var(--box-shadows-light-thin);
+			color: $text__color;
+			box-shadow: $box-shadows-light-thin;
 			border-radius: 1rem;
 			padding: 0.5rem 1rem;
 			margin-bottom: 2rem;
 		}
 
 		.message {
-			box-shadow: var(--box-shadows-light-outset);
+			box-shadow: $box-shadows-light-outset;
 			padding: 1rem 2rem;
 			border-radius: 1rem;
 			margin-top: 4rem;
@@ -32,23 +32,23 @@ section {
 body.dark {
 	section {
 		&#contact {
-			background-color: var(--dark__bg__color);
-			box-shadow: var(--box-shadows-dark-inset);
+			background-color: $dark__bg__color;
+			box-shadow: $box-shadows-dark-inset;
 
 			h2 {
-				color: var(--dark__text__color);
-				box-shadow: var(--box-shadows-dark-thin);
+				color: $dark__text__color;
+				box-shadow: $box-shadows-dark-thin;
 			}
 
 			.message {
-				box-shadow: var(--box-shadows-dark-outset);
+				box-shadow: $box-shadows-dark-outset;
 			}
 		}
 	}
 }
 
 
-@media screen and (orientation: portrait) and (max-width: 600px) {
+@include responsive(mobile-portrait) {
 	body {
 		section {
 			&#contact {
@@ -59,7 +59,7 @@ body.dark {
 	}
 }
 
-@media screen and (orientation: landscape) and (max-width: 812px) {
+@include responsive(mobile-landscape) {
 	body {
 		section {
 			#contact {

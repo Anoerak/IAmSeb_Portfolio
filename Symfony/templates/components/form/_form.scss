@@ -13,7 +13,7 @@ body {
 		padding: 2rem;
 		max-width: 500px;
 		border-radius: 1rem;
-		box-shadow: var(--box-shadows-light-inset);
+		box-shadow: $box-shadows-light-inset;
 		animation: glitchingInElement 2.5s ease-in-out 1s forwards;
 
 		.input__field {
@@ -38,12 +38,12 @@ body {
 					border-radius: 0.5rem;
 					border: none;
 					outline: none;
-					background-color: var(--bg__color);
+					background-color: $bg__color;
 					color: var(--input-text);
-					box-shadow: var(--box-shadows-light-outset);
+					box-shadow: $box-shadows-light-outset;
 
 					&:focus {
-						box-shadow: var(--box-shadows-light-inset);
+						box-shadow: $box-shadows-light-inset;
 					}
 				}
 
@@ -59,28 +59,28 @@ body {
 				border-radius: 0.5rem;
 				border: none;
 				outline: none;
-				background-color: var(--bg__color);
-				color: var(--text__color);
-				box-shadow: var(--box-shadows-light-outset);
+				background-color: $bg__color;
+				color: $text__color;
+				box-shadow: $box-shadows-light-outset;
 
 				&:hover {
-					background-color: var(--bg__color__dark);
+					background-color: $bg__color__dark;
 					color: var(--input-text);
-					box-shadow: var(--box-shadows-light-outset);
+					box-shadow: $box-shadows-light-outset;
 					cursor: pointer;
 				}
 
 				&:active {
-					background-color: var(--bg__color__dark);
+					background-color: $bg__color__dark;
 					color: var(--input-text);
-					box-shadow: var(--box-shadows-light-outset);
+					box-shadow: $box-shadows-light-outset;
 				}
 
 				&::after {
 					content: '';
 					display: block;
 					opacity: 1;
-					background-color: var(--text__color);
+					background-color: $text__color;
 					width: 50%;
 					height: 1px;
 					margin: 0.5rem auto 0 auto;
@@ -89,7 +89,7 @@ body {
 
 				&:hover::after {
 					opacity: 1;
-					background-color: var(--dark-main-orange-color);
+					background-color: $dark-main-orange-color;
 					animation: bounce 0.75s ease-in-out infinite;
 				}
 			}
@@ -99,46 +99,46 @@ body {
 
 body.dark {
 	form {
-		box-shadow: var(--box-shadows-dark-inset);
+		box-shadow: $box-shadows-dark-inset;
 
 		.input__field {
 
 			input,
 			textarea {
-				background-color: var(--dark__bg__color);
-				color: var(--dark-main-orange-color);
-				box-shadow: var(--box-shadows-dark-outset);
+				background-color: $dark__bg__color;
+				color: $dark-main-orange-color;
+				box-shadow: $box-shadows-dark-outset;
 
 				&:focus {
-					box-shadow: var(--box-shadows-dark-inset);
+					box-shadow: $box-shadows-dark-inset;
 				}
 			}
 
 			button {
-				background-color: var(--dark__bg__color);
-				color: var(--dark__text__color);
-				box-shadow: var(--box-shadows-dark-outset);
+				background-color: $dark__bg__color;
+				color: $dark__text__color;
+				box-shadow: $box-shadows-dark-outset;
 				transition: all 0.75s ease-in-out;
 
 				&:hover {
-					background-color: var(--dark__bg__color__2);
-					color: var(--dark-main-orange-color);
-					box-shadow: var(--box-shadows-dark-outset);
+					background-color: $dark__bg__color__2;
+					color: $dark-main-orange-color;
+					box-shadow: $box-shadows-dark-outset;
 				}
 
 				&:active {
-					background-color: var(--dark__bg__color__2);
-					color: var(--dark-main-orange-color);
-					box-shadow: var(--box-shadows-dark-outset);
+					background-color: $dark__bg__color__2;
+					color: $dark-main-orange-color;
+					box-shadow: $box-shadows-dark-outset;
 				}
 
 				&::after {
-					background-color: var(--dark__text__color);
+					background-color: $dark__text__color;
 				}
 
 				&:hover::after {
 					opacity: 1;
-					background-color: var(--dark-main-orange-color);
+					background-color: $dark-main-orange-color;
 					animation: bounce 0.75s ease-in-out infinite;
 				}
 			}
@@ -382,7 +382,7 @@ body.dark {
 	========================
 */
 
-@media screen and (max-width: 600px) {
+@include responsive(mobile-portrait) {
 	form {
 		width: auto;
 	}

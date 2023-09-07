@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<!-- Primary Meta Tags -->
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+		<meta name="title" content="IamSeb Portfolio"/>
+		<meta name="description" content="👋 Hey there! I'm Sébastien, a passionate full-stack web developer with a love for crafting seamless digital experiences. With a blend of creativity and technical work, I thrive on transforming ideas into functional and visually stunning applications."/>
 		<title>
 			{% block title %}IamSeb w/ Symfony
 			{% endblock %}
 		</title>
-		<link rel="icon" href="{{asset('build/assets/imgs/symfony.ico')}}"/>{# <link
-																												rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>"> #}
-		{# We use the gsap CDN for the responsive navbar #}<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"> </script>
+
+		<link
+		rel="icon" href="{{asset('build/assets/imgs/symfony.ico')}}"/>
+
+		<!-- We use the gsap CDN for the responsive navbar -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+
 		<!-- Plausible script for analytics-->
 		<script defer data-domain="iamseb.dev" src="https://plausible.sebdevcloud.synology.me/js/script.js"></script>
-		<!-- Primary Meta Tags -->
-		<title></title>
-		<meta name="title" content="IamSeb Portfolio"/>
-		<meta
-		name="description" content="👋 Hey there! I'm Sébastien, a passionate full-stack web developer with a love for crafting seamless digital experiences. With a blend of creativity and technical work, I thrive on transforming ideas into functional and visually stunning applications."/>
+
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website"/>

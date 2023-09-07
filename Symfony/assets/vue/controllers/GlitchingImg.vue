@@ -81,7 +81,6 @@ export default {
     display: none;
 }
 
-/* #region imgWrap */
 #glitching-img-container .imgWrap {
     height: 100%;
     width: 100%;
@@ -190,12 +189,9 @@ export default {
     transform: scale(0, 1) translate(-50%, -50%);
 }
 
-/* #endregion */
-
 #glitching-img-container .my__resume {
     box-shadow: var(--box-shadows-light-outset);
     border-radius: 1rem;
-    width: 5rem;
 }
 
 #glitching-img-container .my__resume:hover {
@@ -208,7 +204,7 @@ export default {
 }
 
 #glitching-img-container .my__resume img {
-    width: 5rem;
+    width: 3rem;
     padding: 1rem;
     border-radius: 1rem;
 }
@@ -779,19 +775,19 @@ body.dark #glitching-img-container .my__resume img {
 }
 
 @media screen and (orientation: portrait) and (max-width: 600px) {
-    body>#root>section#about-me>div.middle__container>div#glitching-img-container>a.my__resume {
+    body section#about-me div.middle__container div#glitching-img-container a.my__resume {
         width: 4rem;
         height: 4rem;
         top: -7rem;
     }
 
-    body>#root>section#about-me>div.middle__container>div#glitching-img-container>a.my__resume>img {
-        width: 2rem;
+    body section#about-me div.middle__container div#glitching-img-container a.my__resume>img {
+        width: 4rem;
     }
 }
 
 @media screen and (orientation: landscape) and (max-width: 812px) {
-    body>#root>section#about-me>div.middle__container>div#glitching-img-container>a.my__resume {
+    body section#about-me div.middle__container div#glitching-img-container a.my__resume {
         top: 30rem;
         right: 17rem;
         height: 5rem;
@@ -799,13 +795,13 @@ body.dark #glitching-img-container .my__resume img {
 }
 
 @media screen and (orientation: portrait) and (min-width: 600px) and (max-width: 992px) {
-    body>#root>section#about-me>div.middle__container>div#glitching-img-container>a.my__resume {
+    body section#about-me div.middle__container div#glitching-img-container a.my__resume {
         top: 32rem;
         right: -15rem;
         height: 4rem;
     }
 
-    body>#root>section#about-me>div.middle__container>div#glitching-img-container>a.my__resume>img {
+    body section#about-me div.middle__container div#glitching-img-container a.my__resume>img {
         width: 2rem;
     }
 }

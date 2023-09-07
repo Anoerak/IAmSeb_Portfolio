@@ -1,4 +1,3 @@
-import { registerVueControllerComponents } from '@symfony/ux-vue';
 /*
  * Welcome to your app's main JavaScript file!
  *
@@ -7,6 +6,7 @@ import { registerVueControllerComponents } from '@symfony/ux-vue';
  */
 
 import { registerReactControllerComponents } from '@symfony/ux-react';
+import { registerVueControllerComponents } from '@symfony/ux-vue';
 
 // Registers React controller components to allow loading them from Twig
 //
@@ -19,8 +19,16 @@ import { registerReactControllerComponents } from '@symfony/ux-react';
 // they are not necessary.
 registerReactControllerComponents(require.context('./react/controllers', true, /\.(j|t)sx?$/));
 
+registerVueControllerComponents(require.context('./vue/controllers', true, /\.vue$/));
+
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.scss';
+// import '../templates/pages/home/home.css';
+// import '../templates/pages/projects/projects.css';
+// import '../templates/pages/about/about.css';
+// import '../templates/pages/contact/contact.css';
+// import '../templates/components/header/header.css';
+// import '../templates/components/footer/footer.css';
 
 // start the Stimulus application
 import './bootstrap';
@@ -34,20 +42,3 @@ require('@fortawesome/fontawesome-free/css/all.min.css');
 require('@fortawesome/fontawesome-free/js/all.js');
 
 // Global JS goes here
-/* #region  Dark Mode based on user settings */
-// Dark Mode based on user settings
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && !document.body.classList.contains('dark')) {
-	document.body.classList.add('dark');
-}
-
-// Watch for changes in the user settings.
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-	if (e.matches) {
-		document.body.classList.add('dark');
-	} else {
-		document.body.classList.remove('dark');
-	}
-});
-/* #endregion */
-
-registerVueControllerComponents(require.context('./vue/controllers', true, /\.vue$/));

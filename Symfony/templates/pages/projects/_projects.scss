@@ -10,13 +10,13 @@ body {
 			margin: 0 2rem;
 			border-radius: 1rem;
 			padding: 2rem;
-			background-color: var(--bg__color);
-			box-shadow: var(--box-shadows-light-inset);
+			background-color: $bg__color;
+			box-shadow: $box-shadows-light-inset;
 			margin-bottom: 8rem;
 
 			h2 {
-				color: var(--text__color);
-				box-shadow: var(--box-shadows-light-thin);
+				color: $text__color;
+				box-shadow: $box-shadows-light-thin;
 				border-radius: 1rem;
 				padding: 0.5rem 1rem;
 				margin-bottom: 2rem;
@@ -32,7 +32,7 @@ body {
 				width: 75%;
 				padding: 2rem;
 				border-radius: 1rem;
-				box-shadow: var(--box-shadows-light-thin);
+				box-shadow: $box-shadows-light-thin;
 
 				.shortcut__button {
 					position: relative;
@@ -43,9 +43,9 @@ body {
 					width: 20%;
 					padding: 1rem;
 					border-radius: 1rem;
-					box-shadow: var(--box-shadows-light-thin);
+					box-shadow: $box-shadows-light-thin;
 					text-decoration: none;
-					color: var(--text__color);
+					color: $text__color;
 					transition: all 0.2s ease-in-out;
 
 					&::after {
@@ -57,13 +57,13 @@ body {
 						opacity: 1;
 						width: 40%;
 						height: 1px;
-						background-color: var(--text__color);
+						background-color: $text__color;
 						margin: 0.5rem auto 0 auto;
 					}
 
 					&:hover::after {
 						opacity: 1;
-						background-color: var(--main-orange-color);
+						background-color: $main-orange-color;
 						animation: bounce 0.75s ease-in-out infinite;
 					}
 
@@ -74,13 +74,13 @@ body {
 
 					&:hover {
 						filter: brightness(1.1);
-						box-shadow: var(--box-shadows-light-thin);
-						color: var(--main-orange-color);
+						box-shadow: $box-shadows-light-thin;
+						color: $main-orange-color;
 					}
 
 					&:active {
-						box-shadow: var(--box-shadows-light-inset);
-						color: var(--main-orange-color);
+						box-shadow: $box-shadows-light-inset;
+						color: $main-orange-color;
 					}
 				}
 			}
@@ -94,7 +94,7 @@ body {
 				width: 100%;
 				padding: 2rem 1rem;
 				border-radius: 1rem;
-				box-shadow: var(--box-shadows-light-thin);
+				box-shadow: $box-shadows-light-thin;
 
 				.projects__category {
 					display: flex;
@@ -104,15 +104,15 @@ body {
 					width: 100%;
 					padding: 2rem;
 					border-radius: 1rem;
-					box-shadow: var(--box-shadows-light-inset);
+					box-shadow: $box-shadows-light-inset;
 					margin-bottom: 2rem;
 
 					h3 {
 						display: flex;
 						flex-direction: column;
 						align-items: center;
-						color: var(--text__color);
-						box-shadow: var(--box-shadows-light-thin);
+						color: $text__color;
+						box-shadow: $box-shadows-light-thin;
 						border-radius: 1rem;
 						padding: 1rem 4rem;
 						margin-bottom: 2rem;
@@ -139,22 +139,22 @@ body {
 							padding: 1rem;
 							margin-bottom: 2rem;
 							border-radius: 1rem;
-							box-shadow: var(--box-shadows-light-thin);
+							box-shadow: $box-shadows-light-thin;
 							text-decoration: none;
-							color: var(--text__color);
+							color: $text__color;
 							transition: all 0.2s ease-in-out;
 
 							h4 {
-								color: var(--text__color);
-								box-shadow: var(--box-shadows-light-thin);
+								color: $text__color;
+								box-shadow: $box-shadows-light-thin;
 								border-radius: 1rem;
 								padding: 1rem 2rem;
 								margin-bottom: 1rem;
 							}
 
 							h5 {
-								color: var(--main-orange-color);
-								box-shadow: var(--box-shadows-light-inset);
+								color: $main-orange-color;
+								box-shadow: $box-shadows-light-inset;
 								border-radius: 1rem;
 								padding: 1rem 2rem;
 								margin-bottom: 2rem;
@@ -213,8 +213,8 @@ body {
 										.technologies,
 										.links {
 											h5 {
-												color: var(--text__color);
-												box-shadow: var(--box-shadows-light-outset);
+												color: $text__color;
+												box-shadow: $box-shadows-light-outset;
 												border-radius: 1rem;
 												padding: 0.5rem 1rem;
 												margin-bottom: 2rem;
@@ -226,7 +226,7 @@ body {
 								.right__container {
 
 									.medias {
-										box-shadow: var(--box-shadows-light-inset);
+										box-shadow: $box-shadows-light-inset;
 										border-radius: 1rem;
 										padding: 1rem;
 										max-width: 33rem;
@@ -254,23 +254,23 @@ body {
 body.dark {
 	section {
 		&#projects {
-			background-color: var(--dark__bg__color);
-			box-shadow: var(--box-shadows-dark-inset);
+			background-color: $dark__bg__color;
+			box-shadow: $box-shadows-dark-inset;
 
 			h2 {
-				color: var(--dark__text__color);
-				box-shadow: var(--box-shadows-dark-thin);
+				color: $dark__text__color;
+				box-shadow: $box-shadows-dark-thin;
 			}
 
 			.shortcut__buttons {
-				box-shadow: var(--box-shadows-dark-thin);
+				box-shadow: $box-shadows-dark-thin;
 
 				.shortcut__button {
-					box-shadow: var(--box-shadows-dark-thin);
-					color: var(--dark__text__color);
+					box-shadow: $box-shadows-dark-thin;
+					color: $dark__text__color;
 
 					&::after {
-						background-color: var(--dark-main-orange-color);
+						background-color: $dark-main-orange-color;
 					}
 
 					.shortcut__button__icon {
@@ -279,26 +279,26 @@ body.dark {
 
 					&:hover {
 						filter: brightness(1.1);
-						box-shadow: var(--box-shadows-dark-thin);
-						color: var(--dark-main-orange-color);
+						box-shadow: $box-shadows-dark-thin;
+						color: $dark-main-orange-color;
 					}
 
 					&:active {
-						box-shadow: var(--box-shadows-dark-inset);
-						color: var(--dark-main-orange-color);
+						box-shadow: $box-shadows-dark-inset;
+						color: $dark-main-orange-color;
 					}
 				}
 			}
 
 			.projects__container {
-				box-shadow: var(--box-shadows-dark-thin);
+				box-shadow: $box-shadows-dark-thin;
 
 				.projects__category {
-					box-shadow: var(--box-shadows-dark-inset);
+					box-shadow: $box-shadows-dark-inset;
 
 					h3 {
-						color: var(--dark__text__color);
-						box-shadow: var(--box-shadows-dark-thin);
+						color: $dark__text__color;
+						box-shadow: $box-shadows-dark-thin;
 
 						.submenu__title__icon {
 							filter: invert(1);
@@ -307,17 +307,17 @@ body.dark {
 
 					.projects__category__list {
 						.projects__category__list__item {
-							box-shadow: var(--box-shadows-dark-thin);
-							color: var(--dark__text__color);
+							box-shadow: $box-shadows-dark-thin;
+							color: $dark__text__color;
 
 							h4 {
-								color: var(--dark__text__color);
-								box-shadow: var(--box-shadows-dark-thin);
+								color: $dark__text__color;
+								box-shadow: $box-shadows-dark-thin;
 							}
 
 							h5 {
-								color: var(--dark-main-orange-color);
-								box-shadow: var(--box-shadows-dark-inset);
+								color: $dark-main-orange-color;
+								box-shadow: $box-shadows-dark-inset;
 							}
 
 							.projects__category__list__item__container {
@@ -327,8 +327,8 @@ body.dark {
 										.technologies,
 										.links {
 											h5 {
-												color: var(--dark__text__color);
-												box-shadow: var(--box-shadows-dark-outset);
+												color: $dark__text__color;
+												box-shadow: $box-shadows-dark-outset;
 											}
 										}
 									}
@@ -336,7 +336,7 @@ body.dark {
 
 								.right__container {
 									.medias {
-										box-shadow: var(--box-shadows-dark-inset);
+										box-shadow: $box-shadows-dark-inset;
 										border-radius: 1rem;
 										padding: 1rem;
 										max-width: 33rem;
@@ -374,323 +374,353 @@ body.dark {
 	}
 }
 
-@media screen and (orientation: portrait) and (max-width: 600px) {
-	body>#root>#projects {
-		margin-bottom: 4rem;
-	}
+@include responsive(mobile-portrait) {
+	body {
+		#root {
+			#projects {
+				margin-bottom: 4rem;
 
-	body>#root>#projects>.shortcut__buttons {
-		width: 80%;
-		gap: 2rem;
-		padding: 1rem;
-	}
+				.shortcut__buttons {
+					width: 80%;
+					gap: 2rem;
+					padding: 1rem;
 
-	body>#root>#projects>.shortcut__buttons>.shortcut__button {
-		width: 25%;
-		flex-direction: column;
-	}
+					.shortcut__button {
+						width: 25%;
+						flex-direction: column;
 
-	body>#root>#projects>.shortcut__buttons>.shortcut__button::after {
-		width: 45%;
-	}
+						&::after {
+							width: 45%;
+						}
 
-	body>#root>#projects>.shortcut__buttons>.shortcut__button>.shortcut__button__icon {
-		width: 1.5rem;
-		height: 1.5rem;
-	}
+						.shortcut__button__icon {
+							width: 1.5rem;
+							height: 1.5rem;
+						}
+					}
+				}
 
-	body>#root>#projects>.projects__container {
-		padding: 0.5rem;
-		width: 105%;
-	}
+				.projects__container {
+					padding: 0.5rem;
+					width: 105%;
 
-	body>#root>#projects>.projects__container>.projects__category {
-		padding: 0;
-		width: 100%;
-	}
+					.projects__category {
+						padding: 0;
+						width: 100%;
 
-	body>#root>#projects>.projects__container>.projects__category>h3 {
-		padding: 1rem 2rem;
-	}
+						h3 {
+							padding: 1rem 2rem;
+						}
 
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list {
-		width: 80%;
-		flex-wrap: nowrap;
-	}
+						.projects__category__list {
+							width: 80%;
+							flex-wrap: nowrap;
 
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item {
-		width: 95%;
-	}
+							.projects__category__list__item {
+								width: 95%;
 
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item>h4 {
-		padding: 1rem 1rem;
-	}
+								h4 {
+									padding: 1rem 1rem;
+								}
 
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item>h5 {
-		padding: 1rem 1rem;
-	}
+								h5 {
+									padding: 1rem 1rem;
+								}
 
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item>.projects__category__list__item__container {
-		flex-direction: column;
-	}
+								.projects__category__list__item__container {
+									flex-direction: column;
 
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item>.projects__category__list__item__container>.left__container,
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item>.projects__category__list__item__container>.right__container {
-		width: 100%;
-		max-width: 100%;
-		height: 100%;
-	}
+									.left__container,
+									.right__container {
+										width: 100%;
+										max-width: 100%;
+										height: 100%;
+									}
 
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item>.projects__category__list__item__container>.left__container>.bottom {
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-around;
-		width: 100%;
-		margin-top: 2rem;
-	}
+									.left__container {
+										.bottom {
+											flex-direction: column;
+											align-items: center;
+											justify-content: space-around;
+											width: 100%;
+											margin-top: 2rem;
 
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item>.projects__category__list__item__container>.left__container>.bottom>.technologies,
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item>.projects__category__list__item__container>.left__container>.bottom>.links {
-		width: 100%;
-		margin-bottom: 2rem;
-	}
+											.technologies,
+											.links {
+												width: 100%;
+												margin-bottom: 2rem;
 
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item>.projects__category__list__item__container>.left__container>.bottom>.technologies>h5,
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item>.projects__category__list__item__container>.left__container>.bottom>.links>h5 {
-		padding: 0.5rem 1rem;
-		margin-bottom: 2rem;
-	}
+												h5 {
+													padding: 0.5rem 1rem;
+													margin-bottom: 2rem;
+												}
+											}
 
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item>.projects__category__list__item__container>.left__container>.bottom>.links a img {
-		width: 100%;
-	}
+											.links {
+												a {
+													img {
+														width: 100%;
+													}
+												}
+											}
+										}
+									}
 
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item>.projects__category__list__item__container>.right__container>.medias {
-		width: calc(100% - 1rem);
-		height: 100%;
-		max-width: 100%;
-		max-height: 100%;
-		padding: 0.5rem;
-		border-radius: 0;
-	}
+									.right__container {
 
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item>.projects__category__list__item__container>.right__container>.medias .control-dots {
-		display: none;
-	}
-}
+										.medias {
+											width: calc(100% - 1rem);
+											height: 100%;
+											max-width: 100%;
+											max-height: 100%;
+											padding: 0.5rem;
+											border-radius: 0;
 
-@media screen and (orientation: landscape) and (max-width: 812px) {
-	body>#root>#projects {
-		margin-bottom: 4rem;
-	}
-
-	body>#root>#projects>.shortcut__buttons {
-		width: 80%;
-		gap: 2rem;
-		padding: 1rem;
-	}
-
-	body>#root>#projects>.shortcut__buttons>.shortcut__button {
-		width: 25%;
-		flex-direction: column;
-	}
-
-	body>#root>#projects>.shortcut__buttons>.shortcut__button::after {
-		width: 65%;
-	}
-
-	body>#root>#projects>.shortcut__buttons>.shortcut__button>.shortcut__button__icon {
-		width: 1.5rem;
-		height: 1.5rem;
-	}
-
-	body>#root>#projects>.projects__container {
-		padding: 0.5rem;
-		width: 105%;
-	}
-
-	body>#root>#projects>.projects__container>.projects__category {
-		padding: 0;
-		width: 100%;
-	}
-
-	body>#root>#projects>.projects__container>.projects__category>h3 {
-		padding: 1rem 2rem;
-	}
-
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list {
-		width: 90%;
-		flex-wrap: nowrap;
-	}
-
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item {
-		width: 95%;
-	}
-
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item h4 {
-		padding: 1rem 1rem;
-	}
-
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item h5 {
-		padding: 1rem 1rem;
-	}
-
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item>.projects__category__list__item__container {
-		flex-direction: column;
-	}
-
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item>.projects__category__list__item__container>.left__container,
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item>.projects__category__list__item__container>.right__container {
-		width: 100%;
-		max-width: 100%;
-		height: auto;
-	}
-
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item>.projects__category__list__item__container>.right__container>.medias {
-		width: calc(100% - 1rem);
-		height: auto;
-		max-width: 100%;
-		max-height: 100%;
-		padding: 0.5rem;
-		border-radius: 0;
-		margin: 1rem auto;
+											.control-dots {
+												display: none;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
-@media screen and (orientation: portrait) and (min-width: 600px) and (max-width: 992px) {
-	body>#root>#projects {
-		margin-bottom: 8rem;
-	}
+@include responsive(mobile-landscape) {
+	body {
+		#root {
+			#projects {
+				margin-bottom: 4rem;
 
-	body>#root>#projects>.shortcut__buttons {
-		width: 80%;
-		gap: 2rem;
-		padding: 1rem;
-	}
+				.shortcut__buttons {
+					width: 80%;
+					gap: 2rem;
+					padding: 1rem;
 
-	body>#root>#projects>.shortcut__buttons>.shortcut__button {
-		width: 10%;
-		flex-direction: column;
-	}
+					.shortcut__button {
+						width: 25%;
+						flex-direction: column;
 
-	body>#root>#projects>.projects__container {
-		padding: 0.5rem;
-		width: 100%;
-	}
+						&::after {
+							width: 65%;
+						}
 
-	body>#root>#projects>.projects__container>.projects__category {
-		padding: 0;
-		width: 100%;
-	}
+						.shortcut__button__icon {
+							width: 1.5rem;
+							height: 1.5rem;
+						}
+					}
+				}
 
-	body>#root>#projects>.projects__container>.projects__category>h3 {
-		padding: 1rem 2rem;
-	}
+				.projects__container {
+					padding: 0.5rem;
+					width: 105%;
 
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list {
-		width: 90%;
-		flex-wrap: nowrap;
-	}
+					.projects__category {
+						padding: 0;
+						width: 100%;
 
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item {
-		width: 95%;
-	}
+						h3 {
+							padding: 1rem 2rem;
+						}
 
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item h4 {
-		padding: 1rem 1rem;
-	}
+						.projects__category__list {
+							width: 90%;
+							flex-wrap: nowrap;
 
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item h5 {
-		padding: 1rem 1rem;
-	}
+							.projects__category__list__item {
+								width: 95%;
 
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item>.projects__category__list__item__container {
-		flex-direction: column;
-	}
+								h4 {
+									padding: 1rem 1rem;
+								}
 
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item>.projects__category__list__item__container>.left__container,
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item>.projects__category__list__item__container>.right__container {
-		width: 100%;
-		max-width: 100%;
-		height: auto;
-	}
+								h5 {
+									padding: 1rem 1rem;
+								}
 
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item>.projects__category__list__item__container>.right__container>.medias {
-		width: auto;
-		height: auto;
-		max-width: 100%;
-		max-height: 100%;
-		padding: 0.5rem;
-		border-radius: 0;
-		margin: 1rem auto;
+								.projects__category__list__item__container {
+									flex-direction: column;
+
+									.left__container,
+									.right__container {
+										width: 100%;
+										max-width: 100%;
+										height: auto;
+									}
+
+									.right__container {
+										.medias {
+											width: calc(100% - 1rem);
+											height: auto;
+											max-width: 100%;
+											max-height: 100%;
+											padding: 0.5rem;
+											border-radius: 0;
+											margin: 1rem auto;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
-@media screen and (orientation: landscape) and (min-width: 812px) and (max-width: 1300px) {
-	body>#root>#projects {
-		margin-bottom: 8rem;
-	}
+@include responsive(tablet-portrait) {
+	body {
+		#root {
+			#projects {
+				margin-bottom: 8rem;
 
-	body>#root>#projects>.shortcut__buttons {
-		width: 80%;
-		gap: 2rem;
-		padding: 1rem;
-	}
+				.shortcut__buttons {
+					width: 80%;
+					gap: 2rem;
+					padding: 1rem;
 
-	body>#root>#projects>.shortcut__buttons>.shortcut__button {
-		width: 10%;
-		flex-direction: column;
-	}
+					.shortcut__button {
+						width: 10%;
+						flex-direction: column;
+					}
+				}
 
-	body>#root>#projects>.projects__container {
-		padding: 0.5rem;
-		width: 100%;
-	}
+				.projects__container {
+					padding: 0.5rem;
+					width: 100%;
 
-	body>#root>#projects>.projects__container>.projects__category {
-		padding: 0;
-		width: 100%;
-	}
+					.projects__category {
+						padding: 0;
+						width: 100%;
 
-	body>#root>#projects>.projects__container>.projects__category>h3 {
-		padding: 1rem 2rem;
-	}
+						h3 {
+							padding: 1rem 2rem;
+						}
 
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list {
-		width: 90%;
-		flex-wrap: nowrap;
-	}
+						.projects__category__list {
+							width: 90%;
+							flex-wrap: nowrap;
 
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item {
-		width: 95%;
-	}
+							.projects__category__list__item {
+								width: 95%;
 
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item h4 {
-		padding: 1rem 1rem;
-	}
+								h4 {
+									padding: 1rem 1rem;
+								}
 
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item h5 {
-		padding: 1rem 1rem;
-	}
+								h5 {
+									padding: 1rem 1rem;
+								}
 
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item>.projects__category__list__item__container {
-		flex-direction: column;
-	}
+								.projects__category__list__item__container {
+									flex-direction: column;
 
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item>.projects__category__list__item__container>.left__container,
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item>.projects__category__list__item__container>.right__container {
-		width: 100%;
-		max-width: 100%;
-		height: auto;
-	}
+									.left__container,
+									.right__container {
+										width: 100%;
+										max-width: 100%;
+										height: auto;
+									}
 
-	body>#root>#projects>.projects__container>.projects__category>.projects__category__list>.projects__category__list__item>.projects__category__list__item__container>.right__container>.medias {
-		width: auto;
-		height: auto;
-		max-width: 100%;
-		max-height: 100%;
-		padding: 0.5rem;
-		border-radius: 0;
-		margin: 1rem auto;
+									.right__container {
+										.medias {
+											width: auto;
+											height: auto;
+											max-width: 100%;
+											max-height: 100%;
+											padding: 0.5rem;
+											border-radius: 0;
+											margin: 1rem auto;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include responsive(tablet-landscape) {
+	body {
+		#root {
+			#projects {
+				margin-bottom: 8rem;
+
+				.shortcut__buttons {
+					width: 80%;
+					gap: 2rem;
+					padding: 1rem;
+
+					.shortcut__button {
+						width: 10%;
+						flex-direction: column;
+					}
+				}
+
+				.projects__container {
+					padding: 0.5rem;
+					width: 100%;
+
+					.projects__category {
+						padding: 0;
+						width: 100%;
+
+						h3 {
+							padding: 1rem 2rem;
+						}
+
+						.projects__category__list {
+							width: 90%;
+							flex-wrap: nowrap;
+
+							.projects__category__list__item {
+								width: 95%;
+
+								h4 {
+									padding: 1rem 1rem;
+								}
+
+								h5 {
+									padding: 1rem 1rem;
+								}
+
+								.projects__category__list__item__container {
+									flex-direction: column;
+
+									.left__container,
+									.right__container {
+										width: 100%;
+										max-width: 100%;
+										height: auto;
+									}
+
+									.right__container {
+										.medias {
+											width: auto;
+											height: auto;
+											max-width: 100%;
+											max-height: 100%;
+											padding: 0.5rem;
+											border-radius: 0;
+											margin: 1rem auto;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
