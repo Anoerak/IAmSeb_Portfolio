@@ -1,7 +1,10 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import { onMounted } from 'vue'
+
 import gsap from 'gsap'
+
+import DarkMode from './DarkMode.vue'
 
 onMounted(() => {
     /* #region  Navbar */
@@ -46,43 +49,6 @@ onMounted(() => {
     })
     /* #endregion */
 
-    /* #region  Dark Mode */
-    // Dark Mode based on user settings
-    if (
-        window.matchMedia &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches &&
-        !document.body.classList.contains('dark')
-    ) {
-        document.body.classList.add('dark')
-        document.getElementsByTagName('header')[0].classList.add('dark')
-    }
-
-    // Watch for changes in the user settings.
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-        if (e.matches) {
-            document.body.classList.add('dark')
-            document.getElementsByTagName('header')[0].classList.add('dark')
-        } else {
-            document.body.classList.remove('dark')
-            document.getElementsByTagName('header')[0].classList.remove('dark')
-        }
-    })
-
-    // Dark Mode Toggle
-    const toggler = document.querySelector('.toggler')
-    const circle = document.querySelector('.circle')
-    toggler.addEventListener('click', () => {
-        if (document.body.classList.contains('dark')) {
-            document.body.classList.remove('dark')
-            toggler.classList.toggle('clicked')
-            circle.classList.toggle('dark')
-        } else {
-            document.body.classList.add('dark')
-            toggler.classList.toggle('clicked')
-            circle.classList.toggle('dark')
-        }
-    })
-    /* #endregion */
 
     /* #region  Responsive */
     // Responsive Navbar
@@ -125,13 +91,6 @@ onMounted(() => {
     })
     /* #endregion */
 })
-
-// defineProps({
-//   msg: {
-//     type: String,
-//     required: true
-//   }
-// })
 </script>
 
 <template>
@@ -142,8 +101,7 @@ onMounted(() => {
 
         <h1 id="top">I Am Seb</h1>
 
-        <div className="toggler"></div>
-        <button className="circle"></button>
+        <DarkMode />
 
         <nav>
             <h2>Sébastien P.</h2>

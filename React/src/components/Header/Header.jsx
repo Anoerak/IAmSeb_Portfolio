@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+import DarkMode from '@Hooks/darkMode';
+
 import gsap from 'gsap';
 
 import './Header.css';
@@ -45,37 +47,6 @@ function Header() {
 		navbar.addEventListener('mouseenter', () => {
 			if (window.innerWidth >= 992 && window.pageYOffset !== 0) {
 				navbar.style.animation = 'fadingIn 0.25s ease-in-out forwards';
-			}
-		});
-		/* #endregion */
-
-		/* #region  Dark Mode */
-		// Dark Mode based on user settings
-		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && !document.body.classList.contains('dark')) {
-			document.body.classList.add('dark');
-		}
-
-		// Watch for changes in the user settings.
-		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-			if (e.matches) {
-				document.body.classList.add('dark');
-			} else {
-				document.body.classList.remove('dark');
-			}
-		});
-
-		// Dark Mode Toggle
-		const toggler = document.querySelector('.toggler');
-		const circle = document.querySelector('.circle');
-		toggler.addEventListener('click', () => {
-			if (document.body.classList.contains('dark')) {
-				document.body.classList.remove('dark');
-				toggler.classList.toggle('clicked');
-				circle.classList.toggle('dark');
-			} else {
-				document.body.classList.add('dark');
-				toggler.classList.toggle('clicked');
-				circle.classList.toggle('dark');
 			}
 		});
 		/* #endregion */
@@ -131,8 +102,7 @@ function Header() {
 
 			<h1 id='top'>I Am Seb</h1>
 
-			<div className='toggler'></div>
-			<button className='circle'></button>
+			<DarkMode />
 
 			<nav>
 				<h2>Sébastien P.</h2>
