@@ -6,24 +6,21 @@
 
 {% block body %}
 	<section id='contact'>
-		<div {{ react_component('components/GlitchingText/GlitchingText', { text: '**************', dataValue: '{Code with me}', classValue: 'title1', tags: 'h2', } )}}></div>
+		<div {{ vue_component('GlitchingText', { text: '**************', dataValue: '{Code with me}', className: 'title1', tags: 'h2', } )}}></div>
 		<p>
 			✌️ Hey there!
 			<br/>
 			<br/>
 			🙏🏻 Thanks for stopping by my digital crib 🛖. If you’ve got a project that needs some coding magic or just want to say hi,
-																																																															drop me a line using the form below.
+																																																																																													drop me a line using the form below.
 			<br/>
 			<br/>
 			I’ll get back to you faster than you can say ‘JavaScript’!
 		</p>
 		{# If there is a message from the mailer, we display the message, otherwise, we display the form #}
-		{% if message is defined and message is not empty %}
-			<div class="message__container">
-				<div class="message">
-					{{ message }}
-				</div>
-			</div>
+		{% if message1 is defined and message1 is not empty %}
+			<h2>{{ message1 }}</h2>
+			<div>{{ message2 }}</div>
 		{% else %}
 			{{ form_start(form)}}
 			<div class="input__field">

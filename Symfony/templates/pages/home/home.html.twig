@@ -13,12 +13,12 @@
 			<br/>
 		</div>
 		<div class="middle__container">
-			<div {{ react_component('components/GlitchingImg/GlitchingImg', { img: 'build/assets/imgs/portrait_me.webp' , alt: 'portrait B&W' } )}}></div>
+			<div {{ vue_component('GlitchingImg', { image: 'build/assets/imgs/portrait_me.webp' , alt: 'portrait B&W', cv:true, resumeFile:"build/assets/documents/Resume_Seb_classic.pdf" } )}}></div>
 			<div class="welcome">
 				<div class="welcome__img">
 					<img src="{{ asset('build/assets/logos/welcome-back.png')}}" alt="Welcome Back sign"/>
 				</div>
-				<div {{ react_component('components/GlitchingText/GlitchingText', { text: '************', dataValue: 'SEBASTIEN P.', tags: 'h2', classValue: 'title2', } ) }}></div>
+				<div {{ vue_component('GlitchingText', { text: '************', dataValue: 'SEBASTIEN P.', tags: 'h2', className: 'title2', } ) }}></div>
 				<div class="message__container">
 					<div class="message">
 						<p>Welcome to my web development portfolio! Here, you’ll find a showcase of my skills, creativity, and dedication to the craft of web development.</p>

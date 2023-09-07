@@ -110,7 +110,8 @@ class HomeController extends AbstractController
     public function contact(Request $request, MailerInterface $mailer): Response
     {
         // We check if there is a message in the request
-        $message = $request->query->get('message');
+        $message1 = $request->query->get('message1');
+        $message2 = $request->query->get('message2');
 
         $form = $this->createForm(ContactType::class);
 
@@ -138,7 +139,8 @@ class HomeController extends AbstractController
                 ]));
             } finally {
                 return $this->redirect($this->generateUrl('app_contact', [
-                    'message' => 'We\'ll be in touch soon!!',
+                    'message1' => 'Thank you',
+                    'message2' => 'We\'ll be in touch soon!!',
                 ]));
             }
         }
@@ -146,7 +148,8 @@ class HomeController extends AbstractController
         return $this->render('pages/contact/contact.html.twig', [
             'controller_name' => 'HomeController',
             'form' => $form->createView(),
-            'message' => $message ?? '',
+            'message1' => $message1 ?? '',
+            'message2' => $message2 ?? '',
         ]);
     }
 }

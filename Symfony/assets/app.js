@@ -1,3 +1,4 @@
+import { registerVueControllerComponents } from '@symfony/ux-vue';
 /*
  * Welcome to your app's main JavaScript file!
  *
@@ -48,3 +49,5 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
 	}
 });
 /* #endregion */
+
+registerVueControllerComponents(require.context('./vue/controllers', true, /\.vue$/));

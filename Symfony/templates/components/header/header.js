@@ -46,31 +46,6 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
 	document.body.classList.add('dark');
 }
 
-// Watch for changes in the user settings.
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-	if (e.matches) {
-		document.body.classList.add('dark');
-	} else {
-		document.body.classList.remove('dark');
-	}
-});
-
-// Dark Mode Toggle
-const toggler = document.querySelector('.toggler');
-const circle = document.querySelector('.circle');
-toggler.addEventListener('click', () => {
-	if (document.body.classList.contains('dark')) {
-		document.body.classList.remove('dark');
-		toggler.classList.toggle('clicked');
-		circle.classList.toggle('dark');
-	} else {
-		document.body.classList.add('dark');
-		toggler.classList.toggle('clicked');
-		circle.classList.toggle('dark');
-	}
-});
-/* #endregion */
-
 /* #region  Responsive */
 // Responsive Navbar
 const open = document.querySelector('.hamburger__menu__container');

@@ -16,7 +16,7 @@ Encore
 		from: './assets/libs/',
 		to: 'assets/[path]/[name].[ext]',
 		// to: 'images/[path][name].[hash:8].[ext]',
-		pattern: /\.(png|jpg|jpeg|webp|svg|mp4|gif|ico)$/,
+		pattern: /\.(png|jpg|jpeg|webp|svg|mp4|gif|ico|pdf)$/,
 	})
 	// only needed for CDN's or subdirectory deploy
 	//.setManifestKeyPrefix('build/')
@@ -36,6 +36,9 @@ Encore
 
 	// When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
 	.splitEntryChunks()
+
+	// .enableVueLoader()
+	.enableVueLoader(() => {}, { runtimeCompilerBuild: false })
 
 	// will require an extra script tag for runtime.js
 	// but, you probably want this, unless you're building a single-page app
