@@ -204,7 +204,7 @@ export default {
 }
 
 #glitching-img-container .my__resume img {
-    width: 3rem;
+    width: 5rem;
     padding: 1rem;
     border-radius: 1rem;
 }
@@ -788,21 +788,43 @@ body.dark #glitching-img-container .my__resume img {
 
 @media screen and (orientation: landscape) and (max-width: 812px) {
     body section#about-me div.middle__container div#glitching-img-container a.my__resume {
-        top: 30rem;
+        top: 33rem;
         right: 17rem;
         height: 5rem;
+        width: 5rem;
+    }
+
+    body section#about-me div.middle__container div#glitching-img-container a.my__resume img {
+        width: 5rem;
     }
 }
 
 @media screen and (orientation: portrait) and (min-width: 600px) and (max-width: 992px) {
+    body section#about-me div.middle__container div#glitching-img-container .imgWrap img {
+        width: 100%;
+    }
+
     body section#about-me div.middle__container div#glitching-img-container a.my__resume {
         top: 32rem;
         right: -15rem;
         height: 4rem;
+        width: 4rem;
     }
 
     body section#about-me div.middle__container div#glitching-img-container a.my__resume>img {
-        width: 2rem;
+        width: 4rem;
+    }
+}
+
+@media screen and (orientation: landscape) and (min-width: 812px) and (max-width: 1080px) {
+    body section#about-me div.middle__container div#glitching-img-container a.my__resume {
+        height: 5rem;
+        width: 5rem;
+        bottom: 0;
+    }
+
+    body section#about-me div.middle__container div#glitching-img-container a.my__resume img {
+        width: 5rem;
     }
 }
 

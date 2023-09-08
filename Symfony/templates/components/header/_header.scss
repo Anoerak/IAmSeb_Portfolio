@@ -163,7 +163,7 @@ body {
 						display: flex;
 						flex-direction: column;
 						align-items: center;
-						background-color: $nav__bg__color;
+						background-color: transparent;
 						border-radius: inherit;
 						height: calc(100% - 2px);
 						width: calc(100% - 2px);
@@ -231,7 +231,7 @@ body.dark {
 				}
 
 				.li__content {
-					background-color: $dark__nav__bg__color;
+					background-color: transparent;
 
 					a {
 						color: $dark__text__color;

@@ -299,7 +299,8 @@ body {
 					}
 
 					div {
-						width: 100%;
+						margin: 0 auto;
+						width: 95%;
 					}
 				}
 			}
@@ -1186,6 +1187,7 @@ body {
 					gap: 2rem;
 
 					div.left__side {
+						width: 100%;
 
 						div.top__part,
 						div.bottom__part {
@@ -1193,7 +1195,7 @@ body {
 							margin: 0;
 
 							img {
-								.about__me__logo {
+								&.about__me__logo {
 									height: 3rem;
 									width: 3rem;
 								}
@@ -1207,11 +1209,12 @@ body {
 								.line__3 {
 									white-space: normal;
 									overflow: visible;
-									animation: none;
-									display: flex;
+									animation: none !important;
+									/* display: flex; */
 									width: auto;
 								}
 							}
+
 						}
 					}
 
@@ -1224,6 +1227,11 @@ body {
 							width: 3rem;
 						}
 					}
+				}
+
+				a.next__link {
+					display: none;
+					bottom: 0;
 				}
 			}
 
@@ -1274,39 +1282,36 @@ body {
 			margin: 2rem;
 
 			&#about-me {
+				height: auto;
 				flex-direction: column;
 				align-items: center;
-				justify-content: space-around;
+				justify-content: none;
+				min-height: 80vh;
+				margin-bottom: 2rem;
 
-				.top__container,
-				.bottom__container {
+				div.top__container,
+				div.bottom__container {
 					width: 100%;
 					display: flex;
 					flex-direction: column;
 					align-items: center;
 
 					h2 {
-						margin: 2rem auto;
-						animation: none;
-
-						&.glitching-text {
-							animation: none;
-
-							&::before,
-							&::after {
-								animation: none;
-							}
-						}
+						font-size: 2rem;
 					}
 				}
 
-				.top__container {
+				div.top__container {
 					h2 {
 						max-width: 90%;
 					}
 				}
 
-				.middle__container {
+				div.middle__container {
+					flex-direction: column;
+					align-items: center;
+					justify-content: space-around;
+
 					#glitching-img-container {
 						max-width: 100%;
 						margin-top: 2rem;
@@ -1314,26 +1319,87 @@ body {
 						.imgWrap {
 							img {
 								width: 100%;
-								animation: none;
 
 								.red,
 								.green,
 								.blue {
 									width: 100%;
-									animation: none;
 								}
 							}
 						}
 					}
 
+					h2 {
+						display: flex;
+						max-width: 100%;
+						margin: auto;
+						margin-top: 2rem;
+					}
+
 					.welcome {
+						width: 100%;
+						margin-top: 2rem;
 						margin-right: 0;
+
+						.message__container {
+							width: auto;
+							margin-top: 1rem;
+
+							.message {
+								text-align: justify;
+								white-space: normal;
+								overflow: visible;
+								animation: none;
+								border-right: none;
+								width: 100%;
+
+							}
+
+							.links__container {
+								margin: 1rem 0;
+								display: flex;
+								flex-direction: row;
+								align-items: center;
+								justify-content: space-around;
+
+								a.framework {
+									position: inherit;
+									margin: 0;
+									display: flex;
+									flex-direction: column;
+									align-items: center;
+									text-decoration: none;
+									color: var(--text__color);
+									box-shadow: var(--box-shadows-light-outset);
+									width: 5rem;
+									padding: 1rem;
+									border-radius: 1rem;
+									background-color: var(--bg__color);
+									transition: all 250ms ease-in-out;
+
+									&:hover {
+										cursor: pointer;
+										filter: brightness(1.03);
+									}
+
+									&:active {
+										box-shadow: var(--box-shadows-light-inset);
+									}
+
+									img {
+										width: 2rem;
+										height: 2rem;
+										box-shadow: none;
+									}
+								}
+							}
+						}
 					}
 				}
 
-				.bottom__container {
+				div.bottom__container {
 					h2 {
-						max-width: 100%;
+						display: none;
 					}
 				}
 
@@ -1344,9 +1410,16 @@ body {
 				}
 			}
 
+			&#about-me a.next__link,
+			&#me-in-few-words a.next__link {
+				display: none;
+			}
+
 			&#me-in-few-words {
 				width: auto;
-				gap: 2rem;
+				gap: 0rem;
+				min-height: 40vh;
+				height: auto;
 
 				a {
 					&.next__link {
@@ -1356,59 +1429,51 @@ body {
 
 				div {
 
-					&.top__part,
-					&.bottom__part {
-						width: calc(100% - 2rem);
-						margin: 0;
+					&.middle__container {
+						flex-direction: row;
+						align-items: flex-start;
+						justify-content: space-around;
+						width: 100%;
+						gap: 2rem;
 
-						.about__me__logo {
-							height: 3rem;
-							width: 3rem;
-						}
-					}
-
-					&.top__part {
-
-						.line__1,
-						.line__2,
-						.line__3 {
-							text-align: center;
-							white-space: normal;
-							overflow: visible;
-							animation: none;
-							border-right: none;
+						div.left__side {
 							width: 100%;
-						}
-					}
 
-					&.bottom__part {
-						.line__4 {
-							text-align: center;
-							white-space: normal;
-							overflow: visible;
-							animation: none;
-							border-right: none;
+							div.top__part,
+							div.bottom__part {
+								width: initial;
+								margin: 0;
+
+								img.about__me__logo {
+									height: 3rem;
+									width: 3rem;
+								}
+
+								div.TypeWriter {
+									width: 100%;
+									animation: none !important;
+
+									.line__1,
+									.line__2,
+									.line__3 {
+										white-space: normal;
+										overflow: visible;
+										animation: none !important;
+										display: flex;
+										width: auto;
+									}
+								}
+							}
+						}
+
+						div.right__side {
 							width: 100%;
-						}
-					}
-				}
-			}
+							padding: 1rem 0;
 
-			&#my-stack {
-				padding: 0;
-
-				h5 {
-					margin-top: 2rem;
-					width: 80%;
-					padding: 1rem 1.5rem;
-				}
-
-				#stack__container__2 {
-					&.stack__container {
-						.stack__card {
-							width: 45%;
-							/* height: 15rem; */
-							margin: 1rem 0;
+							img {
+								height: 3rem;
+								width: 3rem;
+							}
 						}
 					}
 				}
@@ -1428,6 +1493,7 @@ body {
 				align-items: center;
 				justify-content: none;
 				min-height: 80vh;
+				height: auto;
 				margin-bottom: 2rem;
 
 				div {
@@ -1444,10 +1510,13 @@ body {
 						}
 					}
 
-					&.top__container {
+					&.middle__container {
+						flex-direction: column;
+						align-items: center;
+						justify-content: space-around;
+
 						#glitching-img-container {
 							max-width: 100%;
-							height: 20rem;
 							margin-top: 2rem;
 
 							.imgWrap {
@@ -1461,13 +1530,82 @@ body {
 								}
 							}
 						}
-					}
 
-					&.middle__container {
+						h2 {
+							display: flex;
+							max-width: 100%;
+							margin: auto;
+							margin-top: 2rem;
+						}
+
 						.welcome {
+							width: 100%;
+							margin-top: 2rem;
 							margin-right: 0;
+
+							.message__container {
+								width: auto;
+								margin-top: 1rem;
+
+								.message {
+									text-align: justify;
+									white-space: normal;
+									overflow: visible;
+									animation: none;
+									border-right: none;
+									width: 100%;
+
+								}
+
+								.links__container {
+									margin: 1rem 0;
+									display: flex;
+									flex-direction: row;
+									align-items: center;
+									justify-content: space-around;
+
+									a {
+										position: inherit;
+										margin: 0;
+										display: flex;
+										flex-direction: column;
+										align-items: center;
+										text-decoration: none;
+										color: var(--text__color);
+										box-shadow: var(--box-shadows-light-outset);
+										width: 5rem;
+										padding: 1rem;
+										border-radius: 1rem;
+										background-color: var(--bg__color);
+										transition: all 250ms ease-in-out;
+
+										&:hover {
+											cursor: pointer;
+											filter: brightness(1.03);
+										}
+
+										&:active {
+											box-shadow: var(--box-shadows-light-inset);
+										}
+
+										img {
+											width: 2rem;
+											height: 2rem;
+											box-shadow: none;
+										}
+									}
+								}
+
+							}
 						}
 					}
+
+					&.bottom__container {
+						h2 {
+							display: none;
+						}
+					}
+
 				}
 
 				a {
@@ -1479,6 +1617,7 @@ body {
 
 			&#me-in-few-words {
 				width: auto;
+				height: auto;
 				gap: 0rem;
 				min-height: 40vh;
 
@@ -1495,6 +1634,55 @@ body {
 						width: 100%;
 						margin: 0;
 					}
+
+					&.middle__container {
+						flex-direction: column;
+						align-items: center;
+						justify-content: space-around;
+						width: 100%;
+						gap: 2rem;
+
+						div.left__side {
+							width: 100%;
+
+							div.top__part,
+							div.bottom__part {
+								width: initial;
+								margin: 0;
+
+								img {
+									&.about__me__logo {
+										height: 3rem;
+										width: 3rem;
+									}
+								}
+
+								div.TypeWriter {
+									width: 100%;
+
+									.line__1,
+									.line__2,
+									.line__3 {
+										white-space: normal;
+										overflow: visible;
+										animation: none;
+										/* display: flex; */
+										width: auto;
+									}
+								}
+							}
+						}
+
+						div.right__side {
+							width: 100%;
+							padding: 1rem 0;
+
+							img {
+								height: 3rem;
+								width: 3rem;
+							}
+						}
+					}
 				}
 			}
 		}
@@ -1505,6 +1693,8 @@ body {
 	body {
 		section {
 			&#about-me {
+				min-height: 80vh;
+
 				div {
 
 					&.top__container,
@@ -1517,8 +1707,7 @@ body {
 					&.middle__container {
 						#glitching-img-container {
 							max-width: 100%;
-							height: 20rem;
-							margin-top: 2rem;
+							margin-top: 1.5rem;
 
 							.imgWrap {
 								img {
@@ -1537,27 +1726,70 @@ body {
 						}
 					}
 				}
+			}
 
+			&#about-me,
+			&#me-in-few-words {
 				a {
 					bottom: 0;
 				}
 			}
 
-			&#me-in-fex-words {
+			&#me-in-few-words {
 				width: auto;
+				margin-top: 2rem;
 				gap: 0rem;
-				min-height: 40vh;
-
-				a {
-					bottom: 0;
-				}
+				min-height: 100vh;
+				height: auto;
 
 				div {
 
-					&.top__part,
-					&.bottom__part {
+
+					&.middle__container {
+						flex-direction: row;
+						align-items: flex-start;
+						justify-content: space-between;
 						width: 100%;
-						margin: 0;
+						gap: 2rem;
+
+						div.left__side {
+							width: 100%;
+
+							div.top__part,
+							div.bottom__part {
+								width: initial;
+								margin: 0;
+
+								img {
+									&.about__me__logo {
+										height: 3rem;
+										width: 3rem;
+									}
+								}
+
+								div.TypeWriter {
+									width: 100%;
+
+									.line__1,
+									.line__2,
+									.line__3 {
+										/* display: flex; */
+										width: auto;
+										white-space: normal;
+									}
+								}
+							}
+						}
+
+						div.right__side {
+							width: 100%;
+							padding: 1rem 0;
+
+							img {
+								height: 3rem;
+								width: 3rem;
+							}
+						}
 					}
 				}
 			}

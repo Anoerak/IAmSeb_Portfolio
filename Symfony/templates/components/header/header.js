@@ -40,12 +40,6 @@ navbar.addEventListener('mouseenter', () => {
 });
 /* #endregion */
 
-/* #region  Dark Mode */
-// Dark Mode based on user settings
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && !document.body.classList.contains('dark')) {
-	document.body.classList.add('dark');
-}
-
 /* #region  Responsive */
 // Responsive Navbar
 const open = document.querySelector('.hamburger__menu__container');
@@ -63,7 +57,7 @@ open.addEventListener('click', () => {
 	}
 	document.querySelectorAll('.li__content').forEach((li) => {
 		setTimeout(() => {
-			li.style.backgroundColor = 'var(--text__color)';
+			li.style.backgroundColor = '$text__color';
 		}, 1800);
 	});
 });

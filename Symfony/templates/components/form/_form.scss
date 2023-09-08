@@ -95,51 +95,51 @@ body {
 			}
 		}
 	}
-}
 
-body.dark {
-	form {
-		box-shadow: $box-shadows-dark-inset;
+	&.dark {
+		form {
+			box-shadow: $box-shadows-dark-inset;
 
-		.input__field {
+			.input__field {
 
-			input,
-			textarea {
-				background-color: $dark__bg__color;
-				color: $dark-main-orange-color;
-				box-shadow: $box-shadows-dark-outset;
-
-				&:focus {
-					box-shadow: $box-shadows-dark-inset;
-				}
-			}
-
-			button {
-				background-color: $dark__bg__color;
-				color: $dark__text__color;
-				box-shadow: $box-shadows-dark-outset;
-				transition: all 0.75s ease-in-out;
-
-				&:hover {
-					background-color: $dark__bg__color__2;
+				input,
+				textarea {
+					background-color: $dark__bg__color;
 					color: $dark-main-orange-color;
 					box-shadow: $box-shadows-dark-outset;
+
+					&:focus {
+						box-shadow: $box-shadows-dark-inset;
+					}
 				}
 
-				&:active {
-					background-color: $dark__bg__color__2;
-					color: $dark-main-orange-color;
+				button {
+					background-color: $dark__bg__color;
+					color: $dark__text__color;
 					box-shadow: $box-shadows-dark-outset;
-				}
+					transition: all 0.75s ease-in-out;
 
-				&::after {
-					background-color: $dark__text__color;
-				}
+					&:hover {
+						background-color: $dark__bg__color__2;
+						color: $dark-main-orange-color;
+						box-shadow: $box-shadows-dark-outset;
+					}
 
-				&:hover::after {
-					opacity: 1;
-					background-color: $dark-main-orange-color;
-					animation: bounce 0.75s ease-in-out infinite;
+					&:active {
+						background-color: $dark__bg__color__2;
+						color: $dark-main-orange-color;
+						box-shadow: $box-shadows-dark-outset;
+					}
+
+					&::after {
+						background-color: $dark__text__color;
+					}
+
+					&:hover::after {
+						opacity: 1;
+						background-color: $dark-main-orange-color;
+						animation: bounce 0.75s ease-in-out infinite;
+					}
 				}
 			}
 		}
@@ -383,7 +383,10 @@ body.dark {
 */
 
 @include responsive(mobile-portrait) {
-	form {
-		width: auto;
+	body {
+		form {
+			width: auto;
+		}
+
 	}
 }
