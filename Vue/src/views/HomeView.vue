@@ -229,7 +229,7 @@ export default {
                             <img :src="VueJs" alt="Vue.js logo" class="vue__img" />
                             Vue
                         </a>
-                        <a href="https://iamseb.dev/symfony" class="framework symfony">
+                        <a href="https://iamseb.dev/symfony/public" class="framework symfony">
                             <img :src="Symfony" alt="Symfony 6 logo" class="symfony__img" />
                             Symfony
                         </a>

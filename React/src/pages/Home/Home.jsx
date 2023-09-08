@@ -188,7 +188,7 @@ function Home() {
 									<img src={VueJs} alt='Welcome Back sign' className='vue__img' />
 									Vue
 								</a>
-								<a href='https://iamseb.dev/symfony' className='framework symfony'>
+								<a href='https://iamseb.dev/symfony/public' className='framework symfony'>
 									<img src={Symfony} alt='Welcome Back sign' className='symfony__img' />
 									Symfony
 								</a>
